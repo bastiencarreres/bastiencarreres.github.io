@@ -127,7 +127,7 @@
 
 	body, input, select, textarea, button {
 		color: #414f57;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-family: "Tahoma", "Verdana", "Segoe", sans-serif;
 		font-size: 14pt;
 		font-weight: 300;
 		line-height: 2;
@@ -716,8 +716,23 @@
 	}
 
 	
-	
+	#outreach .card_wrapper {
+		text-align: left;
+		text-transform: none !important;
+		letter-spacing: 0.5px;
+		line-height: 1.5em;
+	}
 
+	#outreach .card_wrapper a {
+		text-decoration: underline;
+	}
+
+	#outreach h3 {
+		font-weight: 600;
+		font-size: 1.2em;
+		padding-top: 10px;
+		border-top: 1px solid #dedede;
+	}
 /* Button */
 
 	input[type="submit"],
