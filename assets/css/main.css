@@ -834,7 +834,7 @@
 	#main {
 		position: relative;
 		max-width: 100%;
-		min-width: 27em;
+		min-width: 50em;
 		cursor: default;
 		text-align: center;
 		-moz-transform-origin: 50% 50%;
