@@ -1,4 +1,4 @@
-# bcarreres.github.io
+# bastiencarreres.github.io
 
 Repository of my resume website.
 
