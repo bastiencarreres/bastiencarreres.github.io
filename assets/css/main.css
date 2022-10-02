@@ -633,17 +633,17 @@
 	
 	.card_wrapper {
 		overflow-y: scroll;
-		height: 330px;
-    margin-bottom: 30px;
+		height: 350px;
+    	margin-bottom: 2%;
 	}
 	.card_wrapper::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 7px;
+    	-webkit-appearance: none;
+    	width: 7px;
 	}
 	.card_wrapper::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(0,0,0,.1);
-    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.1);
+    	border-radius: 4px;
+    	background-color: rgba(0,0,0,.1);
+    	-webkit-box-shadow: 0 0 1px rgba(255,255,255,.1);
 	}
 	ul.project_list, ul.project_list ul {
 		list-style-type: none;
@@ -671,6 +671,11 @@
 
 	#aboutme .card_wrapper a {
 		text-decoration: underline;
+	}
+
+	#aboutme .card_wrapper p {
+		text-align: justify;
+		padding-right: 10px;
 	}
 
 	#publications .card_wrapper {
@@ -855,7 +860,6 @@
     	transform-style: preserve-3d;
     	-webkit-transform-origin: 50% 50%;
 	}
-	
 	#main .front, #main .back {
 		-webkit-backface-visibility: hidden;
     	-moz-backface-visibility: hidden;
@@ -865,7 +869,6 @@
 		background: #ffffff;
 		border-radius: 4px;
 	}
-
 	#main .front {
 		z-index:2;
 		-webkit-transform: rotateY( 0deg );
@@ -878,7 +881,6 @@
 		width: 100%;
 		height: 100%;
 	}
-
 	#main .back {
 		-webkit-transform: rotateY( 180deg );
    		-moz-transform: rotateY( 180deg );
@@ -891,27 +893,23 @@
 		height: 100%;
 		padding: 1.5em 3em 1.5em;
 	}
-	
 	#main.flipped {
 		-webkit-transform: rotateY( 180deg );
     	-moz-transform: rotateY( 180deg );
    	 	-o-transform: rotateY( 180deg );
     	transform: rotateY( 180deg );
 	}
-
 		#main .avatar {
 			position: relative;
 			display: block;
 			margin-bottom: 1.5em;
 		}
-
 			#main .avatar img {
 				display: block;
 				margin: 0 auto;
 				border-radius: 100%;
 				box-shadow: 0 0 0 1.5em #ffffff;
 			}
-
 			#main .avatar:before {
 				content: '';
 				display: block;
@@ -925,7 +923,6 @@
 			}
 
 		@media screen and (max-width: 480px) {
-
 			#main {
 				min-width: 0;
 				width: 100%;
