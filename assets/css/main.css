@@ -634,7 +634,7 @@
 	.card_wrapper {
 		overflow-y: scroll;
 		height: 350px;
-    	margin-bottom: 2%;
+    	margin-bottom: 1%;
 	}
 	.card_wrapper::-webkit-scrollbar {
     	-webkit-appearance: none;
