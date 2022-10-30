@@ -11388,13 +11388,15 @@ p.lead {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 3.5rem;
-  width: 3.5rem;
+  height: 2.0rem;
+  width: 2.0rem;
   background-color: #495057;
   color: #fff;
-  border-radius: 100%;
+  border-radius: 20%;
   font-size: 1.5rem;
-  margin-right: 1.5rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.0rem
 }
 .social-icons .social-icon:last-child {
   margin-right: 0;
