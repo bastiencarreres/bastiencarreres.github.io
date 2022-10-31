@@ -11396,7 +11396,8 @@ p.lead {
   font-size: 1.5rem;
   margin-right: 0.5rem;
   margin-top: 0.5rem;
-  margin-bottom: 1.0rem
+  margin-bottom: 1.0rem;
+  text-decoration: none;
 }
 .social-icons .social-icon:last-child {
   margin-right: 0;
