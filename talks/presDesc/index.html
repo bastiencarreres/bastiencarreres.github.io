@@ -17,7 +17,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section  data-background="assets/talks/P48_1.jpg">
+				<section  data-background="/assets/talks/P48_1.jpg">
 					<div class="container" style="padding-top: 150px; display: block;">
 						<div class="title" style="border-radius: 20px; background-color:rgba(0, 0, 0, 0.6); 
 						padding: 10px;">							
@@ -38,25 +38,54 @@
 				<section>
 					<h2>\(f\sigma_8\) as a probe for general relativity</h2>
 				</section>
-
+				
 				<section>
-					<h2>The selection bias</h2>
-					<div class="container">
-						<div class="col" style="flex: 0.8">
-							<p align="justify" class="fragment" data-fragment-index="1"  style="position: relative; top: -250px">
-								The bias on Hubble diagram residuals begin around \(z \sim 0.06\). 
-							</p> 
-						</div>
-						
-						<div class="col" style="position:relative; left: 50px;">
-							<div class="r-vstack">
-								<img class="fragment" data-fragment-index="1" style="width: 500px" data-src="assets/talks/HD_residuals.svg"></img>
-								<img class="fragment" style="width: 500px; margin-top: 0px;" data-src="/assets/talks/velbias.svg"></img>
+					<h2>The Maximum-Likelihood method</h2>
+						<div class="container" style="display: block;  margin-top: 10px;">
+							<h3>We can approximate the velocity field as a Gaussian random field</h3>
+							<br>
+							<div class="fragment">
+							\[ 
+								\mathcal{L}(\mathbf{p}, \mathbf{p}_{\rm HD}) = (2 \pi)^{-\frac{n}{2}}|C(\mathbf{p}, \mathbf{p}_{\rm HD})|^{-\frac{1}{2}} \times\exp\left[-\frac{1}{2}\mathbf{\hat{v}}^T(\mathbf{p}_{\rm HD})C(\mathbf{p}, \mathbf{p}_{\rm HD})^{-1}\mathbf{\hat{v}}(\mathbf{p}_{\rm HD})
+							\right]
+							\]
 							</div>
-						</div>		
-					</div>	
+							<br>
+							<p class="fragment" align="left">\(\mathbf{p}_\mathrm{HD} = \left\{M_0, \alpha, \beta, \sigma_M\right\}\) are the SNe Ia Hubble diagram parameters</p>
+							<br>
+							<p class="fragment" align="left" >\(\mathbf{p} = \left\{f\sigma_8, \sigma_v, \sigma_u\right\}\) are growth-rate related parameters</p>
+							<br>
+							<p class="fragment" align="left" >\(C_{ij}(\mathbf{p}, \mathbf{p}_\mathrm{HD}) = C_{ij}^{vv}(f\sigma_8, \sigma_u) + (\sigma_v^2 + \sigma_\hat{v}^2(\mathbf{p}_{HD}))\delta_{ij}\) the covariance matrix</p>
+
+						</div>	
 				</section>
 
+				<!-- SLIDE 2 -->
+				<section>
+					<h2>The selection bias</h2>
+						<div class="container" style="display: block;  margin-top: 100px;">
+
+							<p class="fragment" data-fragment-index="1">The sample bias appear on Hublle diagram residuals at \(z \sim 0.06\) and grow up to \(\Delta\mu \sim -0.13\) at \(z \sim 0.12\)
+								<br>
+								<br>
+								
+							</p>
+							<p class="fragment" data-fragment-index="2">
+								It results into a positive bias on estimated peculiar velocities
+							</p>
+							<div class="r-hstack" style="margin-top: 50px;">
+								<img class="fragment" data-fragment-index="1" style="height: 350px; margin-right: 150px;" data-src="/assets/talks/HD_residuals.svg"></img>
+								<img class="fragment" data-fragment-index="2" style="height: 350px" data-src="/assets/talks/velbias.svg"></img>
+							</div>
+						</div>	
+				</section>
+
+			<!-- SLIDE 3 -->
+			<section>
+				<h2>Complete sample results</h2>
+
+						
+				</section>
 			</div>
 		</div>
 
