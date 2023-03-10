@@ -1,3 +1,6 @@
 [submodule "presDesc/reveal.js"]
 	path = presDesc/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
+[submodule "talks/presDesc/reveal.js"]
+	path = talks/presDesc/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
