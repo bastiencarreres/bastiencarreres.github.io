@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Growth rate measurement with type Ia supernovae</title>
+		<title>Growth rate with type Ia supernovae</title>
 
 		<link rel="stylesheet" href="reveal.js/dist/reset.css">
 		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="custom.css">
 
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="reveals.js/plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
 	</head>
 	<body>
 		<div class="reveal">
@@ -30,12 +30,6 @@
 								<br>
 							</div>
 						</div>					
-					</div>
-					<div class="col">
-						<br>
-						<br>
-						<br>
-
 					</div>
 				</section>
 
@@ -64,32 +58,57 @@
 			</div>
 		</div>
 
-		<script src="reveals.js/dist/reveal.js"></script>
-		<script src="reveals.js/plugin/notes/notes.js"></script>
-		<script src="reveals.js/plugin/markdown/markdown.js"></script>
-		<script src="reveals.js/plugin/highlight/highlight.js"></script>
-		<script src="reveals.js/plugin/math/math.js"></script>
-		<script>
+		<script src="reveal.js/dist/reveal.js"></script>
+		<script src="reveal.js/plugin/notes/notes.js"></script>
+		<script src="reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="reveal.js/plugin/highlight/highlight.js"></script>
+		<script src="reveal.js/plugin/math/math.js"></script>
+		<!-- <script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
-				mathjax2: {
-					config: 'TeX-AMS_HTML-full',
-					TeX: {
-						Macros: {
-							R: '\\mathbb{R}',
-							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
-						}
-					}
-				},
-
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax2 ]
-		
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
-		</script>
+		</script> -->
+		<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			//center: false,
+			hash: true,
+
+			// Display a presentation progress bar
+			progress: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath],
+
+			dependencies: [
+				{
+					src: 'reveal.js/plugin/markdown/markdown.js'
+				},
+				{
+					src: 'reveal.js/plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'reveal.js/plugin/math/math.js',
+					async: true
+				},
+				{
+					src: 'reveal.js/plugin/highlight/highlight.js',
+					async: true
+				},
+			]
+
+		});
+	
+	</script>
 	</body>
 </html>
