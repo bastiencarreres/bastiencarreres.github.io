@@ -25,8 +25,9 @@
 						</div>
 					<div class="container">
 						<div class="col">
-							<div align="left" style="margin-right: 15px; margin-top: 5px;">
-								<h2>Bastien Carreres</h2>
+							<div align="left" style="margin-right: 300px; margin-top: 5px;">
+								<h2>Bastien Carreres,</h2>
+								<h3>J. E. Bautista, F. Feinstein, D. Fouchez, B. Racine, M. Smith <i>et al.</i></h3>
 								<br>
 							</div>
 						</div>					
@@ -43,7 +44,8 @@
 
 						<div class="col">
 							<p class="fragment" data-fragment-index="1" style="position: absolute; top: 150px">
-								The bias on Hubble diagram residuals is about</p> 
+								The bias on Hubble diagram residuals is about \(\Delta\mu\simeq0.01\)
+							</p> 
 						</div>
 						
 						<div class="col" style="position:relative; left: 50px;">
@@ -78,13 +80,33 @@
 		// - https://revealjs.com/initialization/
 		// - https://revealjs.com/config/
 		Reveal.initialize({
-			//center: false,
+			controls: false,
+			
 			hash: true,
 
+			// Visibility rule for backwards navigation arrows; "faded", "hidden"
+			// or "visible"
+			controlsBackArrows: 'hidden',
+
 			// Display a presentation progress bar
-			progress: true,
+			progress: false,
+
+			// Display the page number of the current slide
+			slideNumber: true,
 
 			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// The "normal" size of the presentation, aspect ratio will be preserved
+			// when the presentation is scaled to fit different resolutions. Can be
+			// specified using percentage units.
+			width: 1280,
+			height: 720,
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
+
+			// Bounds for smallest/largest possible scale to apply to content
+			minScale: 0.2,
+			maxScale: 1.5,
 
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath],
@@ -100,6 +122,15 @@
 				{
 					src: 'reveal.js/plugin/math/math.js',
 					async: true
+				},
+				{
+					src: 'reveal.js/plugin/reveal.js-d3/reveald3.js'
+				},
+				{
+					src: 'reveal.js/plugin/reveal.js-plugins/chart/Chart.min.js'
+				},
+				{
+					src: 'reveal.js/plugin/reveal.js-plugins/chart/csv2chart.js'
 				},
 				{
 					src: 'reveal.js/plugin/highlight/highlight.js',
