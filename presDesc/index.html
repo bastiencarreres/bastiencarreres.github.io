@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/night.css">
+		<link rel="stylesheet" href="custom.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section  data-background="_static/P48_1.jpg">
+					<div class="container" style="padding-top: 150px; display: block;">
+						<div class="title" style="border-radius: 20px; background-color:rgba(0, 0, 0, 0.6); 
+						padding: 10px;">							
+							<h1>\(f\sigma_8\) measurement with type Ia supernovae</h1>	
+						</div>
+					<div class="container">
+						<div class="col">
+							<div align="left" style="margin-right: 15px; margin-top: 5px;">
+								<h2>Bastien Carreres</h2>
+								<br>
+							</div>
+						</div>					
+					</div>
+					<div class="col">
+						<br>
+						<br>
+						<br>
+
+					</div>
+				</section>
+
+				<section>
+					<h2>\(f\sigma_8\) as a probe for general relativity</h2>
+				</section>
+
+				<section>
+					<h2>The selection bias</h2>
+					<div class="container">
+
+						<div class="col">
+							<p class="fragment" data-fragment-index="1" style="position: absolute; top: 150px">
+								The bias on Hubble diagram residuals is about</p> 
+						</div>
+						
+						<div class="col" style="position:relative; left: 50px;">
+							<div class="r-vstack">
+								<img class="fragment" data-fragment-index="1" data-src="_static/HD_residuals.svg"></img>
+								<img class="fragment" data-src="_static/velbias.svg"></img>
+							</div>
+						</div>		
+					</div>	
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax2 ]
+		
+			});
+		</script>
+	</body>
+</html>
