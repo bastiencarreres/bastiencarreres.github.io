@@ -41,9 +41,8 @@
 				
 				<section>
 					<h2>The Maximum-Likelihood method</h2>
-						<div class="container" style="display: block;  margin-top: 10px;">
-							<h3>We can approximate the velocity field as a Gaussian random field</h3>
-							<br>
+						<div class="container" style="display:block">
+							<h4>We can approximate the velocity field as a Gaussian random field</h4>
 							<div class="fragment">
 							\[ 
 								\mathcal{L}(\mathbf{p}, \mathbf{p}_{\rm HD}) = (2 \pi)^{-\frac{n}{2}}|C(\mathbf{p}, \mathbf{p}_{\rm HD})|^{-\frac{1}{2}} \times\exp\left[-\frac{1}{2}\mathbf{\hat{v}}^T(\mathbf{p}_{\rm HD})C(\mathbf{p}, \mathbf{p}_{\rm HD})^{-1}\mathbf{\hat{v}}(\mathbf{p}_{\rm HD})
@@ -56,15 +55,13 @@
 							<p class="fragment" align="left" >\(\mathbf{p} = \left\{f\sigma_8, \sigma_v, \sigma_u\right\}\) are growth-rate related parameters</p>
 							<br>
 							<p class="fragment" align="left" >\(C_{ij}(\mathbf{p}, \mathbf{p}_\mathrm{HD}) = C_{ij}^{vv}(f\sigma_8, \sigma_u) + (\sigma_v^2 + \sigma_\hat{v}^2(\mathbf{p}_{HD}))\delta_{ij}\) the covariance matrix</p>
-
 						</div>	
 				</section>
 
 				<!-- SLIDE 2 -->
 				<section>
 					<h2>The selection bias</h2>
-						<div class="container" style="display: block;  margin-top: 100px;">
-
+						<div class="container" style="display: block">
 							<p class="fragment" data-fragment-index="1">The sample bias appear on Hublle diagram residuals at \(z \sim 0.06\) and grow up to \(\Delta\mu \sim -0.13\) at \(z \sim 0.12\)
 								<br>
 								<br>
@@ -83,8 +80,24 @@
 			<!-- SLIDE 3 -->
 			<section>
 				<h2>Complete sample results</h2>
-
-						
+					<div class="container">
+						<div class="col" style="flex: 1.2"> 
+							<p align="left"> We can build a bias free sample by applying a redshift cut at \(z = 0.06\)</p>
+							<br>
+							<br>
+							<p align="left">Results for our 27 mocks :</p>
+							<br>
+							<ul>
+								<li>Fit with $v_\mathrm{true}$: \( \langle f\sigma_8 \rangle = 0.991 \pm 0.016 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.100\)</li>
+								<li>Fit fixing \(\mathbf{p}_\mathrm{HD}\): \( \langle f\sigma_8 \rangle = 1.036 \pm 0.031 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.185\)</li>
+								<li>Fit with $\mathbf{p}$, $\mathbf{p}_\mathrm{HD}$ free: \( \langle f\sigma_8 \rangle = 0.998 \pm 0.037 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.188\)</li>
+							</ul>
+							
+						</div>
+					<div class="col">
+						<img style="height: 400px" data-src="/assets/talks/results_z006.svg">
+					</div>
+					</div>
 				</section>
 			</div>
 		</div>
@@ -136,9 +149,17 @@
 			// Bounds for smallest/largest possible scale to apply to content
 			minScale: 0.2,
 			maxScale: 1.5,
-
+			mathjax3: {
+    					mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+				tex: {
+				inlineMath: [ [ '$', '$' ], [ '\\(', '\\)' ]  ]
+				},
+				options: {
+				skipHtmlTags: [ 'script', 'noscript', 'style', 'textarea', 'pre' ]
+				},
+			},
 			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath],
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3],
 
 			dependencies: [
 				{
