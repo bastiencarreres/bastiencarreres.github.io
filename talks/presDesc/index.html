@@ -38,7 +38,19 @@
 				<section>
 					<h2>\(f\sigma_8\) as a probe for general relativity</h2>
 				</section>
-				
+
+				<section>
+					<h2>Effect of peculiar velocity on the Hubble Diagram</h2>
+					<div class="container" style="display:block">
+						<div class="r-stack">
+							<img class="fragment" data-fragment-index="1" style="height: 500px; background-color: white; border-radius:50px" data-src="/assets/talks/HDsimple.svg"></img>
+							<img class="fragment" data-fragment-index="2" style="height: 500px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvel.svg"></img>
+							<img class="fragment" data-fragment-index="3" style="height: 500px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvelnoise.svg"></img>
+
+						</div>
+					</div>
+				</section>
+
 				<section>
 					<h2>The Maximum-Likelihood method</h2>
 						<div class="container" style="display:block">
@@ -77,30 +89,39 @@
 						</div>	
 				</section>
 
-			<!-- SLIDE 3 -->
-			<section>
-				<h2>Complete sample results</h2>
-					<div class="container">
-						<div class="col" style="flex: 1.2"> 
-							<p align="left"> We can build a bias free sample by applying a redshift cut at \(z = 0.06\)</p>
-							<br>
-							<br>
-							<p align="left">Results for our 27 mocks :</p>
-							<br>
-							<ul>
-								<li>Fit with $v_\mathrm{true}$: \( \langle f\sigma_8 \rangle = 0.991 \pm 0.016 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.100\)</li>
-								<li>Fit fixing \(\mathbf{p}_\mathrm{HD}\): \( \langle f\sigma_8 \rangle = 1.036 \pm 0.031 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.185\)</li>
-								<li>Fit with $\mathbf{p}$, $\mathbf{p}_\mathrm{HD}$ free: \( \langle f\sigma_8 \rangle = 0.998 \pm 0.037 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.188\)</li>
-							</ul>
-							
+				<!-- SLIDE 3 -->
+				<section>
+					<h2>Complete sample results</h2>
+						<div class="container">
+							<div class="col" style="flex: 1.2"> 
+								<p align="left"> We can build a bias free sample by applying a redshift cut at \(z = 0.06\)</p>
+								<br>
+								<br>
+								<p align="left">Results for our 27 mocks :</p>
+								<br>
+								<ul>
+									<li>Fit with $v_\mathrm{true}$: \( \langle f\sigma_8 \rangle = 0.991 \pm 0.016 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.100\)</li>
+									<li>Fit fixing \(\mathbf{p}_\mathrm{HD}\): \( \langle f\sigma_8 \rangle = 1.036 \pm 0.031 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.185\)</li>
+									<li>Fit with $\mathbf{p}$, $\mathbf{p}_\mathrm{HD}$ free: \( \langle f\sigma_8 \rangle = 0.998 \pm 0.037 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.188\)</li>
+								</ul>
+							</div>
+							<div class="col">
+								<img style="height: 400px" data-src="/assets/talks/results_z006.svg">
+							</div>
 						</div>
-					<div class="col">
-						<img style="height: 400px" data-src="/assets/talks/results_z006.svg">
-					</div>
-					</div>
 				</section>
+				<section>
+					<h2>Going above $z = 0.06$</h2>
+						<div class="container" style="display: block;">
+							<p>Including SNe Ia after $z=0.06$ bias the result on $f\sigma_8$</p>
+							<br>
+							<img style="height: 400px" data-src="/assets/talks/fs8_6years_bias.svg">
+						</div>
+				</section>
+
 			</div>
 		</div>
+
 
 		<script src="reveal.js/dist/reveal.js"></script>
 		<script src="reveal.js/plugin/notes/notes.js"></script>
