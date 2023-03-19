@@ -43,11 +43,22 @@
 					<h2>Effect of peculiar velocity on the Hubble Diagram</h2>
 					<div class="container" style="display:block">
 						<div class="r-stack">
-							<img class="fragment" data-fragment-index="1" style="height: 500px; background-color: white; border-radius:50px" data-src="/assets/talks/HDsimple.svg"></img>
-							<img class="fragment" data-fragment-index="2" style="height: 500px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvel.svg"></img>
-							<img class="fragment" data-fragment-index="3" style="height: 500px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvelnoise.svg"></img>
+							<h3 class="fragment fade-in-then-out" data-fragment-index="1">Standard candles</h3>
+							<span class="fragment fade-in" data-fragment-index="2">
+								<span class="fragment fade-out" data-fragment-index="4">
+									<h3>Standard candles + velocities</h3>
+								</span>
+							</span>
+							<h3 class="fragment" data-fragment-index="4">Standard candles + velocities + noise</h3>
 
 						</div>
+						<div class="r-stack">
+							<img class="fragment" data-fragment-index="1" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDsimple.svg"></img>
+							<img class="fragment" data-fragment-index="2" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvel.svg"></img>
+							<img class="fragment" data-fragment-index="4" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvelnoise.svg"></img>
+						</div>
+						<br>
+						<p class="fragment" data-fragment-index="3">The velocity estimator: <br> $$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$</p>
 					</div>
 				</section>
 
