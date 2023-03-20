@@ -35,16 +35,17 @@
 
 				</section>
 
-				<section data-background="assets/talks/illustris.png", data-transition="none-out", 
+				<section data-background="/assets/talks/illustris.png", data-transition="none-out", 
 					     data-background-transition="none-out">
 					
 					<h2>\(f\sigma_8\) as a probe for general relativity</h2>
-					<div class="container">
-						<div class="col" style="margin-top: 10px; background-color: rgba(0, 0, 0, 0.558); 
+					<div class="container"  style="height: 500px; column-gap: 50px">
+						<div class="col" style="flex: 0.8; background-color: rgba(0, 0, 0, 0.558); 
 													width: 500px; border-radius: 20px; padding: 20px; 
 													display: block; text-align: center;">
 							<p>
-								Structure evolution : Dark energy vs Gravity
+								Structure evolution :<br>
+								Dark energy vs Gravity
 							</p>
 							<br>
 							<p style="line-height: 1.5;">
@@ -58,23 +59,27 @@
 							</p>
 						</div>
 						<div class="col">
-
-							<div class="fragment", data-animate data-src="assets/talks/telescope_gal.svg">
-								<!--
-									{
-									"setup": [
-									{
-									"element": "#path18",
-									"modifier": "attr",
-									"parameters": [ {"fill": "#0c00fd"} ]
-									},
-									{
-									"element": "#path18",
-									"modifier": "function() { this.scale(0.5).animate(2000).ease('-').attr({ fill: '#e82700'}).ease('<>').dmove(200, -200).loop(true,true);}"
-									}
-									]
-									}
-								-->
+							<div class="r-stack">
+								<div class="fragment fade-in-then-out", data-animate data-src="/assets/talks/telescope_gal.svg", data-fragment-index="1" style="height: 800px;">
+									<!--
+										{
+										"setup": [
+										{
+										"element": "#path18",
+										"modifier": "attr",
+										"parameters": [ {"fill": "#0c00fd"} ]
+										},
+										{
+										"element": "#path18",
+										"modifier": "function() { this.scale(1.).animate(2000).ease('-').attr({ fill: '#e82700'}).ease('<>').dmove(70, -47.6).loop(true,true);}"
+										}
+										]
+										}
+									-->
+								</div>
+								<div class="fragment", data-animate data-src="/assets/talks/telescope_gal.svg" data-fragment-index="2" style="height: 800px;">
+									<svg data-src="/assets/talks/telescope_gal.svg"></svg>
+								</div>
 							</div>
 						</div>
 					</div>
