@@ -36,8 +36,9 @@
 
 				<section data-background="/assets/talks/illustris.png", data-transition="none-out", 
 					     data-background-transition="none-out">
-
+						 
 					<h2>\(f\sigma_8\) as a probe for general relativity</h2>
+					
 					<div class="container", style="height: 500px; column-gap: 50px;">
 						<div class="col" style="margin-top: 10px; background-color: rgba(0, 0, 0, 0.558); 
 												width: 500px; border-radius: 20px; padding: 20px; 
@@ -94,6 +95,11 @@
 
 										},
 										{
+											"element": "#sn",
+											"modifier": "attr",
+											"parameters": [ {"opacity": 0} ]
+										},
+										{
 										"element": "#path18",
 										"modifier": "function() { this.scale(1.).animate(2000).ease('-').attr({ fill: '#e82700'}).ease('<>').dmove(70, -46.2).loop(true,true);}"
 										}
@@ -101,11 +107,46 @@
 										}
 									-->
 								</div>
-								<div class="fragment", 
-								data-animate data-src="/assets/talks/telescope_gal.svg", 
-								data-fragment-index="2" style="height: 800px">
+								<span class="fragment" data-fragment-index="1" ></span>
+								<span class="fragment" data-fragment-index="2" ></span>
+								<div data-animate data-src="/assets/talks/telescope_gal.svg",  style="height: 800px">
 									<!--
 										{
+										"setup": [
+										{
+											"element": "#path18",
+											"modifier": "attr",
+											"parameters": [ {"class": "fragment", "data-fragment-index": "1"} ]
+										},
+										{
+											"element": "#vel3D",
+											"modifier": "attr",
+											"parameters": [ {"class": "fragment", "data-fragment-index": "1"} ]
+
+										},
+										{
+											"element": "#vellos",
+											"modifier": "attr",
+											"parameters": [ {"class": "fragment", "data-fragment-index": "1"} ]
+										},
+										{
+											"element": "#path297",
+											"modifier": "attr",
+											"parameters": [ {"class": "fragment", "data-fragment-index": "1"} ]
+
+										},
+										{
+											"element": "#path164",
+											"modifier": "attr",
+											"parameters": [ {"class": "fragment", "data-fragment-index": "1"} ]
+
+										},
+										{
+											"element": "#sn",
+											"modifier": "attr",
+											"parameters": [ {"class": "fragment", "data-fragment-index": "2"} ]
+										}
+										]
 										}
 									-->
 								</div>							
