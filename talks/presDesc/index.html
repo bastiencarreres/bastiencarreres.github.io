@@ -38,7 +38,7 @@
 					     data-background-transition="none-out">
 
 					<h2>\(f\sigma_8\) as a probe for general relativity</h2>
-					<div class="container">
+					<div class="container", style="height: 500px; column-gap: 50px;">
 						<div class="col" style="margin-top: 10px; background-color: rgba(0, 0, 0, 0.558); 
 												width: 500px; border-radius: 20px; padding: 20px; 
 												display: block; text-align: center;">
@@ -53,13 +53,21 @@
 							</p>
 							<br>
 							<p style="line-height: 1.5;">
-								Density evolution rate<br>  $f(z) = \frac{d \ln D}{d\ln a}(a)$ <br>
+								Density evolution rate
+								<br>  $f(z) = \frac{d \ln D}{d\ln a}(a)$ <br>
 								where $f(z) \equiv$ Growth rate
+							</p>
+							<br>
+							<p style="line-height: 1.5;">
+								Velocities probes $f$:
+								<br>  $\nabla.v(a, \mathbf{x}) = -aHf \delta(a, \mathbf{x})$ <br>
 							</p>
 						</div>
 						<div class="col">
 							<div class="r-stack">
-								<div class="fragment fade-in-then-out", data-animate data-src="/assets/talks/telescope_gal.svg", data-fragment-index="1" style="height: 800px;">
+								<div class="fragment fade-in-then-out", 
+								data-animate data-src="/assets/talks/telescope_gal.svg", 
+								data-fragment-index="1" style="height: 800px">
 									<!--
 										{
 										"setup": [
@@ -69,17 +77,40 @@
 										"parameters": [ {"fill": "#0c00fd"} ]
 										},
 										{
+											"element": "#vel3D",
+											"modifier": "attr",
+											"parameters": [ {"opacity": 0} ]
+
+										},
+										{
+											"element": "#vellos",
+											"modifier": "attr",
+											"parameters": [ {"opacity": 0} ]
+										},
+										{
+											"element": "#path297",
+											"modifier": "attr",
+											"parameters": [ {"opacity": 0} ]
+
+										},
+										{
 										"element": "#path18",
-										"modifier": "function() { this.scale(1.).animate(2000).ease('-').attr({ fill: '#e82700'}).ease('<>').dmove(70, -47.6).loop(true,true);}"
+										"modifier": "function() { this.scale(1.).animate(2000).ease('-').attr({ fill: '#e82700'}).ease('<>').dmove(70, -46.2).loop(true,true);}"
 										}
 										]
 										}
 									-->
 								</div>
-								<div class="fragment", data-animate data-src="/assets/talks/telescope_gal.svg" data-fragment-index="2" style="height: 800px;">
-									<svg data-src="/assets/talks/telescope_gal.svg"></svg>
-								</div>
+								<div class="fragment", 
+								data-animate data-src="/assets/talks/telescope_gal.svg", 
+								data-fragment-index="2" style="height: 800px">
+									<!--
+										{
+										}
+									-->
+								</div>							
 							</div>
+			
 						</div>
 					</div>
 				</section>
@@ -133,7 +164,6 @@
 							<p class="fragment" data-fragment-index="1">The sample bias appear on Hublle diagram residuals at \(z \sim 0.06\) and grow up to \(\Delta\mu \sim -0.13\) at \(z \sim 0.12\)
 								<br>
 								<br>
-								
 							</p>
 							<p class="fragment" data-fragment-index="2">
 								It results into a positive bias on estimated peculiar velocities
@@ -197,6 +227,17 @@
 						<br>
 						<p>With only ~1600 SNe ZTF is at the same precision level than existing measurements with 
 							thousand of galaxies ! </p>
+					</div>
+				</section>
+				<section>
+					<h2>Conclusion</h2>
+					<div class="container" style="display: block; padding-inline: 100px;">
+						<p style="text-align: left;">The spectroscopic selection causes a bias for $f\sigma_8$ when using SNe Ia at $z>0.06$</p>
+						<br>
+						<p style="text-align: left;">We forecast that a 6-years ZTF SNe Ia sample cut at $z=0.06$ will produce a $f\sigma_8$ measurement with a precision of $\sim 19\%$
+						using velocities only</p>
+						<br>
+						<p style="text-align: left;">This </p>
 					</div>
 				</section>
 			</div>
