@@ -174,11 +174,126 @@
 							<img class="fragment" data-fragment-index="2" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvel.svg"></img>
 							<img class="fragment" data-fragment-index="4" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvelnoise.svg"></img>
 						</div>
+						<img class="fragment fade-in-then-out" data-fragment-index="3" data-src="/assets/talks/pec_vel_effect.svg" style="position: absolute; top: 240px; right: 10px; height: 350px;">
 						<br>
-						<p class="fragment" data-fragment-index="3">The velocity estimator: <br> $$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$</p>
+						<div class="r-stack">
+							<p class="fragment fade-in-then-out" data-fragment-index="3">The velocity estimator: <br> $$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$</p>
+							<p class="fragment" data-fragment-index="4">The velocity estimator: <br> $$\sigma_\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\sigma_\mu$$</p>
+						</div>
 					</div>
 				</section>
+				<section>
+					<h2>The simulation pipeline</h2>
+					<div class="container" 	style="position: absolute; top: 400px; left: 200px;">
+						<span class="fragment fade-in-then-out" style="display: contents;">
+						</span>
+						<span class="fragment fade-in-then-out" style="display: contents;">
+							<img data-src="/assets/talks/outerrim.png" style="border: 0; width: 300px">
+							<p>We create 27 mocks from the $\left(3~\mathrm{Gpc}.h^{-1}\right)^3$ box at $z=0$</p>
+						</span>
+						<span class="fragment fade-in-then-out" style="display: contents;">
+						</span>
 
+						<span class="fragment fade-in-then-out" style="display: contents;">
+						</span>
+
+						<span class="fragment fade-in-then-out" style="display: contents;">
+						</span>
+
+						<span class="fragment fade-in-then-out" style="display: contents;">
+						</span>
+
+						<span class="fragment fade-in-then-out" style="display: contents;">
+						</span>
+
+						<span class="fragment fade-in-then-out" style="display: contents;">
+						</span>
+					</div>
+					<div class="container" style="display:block;">
+						<div data-animate data-src="/assets/talks/pipeline.svg",  style="position: relative; top: 0px;">
+							<!--
+								{
+								"setup": [
+								{
+									"element": "#surveypar",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "0"} ]
+								},
+								{
+									"element": "#nbody",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "1"} ]
+								},
+								{
+									"element": "#arrows1",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "2"} ]
+								},
+								{
+									"element": "#snsim",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "2"} ]
+								},
+								{
+									"element": "#arrows2",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "3"} ]
+								},
+								{
+									"element": "#simlcs",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "3"} ]
+								},
+								{
+									"element": "#arrows3",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
+								},
+								{
+									"element": "#lcsfit",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
+								},
+								{
+									"element": "#arrows4",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "5"} ]
+								}
+								,
+								{
+									"element": "#HDvel",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "5"} ]
+								},
+								{
+									"element": "#arrows5",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "6"} ]
+								},
+								{
+									"element": "#maxlik",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "6"} ]
+								},
+								{
+									"element": "#arrows6",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "7"} ]
+								},
+								{
+									"element": "#fs8",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "7"} ]
+								}
+								]
+								}
+							-->
+						</div>	
+
+
+
+					</div>	
+				</section>
 				<section>
 					<h2>The Maximum-Likelihood method</h2>
 						<div class="container" style="display:block">
