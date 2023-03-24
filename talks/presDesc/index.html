@@ -34,7 +34,7 @@
 
 						<div>
 							<a href="https://arxiv.org/abs/2303.01198">
-								<img src="https://img.shields.io/badge/astro--ph.CO-arxiv%3A2303.01198-%23B31B1B" style="border-style: none; width: 250px" >
+								<img  src="https://img.shields.io/badge/astro--ph.CO-arxiv%3A2303.01198-%23B31B1B" style="border-style: none; width: 250px" >
 							</a>
 						</div>
 						<div class="container">
@@ -88,6 +88,9 @@
 								<br>  $\nabla.v(a, \mathbf{x}) = -aHf \delta(a, \mathbf{x})$ <br>
 							</p>
 							</span>
+						</div>
+						<div class="fragment fade-in-then-out" data-fragment-index="2" style="position: absolute; right: 0px;">
+							<img src="/assets/talks/fs8_varg.svg" style="width: 800px; border-radius: 20px; border: 5px; background-color: rgba(255, 255, 255, 0.641);">
 						</div>
 						<span class="fragment" data-fragment-index="3">
 							<div style="position: absolute; right: 100px; top:500px; background-color: rgba(0, 0, 0, 0.558); 
@@ -186,7 +189,7 @@
 
 				<section>
 					<h2>The simulation and analysis pipeline</h2>
-					<div class="r-stack" style="position: absolute; top: 350px; left: 100px;">
+					<div class="r-stack" style="position: absolute; top: 350px;">
 						<span class="fragment fade-in-then-out">
 							<div style="display: flex; align-items: stretch;">
 								<img data-src="/assets/talks/ztf_logo.png" style="width: 300px; border: none; margin-right: 30px;">
@@ -208,7 +211,22 @@
 						</span>
 
 						<span class="fragment fade-in-then-out">
-							<img data-src="/assets/talks/LC.svg" style="width: 700px; border: 0;">
+							<div style="display: flex; align-items: stretch; width: 105%;">
+								<div style="text-align: left;">
+									<br>
+									<br>
+									Apply selection:
+									<br>
+									<br>
+									<ul>
+								            <li>Photo-detection: 2 points with SNR$> 5$</li>
+											<br>
+											<li>Spectro-typing probability from BTS paper</li>
+									</ul>
+								</div>
+								
+								<img data-src="/assets/talks/zdist.svg" style="width: 950px; border: 0;">
+							</div>
 						</span>
 
 						<span class="fragment fade-in-then-out">
@@ -360,7 +378,7 @@
 							<span class="fragment">
 								<div class="container">
 									<div class="col">
-										<p style="text-align: center">$C_{ij}^{vv} = H_0^2(f\sigma_8)^2\int_0^{+\infty}{P_{\theta\theta}(k) W_{ij}(k)\mathrm{sinc}^2(\sigma_u k) dk}$</p>
+										<p style="text-align: center">$C_{ij}^{vv} \propto (f\sigma_8)^2\int_0^{+\infty}{P_{\theta\theta}(k) W_{ij}(k)\mathrm{sinc}^2(\sigma_u k) dk}$</p>
 									</div>
 									<div class="col">
 										<img data-src="/assets/talks/Power_spectrum.svg" style="background-color: white; border-radius: 20px; width: 500px;">
@@ -373,16 +391,24 @@
 				<section>
 					<h2>The selection bias</h2>
 						<div class="container" style="display: block">
-							<p class="fragment" data-fragment-index="1">The sample bias appear on Hublle diagram residuals at \(z \sim 0.06\) and grow up to \(\Delta\mu \sim -0.13\) at \(z \sim 0.12\)
+							<p class="fragment" data-fragment-index="0">The sample bias appear on Hublle diagram residuals at \(z \sim 0.06\) and grow up to \(\Delta\mu \sim -0.13\) at \(z \sim 0.12\)
 								<br>
 								<br>
 							</p>
-							<p class="fragment" data-fragment-index="2">
+							<p class="fragment" data-fragment-index="1">
 								It results into a positive bias on estimated peculiar velocities
 							</p>
 							<div class="r-hstack" style="margin-top: 50px;">
-								<img class="fragment" data-fragment-index="1" style="height: 350px; margin-right: 150px;" data-src="/assets/talks/HD_residuals.svg"></img>
-								<img class="fragment" data-fragment-index="2" style="height: 350px" data-src="/assets/talks/velbias.svg"></img>
+								<img class="fragment" data-fragment-index="0" style="width: 600px; margin-right: 150px;" data-src="/assets/talks/HD_residuals.svg"></img>
+								<img class="fragment" data-fragment-index="1" style="width: 600px" data-src="/assets/talks/velbias.svg"></img>
+							</div>
+							<div class="fragment" data-fragment-index="2" style="position: absolute;   position: fixed; top: 55%; left: 50%; transform: translate(-50%, -50%); ">
+								<img src="/assets/talks/seltruevel.svg" style="width: 800px; background-color: white;" />
+							</div>
+							<br>
+							<br>
+							<div class="fragment" data-fragment-index="2">
+								Only the estimated velocities are biased !!! 
 							</div>
 						</div>	
 				</section>
@@ -412,7 +438,7 @@
 						<div class="container" style="display: block;">
 							<p>Including SNe Ia after $z=0.06$ bias the result on $f\sigma_8$</p>
 							<br>
-							<img style="height: 400px" data-src="/assets/talks/fs8_6years_bias.svg">
+							<img style="height: 400px;" src="/assets/talks/fs8_6years_bias.svg" >
 						</div>
 				</section>
 				<section>
@@ -434,7 +460,7 @@
 				<section>
 					<h2>Comparaison with existing measurements</h2>
 					<div class="container" style="display: block;">
-						<img style="height: 500px" data-src="/assets/talks/plot_fs8_pv_and_bastien.svg">
+						<img style="height: 500px; border-radius: 20px;" data-src="/assets/talks/plot_fs8_pv_and_bastien.svg">
 						<br>
 						<p>With only ~1600 SNe ZTF is at the same precision level than existing measurements with 
 							thousand of galaxies ! </p>
