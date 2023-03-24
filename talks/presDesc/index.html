@@ -433,30 +433,7 @@
 							</div>
 						</div>
 				</section>
-				<section>
-					<h2>Going above $z = 0.06$: biased $f\sigma_8$ measurement</h2>
-						<div class="container" style="display: block;">
-							<p>Including SNe Ia after $z=0.06$ bias the result on $f\sigma_8$</p>
-							<br>
-							<img style="height: 400px;" src="/assets/talks/fs8_6years_bias.svg" >
-						</div>
-				</section>
-				<section>
-					<h2>Going above $z = 0.06$: improvement on $f\sigma_8$</h2>
-						<div class="container" style="display: block;">
-							<p>Simulate a perfect correction of the bias: </p>
-							<br>
-							$v_{\mathrm{debias}, i} \sim \mathcal{N}(v_\mathrm{true}, \sigma_{\hat{v}, i})$
-							<br>
-							<br>
-							<div class="r-stack">
-								<img class="fragment" data-fragment-index="0" style="height: 400px" data-src="/assets/talks/fs8_6years_fakedebias.svg">
-								<img class="fragment" data-fragment-index="1" style="height: 400px" data-src="/assets/talks/efs8_6years_fakedebias.svg">
-							</div>
-							<br>
-							<p class="fragment", data-fragment-index="1">The error on $f\sigma_8$ reduce from $17 \%$ to $15 \%$</p>
-						</div>
-				</section>
+
 				<section>
 					<h2>Comparaison with existing measurements</h2>
 					<div class="container" style="display: block;">
@@ -468,30 +445,86 @@
 				</section>
 
 				<section>
+					<h2>Going above $z = 0.06$: biased $f\sigma_8$ measurement</h2>
+						<div class="container" style="display: block;">
+							<p>Including SNe Ia after $z=0.06$ bias the result on $f\sigma_8$</p>
+							<br>
+							<img style="height: 400px;" src="/assets/talks/fs8_6years_bias.svg" >
+						</div>
+				</section>
+
+				<section>
+					<h2>How to improve the measurement?</h2>
+					<div class="fragment" style="text-align: left; padding-left: 100px; padding-top: 50px;">
+						<ul>
+							<li><h3>Debias the measurement ?</h3></li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h2>How to improve the measurement? Debias velocities</h2>
+						<div class="container" style="display: block;">
+							<p>Simulate a perfect correction of the bias: </p>
+							<br>
+							$v_{\mathrm{debias}, i} \sim \mathcal{N}(v_\mathrm{true}, \sigma_{\hat{v}, i})$
+							<br>
+							<br>
+							<div class="r-stack">
+								<img class="fragment fade-in-then-out" data-fragment-index="0" style="height: 400px" data-src="/assets/talks/fs8_6years_fakedebias.svg">
+								<img class="fragment fade-in-then-out" data-fragment-index="1" style="height: 400px" data-src="/assets/talks/efs8_6years_fakedebias.svg">
+								<img class="fragment" data-fragment-index="2" src="/assets/talks/zdist_axes2.svg" style="border: none; height: 400px">
+							</div>
+							<br>
+							<p class="fragment", data-fragment-index="1">The error on $f\sigma_8$ reduce from $17 \%$ to $15 \%$</p>
+							<p class="fragment", data-fragment-index="2">Density drop rapidly after $z=0.06$ and errors on $\hat{v}_p$ increase ~linearly with $z$</p>
+						</div>
+				</section>
+				
+				<section>
+					<h2>How to improve the measurement?</h2>
+					<div style="text-align: left; padding-left: 100px; padding-top: 50px;">
+						<ul>
+							<li><h3>Debias the measurement ?</h3>
+								<h3 style="padding-left: 100px;">Does not improve much the constrain on $f\sigma_8$</h3>
+							</li>
+							<br>
+							<br>
+							<li class="fragment"><h3>Use photo-typing to increase redshift limit</h3>
+								<h3  style="padding-left: 100px;"><a target="_blank" href="https://confluence.slac.stanford.edu/display/LSSTDESC/Forecast+for+Cosmological+Growth-Rate+Measurement+using+Peculiar+Velocities+From+SNe">
+									DESC project</a> presented by Damiano Rosselli</h3>
+							</li>
+							<br>
+							<br>
+							<li class="fragment">
+								<h3>Combinaison with RSD measurements (e.g. ZTF + DESI)</h3>
+									<h3  style="padding-left: 100px;">Ongoing work on this at CPPM by <a href="https://julianbautista.github.io/index.html">Julian Bautista</a></h3>
+
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
 					<h2>Conclusion</h2>
-					<div class="container" style="display: block; padding-inline: 100px;">
-						<p style="text-align: left;">The spectroscopic selection causes a bias for $f\sigma_8$ when using SNe Ia at $z>0.06$</p>
+					<div class="container" style="display: block; padding-inline: 100px; padding-top: 50px;">
+						<h3 style="text-align: left;">The spectroscopic selection causes a bias for $f\sigma_8$ when using SNe Ia at $z>0.06$</h3>
 						<br>
-						<p style="text-align: left;">We forecast that a 6-years ZTF SNe Ia sample cut at $z=0.06$ will produce a $f\sigma_8$ measurement with a precision of $\sim 19\%$
-						using velocities only</p>
+						<h3 style="text-align: left;">We forecast that a 6-years ZTF SNe Ia spectro-identified sample cut at $z=0.06$ will produce a $f\sigma_8$ measurement with a precision of $\sim 19\%$
+						using velocities only</h3>
 						<br>
-						<p style="text-align: left;">Correcting the bias does not improve much the constrain on $f\sigma_8$</p>
-						<br>
-						<br>
-						<h4 style="text-align: left; font-weight: bold;">Future works :</h4>
-						<br>
-						<p style="text-align: left;">Forecast with ZTF photo-typing sample</p>
-						<br>
-						<p style="text-align: left;">Measurement with ZTF data</p>
-						<br>
-						<p style="text-align: left;">Prepare the measurement for LSST !!! (cf Damiano last meeting presentation)</p>
+						<h3 style="text-align: left;">Correcting the bias does not improve much the constrain on $f\sigma_8$</h3>
 					</div>
 				</section>
 
 				<section>
 					<div class="container">
 						<div style="margin-left: auto;margin-right: auto; margin-top: 20%;">
-							<h1>Thanks for your attention !!!</h1> 
+							<h1></h1>Thanks for your attention !!!
+
+
+							</h1> 
+
 						</div>
 					</div>
 					
