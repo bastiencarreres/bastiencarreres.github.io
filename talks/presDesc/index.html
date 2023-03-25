@@ -429,13 +429,36 @@
 								<p align="left">Results for our 27 mocks :</p>
 								<br>
 								<ul>
-									<li>Fit with $v_\mathrm{true}$: \( \langle f\sigma_8 \rangle = 0.991 \pm 0.016 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.100\)</li>
-									<li>Fit fixing \(\mathbf{p}_\mathrm{HD}\): \( \langle f\sigma_8 \rangle = 1.036 \pm 0.031 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.185\)</li>
-									<li>Fit with $\mathbf{p}$, $\mathbf{p}_\mathrm{HD}$ free: \( \langle f\sigma_8 \rangle = 0.998 \pm 0.037 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.188\)</li>
+									<li class="fragment">Fit with $v_\mathrm{true}$: \( \langle f\sigma_8 \rangle = 0.991 \pm 0.016 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.100\)</li>
+									<li class="fragment">Fit fixing \(\mathbf{p}_\mathrm{HD}\): \( \langle f\sigma_8 \rangle = 1.036 \pm 0.031 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.185\)</li>
+									<li class="fragment">Fit with $\mathbf{p}$, $\mathbf{p}_\mathrm{HD}$ free: \( \langle f\sigma_8 \rangle = 0.998 \pm 0.037 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.188\)</li>
 								</ul>
 							</div>
 							<div class="col">
-								<img style="height: 400px" data-src="/assets/talks/results_z006.svg">
+								<div data-animate style="margin-top: 150px; margin-left: 200px; border: solid #5e5e5e; scale: 1.5; background-color: white; height: 270px;" data-src="/assets/talks/results_z006.svg">
+									<!--
+										{
+										"setup": [
+										{
+											"element": "#vtrue",
+											"modifier": "attr",
+											"parameters": [ {"class": "fragment", "data-fragment-index": "0"} ]
+										},
+																				{
+											"element": "#pfree",
+											"modifier": "attr",
+											"parameters": [ {"class": "fragment", "data-fragment-index": "1"} ]
+										},
+										{
+											"element": "#ppHDfree",
+											"modifier": "attr",
+											"parameters": [ {"class": "fragment", "data-fragment-index": "2"} ]
+										}
+										]
+										}
+									-->
+								</div>		
+
 							</div>
 						</div>
 				</section>
@@ -505,7 +528,7 @@
 				<section>
 					<h2>Conclusion</h2>
 					<div class="container" style="display: block; padding-inline: 100px; padding-top: 50px; text-align: left;">
-						<h3>We developed and run a full detailed simulation and analysis pipeline to measure the growth rate of structures using ZTF SNe Ia observations</h3>
+						<h3>We developed and run a full detailed simulation and analysis pipeline to measured growth rate of structure using ZTF SNe Ia observations</h3>
 						<br>
 						<h3>Our analysis shows that the spectroscopic selection causes a bias for $f\sigma_8$ when using SNe Ia at $z>0.06$</h3>
 						<br>
