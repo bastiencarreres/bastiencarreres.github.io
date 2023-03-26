@@ -353,10 +353,11 @@
 						</div>
 						<div class="r-stack">
 							<img class="fragment" data-fragment-index="1" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDsimple.svg"></img>
+							<img class="fragment" data-fragment-index="2" style="height: 450px; border: 0; z-index: 2;" data-src="/assets/talks/vlegend.svg"></img>
 							<img class="fragment" data-fragment-index="2" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvel.svg"></img>
 							<img class="fragment" data-fragment-index="4" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvelnoise.svg"></img>
 						</div>
-						<img class="fragment fade-in-then-out" data-fragment-index="3" data-src="/assets/talks/pec_vel_effect.svg" style="position: absolute; top: 240px; right: 10px; height: 350px;">
+						<img class="fragment fade-in-then-out" data-fragment-index="3" data-src="/assets/talks/pec_vel_effect.svg" style="position: absolute; top: 240px; right: 10px; height: 350px; z-index: 3;">
 						<br>
 						<div class="r-stack">
 							<p class="fragment fade-in-then-out" data-fragment-index="3">The velocity estimator: <br> $$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$</p>
@@ -408,12 +409,15 @@
 								<img class="fragment" data-fragment-index="0" style="width: 600px; margin-right: 150px;" data-src="/assets/talks/HD_residuals.svg"></img>
 								<img class="fragment" data-fragment-index="1" style="width: 600px" data-src="/assets/talks/velbias.svg"></img>
 							</div>
-							<div class="fragment" data-fragment-index="2" style="position: absolute; top: 460px; left: 50%; transform: translate(-50%, -50%); ">
+							<div class="fragment" data-fragment-index="2" style="padding-inline:10px; border-radius:20px; position: absolute; right: 100px; top: 320px; scale: 0.7; background-color: rgba(94, 94, 94, 0.822);">
+								<h5 style="color: rgb(255, 255, 255);">$$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$</h5>
+							</div>
+							<div class="fragment" data-fragment-index="3" style="position: absolute; top: 460px; left: 50%; transform: translate(-50%, -50%); ">
 								<img src="/assets/talks/seltruevel.svg" style="width: 800px; background-color: white;" />
 							</div>
 							<br>
 							<br>
-							<div class="fragment" data-fragment-index="2">
+							<div class="fragment" data-fragment-index="3">
 								Only the estimated velocities are biased !!! 
 							</div>
 						</div>	
@@ -429,9 +433,11 @@
 								<p align="left">Results for our 27 mocks :</p>
 								<br>
 								<ul>
-									<li class="fragment">Fit with $v_\mathrm{true}$: \( \langle f\sigma_8 \rangle = 0.991 \pm 0.016 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.100\)</li>
-									<li class="fragment">Fit fixing \(\mathbf{p}_\mathrm{HD}\): \( \langle f\sigma_8 \rangle = 1.036 \pm 0.031 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.185\)</li>
-									<li class="fragment">Fit with $\mathbf{p}$, $\mathbf{p}_\mathrm{HD}$ free: \( \langle f\sigma_8 \rangle = 0.998 \pm 0.037 \), \(\sqrt{\left<\sigma_{f \sigma_8}^2\right>} = 0.188\)</li>
+									<li class="fragment">Fit with $v_\mathrm{true}$: $\frac{\langle f\sigma_8 \rangle }{(f\sigma_8)_\mathrm{fid}} = 0.991 \pm 0.016 $, $\frac{\sqrt{\left<\sigma_{f \sigma_8}^2\right>}}{(f\sigma_8)_\mathrm{fid}} = 0.100$</li>
+									<br>
+									<li class="fragment">Fit fixing $\mathbf{p}_\mathrm{HD}$:  $\frac{\langle f\sigma_8 \rangle }{(f\sigma_8)_\mathrm{fid}} = 1.036 \pm 0.031$, $\frac{\sqrt{\left<\sigma_{f \sigma_8}^2\right>}}{(f\sigma_8)_\mathrm{fid}} = 0.185$</li>
+									<br>
+									<li class="fragment">Fit with $\mathbf{p}$, $\mathbf{p}_\mathrm{HD}$ free:  $\frac{\langle f\sigma_8 \rangle }{(f\sigma_8)_\mathrm{fid}} = 0.998 \pm 0.037$, $\frac{\sqrt{\left<\sigma_{f \sigma_8}^2\right>}}{(f\sigma_8)_\mathrm{fid}} = 0.188$</li>
 								</ul>
 							</div>
 							<div class="col">
