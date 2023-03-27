@@ -398,27 +398,37 @@
 				<section>
 					<h2>The selection bias</h2>
 						<div class="container" style="display: block">
-							<p class="fragment" data-fragment-index="0">The sample bias appears on Hubble diagram residuals at \(z \sim 0.06\) and grows up to \(\Delta\mu \sim -0.13\) at \(z \sim 0.12\)
-								<br>
+							
+							<p class="fragment" data-fragment-index="1">The sample bias appears on Hubble diagram residuals at \(z \sim 0.06\) and grows up to \(\Delta\mu \sim -0.13\) at \(z \sim 0.12\)
+							<br>
 								<br>
 							</p>
-							<p class="fragment" data-fragment-index="1">
-								It results into a positive bias on estimated peculiar velocities
+							<p class="fragment" data-fragment-index="2">
+								It gives a positive bias on estimated peculiar velocities
 							</p>
-							<div class="r-hstack" style="margin-top: 50px;">
-								<img class="fragment" data-fragment-index="0" style="width: 600px; margin-right: 150px;" data-src="/assets/talks/HD_residuals.svg"></img>
-								<img class="fragment" data-fragment-index="1" style="width: 600px" data-src="/assets/talks/velbias.svg"></img>
-							</div>
-							<div class="fragment" data-fragment-index="2" style="padding-inline:10px; border-radius:20px; position: absolute; right: 100px; top: 320px; scale: 0.7; background-color: rgba(94, 94, 94, 0.822);">
-								<h5 style="color: rgb(255, 255, 255);">$$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$</h5>
-							</div>
-							<div class="fragment" data-fragment-index="3" style="position: absolute; top: 460px; left: 50%; transform: translate(-50%, -50%); ">
-								<img src="/assets/talks/seltruevel.svg" style="width: 800px; background-color: white;" />
-							</div>
-							<br>
-							<br>
-							<div class="fragment" data-fragment-index="3">
-								Only the estimated velocities are biased !!! 
+							<div class="r-stack">
+								<span class="fragment fade-out" data-fragment-index="5">
+									<div class="r-hstack" style="margin-top: 50px;">
+										<img class="fragment" data-fragment-index="1" style="width: 600px; margin-right: 150px;" data-src="/assets/talks/HD_residuals.svg"></img>
+										<img class="fragment" data-fragment-index="2" style="width: 600px" data-src="/assets/talks/velbias.svg"></img>
+									</div>
+									<div class="fragment" data-fragment-index="3" style="padding-inline:10px; border-radius:20px; position: absolute; right: 100px; top: 320px; scale: 0.7; background-color: rgba(94, 94, 94, 0.822);">
+										<h5 style="color: rgb(255, 255, 255);">$$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$</h5>
+									</div>
+									<div class="fragment" data-fragment-index="4" style="position: absolute; top: 460px; left: 50%; transform: translate(-50%, -50%); ">
+										<img src="/assets/talks/seltruevel.svg" style="width: 800px; background-color: white;" />
+									</div>
+									<br>
+									<br>
+									<div class="fragment" data-fragment-index="4">
+										Only the estimated velocities are biased !!! 
+									</div>
+								</span>
+								<span class="fragment fade-in" data-fragment-index="5">
+									<p>That results to a bias on $f\sigma_8$</p>
+									<br>
+									<img src="/assets/talks/fs8_6years_bias.svg" style="width: 600px; background-color: white;" />
+								</span>
 							</div>
 						</div>	
 				</section>
@@ -609,6 +619,7 @@
 			// Bounds for smallest/largest possible scale to apply to content
 			minScale: 0.2,
 			maxScale: 1.5,
+			
 			mathjax3: {
     					mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
 				tex: {
