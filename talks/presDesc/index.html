@@ -67,28 +67,31 @@
 							<br>
 							<span class="fragment" data-fragment-index="1">
 							<p style="line-height: 1.5;">
-								Clustering density linear evolution<br>  $\delta(a, \mathbf{x}) = D(a)\tilde{\delta}(\mathbf{x})$ <br>
-								where $D(a) \equiv$ Growth factor
+								Clustering density in linear theory:<br>  $\delta(a, \mathbf{x}) = D(t)\tilde{\delta}(\mathbf{x})$ <br>
+								where $D(t) \equiv$ Growth factor
 							</p>
 							</span>
 							<br>
 							<span class="fragment" data-fragment-index="2">
 							<p style="line-height: 1.5;">
 								Density evolution rate
-								<br>  $f(a) = \frac{d \ln D}{d\ln a}(a)$ 
+								<br>  $f(t) = \frac{d \ln D}{d\ln a}(t)$ 
 								<br>
-								where $f(a) \equiv$ Growth rate 
+								where $f(t) \equiv$ Growth rate 
 								<br>
 								<br>
 								$f \simeq \Omega_m^\gamma$<br>
 								with $\gamma \simeq 0.55$ for GR
+								<br>
+								<br>
+								$f\sigma_8 \propto fD$
 							</p>
 							</span>
 							<br>
 							<span class="fragment" data-fragment-index="3">
 							<p style="line-height: 1.5;">
-								Velocities probes $f$:
-								<br>  $\nabla.v(a, \mathbf{x}) = -aHf \delta(a, \mathbf{x})$ <br>
+								Velocities probes $f\sigma_8$:
+								<br>  $\nabla.v \propto f\sigma_8$ <br>
 							</p>
 							</span>
 						</div>
@@ -227,7 +230,7 @@
 									<ul>
 								            <li>Photo-detection: 2 points with SNR$> 5$</li>
 											<br>
-											<li>Spectro-typing probability from the ZTF Bright Transient Sample paper</li>
+											<li>Spectro-typing selection from the ZTF Bright Transient Sample paper</li>
 									</ul>
 								</div>
 								
@@ -385,7 +388,7 @@
 							<span class="fragment">
 								<div class="container">
 									<div class="col">
-										<p style="text-align: center">$C_{ij}^{vv} \propto (f\sigma_8)^2\int_0^{+\infty}{P_{\theta\theta}(k) W_{ij}(k)\mathrm{sinc}^2(\sigma_u k) dk}$</p>
+										<p style="text-align: center">$C_{ij}^{vv} \propto (f\sigma_8)^2\int_0^{+\infty}{P_{\theta\theta}(k) W_{ij}(k)D_u^2(k) dk}$</p>
 									</div>
 									<div class="col">
 										<img data-src="/assets/talks/Power_spectrum.svg" style="background-color: white; border-radius: 20px; width: 500px;">
@@ -396,7 +399,7 @@
 				</section>
 
 				<section>
-					<h2>The selection bias</h2>
+					<h2>Results: The selection bias</h2>
 						<div class="container" style="display: block">
 							
 							<p class="fragment" data-fragment-index="1">The sample bias appears on Hubble diagram residuals at \(z \sim 0.06\) and grows up to \(\Delta\mu \sim -0.13\) at \(z \sim 0.12\)
@@ -434,7 +437,7 @@
 				</section>
 
 				<section>
-					<h2>Results for a ZTF 6-years complete sample</h2>
+					<h2>Results: ZTF 6-years complete sample</h2>
 						<div class="container">
 							<div class="col" style="flex: 1.2"> 
 								<p align="left"> We can build a bias free sample by applying a redshift cut at \(z = 0.06\)</p>
