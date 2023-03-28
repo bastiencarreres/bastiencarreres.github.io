@@ -347,7 +347,7 @@
 				</section>
 
 				<section>
-					<h2>Effect of peculiar velocity on the Hubble Diagram</h2>
+					<h2>Velocity estimator: velocities from Hubble diagram residuals</h2>
 					<div class="container" style="display:block">
 						<div class="r-stack">
 							<h3 class="fragment fade-in-then-out" data-fragment-index="1">Standard candles</h3>
@@ -393,7 +393,16 @@
 							<span class="fragment">
 								<div class="container">
 									<div class="col">
-										<p style="text-align: center">$C_{ij}^{vv} \propto (f\sigma_8)^2\int_0^{+\infty}{P_{\theta\theta}(k) W_{ij}(k)D_u^2(k) dk}$</p>
+										<p style="text-align: center">$C_{ij}^{vv} \propto (f\sigma_8)^2\int_0^{+\infty}{P_{\theta\theta}(k)D_u^2(k)W_{ij}(k) dk}$</p>
+										<br>
+										$P_{\theta\theta}\equiv$ Power spectrum of velocity divergence
+										<br>
+										<br>
+										$D_u = \mathrm{sinc}(\sigma_u k)\equiv$ Damping factor to account for RSD effect
+										<br>
+										<br>
+										$W_{ij}(k) = W(\mathbf{x}_i, \mathbf{x}_j; k)\equiv$ Window funtion
+
 									</div>
 									<div class="col">
 										<img data-src="/assets/talks/Power_spectrum.svg" style="background-color: white; border-radius: 20px; width: 500px;">
@@ -445,7 +454,10 @@
 					<h2>Results: ZTF 6-years complete sample</h2>
 						<div class="container">
 							<div class="col" style="flex: 1.2"> 
-								<p align="left"> We can build a bias free sample by applying a redshift cut at \(z = 0.06\)</p>
+								<p align="left"> We can build a bias free sample by applying a redshift cut at \(z = 0.06\). 
+									<br>
+									<br>
+									$\langle N_\mathrm{SN} \rangle \simeq 1620 \sim$ half of the sample</p>
 								<br>
 								<br>
 								<p align="left">Results for our 27 mocks :</p>
@@ -553,7 +565,7 @@
 				<section>
 					<h2>Conclusion</h2>
 					<div class="container" style="display: block; padding-inline: 100px; padding-top: 50px; text-align: left;">
-						<h3>We developed and run a full detailed simulation and analysis pipeline to measure growth rate of structure using ZTF SNe Ia observations</h3>
+						<h3>We developed and run a full detailed simulation and analysis pipeline to measure growth rate of structure using ZTF SNe Ia</h3>
 						<br>
 						<h3>Our analysis shows that the spectroscopic selection causes a bias for $f\sigma_8$ when using SNe Ia at $z>0.06$</h3>
 						<br>
