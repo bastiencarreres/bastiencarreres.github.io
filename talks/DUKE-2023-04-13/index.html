@@ -106,13 +106,13 @@
 
 	
 				<section data-background="/assets/talks/illustris.webp">
-					<h2>Velocities and $f\sigma_8$</h2>
+					<h2>How to measure $f\sigma_8$ ?</h2>
 					<div class="container", style="height: 500px; column-gap: 20px; margin-top: 50px;">
-						<div class="col" style="margin-top: 10px; background-color: rgba(0, 0, 0, 0.558); 
-												width: 500px; border-radius: 20px; padding: 20px; 
-												display: block; text-align: center;">
-						<span class="fragment" data-fragment-index="1">
-							<p style="line-height: 1.5;">
+						<div class="col" style="margin-top: 10px; display: block; text-align: center;">
+						<span>
+							<p class="fragment" data-fragment-index="0" 
+							style="line-height: 1.5; ; background-color: rgba(0, 0, 0, 0.558); 
+							width: 500px; border-radius: 20px; padding: 20px;">
 								Velocities as probes $f\sigma_8$:
 								<br>  $\nabla.v \propto f\sigma_8$ 
 								<br>
@@ -121,7 +121,9 @@
 								<br>  $1 + z_\mathrm{obs} = \left(1 + z_\mathrm{cos}\right)\left(1 + \frac{v_p}{c}\right)$ 
 							</p>
 							<br>
-							<p style="line-height: 1.5;">
+							<p class="fragment" data-fragment-index="2" 
+							style="line-height: 1.5; ; background-color: rgba(0, 0, 0, 0.558); 
+							width: 500px; border-radius: 20px; padding: 20px;">
 								<b>Indirect method:
 								Redshift Space Distorsions of the density field</b>
 								<br>
@@ -129,8 +131,9 @@
 								Velocities leads to distorted positions: $r(z_\mathrm{obs}) = r(z_\mathrm{cos})(1 + )$
 							</p>
 							<br>
-							<br>
-							<p style="line-height: 1.5;">
+							<p class="fragment" data-fragment-index="4" 
+							style="line-height: 1.5; ; background-color: rgba(0, 0, 0, 0.558); 
+							width: 500px; border-radius: 20px; padding: 20px;">
 								<b>Direct method:
 								velocity tracers</b>
 								<br>
@@ -146,7 +149,7 @@
 							<div class="r-stack">
 								<div class="fragment fade-in-then-out", 
 								data-animate data-src="/assets/talks/telescope_gal.svg", 
-								data-fragment-index="3" style="height: 800px">
+								data-fragment-index="0" style="height: 800px">
 									<!--
 										{
 										"setup": [
@@ -185,44 +188,11 @@
 										}
 									-->
 								</div>
-								<span class="fragment fade-in-then-out">
-									<div>
-										<img src="/assets/talks/RSD.svg" style="border: none; margin-right: 50px; height: 500px;">
-										<img src="/assets/talks/nlinRSD.svg" style="border: none; height: 500Px;">
-									</div>
-								</span>
-								<div data-animate data-src="/assets/talks/telescope_gal.svg",  style="height: 799.5px">
+								<div data-animate class="fragment fade-in-then-out" data-src="/assets/talks/telescope_gal.svg"  style="height: 799.5px"
+								 data-fragment-index="1">
 									<!--
 										{
 										"setup": [
-										{
-											"element": "#path18",
-											"modifier": "attr",
-											"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
-										},
-										{
-											"element": "#vel3D",
-											"modifier": "attr",
-											"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
-
-										},
-										{
-											"element": "#vellos",
-											"modifier": "attr",
-											"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
-										},
-										{
-											"element": "#path297",
-											"modifier": "attr",
-											"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
-
-										},
-										{
-											"element": "#path164",
-											"modifier": "attr",
-											"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
-
-										},
 										{
 											"element": "#sn",
 											"modifier": "opacity",
@@ -232,13 +202,25 @@
 										}
 									-->
 								</div>
-
-
-								<div>
-
+								<div data-animate class="fragment fade-in-then-out" data-src="/assets/talks/telescope_gal.svg"  style="height: 799.5px"
+								 data-fragment-index="4">
 								</div>
+								<span class="fragment fade-in-then-out" data-fragment-index="2">
+									<div style="display: inline-flex;">
+										<div style="margin-right: 50px;">
+											<h3  style="background-color: rgba(0, 0, 0, 0.558); border-radius: 20px; padding: 10px; ">Linear RSD</h3>
+											<img src="/assets/talks/RSD.svg" style="border: none; height: 500px;">
+										</div>
+										<div>
+											<h3  style="background-color: rgba(0, 0, 0, 0.558); border-radius: 20px; padding: 10px; ">Non-linear RSD</h3>
+											<img src="/assets/talks/nlinRSD.svg" style="border: none; height: 500Px;">
+										</div>
+									</div>
+								</span>
+								<span class="fragment fade-in-then-out" data-fragment-index="3">
+									<img src="/assets/talks/butterfly_colour_smallerscales.gif" style="width: 500px;">
+								</span>
 							</div>
-
 						</div>
 					</div>
 					<div style="position: absolute; top: 700px; right: -50px;">
