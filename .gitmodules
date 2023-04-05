@@ -1,12 +1,3 @@
-[submodule "presDesc/reveal.js"]
-	path = presDesc/reveal.js
-	url = https://github.com/hakimel/reveal.js.git
-[submodule "talks/presDesc/reveal.js"]
-	path = talks/presDesc/reveal.js
-	url = https://github.com/hakimel/reveal.js.git
-[submodule "talks/DESCTD-2023-03-28/reveal.js"]
-	path = talks/DESCTD-2023-03-28/reveal.js
-	url = https://github.com/hakimel/reveal.js.git
 [submodule "talks/reveal.js"]
 	path = talks/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
