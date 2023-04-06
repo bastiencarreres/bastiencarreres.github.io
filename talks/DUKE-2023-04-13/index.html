@@ -112,7 +112,7 @@
 						<span>
 							<p class="fragment" data-fragment-index="0" 
 							style="line-height: 1.5; ; background-color: rgba(0, 0, 0, 0.558); 
-							width: 500px; border-radius: 20px; padding: 20px;">
+							width: 500px; border-radius: 20px; padding: 10px;">
 								Velocities as probes $f\sigma_8$:
 								<br>  $\nabla.v \propto f\sigma_8$ 
 								<br>
@@ -123,17 +123,17 @@
 							<br>
 							<p class="fragment" data-fragment-index="2" 
 							style="line-height: 1.5; ; background-color: rgba(0, 0, 0, 0.558); 
-							width: 500px; border-radius: 20px; padding: 20px;">
+							width: 500px; border-radius: 20px; padding: 10px;">
 								<b>Indirect method:
 								Redshift Space Distorsions of the density field</b>
 								<br>
 								<br>
-								Velocities leads to distorted positions: $r(z_\mathrm{obs}) = r(z_\mathrm{cos})(1 + )$
+								Velocities leads to distorted positions: $r(z_\mathrm{obs}) \simeq r(z_\mathrm{cos})+ \frac{1+z_\mathrm{cos}}{H(z_\mathrm{cos})}v_p$
 							</p>
 							<br>
 							<p class="fragment" data-fragment-index="4" 
 							style="line-height: 1.5; ; background-color: rgba(0, 0, 0, 0.558); 
-							width: 500px; border-radius: 20px; padding: 20px;">
+							width: 500px; border-radius: 20px; padding: 10px;">
 								<b>Direct method:
 								velocity tracers</b>
 								<br>
@@ -228,7 +228,29 @@
 					</div>
 				</section>
 
-				<section>
+				<section data-transition="slide-in zoom-out">
+					<h2>The simulation and analysis pipeline</h2>
+
+					<div class="r-stack" style="position: absolute; top: 350px;">
+						<span class="fragment" data-fragment-index="0">
+							<div style="display: flex; align-items: stretch;">
+								<img data-src="/assets/talks/ztf_logo.png" style="width: 300px; border: none; margin-right: 30px;">
+								<p align="left">Use of ZTF existing observations as input for the simulation.<br>Includes observing strategy, filters, sky noise...</p>
+							</div>						
+						</span>
+					</div>
+					<div class="fragment" data-fragment-index="0" style="display:block;">
+						<div data-animate data-src="/assets/talks/ZTFpipeline.svg",  style="position: relative; top: 0px;">
+						</div>
+					</div>	
+				</section>
+
+				<section data-transition="zoom-in zoom-out">
+					<h2>The ZTF survey</h2>
+					
+				</section>
+
+				<section data-transition="zoom-in slide">
 					<h2>The simulation and analysis pipeline</h2>
 					<div class="r-stack" style="position: absolute; top: 350px;">
 						<span class="fragment fade-in-then-out">
@@ -339,8 +361,7 @@
 									"element": "#arrows5",
 									"modifier": "attr",
 									"parameters": [ {"class": "fragment", "data-fragment-index": "6"} ]
-								}
-								,
+								},
 								{
 									"element": "#HDvel",
 									"modifier": "attr",
