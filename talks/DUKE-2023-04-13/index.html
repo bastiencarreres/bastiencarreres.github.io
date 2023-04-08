@@ -94,7 +94,7 @@
 						</div>
 						<div class="col">
 						<span class="fragment fade-in-then-out" data-fragment-index="2">
-							<img src="/assets/talks/fs8_varg.svg" style="width: 800px; border-radius: 20px; border: 5px; background-color: rgba(255, 255, 255, 0.641);">
+							<img src="/assets/talks/fs8_varg.svg" style="width: 800px; border-radius: 30px; border: 5px; background-color: rgba(255, 255, 255, 0.641);">
 						</span>
 						</div>
 					</div>
@@ -131,7 +131,7 @@
 								Velocities leads to distorted positions: $r(z_\mathrm{obs}) \simeq r(z_\mathrm{cos})+ \frac{1+z_\mathrm{cos}}{H(z_\mathrm{cos})}v_p$
 							</p>
 							<br>
-							<p class="fragment" data-fragment-index="4" 
+							<p class="fragment" data-fragment-index="5" 
 							style="line-height: 1.5; ; background-color: rgba(0, 0, 0, 0.558); 
 							width: 500px; border-radius: 20px; padding: 10px;">
 								<b>Direct method:
@@ -203,7 +203,7 @@
 									-->
 								</div>
 								<div data-animate class="fragment fade-in-then-out" data-src="/assets/talks/telescope_gal.svg"  style="height: 799.5px"
-								 data-fragment-index="4">
+								 data-fragment-index="5">
 								</div>
 								<span class="fragment fade-in-then-out" data-fragment-index="2">
 									<div style="display: inline-flex;">
@@ -219,6 +219,9 @@
 								</span>
 								<span class="fragment fade-in-then-out" data-fragment-index="3">
 									<img src="/assets/talks/butterfly_colour_smallerscales.gif" style="width: 500px;">
+								</span>
+								<span class="fragment fade-in-then-out" data-fragment-index="4">
+									<img src="/assets/talks/fs8_varg_desi_meas.svg" style="width: 800px; border-radius: 30px; border: 5px; background-color: rgba(255, 255, 255, 0.641);">
 								</span>
 							</div>
 						</div>
@@ -245,9 +248,47 @@
 					</div>	
 				</section>
 
-				<section data-transition="zoom-in zoom-out">
+				<section data-transition="zoom-in slide-out" data-background="/assets/talks/palomar.jpg">
 					<h2>The ZTF survey</h2>
-					
+
+					<div class="container">
+						<div class="col">
+							<img src="/assets/talks/ztf-camera-fov.jpg">
+						</div>
+						<div class="col" style="margin-left: 100px;margin-bottom: 150px;">
+							<h3 style="text-align: justify;">The ZTF camera at Palomar observatory has a 47 deg$^2$ field of view and cover the North hemisphere in 3 bands</h3>
+						</div>
+					</div>
+					<div style="position: absolute; top: 310px; display: inline-flex">
+						<h3 style="padding-top: 250px; margin-left: 100px;">Already $\sim 8000$ classified transients, $\sim 5000$ SN Ia</h3>
+						<img src="/assets/talks/ZTF_nobj.svg" style="border-radius: 30px; margin-left: 200px; background-color: rgba(255, 255, 255, 0.577);">
+					</div>
+					<div style="position: absolute; top: 700px; right: -50px;">
+						<p style="font-style: italic; font-size: 20px">Image credits: ZTF.Caltech</p>
+					</div>
+				</section>
+
+				<section data-transition="slide-in zoom-out" data-background="/assets/talks/palomar.jpg">
+					<h2>The ZTF survey: spectroscopic follow-up</h2>
+					<div class="container">
+						<div class="col; flex: 0.6"> 
+						<img src="/assets/talks/bts_sne_sky_black_logo_saved2.gif" style="width: 700px">
+						</div>
+						<div class="col"  style="margin-left: 100px; position: relative; top:-110px">
+							<h3 style="text-align: center;">The Bright Transient Survey types every ZTF transients with $mag < 17$ </h3>
+						</div>
+					</div>
+					<div style="position: absolute; top: 260px; right: -50px; display: inline-flex">
+						<h3 style="padding-top: 280px; margin-left: 100px;">
+							The typing efficiency decline for $17 < mag < 19 $
+							<br>
+							No typing for $mag > 19$
+						</h3>
+						<img src="/assets/talks/BTSsel.svg"; style="background-color: #ffffffa4; width: 700px;">
+					</div>
+					<div style="position: absolute; top: 700px; right: -50px;">
+						<p style="font-style: italic; font-size: 20px">Image credits: ZTF.Caltech</p>
+					</div>
 				</section>
 
 				<section data-transition="zoom-in slide">
@@ -263,7 +304,8 @@
 							<div style="display: flex; align-items: stretch;">
 								<img data-src="/assets/talks/outerrim.png" style="width: 300px; border: 0;">
 								<p align="left">OuterRim N-body simulation: <br>
-								   				27 mocks from the $\left(3~\mathrm{Gpc}.h^{-1}\right)^3$ box at $z=0$</p>
+								   				We create 27 mocks of $\left(1~\mathrm{Gpc}.h^{-1}\right)^3 \ \left(z_\mathrm{max} \simeq 0.17\right)$ <br> 
+												from the $\left(3~\mathrm{Gpc}.h^{-1}\right)^3$ box at $z=0$</p>
 							</div>
 						</span>
 						<span class="fragment fade-in-then-out">
