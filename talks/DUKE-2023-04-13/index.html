@@ -140,7 +140,7 @@
 								<br>
 								Galaxies (Tully-Fisher and Focal Plane) $\sigma_D/D \sim 20\%$
 								<br>
-									Type Ia supernovae $\sigma_D/D \sim 7\%$
+									Type Ia supernovae $\sigma_D/D \sim \%$
 							</p>
 						</span>
 						</div>
@@ -263,7 +263,7 @@
 					</div>
 					<div style="position: absolute; top: 310px; display: inline-flex">
 						<h3 style="padding-top: 250px; margin-left: 100px;">
-							Already $\sim 8000$ classified transients, $\sim 5000$ SN Ia at low redshift $z < 0.1$</h3>
+							Already $\sim 8000$ classified supernovae, $\sim 5000$ SN Ia at low redshift $z < 0.1$</h3>
 						<img src="/assets/talks/ZTF_nobj.svg" style="border-radius: 30px; margin-left: 200px; background-color: rgba(255, 255, 255, 0.577);">
 					</div>
 					<div style="position: absolute; top: 700px; right: -50px;">
@@ -283,7 +283,7 @@
 					</div>
 					<div style="position: absolute; top: 260px; right: -50px; display: inline-flex">
 						<h3 style="padding-top: 280px; margin-left: 100px;">
-							The typing efficiency decline for $17 < mag < 19 $
+							The typing efficiency declines for $17 < mag < 19 $
 							<br>
 							No typing for $mag > 19$
 						</h3>
@@ -297,13 +297,13 @@
 				<section data-transition="zoom-in slide">
 					<h2>The simulation and analysis pipeline</h2>
 					<div class="r-stack" style="position: absolute; top: 350px;">
-						<span class="fragment fade-in-then-out">
+						<span class="fragment fade-out" data-fragment-index="0">
 							<div style="display: flex; align-items: stretch;">
 								<img data-src="/assets/talks/ztf_logo.png" style="width: 300px; border: none; margin-right: 30px;">
 								<p align="left">Use of ZTF existing observations as input for the simulation.<br>Includes observing strategy, filters, sky noise...</p>
 							</div>						
 						</span>
-						<span class="fragment fade-in-then-out">
+						<span class="fragment fade-in-then-out" data-fragment-index="0">
 							<div style="display: flex; align-items: stretch;">
 								<img data-src="/assets/talks/outerrim.png" style="width: 300px; border: 0;">
 								<p align="left">OuterRim N-body simulation: <br>
@@ -353,84 +353,79 @@
 								{
 								"setup": [
 								{
-									"element": "#surveypar",
+									"element": "#nbody",
 									"modifier": "attr",
 									"parameters": [ {"class": "fragment", "data-fragment-index": "0"} ]
 								},
 								{
-									"element": "#nbody",
+									"element": "#arrows1",
 									"modifier": "attr",
 									"parameters": [ {"class": "fragment", "data-fragment-index": "1"} ]
 								},
 								{
-									"element": "#arrows1",
-									"modifier": "attr",
-									"parameters": [ {"class": "fragment", "data-fragment-index": "2"} ]
-								},
-								{
 									"element": "#snsim",
 									"modifier": "attr",
-									"parameters": [ {"class": "fragment", "data-fragment-index": "2"} ]
+									"parameters": [ {"class": "fragment", "data-fragment-index": "1"} ]
 								},
 								{
 									"element": "#arrows2",
 									"modifier": "attr",
-									"parameters": [ {"class": "fragment", "data-fragment-index": "3"} ]
+									"parameters": [ {"class": "fragment", "data-fragment-index": "2"} ]
 								},
 								{
 									"element": "#simlcs",
 									"modifier": "attr",
-									"parameters": [ {"class": "fragment", "data-fragment-index": "3"} ]
+									"parameters": [ {"class": "fragment", "data-fragment-index": "2"} ]
 								},
 								{
 									"element": "#arrows3",
 									"modifier": "attr",
-									"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
+									"parameters": [ {"class": "fragment", "data-fragment-index": "3"} ]
 								},
 								{
 									"element": "#selfun",
 									"modifier": "attr",
-									"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
+									"parameters": [ {"class": "fragment", "data-fragment-index": "3"} ]
 								},
 								{
 									"element": "#arrows4",
 									"modifier": "attr",
-									"parameters": [ {"class": "fragment", "data-fragment-index": "5"} ]
+									"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
 								},
 								{
 									"element": "#lcsfit",
 									"modifier": "attr",
-									"parameters": [ {"class": "fragment", "data-fragment-index": "5"} ]
+									"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
 								},
 								{
 									"element": "#arrows5",
 									"modifier": "attr",
-									"parameters": [ {"class": "fragment", "data-fragment-index": "6"} ]
+									"parameters": [ {"class": "fragment", "data-fragment-index": "5"} ]
 								},
 								{
 									"element": "#HDvel",
 									"modifier": "attr",
-									"parameters": [ {"class": "fragment", "data-fragment-index": "6"} ]
+									"parameters": [ {"class": "fragment", "data-fragment-index": "5"} ]
 								},
 								{
 									"element": "#arrows6",
 									"modifier": "attr",
-									"parameters": [ {"class": "fragment", "data-fragment-index": "7"} ]
+									"parameters": [ {"class": "fragment", "data-fragment-index": "6"} ]
 								},
 								{
 									"element": "#maxlik",
 									"modifier": "attr",
-									"parameters": [ {"class": "fragment", "data-fragment-index": "7"} ]
+									"parameters": [ {"class": "fragment", "data-fragment-index": "6"} ]
 								},
 								{
 									"element": "#arrows7",
 									"modifier": "attr",
-									"parameters": [ {"class": "fragment", "data-fragment-index": "8"} ]
+									"parameters": [ {"class": "fragment", "data-fragment-index": "7"} ]
 								},
 								{
 									"element": "#fs8",
 									"modifier": "attr",
-									"parameters": [ {"class": "fragment", "data-fragment-index": "8"} ]
+									"parameters": [ {"class": "fragment", "data-fragment-index": "7"} ]
 								}
 								]
 								}
@@ -468,7 +463,7 @@
 				</section>
 
 				<section>
-					<h2>The Maximum-Likelihood method (<em>Jhonson et al. 2014</em>)</h2>
+					<h2>The Maximum-Likelihood method (<em>Johnson et al. 2014</em>)</h2>
 						<div class="container" style="display: block">
 							<h4>We can approximate the velocity field as a Gaussian random field</h4>
 							<div class="fragment">
@@ -508,7 +503,7 @@
 				<section>
 					<h2>Results: the selection bias</h2>
 						<div class="container" style="display: block">
-							<p>Magnitude limited selection $\Rightarrow$ Selection bias: when redshift increase, only brigher objects remains detected</p>
+							<p>Magnitude limited selection $\Rightarrow$ Selection bias: when redshift increases, only brighter objects are detected</p>
 							<br>
 							<p class="fragment" data-fragment-index="1">The sample bias appears on Hubble diagram residuals at \(z \sim 0.06\) and grows up to \(\Delta\mu \sim -0.13\) at \(z \sim 0.12\)
 							<br>
@@ -536,7 +531,7 @@
 									</div>
 								</span>
 								<span class="fragment fade-in" data-fragment-index="5">
-									<p>That results to a bias on $f\sigma_8$</p>
+									<p>That leads to a bias on $f\sigma_8$</p>
 									<br>
 									<img src="/assets/talks/fs8_6years_bias.svg" style="width: 600px; background-color: white;" />
 								</span>
@@ -643,7 +638,7 @@
 							<br>
 							<li class="fragment"><h3>Use photo-typing to increase the redshift limit</h3>
 								<h3  style="padding-left: 100px;"><a target="_blank" href="https://confluence.slac.stanford.edu/display/LSSTDESC/Forecast+for+Cosmological+Growth-Rate+Measurement+using+Peculiar+Velocities+From+SNe">
-									DESC project</a> presented by Damiano Rosselli</h3>
+									DESC project</a> leads by Damiano Rosselli</h3>
 							</li>
 							<br>
 							<br>
@@ -659,11 +654,11 @@
 				<section>
 					<h2>Conclusion</h2>
 					<div class="container" style="display: block; padding-inline: 100px; padding-top: 50px; text-align: left;">
-						<h3 class="fragment">We developed and run a full detailed simulation and analysis pipeline to measure growth rate of structure using ZTF SNe Ia</h3>
+						<h3 class="fragment">We developed and ran a full detailed simulation and analysis pipeline to measure the growth rate of structure using ZTF SNe Ia</h3>
 						<br>
 						<h3 class="fragment">Our analysis shows that the spectroscopic selection causes a bias for $f\sigma_8$ when using SNe Ia at $z>0.06$</h3>
 						<br>
-						<h3 class="fragment">We forecast that a 6-years ZTF SNe Ia spectro-identified sample cut at $z=0.06$ will produce a $f\sigma_8$ measurement with a precision of $\sim 19\%$
+						<h3 class="fragment">We forecast that a 6-year ZTF SNe Ia spectro-identified sample cut at $z=0.06$ will produce a $f\sigma_8$ measurement with a precision of $\sim 19\%$
 						using velocities only</h3>
 						<br>
 						<h3 class="fragment">Correcting the bias does not improve much the constraint on $f\sigma_8$ but significant improvements are expected from future work on photometric typing analysis and combination with RSD</h3>
@@ -688,7 +683,7 @@
 				</section>
 
 				<section>
-					<h2>$f\sigma_8$ in function of $z_\mathrm{max}$</h2>
+					<h2>$f\sigma_8$ as a function of $z_\mathrm{max}$</h2>
 					<div class="container"; style="display: inline;">
 						<img src="/assets/talks/fs8_6years_true.svg" style="width: 490px; border: none;margin-bottom: 0px;">
 						<img src="/assets/talks/fs8_6years_bias.svg" style="width: 498px; border: none; margin-bottom: 0px;">
@@ -696,7 +691,7 @@
 					</div>
 				</section>
 				<section>
-					<h2>Velocity estimators bias</h2>
+					<h2>Velocity estimators biases</h2>
 					<div class="container">
 						<div class="col">
 							$\hat{v}_1 = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$
