@@ -131,16 +131,16 @@
 								Velocities leads to distorted positions: $r(z_\mathrm{obs}) \simeq r(z_\mathrm{cos})+ \frac{1+z_\mathrm{cos}}{H(z_\mathrm{cos})}v_p$
 							</p>
 							<br>
-							<p class="fragment" data-fragment-index="5" 
+							<p class="fragment" data-fragment-index="6" 
 							style="line-height: 1.5; ; background-color: rgba(0, 0, 0, 0.558); 
 							width: 500px; border-radius: 20px; padding: 10px;">
 								<b>Direct method:
 								velocity tracers</b>
 								<br>
 								<br>
-								Galaxies (Tully-Fisher and Focal Plane) $\sigma_D/D \sim 20\%$
+								Galaxies Tully-Fisher and Fundamental Plane: $\sigma_D/D \sim 20\%$
 								<br>
-									Type Ia supernovae $\sigma_D/D \sim \%$
+									Type Ia supernovae: $\sigma_D/D \sim 7 \%$
 							</p>
 						</span>
 						</div>
@@ -203,7 +203,7 @@
 									-->
 								</div>
 								<div data-animate class="fragment fade-in-then-out" data-src="/assets/talks/telescope_gal.svg"  style="height: 799.5px"
-								 data-fragment-index="5">
+								 data-fragment-index="9">
 								</div>
 								<span class="fragment fade-in-then-out" data-fragment-index="2">
 									<div style="display: inline-flex;">
@@ -222,8 +222,18 @@
 										 2D corr. from <em>Peacock et al. 2001</em></h3>
 									<img src="/assets/talks/rsd.jpg" style="width: 500px;">
 								</span>
-								<span class="fragment fade-in-then-out" data-fragment-index="4">
+								<span class="fragment fade-in-then-out" data-fragment-index="5">
 									<img src="/assets/talks/fs8_varg_desi_meas.svg" style="width: 800px; border-radius: 30px; border: 5px; background-color: rgba(255, 255, 255, 0.641);">
+								</span>
+								<span class="fragment fade-in-then-out" data-fragment-index="7">
+									<h3  style="background-color: rgba(0, 0, 0, 0.558); border-radius: 20px; padding: 10px; ">
+										Tully-Fisher relation</h3>
+								   <img src="/assets/talks/TFrelation.png" style="width: 500px;">
+								</span>
+								<span class="fragment fade-in-then-out" data-fragment-index="8">
+									<h3  style="background-color: rgba(0, 0, 0, 0.558); border-radius: 20px; padding: 10px; ">
+										Fundamental-Plane relation</h3>
+								   <img src="/assets/talks/FPrelation.png" style="width: 500px;">
 								</span>
 							</div>
 						</div>
@@ -281,13 +291,18 @@
 							<h3 style="text-align: center;">The Bright Transient Survey types every ZTF transients with $mag < 17$ </h3>
 						</div>
 					</div>
-					<div style="position: absolute; top: 260px; right: -50px; display: inline-flex">
-						<h3 style="padding-top: 280px; margin-left: 100px;">
-							The typing efficiency declines for $17 < mag < 19 $
-							<br>
-							No typing for $mag > 19$
-						</h3>
-						<img src="/assets/talks/BTSsel.svg"; style="background-color: #ffffffa4; width: 700px;">
+					<div style="position: absolute; top: 260px; display: inline-flex; column-gap: 0px;">
+						<div style="position: relative; padding-top: 280px; margin-left: 150px;">
+							<h3>
+								Typing efficiency is magnitude limited
+								<br>
+								<br>
+								No typing for $mag > 19$
+							</h3>
+						</div>
+						<div style="position: relative; top: 40px; right: -50px;">
+							<img src="/assets/talks/BTSsel.svg"; style="background-color: #ffffffa4; width: 600px">
+						</div>
 					</div>
 					<div style="position: absolute; top: 700px; right: -50px;">
 						<p style="font-style: italic; font-size: 20px">Image credits: ZTF.Caltech</p>
@@ -466,18 +481,42 @@
 					<h2>The Maximum-Likelihood method (<em>Johnson et al. 2014</em>)</h2>
 						<div class="container" style="display: block">
 							<h4>We can approximate the velocity field as a Gaussian random field</h4>
-							<div class="fragment">
-								\[ 
-									\mathcal{L}(\mathbf{p}, \mathbf{p}_{\rm HD}) = (2 \pi)^{-\frac{n}{2}}|C(\mathbf{p}, \mathbf{p}_{\rm HD})|^{-\frac{1}{2}} \times\exp\left[-\frac{1}{2}\mathbf{\hat{v}}^T(\mathbf{p}_{\rm HD})C(\mathbf{p}, \mathbf{p}_{\rm HD})^{-1}\mathbf{\hat{v}}(\mathbf{p}_{\rm HD})
-								\right]
-								\]
+							<div class="r-stack">
+								<div class="fragment fade-in-then-out" data-fragment-index="0">
+									$
+										\mathcal{L}(\mathbf{p}, \mathbf{p}_{\rm HD}) = (2 \pi)^{-\frac{n}{2}}|C(\mathbf{p}, \mathbf{p}_{\rm HD})|^{-\frac{1}{2}} \times\exp\left[-\frac{1}{2}\mathbf{\hat{v}}^T(\mathbf{p}_{\rm HD}){C(\mathbf{p}, \mathbf{p}_{\rm HD})}^{-1}\mathbf{\hat{v}}(\mathbf{p}_{\rm HD})
+									\right]
+									$
+								</div>
+								<div class="fragment fade-in-then-out" data-fragment-index="1">
+									$
+										\mathcal{L}(\mathbf{p}, \mathbf{p}_{\rm HD}) = (2 \pi)^{-\frac{n}{2}}|C(\mathbf{p}, \mathbf{p}_{\rm HD})|^{-\frac{1}{2}} \times\exp\left[-\frac{1}{2}{\color{red}\mathbf{\hat{v}}^T(\mathbf{p}_{\rm HD})}{C(\mathbf{p}, \mathbf{p}_{\rm HD})}^{-1}{\color{red}\mathbf{\hat{v}}(\mathbf{p}_{\rm HD})}
+									\right]
+									$
+								</div>
+								<div class="fragment" data-fragment-index="2">
+									$
+										\mathcal{L}(\mathbf{p}, \mathbf{p}_{\rm HD}) = (2 \pi)^{-\frac{n}{2}}|{\color{red}C(\mathbf{p}, \mathbf{p}_{\rm HD})}|^{-\frac{1}{2}} \times\exp\left[-\frac{1}{2}\mathbf{\hat{v}}^T(\mathbf{p}_{\rm HD}){\color{red}C(\mathbf{p}, \mathbf{p}_{\rm HD})}^{-1}\mathbf{\hat{v}}(\mathbf{p}_{\rm HD})
+									\right]
+									$
+								</div>
 							</div>
 							<br>
-							<p class="fragment" align="left">\(\mathbf{p}_\mathrm{HD} = \left\{M_0, \alpha, \beta, \sigma_M\right\}\) are the SNe Ia Hubble diagram parameters</p>
-							<br>
-							<p class="fragment" align="left" >\(\mathbf{p} = \left\{f\sigma_8, \sigma_v, \sigma_u\right\}\) are growth-rate related parameters</p>
-							<br>
-							<p class="fragment" align="left" >\(C_{ij}(\mathbf{p}, \mathbf{p}_\mathrm{HD}) = C_{ij}^{vv}(f\sigma_8, \sigma_u) + (\sigma_v^2 + \sigma_\hat{v}^2(\mathbf{p}_{HD}))\delta_{ij}\) the covariance matrix</p>
+							<span class="fragment" data-fragment-index="0">
+								<p align="left" >SN Ia Hubble diagram related parameters: $\mathbf{p}_{\rm HD} = \left\{\alpha, \beta, M_0, \sigma_M \right\}$</p>
+								<br>
+								<p align="left" >Growth-rate related parameters: $\mathbf{p} = \left\{f\sigma_8, \sigma_v, \sigma_u\right\}$</p>
+							</span>
+							<div class="r-stack">
+								<span class="fragment fade-in-then-out" data-fragment-index="1">
+									<br>
+									<p align="left">$\mathbf{\hat{v}_i}(\mathbf{p}_{\rm HD}) = -\frac{\ln(10)c}{5}\left(\frac{(1+z_{\mathrm{obs},i})c}{H(z_{\mathrm{obs},i})r(z_{\mathrm{obs},i})} - 1\right)^{-1}\left[m_{B,i} - \alpha x_{1, i} + \beta c_i - M_0 - \mu_\mathrm{model}\left(z_{\mathrm{obs},i}\right)\right]$</p>
+								</span>
+								<span class="fragment fade-in" data-fragment-index="2" style="text-align: left;">
+									<br>
+									<p align="left" >\(C_{ij}(\mathbf{p}, \mathbf{p}_\mathrm{HD}) = C_{ij}^{vv}(f\sigma_8, \sigma_u) + (\sigma_v^2 + \sigma_\hat{v}^2(\mathbf{p}_{HD}))\delta_{ij}\)</p>
+								</span>
+							</div>
 							<span class="fragment">
 								<div class="container">
 									<div class="col">
@@ -486,7 +525,7 @@
 										$P_{\theta\theta}\equiv$ Power spectrum of velocity divergence
 										<br>
 										<br>
-										$D_u = \mathrm{sinc}(\sigma_u k)\equiv$ Empirical damping factor to account for RSD effect (<em>Koda et al. 2014</em>)
+										$D_u = \mathrm{sinc}(\sigma_u k)\equiv$ Empirical damping factor to account for RSD (<em>Koda et al. 2014</em>)
 										<br>
 										<br>
 										$W_{ij}(k) = W(\mathbf{x}_i, \mathbf{x}_j; k)\equiv$ Window funtion
@@ -524,7 +563,6 @@
 									<div class="fragment" data-fragment-index="4" style="position: absolute; top: 460px; left: 50%; transform: translate(-50%, -50%); ">
 										<img src="/assets/talks/seltruevel.svg" style="width: 800px; background-color: white;" />
 									</div>
-									<br>
 									<br>
 									<div class="fragment" data-fragment-index="4">
 										Only the estimated velocities are biased !!! 
@@ -593,7 +631,7 @@
 					<div class="container" style="display: block;">
 						<img style="height: 500px; border-radius: 20px;" data-src="/assets/talks/plot_fs8_pv_and_bastien.svg">
 						<br>
-						<p>With only ~1600 SNe ZTF is at the same precision level than existing measurements with 
+						<p>With only ~1600 SNe Ia, ZTF is at the same precision level than existing measurements with 
 						  several thousands of galaxies ! </p>
 					</div>
 				</section>
