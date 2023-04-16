@@ -56,8 +56,8 @@
 					<div>
 						<h3 style="padding: 0; margin-bottom: 5px;">Strong evidences for an accelerating universe</h3>
 						<div class="r-stack">
-							<h3 class="fragment fade-in-then-out" data-fragment-index="0" style="padding: 0; margin-bottom: 5px;">due to a dark energy constant</h3>
-							<h3 class="fragment fade-in-then-out" data-fragment-index="1" style="padding: 0; margin-bottom: 5px;">due to a dynamical energy field</h3>
+							<h3 class="fragment fade-in-then-out" data-fragment-index="0" style="padding: 0; margin-bottom: 5px;">due to a dark energy constant?</h3>
+							<h3 class="fragment fade-in-then-out" data-fragment-index="1" style="padding: 0; margin-bottom: 5px;">due to a dynamical energy field?</h3>
 						</div>
 					</div>
 					<div>
@@ -73,12 +73,12 @@
 					<div>
 						<h3>Alternative: GR is not valid at all scales and we need <b>modified gravity</b> models</h3>
 					</div>
-					<div style="margin-top: 20px;">
+					<div class="fragment" style="margin-top: 20px;">
 						<h3 style="text-align: left; margin-bottom: -50px;">Luckily:</h3>
 						<img src="/assets/talks/classmodgrav.png" style="width: 600px; border: none;">
 						<div style="position: absolute; top:250px; right: 0px; width: 300px;">
-							<h3>Those models have expansion history hard to distinguish from $\Lambda$CDM</h3>
-							<h3>But they affect structures fromation !</h3>
+							<h3 class="fragment">Those models have expansion history hard to distinguish from $\Lambda$CDM</h3>
+							<h3 class="fragment">But they affect structures fromation !</h3>
 						</div>
 					</div>
 
@@ -308,16 +308,6 @@
 												Limited by DI's precision $\Rightarrow$ efficient at low-z
 												<br>
 												<br>
-											</div>
-										</div>
-
-										<div class="r-hstack" >
-											<div class="col">
-												Affected by tracers bias i.e galaxies distribution $\neq$ DM distribution 
-											
-											</div>
-											<div class="col">
-												Affected by small-scales non-linearities
 											</div>
 										</div>
 									</div>
@@ -578,9 +568,19 @@
 												{
 												"setup": [
 												{
-													"element": "#field",
+													"element": "#density",
+													"modifier": "attr",
+													"parameters": [ {"class": "fragment fade-in-then-out", "data-fragment-index": "1"} ]
+												},
+												{
+													"element": "#coord",
 													"modifier": "attr",
 													"parameters": [ {"class": "fragment", "data-fragment-index": "1"} ]
+												},
+												{
+													"element": "#vel",
+													"modifier": "attr",
+													"parameters": [ {"class": "fragment", "data-fragment-index": "2"} ]
 												}
 												]
 												}
@@ -589,16 +589,16 @@
 									</span>
 								</div>
 								<div class="col">
-									<span class="fragment" data-fragment-index="1">
-									<p style="font-size: 22px;">The correlation function depends of the Power Spectrum:<br><br>
+									<p class="fragment" data-fragment-index="1" style="font-size: 22px;">The correlation function depends of the Power Spectrum:<br><br>
 										For densities:<br>
 										$\langle\delta(\mathbf{x}_i)\delta(\mathbf{x}_i + \mathbf{r})\rangle \propto \int dk k^2 P(k) W^{(\delta)}(k;\mathbf{r}) \propto \sigma_8^2 \int dk k^2 \tilde{P}(k)W^{(\delta)}(k; \mathbf{r})$
 										<br>
 										<br>
-										For velocities:<br>
-										$\langle v(\mathbf{x}_i)v(\mathbf{x}_i + \mathbf{r})\rangle \propto (f\sigma_8)^2 \int dk \tilde{P}(k) W^{(v)}(k; \mathbf{r})$
 									</p>
-									</span>
+									<p class="fragment" data-fragment-index="2" style="font-size: 22px;">
+										For velocities:<br>
+										$\langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle \propto (f\sigma_8)^2 \int dk \tilde{P}(k) W^{(v)}(k; \mathbf{x}_i, \mathbf{x}_j)$
+									</p>
 								</div>
 							</div>
 						</div>
@@ -606,17 +606,18 @@
 						<div>
 						$\mathcal{L}(\mathbf{p}, \mathbf{p}_{\rm HD}) = (2 \pi)^{-\frac{n}{2}}|C(\mathbf{p}, \mathbf{p}_{\rm HD})|^{-\frac{1}{2}} \times\exp\left[-\frac{1}{2}\mathbf{v}^T(\mathbf{p}_{\rm HD})C(\mathbf{p}, \mathbf{p}_{\rm HD})^{-1}\mathbf{v}(\mathbf{p}_{\rm HD})\right]$
 						<br><br>
-						with the free parameters:<br><br>
+						<p style="text-align: left;">with the free parameters:<br><br>
 						$\mathbf{p}_{HD} = \left\{\alpha, \beta, M_B, \sigma_M \right\}$ SNe Ia Hubble diagram parameters<br><br>
 						$\mathbf{p} = \left\{f\sigma_8, \sigma_u, \sigma_v \right\}$ Growth-rate related parameters, $\sigma_u \equiv$ RSD, $\sigma_v\equiv$ non-linearities 
+						</p>
 						</div>
 						<div class="container">
 							<div class="col" style="flex: 0.2">
 								$C_{ij}(\mathbf{p}, \mathbf{p}_{\rm HD}) = C^{vv}_{ij}(f\sigma_8, \sigma_u) + \sigma_v^2 \delta^D_{ij} + \sigma_\hat{v}^2(\mathbf{p}_{\rm HD}) \delta^D_{ij}$<br><br>
-								$C^{vv}_{ij} \propto (f\sigma_8)^2 \int dk P(k) W(k) D(k; \sigma_u) $
+								$C^{vv}_{ij} = \langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle \propto (f\sigma_8)^2 \int dk P(k) W(k) D(k; \sigma_u) $
 							</div>
 							<div class="col">
-								<img src="/assets/talks/Power_spectrum.svg" style="width: 600px; margin-top: 20px;">
+								<img src="/assets/talks/Power_spectrum.svg" style="width: 600px; margin-top: 10px;">
 							</div>
 							
 						</div>
