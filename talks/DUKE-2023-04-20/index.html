@@ -425,6 +425,7 @@
 								<div style="text-align: left;">
 									<br>
 									<br>
+									<br>
 									Apply selection:
 									<br>
 									<br>
@@ -543,24 +544,26 @@
 						<div class="r-stack">
 							<h3 class="fragment fade-in-then-out" data-fragment-index="1">Standard candles</h3>
 							<span class="fragment fade-in" data-fragment-index="2">
-								<span class="fragment fade-out" data-fragment-index="4">
+								<span class="fragment fade-out" data-fragment-index="5">
 									<h3>Standard candles + velocities</h3>
 								</span>
 							</span>
-							<h3 class="fragment" data-fragment-index="4">Standard candles + velocities + noise</h3>
+							<h3 class="fragment" data-fragment-index="5">Standard candles + velocities + noise</h3>
 
 						</div>
 						<div class="r-stack">
 							<img class="fragment" data-fragment-index="1" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDsimple.svg"></img>
 							<img class="fragment" data-fragment-index="2" style="height: 450px; border: 0; z-index: 2;" data-src="/assets/talks/vlegend.svg"></img>
 							<img class="fragment" data-fragment-index="2" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvel.svg"></img>
-							<img class="fragment" data-fragment-index="4" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvelnoise.svg"></img>
+							<img class="fragment" data-fragment-index="5" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvelnoise.svg"></img>
 						</div>
 						<img class="fragment fade-in-then-out" data-fragment-index="3" data-src="/assets/talks/pec_vel_effect.svg" style="position: absolute; top: 240px; right: 10px; height: 350px; z-index: 3;">
 						<br>
 						<div class="r-stack">
-							<p class="fragment fade-in-then-out" data-fragment-index="3">The velocity estimator: <br> $$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$</p>
-							<p class="fragment" data-fragment-index="4">The velocity estimator: <br> $$\sigma_\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\sigma_\mu$$</p>
+							<span class="fragment fade-out" data-fragment-index="5">
+								<p class="fragment fade-in" data-fragment-index="3">The velocity estimator: <br> $$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$</p>
+							</span>
+							<p class="fragment" data-fragment-index="5">The velocity estimator error: <br> $$\sigma_\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\sigma_\mu$$</p>
 						</div>
 					</div>
 				</section>
@@ -600,7 +603,7 @@
 									</span>
 								</div>
 								<div class="col">
-									<p class="fragment" data-fragment-index="1" style="font-size: 22px;">The correlation function depends of the Power Spectrum:<br><br>
+									<p class="fragment" data-fragment-index="1" style="font-size: 22px;">The correlation function depends of the <b>Power Spectrum</b>:<br><br>
 										For densities:<br>
 										$\langle\delta(\mathbf{x}_i)\delta(\mathbf{x}_i + \mathbf{r})\rangle \propto \int dk k^2 P(k) W^{(\delta)}(k;\mathbf{r}) \propto \sigma_8^2 \int dk k^2 \tilde{P}(k)W^{(\delta)}(k; \mathbf{r})$
 										<br>
