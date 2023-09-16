@@ -74,8 +74,10 @@
 								</div>
 							</span>
 							<span class="fragment fade-in" data-fragment-index="4">
-								<h3>The $\Lambda$CDM is confirmed by most of the data but...</h3>
+								<h3>The standard model is confirmed by most of the data !!!</h3>
+								<h3>But...</h3>
 								<h3>Some tensions exists: $H_0$, $S_8$ measurements between early and late universe</h3>
+								<h3>and</h3>
 								<h3>What is this "dark energy"? Is there alternatives to the $\Lambda$ constant?</h3>
 							</span>
 						</div>
@@ -85,7 +87,7 @@
 				<section>
 					<h2>Type Ia supernovae (SNe Ia): powerfull probes for cosmology</h2>
 					<div class="r-stack">
-						<div class="fragment fade-out" data-fragment-index="3">
+						<span class="fragment fade-out" data-fragment-index="3">
 							<h3>SNe Ia are "standard" candles</h3>
 							<div class="fragment" data-fragment-index="1">
 									<div>SNe Ia luminosity $L\simeq \mathrm{cst}$. The flux only depends on distance: $\mathrm{Flux} = \frac{L}{4\pi d_L^2(z)}$</div>
@@ -96,9 +98,52 @@
 								Absolute magnitude $M_B = -2.5\log(F_\mathrm{10pc}) + \mathrm{cst}$<br>
 								Observed magnitude $m_B = -2.5\log(F) + \mathrm{cst}$
 							</div>
+						</span>
+						<span class="fragment" data-fragment-index="3">
+							<span class="fragment fade-out" data-fragment-index="6">
+								<h3>Dealing with SNe Ia data in a nutshell</h3>
+								<br>
+								<ul>
+									<li class="fragment" data-fragment-index="4">
+										Collect data (and calibrate them) using a telescope and a camera to obtain a lightcurve
+									</li>
+									<br>
+									<li class="fragment" data-fragment-index="5">
+										Use a model to fit the lightcurve. The most used is SALT2 that use 3 parameters:<br>
+										$m_B$: the peak magnitude in Bessel B band, $x_1$ the stretch of the SN and $c$ the color of the SN
+									</li>
+								</ul>
 
-						</div>
-						<div class="fragment fade-in-then-out" data-fragment-index="3">
+							<br>
+							<br>
+							<span class="fragment" data-fragment-index="4">
+								<div data-animate data-load="/assets/talks/ztf_onelc.svg" style="scale: 1.5; margin-top: 80px;">
+										<!--
+											{
+											"setup": [
+											{
+												"element": "#iline",
+												"modifier": "attr",
+												"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
+											},
+											{
+												"element": "#gline",
+												"modifier": "attr",
+												"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
+											},
+											{
+												"element": "#rline",
+												"modifier": "attr",
+												"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
+											}
+											]
+											}
+										-->
+								</div>
+							</span>
+						</span>
+						</span>
+						<span class="fragment fade-in-then-out" data-fragment-index="6">
 							<h3>By "standard" we mean standardizable</h3>
 							<div>
 								<div>
@@ -108,13 +153,13 @@
 								<img src="/assets/talks/standardization.svg" style="width: 600px;">
 								<div>Standardized absolute magnitude at peak $M_B^* = M_B - \alpha x_1 + \beta c$</div>
 							</div>
-						</div>
-						<div class="fragment fade-in-then-out" data-fragment-index="4">
+						</span>
+						<span class="fragment fade-in-then-out" data-fragment-index="7">
 							<h3>Using observed magnitudes from SNe Ia and redshifts from host galaxies we obtain the Hubble diagram.</h3>
 							<div>
-								<img src="/assets/talks/HD_panth.png" style="width: 800px;">
+								<img src="/assets/talks/HD_panth.png" style="width: 750px;">
 							</div>
-						</div>
+						</span>
 					</div>
 
 				</section>
@@ -234,7 +279,8 @@
 								<br>
 								<br>
 								Doppler effect on redshift:
-								<br>  $1 + z_\mathrm{obs} = \left(1 + z_\mathrm{cos}\right)\left(1 + \frac{v_p}{c}\right)$ 
+								<br>  $1 + z_\mathrm{obs} = \left(1 + z_\mathrm{cos}\right)\left(1 + z_p\right)$ 
+								<br> $z_p \simeq \frac{v_p}{c}$, $v_p$ is the line-of-sight velocity
 							</p>
 							<br>
 							<p class="fragment" data-fragment-index="2" 
@@ -264,7 +310,7 @@
 						<div class="col">
 							<div class="r-stack">
 								<div class="fragment fade-in-then-out", 
-								data-animate data-src="/assets/talks/telescope_gal.svg", 
+								data-animate data-load="/assets/talks/telescope_gal.svg", 
 								data-fragment-index="0" style="height: 800px">
 									<!--
 										{
@@ -304,7 +350,7 @@
 										}
 									-->
 								</div>
-								<div data-animate class="fragment fade-in-then-out" data-src="/assets/talks/telescope_gal.svg"  style="height: 799.5px"
+								<div data-animate class="fragment fade-in-then-out" data-load="/assets/talks/telescope_gal.svg"  style="height: 799.5px"
 								 data-fragment-index="1">
 									<!--
 										{
@@ -318,7 +364,7 @@
 										}
 									-->
 								</div>
-								<div data-animate class="fragment fade-in-then-out" data-src="/assets/talks/telescope_gal.svg"  style="height: 799.5px"
+								<div data-animate class="fragment fade-in-then-out" data-load="/assets/talks/telescope_gal.svg"  style="height: 799.5px"
 								 data-fragment-index="10">
 								</div>
 								<span class="fragment fade-in-then-out" data-fragment-index="2">
@@ -398,7 +444,7 @@
 										</div>
 									</div>
 									<div class="fragment" style="background-color: rgba(0, 0, 0, 0.558); width: 750px; padding: 10px; border-radius: 20px; margin-top: 20px;">
-										<h3>Large low-z SNe Ia sample from the Zwicky Transient Facility and LSST could provide a $f\sigma_8$ measurement</h3>
+										<h3 style="color: rgb(255, 217, 0);">Large low-z SNe Ia sample from the Zwicky Transient Facility and LSST could provide a $f\sigma_8$ measurement</h3>
 									</div>
 									
 								</span>
@@ -414,10 +460,21 @@
 					<h2>$f\sigma_8$ with SNe Ia peculiar velocities: the simulation and analysis pipeline</h2>
 		
 					<div style="display:block;">
-						<div data-animate data-src="/assets/talks/pipeline_phd.svg",  style="position: relative; top: 0px;">
+						<div data-animate data-load="/assets/talks/pipeline_phd.svg",  style="position: relative; top: 0px;">
 							<!--
 								{
 								"setup": [
+								{
+									"element": "#snmodel",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "0"} ]
+								},
+								{
+									"element": "#arrows0",
+									"modifier": "attr",
+									"parameters": [ {"class": "fragment", "data-fragment-index": "0"} ]
+								},
+
 								{
 									"element": "#surveypar",
 									"modifier": "attr",
@@ -567,6 +624,100 @@
 					</div>
 				</section>
 
+				<section>
+					<h2>Simulation: survey parameters</h2>
+					<div>
+						<h3>I have worked in ZTF simulation working group to constructs ZTF simulation input files</h3>
+						<br>
+						<ul style="line-height: 45px;">
+							<li>The dates and coordinates of pointing (cadence)</li>
+							<li>Filter used in each pointing</li>
+							<li>5-$\sigma$ limiting magnitudes of each pointing</li>
+							<li>CCD gain of each pointing</li>
+							<li>Zero Point (ZP) of each pointing</li>
+						</ul>
+				</section>
+
+				<section>
+					<h2>Simulation: the N-Body simulation</h2>
+					<div>
+						<h3>Use of the OuterRim N-body simulation</h3>
+						<br>
+						<div class="container">
+							<div class="col">	
+								<h4>Dark Matter halo catalog at $z=0$</h4>					
+								<h4>3 Gpc.$h^{-1}$ box $\Rightarrow$ 27 ZTF realisations up to $z\sim 0.17$</h4>
+								<h4>WMAP cosmology:</h4>
+								<table>
+									<tr>
+										<td>$H_0$</td>
+										<td>$\omega_{\rm cdm}$</td>
+										<td>$\omega_{\rm b}$</td>
+										<td>$n_s$</td>
+										<td>$\sigma_8$</td>
+										<td>$f$</td>
+										<td>$f\sigma_8$</td>
+									</tr>
+									<tr>
+										<td>$71.$</td>
+										<td>$0.1109$</td>
+										<td>$0.02258$</td>
+										<td>$0.963$</td>
+										<td>$0.800 $</td>
+										<td>$0.478$</td>
+										<td>$0.382$</td>
+									</tr>
+								</table>
+							</div>
+							<div class="col">						
+								<img src="/assets/talks/outerrim.png" style="border: none; width: 300px;">
+							</div>
+						</div>
+						<br>
+						<div>
+							<h3>Use postions and velocities to create host catalog for SNe Ia:</h3>
+							Real space to angular + redshift position $(x_0, x_1, x_2) \Rightarrow (\mathrm{RA}, \mathrm{Dec}, z_\mathrm{cos})$
+							<br>
+							<br>
+							3D velocities to line-of-sight velocities $(v_0, v_1, v_2) \Rightarrow v_p = \mathbf{v}.\mathbf{n}$
+						</div>
+				</section>
+
+				<section>
+					<h2>Simulation: SN Ia model</h2>
+					<div style="text-align: left;">
+					SN Ia rate from <em>Perley et al.</em> 2020: $ r_v=(2.35 \pm 0.24) \times 10^{-5} \ \mathrm{SNe \ Ia}.\mathrm{Mpc}^{-3}.\mathrm{an}^{-1}$
+					<br>
+					<br>
+					<br>
+					Use the SALT2 implementation of $\texttt{SNCosmo}$ to generate lightcurves
+					<br><br>
+					Simulated SNe Ia magnitudes are given by: $m_{B,i} = M_B - \alpha x_{1, i} + \beta c_i + \sigma_{\mathrm{int}, i} + \mu$
+					<br><br>
+					Standardization parameters $M_B$, $\alpha$ and $\beta$ taken from <em>Betoule et al.</em> 2014<br><br>
+					Stretch $x_1$ distribution from <em>Nicolas et al.</em> 2021 and color $c$ distribution from <em>Scolnic & Kessler</em> 2016
+
+					</div>
+				</section>
+
+				<section>
+					<h2>Simulation: SNSIM and lightcurves</h2>
+					<div>
+						<h3>
+							Using previous inputs and the $\texttt{SNSim}$ python package that I have developed we obtain realistic ZTF SNe Ia lightcurves
+							with host velocities from the N-body simulation
+						</h3>
+						<br>
+						Flux are computed with $\texttt{SNCosmo}$ for the given observations and randomly scatter with the corresponding noise
+						<br>
+						<br>
+						Noise is computed as $\sigma_F = \sqrt{\frac{F}{G} + \sigma_\mathrm{sky}^2 + \sigma_\mathrm{ZP}^2}$
+						<br>
+						<br>
+						<br>
+						<img src="/assets/talks/sim_lcs.svg" style="scale: 1.3; border: none;"> 
+					</div>
+				</section>
 
 				<section>
 					<h2>Velocity estimator: velocities from Hubble diagram residuals</h2>
@@ -608,7 +759,7 @@
 							<div class="container" style="column-gap: 30px;">
 								<div class="col" style="width: 500px; padding-top: 50px;">
 									<span class="fragment fade-in" data-fragment-index="0">
-										<div data-animate data-src="/assets/talks/GRF.svg" style="scale: 1.3;">
+										<div data-animate data-load="/assets/talks/GRF.svg" style="scale: 1.3;">
 											<!--
 												{
 												"setup": [
@@ -745,7 +896,7 @@
 								</ul>
 							</div>
 							<div class="col">
-								<div data-animate style="position: absolute; top: 100px; left: 630px; margin-top: 150px; margin-left: 200px; border: solid #5e5e5e; scale: 1.5; background-color: white" data-src="/assets/talks/results_z006.svg">
+								<div data-animate style="position: absolute; top: 100px; left: 630px; margin-top: 150px; margin-left: 200px; border: solid #5e5e5e; scale: 1.5; background-color: white" data-load="/assets/talks/results_z006.svg">
 									<!--
 										{
 										"setup": [
@@ -936,8 +1087,14 @@
 		<script src="/talks/reveal.js/plugin/markdown/markdown.js"></script>
 		<script src="/talks/reveal.js/plugin/highlight/highlight.js"></script>
 		<script src="/talks/reveal.js/plugin/math/math.js"></script>
-		<script src="/talks/add_plugins/animate/svg.min.js"></script>
-		<script src="/talks/add_plugins/animate/plugin.js"></script>
+
+		<!-- Load content plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/loadcontent/plugin.js"></script>
+
+		<!-- Animate plugin -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+		
 		<!-- Chart plugin -->
 		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
@@ -1010,7 +1167,7 @@
 					autoplay: true
 			},
 			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3, RevealAnimate, RevealChart ],
+			plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3,  RevealLoadContent, RevealAnimate, RevealChart ],
 	
 			dependencies: [
 				{
