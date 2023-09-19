@@ -27,7 +27,6 @@
 						<div style="margin-left: 1cm;">
 							<h2>Bastien Carreres</h2> 
 							<h3 style="text-align: left;">Under the supervision of Dominique Fouchez & Benjamin Racine</h3>
-
 						</div>
 			
 						<div class="container" style="margin-top: 5%;">
@@ -78,9 +77,9 @@
 							<span class="fragment fade-in" data-fragment-index="4">
 								<h3>The standard model is confirmed by most of the data !!!</h3>
 								<h3>But...</h3>
-								<h3>Some tensions exists: $H_0$, $S_8$ measurements between early and late universe</h3>
+								<h3>Some tensions exist: $H_0$, $S_8$ measurements between early and late universe</h3>
 								<h3>and</h3>
-								<h3>What is this "dark energy"? Is there alternatives to the $\Lambda$ constant?</h3>
+								<h3>What is this "dark energy"? Are there alternatives to the $\Lambda$ constant?</h3>
 							</span>
 						</div>
 					</div>
@@ -165,8 +164,8 @@
 							</div>
 						</span>
 					</div>
-
 				</section>
+
 
 				<section data-transition="slide-in none-out">
 					<h2>SNe Ia and dark energy models</h2>
@@ -193,7 +192,8 @@
 						</div>
 					</div>
 				</section>
-				
+
+
 				<section data-transition="none-in slide-out">
 					<h2>Modified gravity</h3>
 					<div class="r-stack">
@@ -215,7 +215,6 @@
 
 
 				<section data-background="/assets/talks/illustris.webp">	 
-					
 					<h2>\(f\sigma_8\) as a probe for general relativity</h2>
 						<div class="r-stack">
 						<span class="fragment fade-out" data-fragment-index="4">
@@ -244,7 +243,7 @@
 									</span>
 									<span class="fragment"  data-fragment-index="2">
 										<h3>
-											Velocities are linked to density through continuity equation:
+											Velocities are linked to density through the continuity equation:
 											<br> <br>
 											$\nabla.v = -aH\frac{d\delta}{da}\ \propto -aHf\sigma_8\delta$ 
 											<br><br>
@@ -293,6 +292,7 @@
 								<b>Indirect method:
 								Redshift Space Distorsions of the density field</b>
 								<br>
+								Data: redshifts
 								<br>
 								Velocities leads to distorted positions: $r(z_\mathrm{obs}) \simeq r(z_\mathrm{cos})+ \frac{1+z_\mathrm{cos}}{H(z_\mathrm{cos})}v_p$
 							</p>
@@ -303,6 +303,7 @@
 								<b>Direct method:
 								velocity tracers</b>
 								<br>
+								Data: redshifts + distances
 								<br>
 								Galaxies Tully-Fisher and Fundamental Plane: $\sigma_D/D \sim 20\%$
 								<br>
@@ -411,7 +412,7 @@
 								   <img src="/assets/talks/FPrelation.png" style="width: 500px;">
 								</span>
 								<span class="fragment">
-									<div class="r-vstack" style="width: 750px; background-color: rgba(0, 0, 0, 0.558); padding: 10px; border-radius: 20px;">
+									<div class="r-vstack" style="width: 750px; background-color: rgba(0, 0, 0, 0.558); padding: 15px; border-radius: 20px;">
 										<div class="r-hstack" style="width: 100%;">
 											<div class="col">
 												<h3>RSD <br><br></h3>
@@ -421,7 +422,7 @@
 											</div>
 										</div>
 									
-										<div class="r-hstack" >
+										<div class="r-hstack" style="width: 100%;">
 											<div class="col">
 												Indirect measurement through distorsion of the density field from redshifts.
 												<br>
@@ -434,8 +435,8 @@
 											</div>
 										</div>
 
-										<div class="r-hstack" >
-											<div class="col">
+										<div class="r-hstack" style="width: 100%;" >
+											<div class="col" style="margin-right: 10px;">
 												Need high statistic $\Rightarrow$ efficient at high-$z$ 
 												<br>
 												<br>
@@ -715,21 +716,27 @@
 							</span>
 							<h3 class="fragment" data-fragment-index="5">Standard candles + velocities + noise</h3>
 						</div>
-						<div class="r-stack">
-							<img class="fragment" data-fragment-index="1" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDsimple.svg"></img>
-							<img class="fragment" data-fragment-index="2" style="height: 450px; border: 0; z-index: 2;" data-src="/assets/talks/vlegend.svg"></img>
-							<img class="fragment" data-fragment-index="2" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvel.svg"></img>
-							<img class="fragment" data-fragment-index="5" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvelnoise.svg"></img>
+						<div class="r-hstack" style="margin-top: 50px;">
+							<div>
+								<p class="fragment fade-in" data-fragment-index="3">
+									The velocity estimator: <br> $$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$
+								</p>
+								<br>
+								<p class="fragment" data-fragment-index="5">
+									The velocity estimator error: <br> $$\sigma_\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\sigma_\mu$$
+								</p>
+
+							</div>
+							<div class="r-stack" style="margin-left: 50px;">
+								<img class="fragment" data-fragment-index="1" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDsimple.svg"></img>
+								<img class="fragment" data-fragment-index="2" style="height: 450px; border: 0; z-index: 2;" data-src="/assets/talks/vlegend.svg"></img>
+								<img class="fragment" data-fragment-index="2" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvel.svg"></img>
+								<img class="fragment" data-fragment-index="5" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDvelnoise.svg"></img>
+							</div>
 						</div>
-						<img class="fragment fade-in-then-out" data-fragment-index="3" data-src="/assets/talks/pec_vel_effect.svg" style="position: absolute; top: 240px; right: 10px; height: 350px; z-index: 3;">
-						<br>
 						<span class="fragment" data-fragment-index="4"></span>
-						<div class="r-stack">
-							<span class="fragment fade-out" data-fragment-index="5">
-								<p class="fragment fade-in" data-fragment-index="3">The velocity estimator: <br> $$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$</p>
-							</span>
-							<p class="fragment" data-fragment-index="5">The velocity estimator error: <br> $$\sigma_\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\sigma_\mu$$</p>
-						</div>
+						<img class="fragment fade-in-then-out" data-fragment-index="3" data-src="/assets/talks/pec_vel_effect.svg" style="position: absolute; top: 240px; right: 10px; height: 350px; z-index: 3;">
+
 					</div>
 				</section>
 
@@ -942,25 +949,15 @@
 
 
 				<section>
-					<h2>How to improve the measurement?</h2>
-					<div class="fragment" style="text-align: left; padding-left: 100px; padding-top: 50px;">
-						<ul>
-							<li><h3>Bias correction of the velocity estimates ?</h3></li>
-						</ul>
-					</div>
-				</section>
-
-
-				<section>
-					<h2>How to improve the measurement? Bias correction of the velocities</h2>
+					<h2>Could a bias correction improve the constraint?</h2>
 						<div class="container" style="display: block;">
 							<h3>Simulate a perfect correction of the bias:<br>
 							$v_{\mathrm{debias}, i} \sim \mathcal{N}(v_\mathrm{true}, \sigma_{\hat{v}, i})$
 							 </h3>
 							<div class="r-stack">
-								<img class="fragment fade-in-then-out" data-fragment-index="0" style="height: 400px" data-src="/assets/talks/fs8_6years_fakedebias.svg">
-								<img class="fragment fade-in-then-out" data-fragment-index="1" style="height: 400px" data-src="/assets/talks/efs8_6years_fakedebias.svg">
-								<img class="fragment" data-fragment-index="2" src="/assets/talks/zdist_axes2.svg" style="border: none; height: 400px">
+								<img class="fragment fade-in-then-out" data-fragment-index="0" style="height: 350px" data-src="/assets/talks/fs8_6years_fakedebias.svg">
+								<img class="fragment fade-in-then-out" data-fragment-index="1" style="height: 350px" data-src="/assets/talks/efs8_6years_fakedebias.svg">
+								<img class="fragment" data-fragment-index="2" src="/assets/talks/zdist_axes2.svg" style="border: none; height: 350px">
 							</div>
 							<div class="r-stack">
 								<h3 class="fragment fade-in-then-out", data-fragment-index="1"><br>From a redshift limit of $z \sim 0.06$ to $z\sim 0.13$, $N_{SN}$ is doubled but the error on $f\sigma_8$ only reduces from $17 \%$ to $15 \%$</h3>
@@ -998,7 +995,7 @@
 				<section>
 					<h2>Future surveys</h2>
 					<div>
-						<img src="/assets/talks/fs8_allforecasts.svg" style="width: 850px;background-color: rgba(255, 255, 255, 0.641); border: none; border-radius: 20px;">
+						<img src="/assets/talks/fs8_allforecasts.svg" style="width: 800px;background-color: rgba(255, 255, 255, 0.641); border: none; border-radius: 20px;">
 						<h3>Peculiar velocities + RSD will put strong constraint on $f\sigma_8$ at low redshift</h3>
 					</div>
 
