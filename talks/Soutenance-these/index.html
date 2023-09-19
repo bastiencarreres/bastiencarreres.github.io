@@ -615,19 +615,19 @@
 				<section>
 					<h2>Simulation: SN Ia model</h2>
 					<div style="text-align: left;">
-					SN Ia rate from <em>Perley et al.</em> 2020: $ r_v=(2.35 \pm 0.24) \times 10^{-5} \ \mathrm{SNe \ Ia}.\mathrm{Mpc}^{-3}.\mathrm{an}^{-1}$
-					<br>
-					<br>
-					<br>
-					Use the SALT2 implementation of $\texttt{SNCosmo}$ to generate lightcurves
-					<br><br>
-					Simulated SNe Ia magnitudes are given by: $m_{B,i} = M_B - \alpha x_{1, i} + \beta c_i + \sigma_{\mathrm{int}, i} + \mu$
-					<br><br>
-					Standardization parameters $M_B$, $\alpha$ and $\beta$ taken from <em>Betoule et al.</em> 2014<br><br>
-					Stretch $x_1$ distribution from <em>Nicolas et al.</em> 2021 and color $c$ distribution from <em>Scolnic & Kessler</em> 2016
-
+						SN Ia rate from <em>Perley et al.</em> 2020: $ r_v=(2.35 \pm 0.24) \times 10^{-5} \ \mathrm{SNe \ Ia}.\mathrm{Mpc}^{-3}.\mathrm{an}^{-1}$
+						<br>
+						<br>
+						<br>
+						Use the SALT2 implementation of $\texttt{SNCosmo}$ to generate lightcurves
+						<br><br>
+						Simulated SNe Ia magnitudes are given by: $m_{B,i} = M_B - \alpha x_{1, i} + \beta c_i + \sigma_{\mathrm{int}, i} + \mu$
+						<br><br>
+						Standardization parameters $M_B$, $\alpha$ and $\beta$ taken from <em>Betoule et al.</em> 2014<br><br>
+						Stretch $x_1$ distribution from <em>Nicolas et al.</em> 2021 and color $c$ distribution from <em>Scolnic & Kessler</em> 2016
 					</div>
 				</section>
+
 
 				<section>
 					<h2>Simulation: SNSIM and lightcurves</h2>
@@ -647,6 +647,7 @@
 						<img src="/assets/talks/sim_lcs.svg" style="scale: 1.3; border: none;"> 
 					</div>
 				</section>
+
 
 				<section>
 					<h2>Simulation: applying spectroscopic identification selection function</h2>
@@ -673,6 +674,7 @@
 					</div>
 				</section>
 
+
 				<section>
 					<h2>$f\sigma_8$ with SNe Ia peculiar velocities: the simulation and analysis pipeline</h2>
 					<div>
@@ -691,6 +693,7 @@
 					</div>
 				</section>
 
+
 				<section>
 					<h2>Analysis: lightcurves fit and cosmological cut</h2>
 					<div>
@@ -698,6 +701,7 @@
 						<img src="/assets/talks/sncuts.png" style="width: 650px;">
 					</div>
 				</section>
+
 
 				<section>
 					<h2>Analysis: velocities from Hubble diagram residuals</h2>
@@ -710,7 +714,6 @@
 								</span>
 							</span>
 							<h3 class="fragment" data-fragment-index="5">Standard candles + velocities + noise</h3>
-
 						</div>
 						<div class="r-stack">
 							<img class="fragment" data-fragment-index="1" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/talks/HDsimple.svg"></img>
@@ -729,6 +732,7 @@
 						</div>
 					</div>
 				</section>
+
 
 				<section>
 					<h2>Analysis: the Maximum-Likelihood method (<em>Johnson et al.</em> 2014)</h2>
@@ -832,7 +836,7 @@
 							<span class="fragment" data-fragment-index="7">
 								<h3 style="text-align: left;">The covariance:</h3> 
 								$C_{ij}({\color{yellow}\mathbf{p}},{\color{orange}\mathbf{p}_{\rm HD}}) = C^{vv}_{ij}({\color{yellow}f\sigma_8}, {\color{yellow}\sigma_u}) + {\color{yellow}\sigma_v}^2 \delta^K_{ij} + \sigma_\hat{v}^2({\color{orange}\mathbf{p}_{\rm HD}}) \delta^K_{ij}$<br><br>
-								$C^{vv}_{ij}({\color{yellow}f\sigma_8}, {\color{yellow}\sigma_u}) = \langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle \propto ({\color{yellow}f\sigma_8})^2 \int dk P(k) W(k) D(k; {\color{yellow}\sigma_u}) $
+								$C^{vv}_{ij}({\color{yellow}f\sigma_8}, {\color{yellow}\sigma_u}) = \langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle \propto ({\color{yellow}f\sigma_8})^2 \int dk P(k) W(k) D_u^2(k; {\color{yellow}\sigma_u}) $
 							</span>
 						</div>
 					</div>
@@ -840,13 +844,13 @@
 
 
 				<section>
-					<h2>Results: the selection bias</h2>
+					<h2>Analysis: results - the selection bias</h2>
 						<div class="container" style="display: block">
 							<p style="font-size: 25px;">Magnitude limited selection $\Rightarrow$ Selection bias: when redshift increases, only brighter objects are detected<br></p>
 							<br>
 							<div class="r-stack">
 								<span class="fragment fade-out" data-fragment-index="5">
-									<div class="r-hstack" style="margin-top: 50px;">
+									<div class="r-hstack">
 										<div class="fragment" data-fragment-index="1">
 											<h3 style="margin-right: 50px; margin-bottom: 10px;">Bias on HD residuals</h3>
 											<img  style="width: 600px; margin-right: 150px;" data-src="/assets/talks/HD_residuals.svg"></img>
@@ -877,7 +881,7 @@
 
 
 				<section>
-					<h2>Results: forecast for a ZTF 6-years complete sample</h2>
+					<h2>Analysis: results - forecast for a ZTF 6-years complete sample</h2>
 						<div class="container">
 							<div class="col" style="flex: 1.2"> 
 								<p align="left"> We can build a bias free sample by applying a redshift cut at \(z = 0.06\). 
@@ -953,7 +957,7 @@
 							<h3>Simulate a perfect correction of the bias:<br>
 							$v_{\mathrm{debias}, i} \sim \mathcal{N}(v_\mathrm{true}, \sigma_{\hat{v}, i})$
 							 </h3>
-							<div class="r-stack" style="margin-top: -10px;">
+							<div class="r-stack">
 								<img class="fragment fade-in-then-out" data-fragment-index="0" style="height: 400px" data-src="/assets/talks/fs8_6years_fakedebias.svg">
 								<img class="fragment fade-in-then-out" data-fragment-index="1" style="height: 400px" data-src="/assets/talks/efs8_6years_fakedebias.svg">
 								<img class="fragment" data-fragment-index="2" src="/assets/talks/zdist_axes2.svg" style="border: none; height: 400px">
