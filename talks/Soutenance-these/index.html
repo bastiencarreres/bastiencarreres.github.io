@@ -74,16 +74,21 @@
 									</div>
 								</div>
 							</span>
-							<span class="fragment fade-in" data-fragment-index="4">
-								<h3>The standard model is confirmed by most of the data !!!</h3>
-								<h3>But...</h3>
-								<h3>Some tensions exist: $H_0$, $S_8$ measurements between early and late universe</h3>
-								<h3>and</h3>
-								<h3>What is this "dark energy"? Are there alternatives to the $\Lambda$ constant?</h3>
-							</span>
+							<div>
+								<h3 class="fragment" data-fragment-index="4">The standard model is confirmed by most of the data !!!</h3>
+								<span class="fragment" data-fragment-index="5">
+									<h3>But...</h3>
+									<h3>Some tensions exist: $H_0$, $S_8$ measurements between early and late universe</h3>
+								</span>
+								<span class="fragment" data-fragment-index="6">
+									<h3>and</h3>
+									<h3>What is this "dark energy"? Are there alternatives to the $\Lambda$ constant?</h3>
+								</span>
+							</div>
 						</div>
 					</div>
 				</section>
+
 
 				<section>
 					<h2>Type Ia supernovae (SNe Ia): powerfull probes for cosmology</h2>
@@ -114,7 +119,6 @@
 										$m_B$: the peak magnitude in Bessel B band, $x_1$ the stretch of the SN and $c$ the color of the SN
 									</li>
 								</ul>
-
 							<br>
 							<br>
 							<span class="fragment" data-fragment-index="4">
@@ -167,9 +171,8 @@
 				</section>
 
 
-				<section data-transition="slide-in none-out">
+				<section>
 					<h2>SNe Ia and dark energy models</h2>
-
 					<div class="r-stack">
 						<div>
 							<div class="r-stack">
@@ -194,7 +197,7 @@
 				</section>
 
 
-				<section data-transition="none-in slide-out">
+				<section>
 					<h2>Modified gravity</h3>
 					<div class="r-stack">
 						<div class="fragment fade-out" data-fragment-index="0"> 
@@ -466,7 +469,8 @@
 					<div>
 						<span class="fragment appear-disappear"></span>
 						<span class="fragment appear-disappear"></span>
-						<div data-animate data-load="/assets/talks/pipeline_phd.svg",  style="position: relative; top: 0px;">
+						<span class="fragment appear-disappear"></span>
+						<div data-animate data-load="/assets/talks/pipeline_phd.svg", style="position: relative; top: 0px;">
 									<!--
 										{
 											"setup": [
@@ -474,13 +478,32 @@
 												"element": "#analysis",
 												"modifier": "opacity",
 												"parameters": [ 0 ]
+											},
+											{
+												"element": "#simulation",
+												"modifier": "opacity",
+												"parameters": [ 0 ]
 											}],
 											"animation": [ 
-											[{
+											[
+											{
+												"element": "#simulation",
+												"modifier": "opacity",
+												"parameters": [ 0 ]
+											},
+											{
 												"element": "#analysis",
 												"modifier": "opacity",
 												"parameters": [ 0 ]
-											}], 
+											}
+											],
+											[
+											{
+												"element": "#simulation",
+												"modifier": "opacity",
+												"parameters": [ 1 ]
+											}
+											], 
 											[
 											{
 												"element": "#analysis",
@@ -622,10 +645,16 @@
 						<br>
 						Use the SALT2 implementation of $\texttt{SNCosmo}$ to generate lightcurves
 						<br><br>
-						Simulated SNe Ia magnitudes are given by: $m_{B,i} = M_B - \alpha x_{1, i} + \beta c_i + \sigma_{\mathrm{int}, i} + \mu$
-						<br><br>
+						Simulated SNe Ia magnitudes are given by: 
+						$$m_{B,i} = M_B - \alpha x_{1, i} + \beta c_i + \sigma_{\mathrm{int}, i} + \mu(z_{\mathrm{cos},i}) + 10\log(1 + z_p)$$
+						<br>
 						Standardization parameters $M_B$, $\alpha$ and $\beta$ taken from <em>Betoule et al.</em> 2014<br><br>
-						Stretch $x_1$ distribution from <em>Nicolas et al.</em> 2021 and color $c$ distribution from <em>Scolnic & Kessler</em> 2016
+						Stretch $x_1$ distribution from <em>Nicolas et al.</em> 2021 and color $c$ distribution from <em>Scolnic & Kessler</em> 2016<br><br>
+						Intrinsic scattering $\sigma_\mathrm{int}$ drawn from Normal distribution $\mathcal{N}(0, \sigma_M)$ with $\sigma_M=0.12$<br><br>
+						Distance modulus $\mu$ computed with OuterRim cosmology<br><br>
+						$z_\mathrm{cos}$ and $z_p$ are cosmological and peculiar redshift of the SN Ia host
+
+
 					</div>
 				</section>
 
@@ -972,20 +1001,16 @@
 					<div style="text-align: left; padding-left: 100px; padding-top: 50px;">
 						<ul>
 							<li><h3>Bias correction of the velocity estimates ?</h3>
-								<h3 style="padding-left: 100px;">Does not improve the constraint on $f\sigma_8$</h3>
+								<h3 style="padding-left: 100px;">Does not improve strongly the constraint on $f\sigma_8$</h3>
 							</li>
 							<br>
 							<br>
 							<li class="fragment"><h3>Use photo-typing to increase the redshift limit</h3>
-								<h3  style="padding-left: 100px;"><a target="_blank" href="https://confluence.slac.stanford.edu/display/LSSTDESC/Forecast+for+Cosmological+Growth-Rate+Measurement+using+Peculiar+Velocities+From+SNe">
-									DESC project</a> led by Damiano Rosselli</h3>
 							</li>
 							<br>
 							<br>
 							<li class="fragment">
 								<h3>Combination with RSD measurements (e.g. ZTF + DESI)</h3>
-									<h3  style="padding-left: 100px;">Ongoing work on this at CPPM by <a href="https://julianbautista.github.io/index.html">Julian Bautista</a></h3>
-
 							</li>
 						</ul>
 					</div>
