@@ -521,21 +521,18 @@
 
 				<section>
 					<h2>Simulation: SN Ia model</h2>
-					<div style="text-align: left;">
-						SN Ia rate from <em>Perley et al.</em> 2020: $ r_v=(2.35 \pm 0.24) \times 10^{-5} \ \mathrm{SNe \ Ia}.\mathrm{Mpc}^{-3}.\mathrm{an}^{-1}$
+					<div>
+						<img src="/assets/talks/snmodel_par.svg" style="border: none; width: 600px;">
 						<br>
 						<br>
-						<br>
-						Use the SALT2 implementation of $\texttt{SNCosmo}$ to generate lightcurves
-						<br><br>
-						Simulated SNe Ia magnitudes are given by: 
-						$$m_{B,i} = M_B - \alpha x_{1, i} + \beta c_i + \sigma_{\mathrm{int}, i} + \mu(z_{\mathrm{cos},i}) + 10\log(1 + z_p)$$
-						<br>
-						Standardization parameters $M_B$, $\alpha$ and $\beta$ taken from <em>Betoule et al.</em> 2014<br><br>
-						Stretch $x_1$ distribution from <em>Nicolas et al.</em> 2021 and color $c$ distribution from <em>Scolnic & Kessler</em> 2016<br><br>
-						Intrinsic scattering $\sigma_\mathrm{int}$ drawn from Normal distribution $\mathcal{N}(0, \sigma_M)$ with $\sigma_M=0.12$<br><br>
-						Distance modulus $\mu$ computed with OuterRim cosmology<br><br>
-						$z_\mathrm{cos}$ and $z_p$ are cosmological and peculiar redshift of the SN Ia host
+						<p style="text-align: left; line-height:35px">
+							Simualted observed redshifts $1 + z_\mathrm{obs} = (1 + z_\mathrm{cos}) (1 + z_\mathrm{p})$
+							<br>
+							Simulated SNe Ia magnitudes: $m_{B,i} = M_B - \alpha x_{1, i} + \beta c_i + \sigma_{\mathrm{int}, i} + \mu(z_{\mathrm{cos},i}) + 10\log(1 + z_p)$
+							<br>
+							$z_\mathrm{cos}$ and $z_p$ given by the host from the N-body
+						</p>
+
 					</div>
 				</section>
 
@@ -551,7 +548,7 @@
 						Flux are computed with $\texttt{SNCosmo}$ for the given observations and randomly scatter with the corresponding noise
 						<br>
 						<br>
-						Noise is computed as $\sigma_F = \sqrt{\frac{F}{G} + \sigma_\mathrm{sky}^2 + \sigma_\mathrm{ZP}^2}$
+						Noise is computed as $\sigma_F = \sqrt{F + \sigma_\mathrm{sky}^2 + \sigma_\mathrm{ZP}^2}$
 						<br>
 						<br>
 						<br>
@@ -652,109 +649,114 @@
 
 				<section>
 					<h2>Analysis: the Maximum-Likelihood method (<em>Johnson et al.</em> 2014)</h2>
-					<div class="r-stack">
-						<span class="fragment fade-out" data-fragment-index="5">
-							<h3>
-								We can approximate the velocity field as a Gaussian random field
-							</h3>
-							<div class="r-stack" >
-								<span class="fragment fade-out" data-fragment-index="4"> 
-									<div class="container" style="margin-top: 50px;">
-										<span class="fragment fade-in" data-fragment-index="1">
-											<div class="col" style="width: 500px;">
-												<div data-animate data-load="/assets/talks/GRF.svg" style="scale: 1.3;">
-													<!--
-														{
-														"setup": [
+					<h3>We can approximate the velocity field as a Gaussian random field</h3>	
+					<div class="r-stack" >
+						<span class="fragment fade-out" data-fragment-index="4"> 
+							<div class="container" style="margin-top: 50px; width: 100%;">
+								<span class="fragment fade-in" data-fragment-index="0">
+									<div class="col" style="width: 650px;">
+										<div data-animate data-load="/assets/talks/rsd_norsd.svg" style="scale: 1.1;">
+											<!--
+												{
+													"setup": 
+													[
 														{
 															"element": "#density",
-															"modifier": "attr",
-															"parameters": [ {"class": "fragment fade-in-then-out", "data-fragment-index": "1"} ]
+															"modifier": "opacity",
+															"parameters": [ 0 ]
 														},
 														{
 															"element": "#coord",
 															"modifier": "attr",
-															"parameters": [ {"class": "fragment", "data-fragment-index": "1"} ]
+															"parameters": [ {"class": "fragment", "data-fragment-index": "0"} ]
 														},
 														{
-															"element": "#vel",
+															"element": "#velocity",
 															"modifier": "attr",
-															"parameters": [ {"class": "fragment", "data-fragment-index": "2"} ]
+															"parameters": [ {"class": "fragment fade-in-then-out", "data-fragment-index": "1"} ]
+														},
+														{
+															"element": "#norsd",
+															"modifier": "attr",
+															"parameters": [ {"class": "fragment fade-out", "data-fragment-index": "3"} ]
+														},								
+														{
+															"element": "#rsd",
+															"modifier": "attr",
+															"parameters": [ {"class": "fragment fade-in", "data-fragment-index": "3"} ]
 														}
-														]
-														}
-													-->
-												</div>
-											</div>
-										</span>
-										<div class="col">
-											<p class="fragment" data-fragment-index="1" style="font-size: 22px;">
-												The correlation function depends of the <b>Power Spectrum</b>:
-												<br><br>
-												For densities:<br>
-												$\langle\delta(\mathbf{x}_i)\delta(\mathbf{x}_i + \mathbf{r})\rangle \propto \int dk k^2 P(k) W^{(\delta)}(k;\mathbf{r}) \propto \sigma_8^2 \int dk k^2 \tilde{P}(k)W^{(\delta)}(k; \mathbf{r})$
-												<br<br>
-											</p>
-											<p class="fragment" data-fragment-index="2" style="font-size: 22px;">
-												For velocities:<br>
-												$\langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle \propto (f\sigma_8)^2 \int dk \tilde{P}(k) W^{(v)}(k; \mathbf{x}_i, \mathbf{x}_j)$
-												<br>
-												<br>
-											</p>
-											<p class="fragment" data-fragment-index="3" style="font-size: 22px;">
-												It gives us a $f\sigma_8$ dependant model for our covariance matrix! <br>
-												$C_{ij}^{vv}(f\sigma_8) = \langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle$ <br>
-											</p>
+													]
+												}
+											-->
 										</div>
+										<span class="fragment" data-fragment-index="3"></span>
 									</div>
 								</span>
-								<div class="fragment fade-in" data-fragment-index="4">
-									<div class="r-hstack">
-										<div>
-											Two non-linear model of power spectrum:<br><br>
-											<ul>
-												<li>
-													One based on N-body simulaton fit from <em>Bel et al.</em> 2019
-												</li>
-												<li>
-													One based on PT beyond order one from <em>Taruya et al.</em> 2012
-												</li>
-											</ul>
-											<br>
-											<br>
-											Add of a damping function from <em>Koda et al.</em> 2014 for RSD:<br>
-											$D_u(k) = \frac{\sin(k\sigma_u)}{k\sigma_u}$
-										</div>
-										<img src="/assets/talks/Power_spectrum.svg" style="width: 750px; margin-left: 20px;">
-									</div>
-								</div>
-							</div>	
-						</span>
-						<div class="fragment" data-fragment-index="5">
-							<h3 style="text-align: left;">Free parameters of the likelihood:</h3>
-							<div class="container" style="width: 1000px;">
 								<div class="col">
-								SNe Ia Hubble diagram parameters<br><br>
-								${\color{orange} \mathbf{p}_{HD} = \left\{\alpha, \beta, M_B, \sigma_M \right\}}$ 
-								</div>
-								<div class="col">
-									<br>
-									Growth-rate related parameters<br><br>
-									${\color{yellow} \mathbf{p} = \left\{f\sigma_8, \sigma_u, \sigma_v \right\}}$, $\sigma_u \equiv$ RSD, $\sigma_v\equiv$ non-linearities 
+									<p class="fragment" data-fragment-index="0" style="font-size: 22px;">
+										The correlation function depends of the <b>Power Spectrum</b>:
+										<br>
+										<br>
+									</p>
+									<p class="fragment" data-fragment-index="1" style="font-size: 22px;">
+										$\langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle \propto (f\sigma_8)^2 \int dk \tilde{P}(k) W^{(v)}(k; \mathbf{x}_i, \mathbf{x}_j)$
+										<br>
+										<br>
+									</p>
+									<p class="fragment" data-fragment-index="2" style="font-size: 22px;">
+										It gives us a $f\sigma_8$ dependant model for our covariance matrix! <br>
+										$C_{ij}^{vv}(f\sigma_8) = \langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle$
+										<br>
+										<br>
+									</p>
+									<p class="fragment" data-fragment-index="3" style="font-size: 22px;">
+										Redshift space distortion need to be take into account.<br>
+										Add of a damping function from <em>Koda et al.</em> 2014 for RSD:
+										$P^\mathrm{RSD}(k) = P(k) D_u^2(k\sigma_u)$
+									</p>
 								</div>
 							</div>
-							<br>
-							<span class="fragment" data-fragment-index="6">
-								<h3 style="text-align: left;">The likelihood:</h3> 
-								$\mathcal{L}({\color{yellow}\mathbf{p}}, {\color{orange}\mathbf{p}_{\rm HD}}) \propto |C({\color{yellow}\mathbf{p}}, {\color{orange}\mathbf{p}_{\rm HD}})|^{-\frac{1}{2}} \times\exp\left[-\frac{1}{2}\mathbf{v}^T({\color{orange}\mathbf{p}_{\rm HD}})C({\color{yellow}\mathbf{p}}, {\color{orange}\mathbf{p}_{\rm HD}})^{-1}\mathbf{v}({\color{orange}\mathbf{p}_{\rm HD}})\right]$
-								<br><br><br>
-							</span>
-							<span class="fragment" data-fragment-index="7">
-								<h3 style="text-align: left;">The covariance:</h3> 
-								$C_{ij}({\color{yellow}\mathbf{p}},{\color{orange}\mathbf{p}_{\rm HD}}) = C^{vv}_{ij}({\color{yellow}f\sigma_8}, {\color{yellow}\sigma_u}) + {\color{yellow}\sigma_v}^2 \delta^K_{ij} + \sigma_\hat{v}^2({\color{orange}\mathbf{p}_{\rm HD}}) \delta^K_{ij}$<br><br>
-								$C^{vv}_{ij}({\color{yellow}f\sigma_8}, {\color{yellow}\sigma_u}) = \langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle \propto ({\color{yellow}f\sigma_8})^2 \int dk P(k) W(k) D_u^2(k; {\color{yellow}\sigma_u}) $
-							</span>
+						</span>
+						<div class="fragment fade-in" data-fragment-index="4">
+							<div class="r-hstack">
+								<div>
+									Two non-linear model of power spectrum:<br><br>
+									<ul>
+										<li>
+											One based on N-body simulaton fit from <em>Bel et al.</em> 2019
+										</li>
+										<li>
+											One based on PT beyond order one from <em>Taruya et al.</em> 2012
+										</li>
+									</ul>
+								</div>
+								<img src="/assets/talks/Power_spectrum.svg" style="width: 750px; margin-left: 20px;">
+							</div>
 						</div>
+					</div>
+				</section>
+
+
+				<section>
+					<h2>Analysis: the Maximum-Likelihood method (<em>Johnson et al.</em> 2014)</h2>
+					<div style="margin-left: 100px;">
+						<h3 style="text-align: left;">Free parameters of the likelihood:</h3>
+						<div>
+							Growth-rate related parameters:
+							<br><br>
+							${\color{yellow} \mathbf{p} = \left\{f\sigma_8, \sigma_u, \sigma_v \right\}}$, $\sigma_u \equiv$ RSD, $\sigma_v\equiv$ non-linearities 
+						</div>
+						<br>
+						<span class="fragment">
+							<h3 style="text-align: left;">The likelihood:</h3> 
+							$\mathcal{L}({\color{yellow}\mathbf{p}}) \propto |C({\color{yellow}\mathbf{p}})|^{-\frac{1}{2}} \times\exp\left[-\frac{1}{2}\mathbf{v}^TC({\color{yellow}\mathbf{p}})^{-1}\mathbf{v}\right]$
+							<br><br><br>
+						</span>
+						<span class="fragment">
+							<h3 style="text-align: left;">The covariance:</h3> 
+							$C_{ij}({\color{yellow}\mathbf{p}}) = C^{vv}_{ij}({\color{yellow}f\sigma_8}, {\color{yellow}\sigma_u}) + {\color{yellow}\sigma_v}^2 \delta^K_{ij} + \sigma_\hat{v}^2 \delta^K_{ij}$<br><br>
+							$C^{vv}_{ij}({\color{yellow}f\sigma_8}, {\color{yellow}\sigma_u}) = \langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle \propto ({\color{yellow}f\sigma_8})^2 \int dk P(k) W(k) D_u^2(k; {\color{yellow}\sigma_u}) $
+						</span>
 					</div>
 				</section>
 
@@ -784,10 +786,10 @@
 									</div>
 									<br>
 									<div class="fragment" data-fragment-index="4">
-										<h3 >Only the estimated velocities are biased !!!</h3>
+										<h3>Only the estimated velocities are biased !!!</h3>
 									</div>
 								</span>
-								<span class="fragment fade-in" data-fragment-index="5">
+								<span class="fragment" data-fragment-index="5">
 									<h3>Bias on $f\sigma_8$</h3>
 									<img src="/assets/talks/fs8_6years_bias.svg" style="width: 600px; background-color: white;" />
 								</span>
@@ -809,11 +811,10 @@
 								<p align="left">Results for our 27 mocks :</p>
 								<br>
 								<ul>
-									<li class="fragment">Fit with $v_\mathrm{true}$: $\frac{\langle f\sigma_8 \rangle }{(f\sigma_8)_\mathrm{fid}} = 0.991 \pm 0.016 $, $\frac{\sqrt{\left<\sigma_{f \sigma_8}^2\right>}}{(f\sigma_8)_\mathrm{fid}} = 0.100$</li>
+									<li class="fragment">Fit with $v_\mathrm{true}$: No bias, 10% precision on $f\sigma_8$</li>
 									<br>
-									<li class="fragment">Fit fixing $\mathbf{p}_\mathrm{HD}$:  $\frac{\langle f\sigma_8 \rangle }{(f\sigma_8)_\mathrm{fid}} = 1.036 \pm 0.031$, $\frac{\sqrt{\left<\sigma_{f \sigma_8}^2\right>}}{(f\sigma_8)_\mathrm{fid}} = 0.185$</li>
+									<li class="fragment">Fit with SNe Ia HD parameters ($\alpha$, $\beta$, $M_0$) fixed: Small bias but negligible, 18.5% precision on $f\sigma_8$</li>
 									<br>
-									<li class="fragment">Fit with $\mathbf{p}$, $\mathbf{p}_\mathrm{HD}$ free:  $\frac{\langle f\sigma_8 \rangle }{(f\sigma_8)_\mathrm{fid}} = 0.998 \pm 0.037$, $\frac{\sqrt{\left<\sigma_{f \sigma_8}^2\right>}}{(f\sigma_8)_\mathrm{fid}} = 0.188$</li>
 								</ul>
 							</div>
 							<div class="col">
@@ -833,8 +834,75 @@
 										},
 										{
 											"element": "#ppHDfree",
+											"modifier": "opacity",
+											"parameters": [ 0 ]
+										}
+										]
+										}
+									-->
+								</div>		
+
+							</div>
+						</div>
+				</section>
+
+				<section>
+					<h2>Analysis: full likelihood fit</h2>
+					<div style="width: 100%; text-align: left;">
+						<h3>Free parameters:</h3>
+						Growth-rate related parameters:
+							${\color{yellow} \mathbf{p} = \left\{f\sigma_8, \sigma_u, \sigma_v \right\}}$
+						<br><br>
+						SNe Ia Hubble diagram parameters:
+						${\color{orange} \mathbf{p}_{HD} = \left\{\alpha, \beta, M_B, \sigma_M \right\}}$ 
+						<br>
+						<br>
+					</div>
+
+					<div style="width: 100%;text-align: left;">
+						<h3>Data vector</h3>
+						HD residuals: $\Delta \mu({\color{orange} \mathbf{p}_{HD}}) = m_B + {\color{orange} \alpha} x_1 - {\color{orange} \beta} c - {\color{orange} M_0} - \mu_\mathrm{model}(z)$
+						<br><br>
+						$\hat{v} \rightarrow \hat{v}({\color{orange} \mathbf{p}_{HD}})= -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu({\color{orange} \mathbf{p}_{HD}})$ 
+					</div>
+
+					<div style="width: 100%;text-align: left;">
+						<h3>Covariance</h3>
+						$\sigma_\hat{v} \rightarrow \sigma_\hat{v}({\color{orange} \mathbf{p}_{HD}})= \frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\sigma_\mu({\color{orange} \mathbf{p}_{HD}})$ 
+					</div>
+				</section>
+
+
+				<section>
+					<h2>Analysis: results - forecast for a ZTF 6-years complete sample</h2>
+						<div class="container">
+							<div class="col" style="flex: 1.2"> 
+								<p align="left"> We can build a bias free sample by applying a redshift cut at \(z = 0.06\). 
+									<br>
+									<br>
+									$\langle N_\mathrm{SN} \rangle \simeq 1620 \sim$ half of the sample</p>
+								<br>
+								<br>
+								<p align="left">Results for our 27 mocks :</p>
+								<br>
+								<ul>
+									<li>Fit with $v_\mathrm{true}$: No bias, 10% precision on $f\sigma_8$</li>
+									<br>
+									<li>Fit with SNe Ia HD parameters ($\alpha$, $\beta$, $M_0$) fixed: Small bias but negligible, 18.5% precision on $f\sigma_8$</li>
+									<br>
+									<li class="fragment">Full likelihood fit: No bias, 18.8% precision on $f\sigma_8$</li>
+
+								</ul>
+							</div>
+							<div class="col">
+								<div data-animate style="position: absolute; top: 100px; left: 630px; margin-top: 150px; margin-left: 200px; border: solid #5e5e5e; scale: 1.5; background-color: white" data-load="/assets/talks/results_z006.svg">
+									<!--
+										{
+										"setup": [
+										{
+											"element": "#ppHDfree",
 											"modifier": "attr",
-											"parameters": [ {"class": "fragment", "data-fragment-index": "2"} ]
+											"parameters": [ {"class": "fragment", "data-fragment-index": "0"} ]
 										}
 										]
 										}
@@ -928,7 +996,7 @@
 				<section>
 					<div class="container">
 						<div style="margin-left: auto;margin-right: auto; margin-top: 20%;">
-							<h1>Thanks for your attention !!!
+							<h1>Thanks !!!
 							</h1> 
 
 						</div>
