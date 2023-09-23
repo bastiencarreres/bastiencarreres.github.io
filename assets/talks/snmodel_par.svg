@@ -29,8 +29,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.97134925"
-     inkscape:cx="203.84017"
-     inkscape:cy="519.89539"
+     inkscape:cx="315.02572"
+     inkscape:cy="273.84589"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
@@ -83,7 +83,7 @@
            id="tspan665">model</tspan></text></g><g
        id="g1993"
        transform="translate(17.189371,54.410974)"><g
-         id="g1792-3"
+         id="sed"
          transform="matrix(0.99940499,0,0,1.0455171,-33.67336,-3.8856226)"><text
            xml:space="preserve"
            style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-dasharray:none"
@@ -117,7 +117,7 @@
            x="144.11797"
            y="94.713669"
            ry="0.3555733" /></g><g
-         id="g1785"
+         id="stdpar"
          transform="matrix(0.99995673,0,0,1.0032083,-31.592495,-0.30278667)"><rect
            style="fill:#000000;fill-opacity:0;stroke:#e88a0d;stroke-width:1.55582;stroke-linejoin:round;stroke-miterlimit:2.3;stroke-opacity:1;paint-order:stroke fill markers"
            id="rect5062-4"
@@ -191,7 +191,7 @@
        id="g3894"
        transform="translate(-1.958319,114.91385)"><g
          id="g4994"><g
-           id="path2019-0"><path
+           id="arrow2"><path
              style="color:#000000;fill:#e78a0d;fill-opacity:0.878431;stroke-width:2.165;-inkscape-stroke:none"
              d="M 154.60441,75.370461 139.5874,114.56873"
              id="path2647" /><path
@@ -206,7 +206,7 @@
                  style="color:#000000;fill:#e78a0d;fill-rule:evenodd;-inkscape-stroke:none"
                  d="m 134.73828,108.59961 2.09961,13.14844 0.96875,-0.78516 9.37695,-7.5957 z m 1.82031,2.24219 7.77149,2.97851 -6.46094,5.23242 z"
                  id="path2645" /></g></g></g><g
-           id="path2019-0-2"><path
+           id="arrow1"><path
              style="color:#000000;fill:#e78a0d;fill-opacity:0.878431;stroke-width:2.165;-inkscape-stroke:none"
              d="m 95.00173,74.251101 15.01701,39.198269"
              id="path2631" /><path
@@ -222,7 +222,7 @@
                  d="m 114.86719,107.48047 -12.44336,4.76758 10.3457,8.38086 0.19727,-1.23243 z m -1.82031,2.24219 -1.3086,8.21289 -6.46289,-5.23438 z"
                  id="path2629" /></g></g></g></g><g
          id="g5120"><g
-           id="path2019-0-6"><path
+           id="arrow3"><path
              style="color:#000000;fill:#e78a0d;fill-opacity:0.878431;stroke-width:2.165;-inkscape-stroke:none"
              d="m 201.905,126.08662 -29.57236,13.80763"
              id="path2615" /><path
@@ -237,7 +237,7 @@
                  style="color:#000000;fill:#e78a0d;fill-rule:evenodd;-inkscape-stroke:none"
                  d="m 172.99219,132.23242 -7.625,10.91406 1.24218,0.10938 12.02149,1.05078 z m -0.25,2.87695 3.52148,7.54102 -8.2832,-0.72266 z"
                  id="path2613" /></g></g></g><g
-           id="path2019-0-6-9"><path
+           id="arrow0"><path
              style="color:#000000;fill:#e78a0d;fill-opacity:0.878431;stroke-width:2.165;-inkscape-stroke:none"
              d="m 46.347943,126.48807 29.57236,13.80763"
              id="path2599" /><path
@@ -254,7 +254,7 @@
                  id="path2597" /></g></g></g></g></g><g
        id="g5177"
        transform="translate(-1.033657,54.410974)"><g
-         id="g1801"
+         id="rate"
          transform="translate(-5.9925236,60.502874)"><text
            xml:space="preserve"
            style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-dasharray:none"
@@ -290,7 +290,7 @@
            x="23.651796"
            y="78.559212"
            ry="0.35032061" /></g><g
-         id="g1792"
+         id="pdist"
          transform="matrix(0.99939155,0,0,1.0464728,28.19038,39.79597)"><text
            xml:space="preserve"
            style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-dasharray:none"
