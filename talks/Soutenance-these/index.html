@@ -85,6 +85,7 @@
 					</div>
 				</section>
 
+
 				<section>
 					<h2>Alternives to $\Lambda$</h2>
 					<div class="r-stack">
@@ -174,6 +175,7 @@
 					</div>
 				</section>
 	
+
 				<section data-background="/assets/talks/illustris.webp">
 					<h2>How to measure $f\sigma_8$ ?</h2>
 					<div class="container", style="height: 500px; column-gap: 20px; margin-top: 50px;">
@@ -383,6 +385,7 @@
 						</div>
 				</section>
 
+
 				<section>
 					<h2>SNe Ia: few words about standardization</h2>
 					<div class="r-stack">
@@ -464,6 +467,7 @@
 					</div>
 				</section>
 
+
 				<section data-background="/assets/talks/palomar.jpg">
 					<h2>The Zwicky Transient Facility survey</h2>
 
@@ -514,7 +518,7 @@
 						</div>
 						<br>
 						<div>
-							<h3>Use postions and velocities to create host catalog for SNe Ia</h3>
+							<h3>Use positions and velocities to create host catalog for SNe Ia</h3>
 						</div>
 				</section>
 
@@ -526,19 +530,18 @@
 						<br>
 						<br>
 						<p style="text-align: left; line-height:35px">
-							Simualted observed redshifts $1 + z_\mathrm{obs} = (1 + z_\mathrm{cos}) (1 + z_\mathrm{p})$
+							Simulated observed redshifts $1 + z_\mathrm{obs} = (1 + z_\mathrm{cos}) (1 + z_\mathrm{p})$
 							<br>
 							Simulated SNe Ia magnitudes: $m_{B,i} = M_B - \alpha x_{1, i} + \beta c_i + \sigma_{\mathrm{int}, i} + \mu(z_{\mathrm{cos},i}) + 10\log(1 + z_p)$
 							<br>
 							$z_\mathrm{cos}$ and $z_p$ given by the host from the N-body
 						</p>
-
 					</div>
 				</section>
 
 
 				<section>
-					<h2>Simulation: SNSIM and lightcurves</h2>
+					<h2>Simulation: \texttt{SNSim} and lightcurves</h2>
 					<div>
 						<h3>
 							Using previous inputs and the $\texttt{SNSim}$ python package that I have developed we obtain realistic ZTF SNe Ia lightcurves
@@ -552,7 +555,7 @@
 						<br>
 						<br>
 						<br>
-						<img src="/assets/talks/sim_lcs.svg" style="scale: 1.3; border: none;"> 
+						<img src="/assets/talks/sim_lcs.svg" style="scale: 1.1; border: none;"> 
 					</div>
 				</section>
 
@@ -991,7 +994,7 @@
 
 
 				<section>
-					<h2>Conclusion</h2>
+					<h2>Conclusion - ZTF $f\sigma_8$ forecast</h2>
 					<div class="container" style="display: block; padding-inline: 100px; padding-top: 50px; text-align: left;">
 						<h3 class="fragment">We developed and ran a full detailed simulation and analysis pipeline to measure the growth rate of structure using ZTF SNe Ia</h3>
 						<br>
@@ -999,7 +1002,29 @@
 						<br>
 						<h3 class="fragment">We forecast that a 6-year ZTF SNe Ia spectro-identified sample cut at $z=0.06$ will produce a $f\sigma_8$ measurement with a precision of $\sim 19\%$ </h3>
 						<br>
-						<h3 class="fragment">Significant improvements are expected from future work on photometric typing analysis and combination with RSD</h3>
+						<h3 class="fragment">Improvements are expected from future work on photometric typing analysis and combination with RSD</h3>
+					</div>
+				</section>
+
+				<section>
+					<h2>Conclusion - ongoing work: velocities as systematic in ZTF DR2 sample</h2>
+
+					<h3>We use our 27 mocks from $\texttt{SNSim}$ to evaluate velocities effect in Hubble diagram fit</h3>
+
+				</section>
+
+				<section>
+					<h2>Conclusion - Future works</h2>
+					<div class="container" style="display: block; padding-inline: 100px; padding-top: 50px; text-align: left;">
+						<h3 class="fragment" data-fragment-index="0">Improve the simulation:</h3>
+							<h3 class="fragment" data-fragment-index="0" style="text-indent: 50px;">Include more realistic noise, correlation with host properties, color-dependant scattering</h3>
+						<br>
+						<h3 class="fragment" data-fragment-index="1">Evaluate the photometric sample:</h3>
+						<h3 class="fragment" data-fragment-index="1" style="text-indent: 50px;">Work started with D. Rosselli in a Vera Rubin/DESC project</h3>
+						<br>
+						<h3 class="fragment" data-fragment-index="2">Improvements of covariance models computation:</h3>
+						<h3 class="fragment" data-fragment-index="2" style="text-indent: 50px;">Work started with C. Ravoux: development of the $\texttt{flip}$ public package</h3>
+
 					</div>
 				</section>
 
