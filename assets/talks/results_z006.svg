@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    width="277.32812pt"
-   height="202.19139pt"
-   viewBox="0 0 277.32811 202.19139"
+   height="202.19141pt"
+   viewBox="0 0 277.32811 202.19141"
    version="1.1"
    id="svg404"
    sodipodi:docname="results_z006.svg"
@@ -780,7 +780,8 @@
       <g
          aria-label="HD Fixed "
          id="text11638"
-         style="font-size:11px;font-family:'Uber Move';-inkscape-font-specification:'Uber Move';stroke-width:0.75">
+         style="font-size:11px;font-family:'Uber Move';-inkscape-font-specification:'Uber Move';stroke-width:0.75"
+         inkscape:label="text11638">
         <path
            d="m 142.01918,189.11713 h -1.661 v -3.388 h -3.113 v 3.388 h -1.661 v -7.854 h 1.661 v 3.08 h 3.113 v -3.08 h 1.661 z"
            style="-inkscape-font-specification:'sans-serif Bold'"
@@ -813,39 +814,6 @@
     </g>
     <g
        id="ppHDfree">
-      <g
-         aria-label="Join fit"
-         id="text11638-1"
-         style="font-size:11px;font-family:'Uber Move';-inkscape-font-specification:'Uber Move';stroke-width:0.75">
-        <path
-           d="m 214.77402,190.35463 q -0.319,0 -0.561,-0.033 -0.242,-0.033 -0.418,-0.088 v -1.386 q 0.176,0.044 0.374,0.077 0.187,0.033 0.407,0.033 0.286,0 0.517,-0.11 0.242,-0.11 0.374,-0.418 0.132,-0.297 0.132,-0.88 v -7.359 h 1.661 v 7.348 q 0,1.012 -0.319,1.628 -0.308,0.627 -0.869,0.902 -0.561,0.286 -1.298,0.286 z"
-           style="-inkscape-font-specification:'sans-serif Bold'"
-           id="path11748" />
-        <path
-           d="m 224.56402,185.03063 q 0,1.496 -0.792,2.31 -0.781,0.814 -2.134,0.814 -0.836,0 -1.496,-0.363 -0.649,-0.363 -1.023,-1.056 -0.374,-0.704 -0.374,-1.705 0,-1.496 0.781,-2.299 0.781,-0.803 2.145,-0.803 0.847,0 1.496,0.363 0.649,0.363 1.023,1.056 0.374,0.693 0.374,1.683 z m -4.147,0 q 0,0.891 0.286,1.353 0.297,0.451 0.957,0.451 0.649,0 0.935,-0.451 0.297,-0.462 0.297,-1.353 0,-0.891 -0.297,-1.331 -0.286,-0.451 -0.946,-0.451 -0.649,0 -0.946,0.451 -0.286,0.44 -0.286,1.331 z"
-           style="-inkscape-font-specification:'sans-serif Bold'"
-           id="path11750" />
-        <path
-           d="m 226.74201,179.68463 q 0.363,0 0.627,0.176 0.264,0.165 0.264,0.627 0,0.451 -0.264,0.627 -0.264,0.176 -0.627,0.176 -0.374,0 -0.638,-0.176 -0.253,-0.176 -0.253,-0.627 0,-0.462 0.253,-0.627 0.264,-0.176 0.638,-0.176 z m 0.814,2.354 v 6.006 h -1.639 v -6.006 z"
-           style="-inkscape-font-specification:'sans-serif Bold'"
-           id="path11752" />
-        <path
-           d="m 232.68201,181.92863 q 0.968,0 1.551,0.528 0.583,0.517 0.583,1.672 v 3.916 h -1.639 v -3.509 q 0,-0.649 -0.231,-0.968 -0.231,-0.33 -0.737,-0.33 -0.748,0 -1.023,0.517 -0.275,0.506 -0.275,1.463 v 2.827 h -1.639 v -6.006 h 1.254 l 0.22,0.77 h 0.088 q 0.286,-0.462 0.781,-0.671 0.506,-0.209 1.067,-0.209 z"
-           style="-inkscape-font-specification:'sans-serif Bold'"
-           id="path11754" />
-        <path
-           d="m 242.68101,183.27063 h -1.419 v 4.774 h -1.639 v -4.774 h -0.902 v -0.792 l 0.902,-0.44 v -0.44 q 0,-0.77 0.253,-1.188 0.264,-0.429 0.737,-0.605 0.484,-0.176 1.133,-0.176 0.473,0 0.869,0.077 0.396,0.077 0.638,0.176 l -0.418,1.199 q -0.187,-0.055 -0.418,-0.099 -0.22,-0.055 -0.495,-0.055 -0.341,0 -0.506,0.209 -0.154,0.209 -0.154,0.528 v 0.374 h 1.419 z"
-           style="-inkscape-font-specification:'sans-serif Bold'"
-           id="path11756" />
-        <path
-           d="m 244.441,179.68463 q 0.363,0 0.627,0.176 0.264,0.165 0.264,0.627 0,0.451 -0.264,0.627 -0.264,0.176 -0.627,0.176 -0.374,0 -0.638,-0.176 -0.253,-0.176 -0.253,-0.627 0,-0.462 0.253,-0.627 0.264,-0.176 0.638,-0.176 z m 0.814,2.354 v 6.006 h -1.639 v -6.006 z"
-           style="-inkscape-font-specification:'sans-serif Bold'"
-           id="path11758" />
-        <path
-           d="m 249.50101,186.84563 q 0.275,0 0.528,-0.044 0.253,-0.055 0.506,-0.143 v 1.221 q -0.264,0.121 -0.66,0.198 -0.385,0.077 -0.847,0.077 -0.539,0 -0.968,-0.176 -0.418,-0.176 -0.671,-0.605 -0.242,-0.429 -0.242,-1.21 v -2.893 h -0.781 v -0.693 l 0.902,-0.55 0.473,-1.265 h 1.045 v 1.276 h 1.683 v 1.232 h -1.683 v 2.893 q 0,0.341 0.198,0.517 0.198,0.165 0.517,0.165 z"
-           style="-inkscape-font-specification:'sans-serif Bold'"
-           id="path11760" />
-      </g>
       <path
          style="fill:#c24c51;fill-opacity:0.3;fill-rule:nonzero;stroke:#c24c51;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:0.3"
          d="M 218.04687,174.56902 V 36.229175 h 29.76172 V 174.56902 Z m 0,0"
@@ -861,6 +829,18 @@
          d="m 232.92969,102.40105 c 0.79297,0 1.55859,0.3125 2.12109,0.875 0.5625,0.5625 0.87891,1.32812 0.87891,2.125 0,0.79297 -0.31641,1.55859 -0.87891,2.12109 -0.5625,0.5625 -1.32812,0.87891 -2.12109,0.87891 -0.79688,0 -1.5586,-0.31641 -2.1211,-0.87891 -0.5625,-0.5625 -0.8789,-1.32812 -0.8789,-2.12109 0,-0.79688 0.3164,-1.5625 0.8789,-2.125 0.5625,-0.5625 1.32422,-0.875 2.1211,-0.875 z m 0,0"
          transform="matrix(1,0,0,-1,0,202.19011)"
          id="path401" />
+      <text
+         xml:space="preserve"
+         style="font-size:11px;line-height:1.25;font-family:'Uber Move';-inkscape-font-specification:'Uber Move';stroke-width:0.75"
+         x="212.133"
+         y="189.01971"
+         id="text36704"
+         inkscape:label="text36704"><tspan
+           sodipodi:role="line"
+           id="tspan36702"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.75"
+           x="212.133"
+           y="189.01971">Joint fit</tspan></text>
     </g>
   </g>
 </svg>
