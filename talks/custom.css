@@ -238,3 +238,6 @@ background: transparent; }
 
 .reveal small * {
   vertical-align: top; }
+
+.reveal .slide-number {
+  font-size: 20pt; }
