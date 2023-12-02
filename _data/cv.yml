@@ -1,0 +1,30 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Bastien Carreres
+    - name: Date of Birth
+      value: 3 August 1997
+    - name: Languages
+      value: French, English
+
+- title: Education
+  type: time_table
+  contents:
+    - title: PhD - Astrophysics and Cosmology
+      institution: Centre de Physique des Particules de Marseille, Aix-Marseille University
+      year: 2023
+      description: 
+    - title: Master 2 - Subatomic Physics and Cosmology
+      institution: Grenoble-Alpes University
+      year: 2020
+    - title: Master 1 - Fundamental Research 
+      institution: Grenoble-Alpes University  
+      year: 2019
+    
+- title: Experience
+  type: time_table
+  contents:
+    - title: Post-Doc
+      institution: Duke University
+      year: 2023 - 
