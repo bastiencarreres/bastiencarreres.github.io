@@ -40,7 +40,7 @@ jobs:
         npm install -g purgecss
         git clone https://github.com/hakimel/reveal.js.git
         export JEKYLL_ENV=production
-        bundle exec jekyll build --lsi
+        bundle exec jekyll build --lsi --trace
         purgecss -c purgecss.config.js
     - name: Deploy 🚀
       if: github.event_name != 'pull_request'
