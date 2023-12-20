@@ -36,7 +36,7 @@ jobs:
     - name: Install and Build 🔧
       run: |
         pip3 install --upgrade jupyter
-        git submodule add https://github.com/hakimel/reveal.js.git /assets/
+        git submodule add https://github.com/hakimel/reveal.js.git assets/
         npm install -g mermaid.cli
         npm install -g purgecss
         export JEKYLL_ENV=production
