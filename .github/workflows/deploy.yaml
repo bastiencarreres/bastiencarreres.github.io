@@ -41,6 +41,7 @@ jobs:
         export JEKYLL_ENV=production
         bundle exec jekyll build --lsi --trace
         purgecss -c purgecss.config.js
+        git submodule update --init --recursive
     - name: Deploy 🚀
       if: github.event_name != 'pull_request'
       uses: JamesIves/github-pages-deploy-action@v4
