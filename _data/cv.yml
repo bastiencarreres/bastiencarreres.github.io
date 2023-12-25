@@ -8,23 +8,42 @@
     - name: Languages
       value: French, English
 
-- title: Education
-  type: time_table
-  contents:
-    - title: PhD - Astrophysics and Cosmology
-      institution: Centre de Physique des Particules de Marseille, Aix-Marseille University
-      year: 2023
-      description: 
-    - title: Master 2 - Subatomic Physics and Cosmology
-      institution: Grenoble-Alpes University
-      year: 2020
-    - title: Master 1 - Fundamental Research 
-      institution: Grenoble-Alpes University  
-      year: 2019
-    
 - title: Experience
   type: time_table
   contents:
     - title: Post-Doc
       institution: Duke University
-      year: 2023 - 
+      year: 2023 - Now
+
+- title: Education
+  type: time_table
+  contents:
+    - title: PhD - Astrophysics and Cosmology
+      institution: Aix-Marseille Université
+      year: 2023
+      description:
+        - <text>Thesis project:</text> <i>Measurement of the growth rate of structures with the type Ia Supernovae from the ZTF photometric survey
+        - <text>Supervisors:</text> Drs. D. Fouchez, B. Racine & J. E. Bautista
+    - title: Master & Magister degree - Subatomic Physics and Cosmology</i>
+      institution: Université Grenoble-Alpes
+      description:
+        - Graduated with honors
+      year: 2020
+    - title: Bachelor degree - Fundamental Physics
+      institution : Université de Montpellier
+      description:
+        - Graduated with high honors
+      year: 2018
+
+- title: Grants
+  type: time_table
+  contents: 
+    - title: LSSTC Enabling Science Program Award 
+      year: 2021
+      description: 
+        - 5000$ award
+    - title: National PhD Grant
+      year: 2020
+      description:
+        - Aix-Marseille Université, ED 352, 3 years contract
+
