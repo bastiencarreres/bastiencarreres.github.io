@@ -47,7 +47,7 @@ jobs:
       with:
         folder: _site 
     - name: Setup reveals.js
-        uses: planetoftheweb/copy-to-branches@v1
-        env:
-          key: main
-          files: .gitmodules
+      uses: planetoftheweb/copy-to-branches@v1
+      env:
+        key: main
+        files: .gitmodules
