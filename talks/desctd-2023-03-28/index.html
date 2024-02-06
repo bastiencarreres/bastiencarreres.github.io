@@ -1,15 +1,16 @@
+<!-- these.html -->
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Growth rate with type Ia supernovae</title>
+		<title>Ph.D defense</title>
 
 		<link rel="stylesheet" href="/reveal.js/dist/reset.css">
 		<link rel="stylesheet" href="/reveal.js/dist/reveal.css">
-		<link rel="stylesheet" href="/reveal.js/dist/theme/night.css">
-		<link rel="stylesheet" href="/custom_css/custom.css">
+		<link rel="stylesheet" href="/reveal.js/dist/theme/league.css">
+		<link rel="stylesheet" href="/assets/custom_css/custom.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="/reveal.js/plugin/highlight/monokai.css">
@@ -637,21 +638,17 @@
 					<div class="r-vstack">
 						<img src="/assets/img/talks_img/fs8_prior_meanp.svg" style="width: 480px; margin-bottom: 10px;">
 						<img src="/assets/img/talks_img/fs8_prior_scalep.svg" style="width: 480px; margin-top: 0px;">
-
 					</div>
-
 				</section>
 
 			</div>
 		</div>
+		<script src="/reveal.js/dist/reveal.js"></script>
+		<script src="/reveal.js/plugin/notes/notes.js"></script>
+		<script src="/reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="/reveal.js/plugin/highlight/highlight.js"></script>
+		<script src="/reveal.js/plugin/math/math.js"></script>
 
-
-		<script src="/assets/reveal.js/dist/reveal.js"></script>
-		<script src="/assets/reveal.js/plugin/notes/notes.js"></script>
-		<script src="/assets/reveal.js/plugin/markdown/markdown.js"></script>
-		<script src="/assets/reveal.js/plugin/highlight/highlight.js"></script>
-		<script src="/assets/reveal.js/plugin/math/math.js"></script>
-		
 		<!-- Load content plugin -->
 		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/loadcontent/plugin.js"></script>
 
@@ -714,12 +711,25 @@
 				skipHtmlTags: [ 'script', 'noscript', 'style', 'textarea', 'pre' ]
 				},
 			},
+			chart: {
+				defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" } , // color of grid lines
+					},
+				},
+				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(136,126,131,.3)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+			},
 			animate: {
 					autoplay: true
 			},
 			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3, RevealAnimate ],
-
+			plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3,  RevealLoadContent, RevealAnimate, RevealChart ],
+	
 			dependencies: [
 				{
 					src: '/reveal.js/plugin/markdown/markdown.js'

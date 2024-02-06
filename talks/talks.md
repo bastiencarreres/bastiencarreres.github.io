@@ -6,12 +6,12 @@ description: My previous talks
 nav: true
 nav_order: 1
 ---
-<!-- _talks/talks.md -->
+<!-- talks/talks.md -->
 
 * [Desc-TD](desctd-2023-03-28/index.html)
 
- * [Duke seminar](duke-2023-04-20/index.html) 
+* [Duke seminar](duke-2023-04-20/index.html) 
 
- * [Thesis defense](PhD/index.html)
+* [Thesis defense](PhD/index.html)
 
 
