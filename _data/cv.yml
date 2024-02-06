@@ -8,13 +8,15 @@
     - name: Languages
       value: French, English
 
-- title: Experience
+- title: Experiences
   type: time_table
   contents:
     - title: Post-Doc
       institution: Duke University
       year: 2023 - Now
-
+    - title: PhD student
+      institution: CPPM
+      year: 2020 - 2023
 - title: Education
   type: time_table
   contents:
