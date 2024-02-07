@@ -13,5 +13,3 @@ jobs:
         env:
           key: main
           files: .gitmodules
-      - name: Checkout submodules
-        run: git submodule update
