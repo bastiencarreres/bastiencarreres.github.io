@@ -1,4 +1,4 @@
-name: Copy To Branches
+name: add .gitmodules
 on:
   workflow_dispatch:
 jobs:
