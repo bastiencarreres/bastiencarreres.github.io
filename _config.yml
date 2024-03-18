@@ -223,6 +223,7 @@ exclude:
 keep_files:
   - CNAME
   - .nojekyll
+  - .gitmodules
 
 # Plug-ins
 plugins:
