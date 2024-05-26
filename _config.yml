@@ -202,7 +202,7 @@ kramdown:
       start_line: 1
 
 # Includes & excludes
-include: ["_pages", "_talks", "reveals.js"]
+include: ["_pages", "_talks", ".gitmodules"]
 exclude:
   - bin
   - CONTRIBUTING.md
@@ -222,7 +222,6 @@ exclude:
 keep_files:
   - CNAME
   - .nojekyll
-  - .gitmodules
 
 # Plug-ins
 plugins:
