@@ -10,6 +10,4 @@ nav_order: 1
 <div class="publications">
 <h2>First author</h2>
 {% bibliography -f {{ site.scholar.bibliography }} %}
-%<h2>Collaboration papers</h2>
-%{% bibliography -f others %}
 </div>
