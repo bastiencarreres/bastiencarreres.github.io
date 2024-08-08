@@ -1,0 +1,152 @@
+{
+  "basics": {
+    "Full Name": "Bastien Carreres",
+    "Date of Birth": "August, 3rd 1997",
+    "image": "",
+    "email": "bastien.carreres@duke.edu",
+    "phone": "",
+    "url": "",
+    "summary": "",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "",
+      "countryCode": "",
+      "region": ""
+    },
+  "profiles": [
+    ]
+  },
+  "work": [
+    {
+      "institution": "Duke University",
+      "position": "Post Doctorate Associate",
+      "url": "",
+      "startDate": "2023-11-01",
+      "endDate": "",
+      "summary": "",
+      "location": "Durham, NC, USA",
+      "highlights": []
+    },
+    {
+      "institution": "Centre de Physique des Particules de Marseille",
+      "position": "PhD student",
+      "url": "https://www.cppm.in2p3.fr/web/fr/index.html",
+      "startDate": "2020-10-01",
+      "endDate": "2023-09-31",
+      "summary": "",
+      "location": "Marseille, France",
+      "highlights": []
+    }
+  ],
+  "volunteer": [
+  ],
+  "education": [
+    {
+      "institution": "Université de Montpellier",
+      "location": "Montpellier, France",
+      "url": "",
+      "area": "",
+      "studyType": "Bachelor degree - Fundamental Physics",
+      "date": "2018",
+      "endDate": "",
+      "score": "Admitted with high honours",
+      "courses": []
+    },
+    {
+      "institution": "Université Grenoble-Alpes",
+      "location": "Grenoble, France",
+      "url": "",
+      "area": "",
+      "studyType": "Master & Magister degree - Subatomic Physics and Cosmology",
+      "date": "2020",
+      "endDate": "",
+      "score": "Admitted with honours",
+      "courses": []
+    },
+    {
+      "institution": "Aix-Marseille Université",
+      "location": "Marseille, France",
+      "url": "",
+      "area": "",
+      "studyType": "PhD - Astrophysics and Cosmology",
+      "date": "2023",
+      "endDate": "",
+      "score": "",
+      "courses": ["<text>Thesis project :</text> <i>Measurement of the growth rate of structures with the type Ia Supernovae from the ZTF photometric survey",
+      "<text>Supervisors :</text> Drs. D. Fouchez, B. Racine & J. E. Bautista"]
+    }
+  ],
+  "grants": [
+    {
+      "title": "LSSTC Enabling Science Program Award",
+      "date": "2021",
+      "awarder": "",
+      "url": "",
+      "summary": "$5000 awards"
+    },
+    {
+      "title": "National PhD Grant",
+      "date": "2020",
+      "awarder": "Aix-Marseille Université, ED 352",
+      "url": "",
+      "summary": "3 years contract"
+    }
+  ],
+  "certificates": [
+  ],
+  "publications": [
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "level": "",
+      "icon": "fa-solid fa-code",
+      "keywords": [
+        "Python : <i>Advanced</i>",
+        "C/C++ : <i>Basics</i>",
+        "HTML/CSS : <i>Beginner</i> "
+      ]
+    },
+    {
+      "name": "Cosmology software and library",
+      "level": "",
+      "icon": "fa-regular fa-star",
+      "keywords": [
+        "SNANA",
+        "SNCosmo",
+        "CAMB",
+        "Class"
+      ]
+    },
+    {
+      "name": "Python library",
+      "level": "",
+      "icon": "fa-brands fa-python",
+      "keywords": [
+        "numpy",
+        "numba",
+        "dask",
+        "jax"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "French",
+      "fluency": "Native speaker",
+      "icon": ""
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent",
+      "icon": ""
+    }
+  ],
+  "interests": [
+  ],
+  "references": [
+  ],
+  "projects": [
+  ]
+}
