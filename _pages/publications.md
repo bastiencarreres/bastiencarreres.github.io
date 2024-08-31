@@ -15,4 +15,22 @@ nav_order: 1
 <div class="publications">
 <h2>First author</h2>
 {% bibliography -f {{ site.scholar.bibliography }} %}
+
+<br>
+<hr style="height:2px;border-width:0;color:black;background-color:gray">
+<br>
+
+<h2>Significative contribution</h2>
+{% bibliography -f {{ site.scholar.coauth_papers }} %}
+
+<br>
+<hr style="height:2px;border-width:0;color:black;background-color:gray">
+<br>
+
+<h2>Collaboration papers</h2>
+{% bibliography -f {{ site.scholar.other_papers }} %}
+
+
 </div>
+
+
