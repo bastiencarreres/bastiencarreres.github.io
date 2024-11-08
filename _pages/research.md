@@ -6,7 +6,8 @@ nav: False
 nav_order: 4
 ---
 
-My researches focus 
+My researches focus
 
 # SN Ia Peculiar velocities
-Peculiar velocities could be determined from the combinaison of 
+
+Peculiar velocities could be determined from the combinaison of

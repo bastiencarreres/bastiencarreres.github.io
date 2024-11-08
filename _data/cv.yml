@@ -36,7 +36,7 @@
         - Graduated with honors
       year: 2020
     - title: Bachelor degree - Fundamental Physics
-      institution : Université de Montpellier
+      institution: Université de Montpellier
       location: Montpellier, France
       description:
         - Graduated with high honors
@@ -44,10 +44,10 @@
 
 - title: Grants
   type: time_table
-  contents: 
-    - title: LSSTC Enabling Science Program Award 
+  contents:
+    - title: LSSTC Enabling Science Program Award
       year: 2021
-      description: 
+      description:
         - 5000$ award
     - title: National PhD Grant
       year: 2020
@@ -56,15 +56,12 @@
 
 - title: Skills
   type: skills
-  contents: 
-    - title: LSSTC Enabling Science Program Award 
+  contents:
+    - title: LSSTC Enabling Science Program Award
       year: 2021
-      description: 
+      description:
         - 5000$ award
     - title: National PhD Grant
       year: 2020
       description:
         - Aix-Marseille Université, ED 352, 3 years contract
-
-
-

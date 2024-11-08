@@ -14,8 +14,7 @@
       "countryCode": "",
       "region": ""
     },
-  "profiles": [
-    ]
+    "profiles": []
   },
   "work": [
     {
@@ -39,8 +38,7 @@
       "highlights": []
     }
   ],
-  "volunteer": [
-  ],
+  "volunteer": [],
   "education": [
     {
       "institution": "Université de Montpellier",
@@ -73,8 +71,10 @@
       "date": "2023",
       "endDate": "",
       "score": "",
-      "courses": ["<text>Thesis project :</text> <i>Measurement of the growth rate of structures with the type Ia Supernovae from the ZTF photometric survey",
-      "<text>Supervisors :</text> Drs. D. Fouchez, B. Racine & J. E. Bautista"]
+      "courses": [
+        "<text>Thesis project :</text> <i>Measurement of the growth rate of structures with the type Ia Supernovae from the ZTF photometric survey",
+        "<text>Supervisors :</text> Drs. D. Fouchez, B. Racine & J. E. Bautista"
+      ]
     }
   ],
   "grants": [
@@ -93,42 +93,26 @@
       "summary": "3 years contract"
     }
   ],
-  "certificates": [
-  ],
-  "publications": [
-  ],
+  "certificates": [],
+  "publications": [],
   "skills": [
     {
       "name": "Programming Languages",
       "level": "",
       "icon": "fa-solid fa-code",
-      "keywords": [
-        "Python : <i>Advanced</i>",
-        "C/C++ : <i>Basics</i>",
-        "HTML/CSS : <i>Beginner</i> "
-      ]
+      "keywords": ["Python : <i>Advanced</i>", "C/C++ : <i>Basics</i>", "HTML/CSS : <i>Beginner</i> "]
     },
     {
       "name": "Cosmology software and library",
       "level": "",
       "icon": "fa-regular fa-star",
-      "keywords": [
-        "SNANA",
-        "SNCosmo",
-        "CAMB",
-        "Class"
-      ]
+      "keywords": ["SNANA", "SNCosmo", "CAMB", "Class"]
     },
     {
       "name": "Python library",
       "level": "",
       "icon": "fa-brands fa-python",
-      "keywords": [
-        "numpy",
-        "numba",
-        "dask",
-        "jax"
-      ]
+      "keywords": ["numpy", "numba", "dask", "jax"]
     }
   ],
   "languages": [
@@ -143,10 +127,7 @@
       "icon": ""
     }
   ],
-  "interests": [
-  ],
-  "references": [
-  ],
-  "projects": [
-  ]
+  "interests": [],
+  "references": [],
+  "projects": []
 }

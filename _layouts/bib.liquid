@@ -48,18 +48,18 @@
   <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
     <!-- Title -->
     <div class="title">
-    {{ entry.title }}
+      {{ entry.title }}
 
-    {% if entry.annotation %}
-      <i
-        class="fa-solid fa-circle-info ml-1"
-        data-toggle="popover"
-        data-placement="top"
-        data-html="true"
-        data-content="{{ entry.annotation | escape }}"
-      >
+      {% if entry.annotation %}
+        <i
+          class="fa-solid fa-circle-info ml-1"
+          data-toggle="popover"
+          data-placement="top"
+          data-html="true"
+          data-content="{{ entry.annotation | escape }}"
+        >
         </i>
-    {% endif %}
+      {% endif %}
     </div>
     <!-- Author -->
     <div class="author">
@@ -187,16 +187,15 @@
 
     <!-- Links/Buttons -->
     <div class="links">
-
       {% assign entry_is_published = true %}
-      {% if entry.doi and entry.doi contains 'arXiv'%}
+      {% if entry.doi and entry.doi contains 'arXiv' %}
         {% assign entry_is_published = false %}
       {% endif %}
       {% if entry_is_published %}
-        <a href="https://doi.org/{{ entry.doi }}"  class="btn btn-sm z-depth-0" role="button">
+        <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button">
           {%- if entry.award_name %}{{ entry.award_name }}{% else %}Publisher{% endif -%}
         </a>
-      {% endif %}  
+      {% endif %}
       {% if entry.award %}
         <a class="award btn btn-sm z-depth-0" role="button">
           {%- if entry.award_name %}{{ entry.award_name }}{% else %}Awarded{% endif -%}

@@ -91,7 +91,7 @@ layout: default
                   {% include resume/volunteer.liquid %}
                 {% when 'projects' %}
                   {% include resume/projects.liquid %}
-                {% when 'awards' or 'grants' %}
+                {% when 'awards', 'grants' %}
                   {% include resume/awards.liquid %}
                 {% when 'skills' %}
                   {% include resume/skills.liquid %}

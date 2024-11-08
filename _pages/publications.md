@@ -7,6 +7,7 @@ description:
 nav: true
 nav_order: 1
 ---
+
 <!-- _pages/publications.md -->
 
 <!-- Bibsearch Feature -->
@@ -31,5 +32,3 @@ nav_order: 1
 <h2>Co-author</h2>
 {% bibliography -f {{ site.scholar.bibliography }} -q @*[keywords=Other] %}
 </div>
-
-

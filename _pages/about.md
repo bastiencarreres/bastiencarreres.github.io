@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle:  Post Doctorate Associate at Duke University
+subtitle: Post Doctorate Associate at Duke University
 
 profile:
   align: left
@@ -15,13 +15,13 @@ profile:
     <br>
     <p>Durham, NC, USA</p>
 
-news: false  # includes a list of news items
-latest_posts: false  # includes a list of the newest posts
+news: false # includes a list of news items
+latest_posts: false # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: false  # includes social icons at the bottom of the page
+social: false # includes social icons at the bottom of the page
 ---
 
-After obtaining a master's degree in [Subatomic Physics and Cosmology](https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-physique-IAQK7WZY/parcours-physique-subatomique-et-cosmologie-2e-annee-IAY1KEEB.html) at *[Université Grenoble-Alpes](https://www.univ-grenoble-alpes.fr/)* I completed my PhD in Astrophycs and Cosmology at *[Centre de Physique des Particules de Marseille](https://www.cppm.in2p3.fr/web/fr/index.html)*.
+After obtaining a master's degree in [Subatomic Physics and Cosmology](https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-physique-IAQK7WZY/parcours-physique-subatomique-et-cosmologie-2e-annee-IAY1KEEB.html) at _[Université Grenoble-Alpes](https://www.univ-grenoble-alpes.fr/)_ I completed my PhD in Astrophycs and Cosmology at _[Centre de Physique des Particules de Marseille](https://www.cppm.in2p3.fr/web/fr/index.html)_.
 {: style="text-align: justify"}
 
 **I'm currently working as a Post-Doctorate Associate in the [Cosmology group of Duke Universty](https://physics.duke.edu/research/astrophysics).**

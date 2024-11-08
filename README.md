@@ -1,7 +1,7 @@
-
 My personal page repo hosted [here](https://bastiencarreres.github.io/)
 
 ## Aknowledgment
+
 Based on **al-folio** theme available on this [repo](https://github.com/alshedivat/al-folio)
 
 ## License
