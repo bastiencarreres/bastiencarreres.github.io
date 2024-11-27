@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Post Doctorate Associate at Duke University
+subtitle: Postdoctoral Associate at Duke University
 
 profile:
   align: left
