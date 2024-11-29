@@ -2,7 +2,7 @@ name: Activate Submodules
 
 on: workflow_dispatch
 jobs:
-  git_submodules:
+  git_reveals:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout gh-pages branch
@@ -10,4 +10,4 @@ jobs:
         with:
           ref: gh-pages
       - name: Add submodules
-        run: git submodule update --remote --merge
+        run: git submodule add https://github.com/hakimel/reveal.js.git assets/js/reveal.js
