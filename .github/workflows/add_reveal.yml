@@ -1,6 +1,11 @@
 name: Add reveals
 
-on: workflow_dispatch
+on:
+  workflow_run:
+    workflows: ["Deploy site"]
+    types:
+      - completed
+  workflow_dispatch:
 jobs:
   git_reveals:
     runs-on: ubuntu-latest
