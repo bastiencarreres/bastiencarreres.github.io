@@ -28,6 +28,7 @@ on:
       - "!FAQ.md"
       - "!INSTALL.md"
       - "!README.md"
+      - "!.github/workflows/**"
   pull_request:
     branches:
       - master
