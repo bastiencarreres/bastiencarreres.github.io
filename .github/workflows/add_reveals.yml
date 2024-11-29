@@ -1,7 +1,7 @@
 name: Activate Submodules
 on: workflow_dispatch
 
-format:
+jobs:
   runs-on: ubuntu-latest
   steps:
     - name: Checkout gh-pages branch
