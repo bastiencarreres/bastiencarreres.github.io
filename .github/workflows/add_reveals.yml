@@ -1,13 +1,19 @@
-name: Activate Submodules
+name: Add reveals
 
 on: workflow_dispatch
 jobs:
   git_reveals:
     runs-on: ubuntu-latest
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
     steps:
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4
         with:
           ref: gh-pages
-      - name: Add submodules
-        run: git submodule add -f https://github.com/hakimel/reveal.js.git assets/js/reveal.js
+      - name: Add Reveals
+        run: git submodule add https://github.com/hakimel/reveal.js.git assets/js/reveal.js
+      - name: commit and push
+        uses: stefanzweifel/git-auto-commit-action@v5
