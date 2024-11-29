@@ -10,6 +10,12 @@ nav_order: 1
 <!-- talks/talks.md -->
 
 ---
+## 2024
+
+- 10/15 - [**DESC Project announcement: Measurement of the growth-rate of structures using
+SN Ia PVs in the BBC framework**](desctd-2024-10-15/DESC_PV_BBC_project.pdf) at _DESC-TD biweekly meeting_, online
+
+---
 
 ## 2023
 
