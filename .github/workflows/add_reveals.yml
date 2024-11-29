@@ -2,13 +2,12 @@ name: Activate Submodules
 on: workflow_dispatch
 
 jobs:
-  runs-on: ubuntu-latest
   steps:
-    - name: Checkout gh-pages branch
-      uses: actions/checkout@v4
-      with:
-        ref: gh-pages
-    - name: Source gitmodules
-      run: |
-        git submodule update --init --recursive
-        git submodule update --recursive --remote
+  - name: Checkout gh-pages branch
+    uses: actions/checkout@v4
+    with:
+      ref: gh-pages
+  - name: Source gitmodules
+    run: |
+      git submodule update --init --recursive
+      git submodule update --recursive --remote
