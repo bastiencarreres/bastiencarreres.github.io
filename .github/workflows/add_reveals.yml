@@ -3,13 +3,13 @@ on: workflow_dispatch
 
 format:
   runs-on: ubuntu-latest
-    steps:
-      - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-      - name: Source gitmodules
-        run: |
-          git submodule update --init --recursive
-          git submodule update --recursive --remote
+  steps:
+    - name: Checkout gh-pages branch
+      uses: actions/checkout@v4
+      with:
+        ref: gh-pages
+    - name: Source gitmodules
+      run: |
+        git submodule update --init --recursive
+        git submodule update --recursive --remote
 
