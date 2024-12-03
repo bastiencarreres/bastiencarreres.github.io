@@ -31,9 +31,16 @@ SN Ia PVs in the BBC framework**](desctd-2024-10-15/DESC_PV_BBC_project.pdf) at 
 
 ## 2022
 
+- Feb. - Poster: [**Cosmology with the growth rate of structures using type Ia supernovae**](Poster_Moriond_Chicago.pdf) + [Proceedings](https://moriond.in2p3.fr/download/proceedings_cosmology_2022.pdf) at _Ren-
+contres de Moriond_ 
+
 - 05/13 - [**Measuring the growth-rate with the ZTF SN Ia sample**](https://indico.in2p3.fr/event/26793/contributions/110110/attachments/70411/99926/f%CF%838%20with%20SN%20Ia%20-%20ZTF%20Paris%20-%20PhD%20talks.pdf) at _ZTF Spring Meeting_, LPNHE, Paris, France
 
+- July - Poster: [**Cosmology with the growth rate of structures using type Ia supernovae**](Poster_Moriond_Chicago.pdf) at _DESC
+Summer Meeting 2022_, University of Chicago
+
 - 11/18 - [**Cosmology with the growth rate using type Ia supernovae**](https://indico.in2p3.fr/event/27399/contributions/116473/attachments/74014/106473/ADE_2022_bc.pdf) at _Action Dark Energy 2022_, Marseille, France
+
 
 ---
 
