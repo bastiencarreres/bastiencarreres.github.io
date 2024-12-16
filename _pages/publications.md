@@ -2,7 +2,7 @@
 layout: pub_page
 permalink: /publications/
 title: Publications
-publist_pdf: Pub_list.pdf
+publist_pdf: /assets/pdf/pub_list.pdf
 description:
 nav: true
 nav_order: 1
