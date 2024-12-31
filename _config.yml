@@ -157,7 +157,7 @@ kramdown:
       start_line: 1
 
 # Includes & excludes
-include: ["_pages", "_talks", ".gitmodules"]
+include: ["_pages", "_scripts", "_talks", ".gitmodules"]
 exclude:
   - bin/
   - CONTRIBUTING.md
@@ -200,6 +200,7 @@ plugins:
   - jekyll-toc
   - jekyll-twitter-plugin
   - jemoji
+  - terser
 
 # Sitemap settings
 defaults:
@@ -216,9 +217,16 @@ sass:
 # -----------------------------------------------------------------------------
 
 jekyll-minifier:
-  exclude: ["robots.txt", "assets/js/search/*.js", "assets/libs/**/*"]
-  uglifier_args:
-    harmony: true
+  compress_javascript: false # set to false since we are using terser as the js minifier
+  # exclude: ["robots.txt", "assets/js/search/*.js"]
+
+# -----------------------------------------------------------------------------
+# Terser
+# -----------------------------------------------------------------------------
+
+terser:
+  compress:
+    drop_console: true
 
 # -----------------------------------------------------------------------------
 # Jekyll Archives
