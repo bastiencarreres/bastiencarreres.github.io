@@ -10,4 +10,4 @@ My researches focus
 
 # SN Ia Peculiar velocities
 
-Peculiar velocities could be determined from the combinaison of
+Peculiar velocities could be determined from the combinaison of \\(f\sigma_8\\)
