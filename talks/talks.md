@@ -25,7 +25,7 @@ SN Ia PVs in the BBC framework**](desctd-2024-10-15/DESC_PV_BBC_project.pdf) at 
 
 - 03/28 - [**Growth-rate measurement with type Ia supernovae**](desctd-2023-03-28/index.html) at _DESC-TD biweekly meeting_, online
 
-- 04/20 - [**Growth-rate measurement with type Ia supernovaer**](duke-2023-04-20/index.html) at _Duke cosmology group' seminar_, Duke University, Durham, NC, USA
+- 04/20 - [**Growth-rate measurement with type Ia supernovae**](duke-2023-04-20/index.html) at _Duke cosmology group' seminar_, Duke University, Durham, NC, USA
 
 ---
 
