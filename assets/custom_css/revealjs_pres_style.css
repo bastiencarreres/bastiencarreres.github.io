@@ -7,7 +7,7 @@
  * GLOBAL STYLES
  *********************************************/
 .reveal {
-    font-family: "Helvetica", sans-serif;
+    font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
     font-size: 25px;
     font-weight: normal;
     color: #eee; }
@@ -24,16 +24,16 @@
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #eee;
-  font-family: "Helvetica", Impact, sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: normal;
   line-height: 1.2;
-  letter-spacing: -0.03em;
+  letter-spacing: normal;
   text-transform: none;
   text-shadow: none;
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 225%; }
+  font-size: 210%; }
 
 .reveal h2 {
   font-size: 180%;
