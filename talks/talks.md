@@ -8,6 +8,11 @@ nav_order: 1
 ---
 
 <!-- talks/talks.md -->
+---
+## 2025
+- 02/06 - [**SNe Ia growth-rate measurements with Rubin-LSST simulations: intrinsic scatter systematics**](cosmicflows-2025-02-06/index.html)
+
+- 02/03 - [**Improving SN Ia Hubble residual scatter with galaxy groups**](cosmicflows-2025-02-03/CF2025_GalGrpSN_250203.pdf)
 
 ---
 ## 2024

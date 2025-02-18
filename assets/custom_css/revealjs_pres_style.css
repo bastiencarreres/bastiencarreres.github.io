@@ -92,10 +92,6 @@ section p {
   border-color: #000000;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
-.container {
-  display: flex;
-  align-items: center; }
-
 .titlepage {
   position: relative;
   display: block;
