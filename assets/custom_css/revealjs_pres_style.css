@@ -47,8 +47,17 @@
 .reveal h4 {
   font-size: 100%; }
 
+.reveal h5 {
+    font-size: 80%; }
+  
+.reveal h6 {
+      font-size: 60%; }
+  
+    
+
 .reveal h1 {
   text-shadow: none; }
+
 
 
 section {
@@ -272,3 +281,8 @@ background: transparent; }
 
 .reveal .slide-number {
   font-size: 20pt; }
+
+tt {
+    font-family: "Lucida Console", "Menlo", "Monaco", "Courier", monospace;
+  }
+  
