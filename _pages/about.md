@@ -15,10 +15,18 @@ profile:
     <br>
     <p>Durham, NC, USA</p>
 
-news: false # includes a list of news items
-latest_posts: false # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
+
+announcements:
+  enabled: false # includes a list of news items
+  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
+  limit: 5 # leave blank to include all the news in the `_news` folder
+
+latest_posts:
+  enabled: false
+  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
+  limit: 3 # leave blank to include all the blog posts
 ---
 
 After obtaining a master's degree in [Subatomic Physics and Cosmology](https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-physique-IAQK7WZY/parcours-physique-subatomique-et-cosmologie-2e-annee-IAY1KEEB.html) at _[Université Grenoble-Alpes](https://www.univ-grenoble-alpes.fr/)_ I completed my PhD in Astrophycs and Cosmology at _[Centre de Physique des Particules de Marseille](https://www.cppm.in2p3.fr/web/fr/index.html)_.
