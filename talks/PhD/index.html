@@ -1,215 +1,235 @@
 <!-- desctd.html -->
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		<title>Ph.D defense</title>
-		<link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
+    <title>Ph.D defense</title>
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
 
-		<link rel="stylesheet" href="/assets/js/reveal.js/">
-		<link rel="stylesheet" href="/assets/js/reveal.js/dist/reveal.css">
-		<link rel="stylesheet" href="/assets/js/reveal.js/dist/theme/league.css">
-		<link rel="stylesheet" href="/assets/custom_css/custom.css">
+    <link rel="stylesheet" href="/assets/js/reveal.js/" />
+    <link rel="stylesheet" href="/assets/js/reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="/assets/js/reveal.js/dist/theme/league.css" />
+    <link rel="stylesheet" href="/assets/custom_css/custom.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="/assets/js/reveal.js/plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section  data-background="/assets/img/talks_img/P48_1.webp">
-					<div class="container" style="padding-top: 50px; padding-bottom: 30px;">
-						<div class="title" style="border-radius: 20px; background-color:rgba(0, 0, 0, 0.6); padding: 10px;">							
-							<h1 style="font-size: 70px;">Growth-rate measurement with type Ia supernovae within the ZTF photometric survey</h1>	
-						</div>
-					</div>
-					<div class="container" style="display: block;">
-						<div style="margin-left: 1cm;">
-							<h2>Bastien Carreres</h2> 
-						</div>
-			
-						<div class="container" style="margin-top: 5%;">
-							<div class="col">
-								<img src="/assets/img/talks_img/Logo_AMU.png" class="plain" height="150">
-							</div>
-							<div class="col">
-								<img src="/assets/img/talks_img/Logo_CPPM.png" class="plain" height="190">
-							</div>
-						</div>
-					</div>
-					<div style="position: absolute; top: 700px; right: -50px;">
-						<p style="font-style: italic; font-size: 20px">Image credits: ZTF.Caltech</p>
-					</div>
-				</section>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/assets/js/reveal.js/plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background="/assets/img/talks_img/P48_1.webp">
+          <div class="container" style="padding-top: 50px; padding-bottom: 30px">
+            <div class="title" style="border-radius: 20px; background-color: rgba(0, 0, 0, 0.6); padding: 10px">
+              <h1 style="font-size: 70px">Growth-rate measurement with type Ia supernovae within the ZTF photometric survey</h1>
+            </div>
+          </div>
+          <div class="container" style="display: block">
+            <div style="margin-left: 1cm">
+              <h2>Bastien Carreres</h2>
+            </div>
 
+            <div class="container" style="margin-top: 5%">
+              <div class="col">
+                <img src="/assets/img/talks_img/Logo_AMU.png" class="plain" height="150" />
+              </div>
+              <div class="col">
+                <img src="/assets/img/talks_img/Logo_CPPM.png" class="plain" height="190" />
+              </div>
+            </div>
+          </div>
+          <div style="position: absolute; top: 700px; right: -50px">
+            <p style="font-style: italic; font-size: 20px">Image credits: ZTF.Caltech</p>
+          </div>
+        </section>
 
-				<section>
-					<h2> Outline</h2>
-						<ul style="margin-left: 200px;">
-							<li><h3>Introduction:</h3></li>
-							<ul>
-								<li><h4>The $\Lambda$CDM standard model</h4></li>
-								<li><h4>Modified gravity</h4></li>
-							</ul>
-							<div class="fragment semi-fade-out">
-							<li><h3>Growth rate of structure</h3></li>
-							<ul>
-								<li><h4>What is the growth rate of structure?</h4></li>
-								<li><h4>How to measure it?</h4></li>
-							</ul>
-							<li><h3>Type Ia supernovae</h3></li>
-							<ul>
-								<li><h4>What are they?</h4></li>
-								<li><h4>The Zwicky Transient Facility</h4></li>
-							</ul>
-							<li><h3>The growth-rate analysis pipeline</h3></li>
-							<ul>
-								<li><h4>Simulation</h4></li>
-								<li><h4>Analysis</h4></li>
-							</ul>
-							<li><h3>Results</h3></li>
-							<ul>
-								<li><h4>The sample bias</h4></li>
-								<li><h4>ZTF 6-years forecast</h4></li>
-								<li><h4>How to improve the measurement?</h4></li>
-							</ul>
-							<li><h3>Other projects</h3></li>
-							<ul>
-								<li><h4>Systematic effect on $H_0$ due to velocities</h4></li>
-								<li><h4>What's next?</h4></li>
-							</ul>
-							<li><h3>Conclusion</h3></li>
-							</div>
-						</ul>
-				</section>
+        <section>
+          <h2>Outline</h2>
+          <ul style="margin-left: 200px">
+            <li><h3>Introduction:</h3></li>
+            <ul>
+              <li><h4>The $\Lambda$CDM standard model</h4></li>
+              <li><h4>Modified gravity</h4></li>
+            </ul>
+            <div class="fragment semi-fade-out">
+              <li><h3>Growth rate of structure</h3></li>
+              <ul>
+                <li><h4>What is the growth rate of structure?</h4></li>
+                <li><h4>How to measure it?</h4></li>
+              </ul>
+              <li><h3>Type Ia supernovae</h3></li>
+              <ul>
+                <li><h4>What are they?</h4></li>
+                <li><h4>The Zwicky Transient Facility</h4></li>
+              </ul>
+              <li><h3>The growth-rate analysis pipeline</h3></li>
+              <ul>
+                <li><h4>Simulation</h4></li>
+                <li><h4>Analysis</h4></li>
+              </ul>
+              <li><h3>Results</h3></li>
+              <ul>
+                <li><h4>The sample bias</h4></li>
+                <li><h4>ZTF 6-years forecast</h4></li>
+                <li><h4>How to improve the measurement?</h4></li>
+              </ul>
+              <li><h3>Other projects</h3></li>
+              <ul>
+                <li><h4>Systematic effect on $H_0$ due to velocities</h4></li>
+                <li><h4>What's next?</h4></li>
+              </ul>
+              <li><h3>Conclusion</h3></li>
+            </div>
+          </ul>
+        </section>
 
-				<!-- Introduction -->
-				<section>
-					<h2>The standard cosmological model: General Relativity + $\Lambda$CDM</h2>
-					<br>
-					<br>
-					<div class="r-stack"> 
-						<div class="r-stack">
-							<img src="/assets/img/talks_img/Universe_expansion.webp" style="width: 3000px; border: none; z-index:-5;">
-							<img class="fragment fade-in-then-out" data-fragment-index="1" src="/assets/img/talks_img/Universe_expansion_de.webp" style="width: 3000px; border: none;  z-index:-4;">
-						</div>
-						<img class="fragment fade-in-then-out" data-fragment-index="0" src="/assets/img/talks_img/millenium.gif" style="border: none; border-radius: 20px; width: 800px">
-						<span class="fragment" data-fragment-index=""></span>
-						<img class="fragment fade-in-then-out" data-fragment-index="2" src="/assets/img/talks_img/universepie.png" style="padding: 20px; border: none; border-radius: 20px; width: 500px; background-color: rgba(110, 110, 110, 0.892);">
-						<img class="fragment fade-in-then-out" data-fragment-index="3" src="/assets/img/talks_img/LCDM_constraint.jpg" style="border: none; border-radius: 20px; width: 500px;">
-						<div>
-							<h3 class="fragment" data-fragment-index="4" style="border-radius: 20px; width: 500px; background-color: rgba(0, 0, 0, 0.90);">
-								What is dark energy? Is there an alternative to $\Lambda$?</h3>
-						</div>
-					</div>
+        <!-- Introduction -->
+        <section>
+          <h2>The standard cosmological model: General Relativity + $\Lambda$CDM</h2>
+          <br />
+          <br />
+          <div class="r-stack">
+            <div class="r-stack">
+              <img src="/assets/img/talks_img/Universe_expansion.webp" style="width: 3000px; border: none; z-index: -5" />
+              <img
+                class="fragment fade-in-then-out"
+                data-fragment-index="1"
+                src="/assets/img/talks_img/Universe_expansion_de.webp"
+                style="width: 3000px; border: none; z-index: -4"
+              />
+            </div>
+            <img
+              class="fragment fade-in-then-out"
+              data-fragment-index="0"
+              src="/assets/img/talks_img/millenium.gif"
+              style="border: none; border-radius: 20px; width: 800px"
+            />
+            <span class="fragment" data-fragment-index=""></span>
+            <img
+              class="fragment fade-in-then-out"
+              data-fragment-index="2"
+              src="/assets/img/talks_img/universepie.png"
+              style="padding: 20px; border: none; border-radius: 20px; width: 500px; background-color: rgba(110, 110, 110, 0.892)"
+            />
+            <img
+              class="fragment fade-in-then-out"
+              data-fragment-index="3"
+              src="/assets/img/talks_img/LCDM_constraint.jpg"
+              style="border: none; border-radius: 20px; width: 500px"
+            />
+            <div>
+              <h3 class="fragment" data-fragment-index="4" style="border-radius: 20px; width: 500px; background-color: rgba(0, 0, 0, 0.9)">
+                What is dark energy? Is there an alternative to $\Lambda$?
+              </h3>
+            </div>
+          </div>
+        </section>
 
-				</section>
+        <section>
+          <h2>Modified gravity</h2>
+          <h3>Many models propose to explain accelerated expansion using new laws for gravity:</h3>
+          <div class="r-stack">
+            <img src="/assets/img/talks_img/classmodgrav.png" style="width: 500px; border: none" />
+            <div>
+              <h3 class="fragment" style="border-radius: 20px; width: 500px; background-color: rgba(0, 0, 0, 0.9)">
+                Changing gravity will affect structures formation
+              </h3>
+            </div>
+          </div>
+          <p style="font-style: italic; font-size: 20px">Image credits: arXiv:2204.06533</p>
+        </section>
 
-				<section>
-					<h2>Modified gravity</h2>
-					<h3>Many models propose to explain accelerated expansion using new laws for gravity:</h3>
-					<div class="r-stack">						
-						<img src="/assets/img/talks_img/classmodgrav.png" style="width: 500px; border: none;">
-						<div>
-							<h3 class="fragment" style="border-radius: 20px; width: 500px; background-color: rgba(0, 0, 0, 0.90);">
-							Changing gravity will affect structures formation</h3>
-						</div>
-					</div>
-					<p style="font-style: italic; font-size: 20px">Image credits: arXiv:2204.06533</p>
-				</section>
+        <section>
+          <h2>Outline</h2>
+          <ul style="margin-left: 200px">
+            <div style="opacity: 0.5">
+              <li><h3>Introduction:</h3></li>
+              <ul>
+                <li><h4>The $\Lambda$CDM standard model</h4></li>
+                <li><h4>Alternatives to $\Lambda$</h4></li>
+              </ul>
+            </div>
+            <li><h3>Growth rate of structure</h3></li>
+            <ul>
+              <li><h4>What is the growth rate of structures?</h4></li>
+              <li><h4>How to measure it?</h4></li>
+            </ul>
+            <div style="opacity: 0.5">
+              <li><h3>Type Ia supernovae</h3></li>
+              <ul>
+                <li><h4>What are they?</h4></li>
+                <li><h4>The Zwicky Transient Facility</h4></li>
+              </ul>
+              <li><h3>The growth-rate analysis pipeline</h3></li>
+              <ul>
+                <li><h4>Simulation</h4></li>
+                <li><h4>Analysis</h4></li>
+              </ul>
+              <li><h3>Results</h3></li>
+              <ul>
+                <li><h4>The sample bias</h4></li>
+                <li><h4>ZTF 6-years forecast</h4></li>
+                <li><h4>How to improve the measurement?</h4></li>
+              </ul>
+              <li><h3>Other works</h3></li>
+              <ul>
+                <li><h4>Systematic effect on $H_0$ due to velocities</h4></li>
+                <li><h4>What's next?</h4></li>
+              </ul>
+              <li><h3>Conclusion</h3></li>
+            </div>
+          </ul>
+        </section>
 
-				<section>
-					<h2> Outline</h2>
-						<ul style="margin-left: 200px;">
-							<div style="opacity: 0.5;">
-								<li><h3>Introduction:</h3></li>
-									<ul>
-										<li><h4>The $\Lambda$CDM standard model</h4></li>
-										<li><h4>Alternatives to $\Lambda$</h4></li>
-									</ul>
-							</div>
-							<li><h3>Growth rate of structure</h3></li>
-							<ul>
-								<li><h4>What is the growth rate of structures?</h4></li>
-								<li><h4>How to measure it?</h4></li>
-							</ul>
-							<div style="opacity: 0.5;">
-								<li><h3>Type Ia supernovae</h3></li>
-								<ul>
-									<li><h4>What are they?</h4></li>
-									<li><h4>The Zwicky Transient Facility</h4></li>
-								</ul>
-								<li><h3>The growth-rate analysis pipeline</h3></li>
-								<ul>
-									<li><h4>Simulation</h4></li>
-									<li><h4>Analysis</h4></li>
-								</ul>
-								<li><h3>Results</h3></li>
-								<ul>
-									<li><h4>The sample bias</h4></li>
-									<li><h4>ZTF 6-years forecast</h4></li>
-									<li><h4>How to improve the measurement?</h4></li>
-								</ul>
-								<li><h3>Other works</h3></li>
-								<ul>
-									<li><h4>Systematic effect on $H_0$ due to velocities</h4></li>
-									<li><h4>What's next?</h4></li>
-								</ul>
-								<li><h3>Conclusion</h3></li>
-							</div>
-						</ul>
-				</section>
-
-				<!-- GRS -->
-				<section data-background="/assets/img/talks_img/illustris.webp">	 
-					<h2>\(f\sigma_8\) as a probe for general relativity</h2>
-					<div class="container" style="margin-top: -50px;">
-						<div class="r-stack"style="background-color: rgba(0, 0, 0, 0.850); 
-						width: 600px; border-radius: 20px; padding: 20px ; text-align: center">
-							<span class="fragment fade-out" data-fragment-index="2">
-								<h3>Structure evolution:<br>Dark energy vs Gravity</h3>
-								<br>
-								<span class="fragment" data-fragment-index="0">
-									<h3>
-										Density contrast: $\delta(\mathbf{x}) = \frac{\rho(\mathbf{x})}{\bar{\rho}} - 1$
-									</h3>
-								</span>
-								<br>
-								<span class="fragment" data-fragment-index="1">
-									<h3>
-										$\sigma_8$: <br>
-										RMS of fluctuation over sphere of<br>
-										8 Mpc.$h^{-1}$ radius
-									</h3>
-									<h3>
-										$\delta(\mathbf{x}) = \sigma_8 \tilde{\delta}(\mathbf{x})$
-									</h3>
-								</span>
-							</span>
-							<span class="fragment"  data-fragment-index="2">
-								<h3>
-									Velocities are linked to density through the continuity equation:
-									<br> <br>
-									$\nabla.v(\mathbf{x}) \propto f\sigma_8 \tilde{\delta}(\mathbf{x})$ 
-									<br><br>
-									where  $f \equiv$ growth rate 
-									<br><br>
-									<span class="fragment" data-fragment-index="3">
-										General Relativity + $\Lambda$CDM:
-										<br>
-										$f \simeq \Omega_m^\gamma$ 
-										with $\gamma \simeq 0.55$
-									</span>
-								</h3>
-							</span>
-						</div>
-						<div class="r-stack">
-							<div class="r-stack">
-								<div data-animate class="fragment fade-out" data-fragment-index="1" data-load="/assets/img/talks_img/grav_vs_de.svg" 
-								style="border: none; width: 600px; scale: 0.7; margin-top: -130px;">
-									<!--
+        <!-- GRS -->
+        <section data-background="/assets/img/talks_img/illustris.webp">
+          <h2>\(f\sigma_8\) as a probe for general relativity</h2>
+          <div class="container" style="margin-top: -50px">
+            <div class="r-stack" style="background-color: rgba(0, 0, 0, 0.85); width: 600px; border-radius: 20px; padding: 20px; text-align: center">
+              <span class="fragment fade-out" data-fragment-index="2">
+                <h3>Structure evolution:<br />Dark energy vs Gravity</h3>
+                <br />
+                <span class="fragment" data-fragment-index="0">
+                  <h3>Density contrast: $\delta(\mathbf{x}) = \frac{\rho(\mathbf{x})}{\bar{\rho}} - 1$</h3>
+                </span>
+                <br />
+                <span class="fragment" data-fragment-index="1">
+                  <h3>
+                    $\sigma_8$: <br />
+                    RMS of fluctuation over sphere of<br />
+                    8 Mpc.$h^{-1}$ radius
+                  </h3>
+                  <h3>$\delta(\mathbf{x}) = \sigma_8 \tilde{\delta}(\mathbf{x})$</h3>
+                </span>
+              </span>
+              <span class="fragment" data-fragment-index="2">
+                <h3>
+                  Velocities are linked to density through the continuity equation:
+                  <br />
+                  <br />
+                  $\nabla.v(\mathbf{x}) \propto f\sigma_8 \tilde{\delta}(\mathbf{x})$
+                  <br /><br />
+                  where $f \equiv$ growth rate
+                  <br /><br />
+                  <span class="fragment" data-fragment-index="3">
+                    General Relativity + $\Lambda$CDM:
+                    <br />
+                    $f \simeq \Omega_m^\gamma$ with $\gamma \simeq 0.55$
+                  </span>
+                </h3>
+              </span>
+            </div>
+            <div class="r-stack">
+              <div class="r-stack">
+                <div
+                  data-animate
+                  class="fragment fade-out"
+                  data-fragment-index="1"
+                  data-load="/assets/img/talks_img/grav_vs_de.svg"
+                  style="border: none; width: 600px; scale: 0.7; margin-top: -130px"
+                >
+                  <!--
 										{
 										"setup": [
 										{
@@ -219,11 +239,16 @@
 										}
 										]
 										}
-									-->								
-								</div>
-								<div data-animate class="fragment" data-fragment-index="2" data-load="/assets/img/talks_img/grav_vs_de.svg" 
-								style="border: none; width: 600px; scale: 0.7; margin-top: -130px;">
-									<!--
+									-->
+                </div>
+                <div
+                  data-animate
+                  class="fragment"
+                  data-fragment-index="2"
+                  data-load="/assets/img/talks_img/grav_vs_de.svg"
+                  style="border: none; width: 600px; scale: 0.7; margin-top: -130px"
+                >
+                  <!--
 										"setup": [
 										{
 											"element": "#vel",
@@ -233,57 +258,71 @@
 										]
 										}
 									-->
-								</div>
-							</div>
-							<img class="fragment fade-in-then-out" data-fragment-index="1" src="/assets/img/talks_img/circle_8mpch.svg" 
-							style="border: none; width: 450px; position: relative; left: 50px; top: 30px;">
-					
-						</div>
-					</div>
-					<div style="position: absolute; top: 700px; right: -50px;">
-						<p style="font-style: italic; font-size: 20px">Image credits: Illustris TNG</p>
-					</div>
-				</section>
-	
+                </div>
+              </div>
+              <img
+                class="fragment fade-in-then-out"
+                data-fragment-index="1"
+                src="/assets/img/talks_img/circle_8mpch.svg"
+                style="border: none; width: 450px; position: relative; left: 50px; top: 30px"
+              />
+            </div>
+          </div>
+          <div style="position: absolute; top: 700px; right: -50px">
+            <p style="font-style: italic; font-size: 20px">Image credits: Illustris TNG</p>
+          </div>
+        </section>
 
-				<section data-background="/assets/img/talks_img/illustris.webp">
-					<h2>How to measure $f\sigma_8$ ?</h2>
-					<div class="container", style="height: 500px; column-gap: 20px; margin-top: 50px;">
-						<div class="col" style="margin-top: 10px; display: block; text-align: center;">
-							<p class="fragment" data-fragment-index="0" 
-								style="line-height: 1.5; ; background-color: rgba(0, 0, 0, 0.850); 
-								width: 500px; border-radius: 20px; padding: 10px; font-size: 22px;">
-								Velocities as probes of $f\sigma_8$:
-								<br>  $\nabla.v \propto f\sigma_8$ 
-								<br>
-								<br>
-								Doppler effect on redshift:
-								<br>  $1 + z_\mathrm{obs} = \left(1 + z_\mathrm{cos}\right)\left(1 + z_p\right)$ 
-								<br> $z_p \simeq \frac{v_p}{c}$, $v_p$ is the line-of-sight velocity
-								<br>
-								<br>
-								$v_p \sim 300 \ \mathrm{km}.\mathrm{s}^{-1}$ and $z_p \sim 0.001$
-							</p>
-							<br>
-							<p class="fragment" data-fragment-index="2" 
-								style="line-height: 1.5; ; background-color: rgba(0, 0, 0, 0.850); 
-								width: 500px; border-radius: 20px; padding: 10px; font-size: 22px;">
-								<b>Direct velocity tracers</b>
-								<br>
-								Data: redshifts + distances
-								<br>
-								Galaxies Tully-Fisher and Fundamental Plane: $\sigma_D/D \sim 20\%$
-								<br>
-								Type Ia supernovae: $\sigma_D/D \sim 7 \%$
-							</p>
-						</div>
+        <section data-background="/assets/img/talks_img/illustris.webp">
+          <h2>How to measure $f\sigma_8$ ?</h2>
+          <div class="container" , style="height: 500px; column-gap: 20px; margin-top: 50px">
+            <div class="col" style="margin-top: 10px; display: block; text-align: center">
+              <p
+                class="fragment"
+                data-fragment-index="0"
+                style="line-height: 1.5; background-color: rgba(0, 0, 0, 0.85); width: 500px; border-radius: 20px; padding: 10px; font-size: 22px"
+              >
+                Velocities as probes of $f\sigma_8$:
+                <br />
+                $\nabla.v \propto f\sigma_8$
+                <br />
+                <br />
+                Doppler effect on redshift:
+                <br />
+                $1 + z_\mathrm{obs} = \left(1 + z_\mathrm{cos}\right)\left(1 + z_p\right)$ <br />
+                $z_p \simeq \frac{v_p}{c}$, $v_p$ is the line-of-sight velocity
+                <br />
+                <br />
+                $v_p \sim 300 \ \mathrm{km}.\mathrm{s}^{-1}$ and $z_p \sim 0.001$
+              </p>
+              <br />
+              <p
+                class="fragment"
+                data-fragment-index="2"
+                style="line-height: 1.5; background-color: rgba(0, 0, 0, 0.85); width: 500px; border-radius: 20px; padding: 10px; font-size: 22px"
+              >
+                <b>Direct velocity tracers</b>
+                <br />
+                Data: redshifts + distances
+                <br />
+                Galaxies Tully-Fisher and Fundamental Plane: $\sigma_D/D \sim 20\%$
+                <br />
+                Type Ia supernovae: $\sigma_D/D \sim 7 \%$
+              </p>
+            </div>
 
-						<div class="col">
-							<div class="r-stack">
-								<div class="fragment fade-in-then-out", 
-								data-animate data-load="/assets/img/talks_img/telescope_gal.svg", 
-								data-fragment-index="0" style="height: 800px">
-									<!--
+            <div class="col">
+              <div class="r-stack">
+                <div
+                  class="fragment fade-in-then-out"
+                  ,
+                  data-animate
+                  data-load="/assets/img/talks_img/telescope_gal.svg"
+                  ,
+                  data-fragment-index="0"
+                  style="height: 800px"
+                >
+                  <!--
 										{
 										"setup": [
 										{
@@ -320,10 +359,15 @@
 										]
 										}
 									-->
-								</div>
-								<div data-animate class="fragment fade-in-then-out" data-load="/assets/img/talks_img/telescope_gal.svg"  style="height: 799.5px"
-								 data-fragment-index="1">
-									<!--
+                </div>
+                <div
+                  data-animate
+                  class="fragment fade-in-then-out"
+                  data-load="/assets/img/talks_img/telescope_gal.svg"
+                  style="height: 799.5px"
+                  data-fragment-index="1"
+                >
+                  <!--
 										{
 										"setup": [
 										{
@@ -334,100 +378,114 @@
 										]
 										}
 									-->
-								</div>
-								<div data-animate class="fragment fade-in-then-out" data-load="/assets/img/talks_img/telescope_gal.svg"  style="height: 799.5px"
-								 data-fragment-index="9">
-								</div>
+                </div>
+                <div
+                  data-animate
+                  class="fragment fade-in-then-out"
+                  data-load="/assets/img/talks_img/telescope_gal.svg"
+                  style="height: 799.5px"
+                  data-fragment-index="9"
+                ></div>
+                <span class="fragment fade-in-then-out" data-fragment-index="5">
+                  <img
+                    src="/assets/img/talks_img/HDsimpleSimp.svg"
+                    style="width: 800px; border-radius: 30px; border: 5px; background-color: rgba(255, 255, 255, 0.641)"
+                  />
+                </span>
+                <span class="fragment fade-in-then-out" data-fragment-index="6">
+                  <img
+                    src="/assets/img/talks_img/HDvelSimple.svg"
+                    style="width: 800px; border-radius: 30px; border: 5px; background-color: rgba(255, 255, 255, 0.641)"
+                  />
+                </span>
+                <span class="fragment fade-in-then-out" data-fragment-index="6">
+                  <img
+                    class="fragment"
+                    data-fragment-index="2"
+                    style="width: 800px; border: 0; z-index: 2"
+                    data-src="/assets/img/talks_img/vlegend.svg"
+                  />
+                </span>
+                <span class="fragment fade-in-then-out" data-fragment-index="7">
+                  <h3 style="background-color: rgba(0, 0, 0, 0.85); border-radius: 20px; padding: 10px">
+                    Galaxies: Tully-Fisher & Fundamental plane relation
+                  </h3>
+                  <div class="r-hstack">
+                    <img src="/assets/img/talks_img/TFrelation.png" style="height: 250px" />
+                    <img src="/assets/img/talks_img/FPrelation.png" style="height: 250px; margin-left: 10px" />
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div style="position: absolute; top: 700px; right: -50px">
+            <p style="font-style: italic; font-size: 20px">Image credits: Illustris TNG</p>
+          </div>
+        </section>
 
-								</span>
-								<span class="fragment fade-in-then-out" data-fragment-index="5">
-									<img src="/assets/img/talks_img/HDsimpleSimp.svg" style="width: 800px; border-radius: 30px; border: 5px; background-color: rgba(255, 255, 255, 0.641);">
-								</span>
-								<span class="fragment fade-in-then-out" data-fragment-index="6">
-									<img src="/assets/img/talks_img/HDvelSimple.svg" style="width: 800px; border-radius: 30px; border: 5px; background-color: rgba(255, 255, 255, 0.641);">
-								</span>
-								<span class="fragment fade-in-then-out" data-fragment-index="6">
-								<img class="fragment" data-fragment-index="2" style="width: 800px; border: 0; z-index: 2;" data-src="/assets/img/talks_img/vlegend.svg">
-								</span>
-								<span class="fragment fade-in-then-out" data-fragment-index="7">
-									<h3  style="background-color: rgba(0, 0, 0, 0.850); border-radius: 20px; padding: 10px; ">
-										Galaxies: Tully-Fisher & Fundamental plane relation</h3>
-									<div class="r-hstack">
-								   		<img src="/assets/img/talks_img/TFrelation.png" style="height: 250px;">
-								   		<img src="/assets/img/talks_img/FPrelation.png" style="height: 250px; margin-left: 10px;">
-									</div>
-								</span>
-							</div>
-						</div>
-					</div>
-					<div style="position: absolute; top: 700px; right: -50px;">
-						<p style="font-style: italic; font-size: 20px">Image credits: Illustris TNG</p>
-					</div>
-				</section>
+        <section>
+          <h2>Outline</h2>
+          <ul style="margin-left: 200px">
+            <div style="opacity: 0.5">
+              <li><h3>Introduction:</h3></li>
+              <ul>
+                <li><h4>The $\Lambda$CDM standard model</h4></li>
+                <li><h4>Alternatives to $\Lambda$</h4></li>
+              </ul>
+              <li><h3>Growth rate of structure</h3></li>
+              <ul>
+                <li><h4>What is the growth rate of structures?</h4></li>
+                <li><h4>How to measure it?</h4></li>
+              </ul>
+            </div>
+            <li><h3>Type Ia supernovae</h3></li>
+            <ul>
+              <li><h4>SNe Ia for cosmology</h4></li>
+              <li><h4>The Zwicky Transient Facility</h4></li>
+            </ul>
+            <div style="opacity: 0.5">
+              <li><h3>The growth-rate analysis pipeline</h3></li>
+              <ul>
+                <li><h4>Simulation</h4></li>
+                <li><h4>Analysis</h4></li>
+              </ul>
+              <li><h3>Results</h3></li>
+              <ul>
+                <li><h4>The sample bias</h4></li>
+                <li><h4>ZTF 6-years forecast</h4></li>
+                <li><h4>How to improve the measurement?</h4></li>
+              </ul>
+              <li><h3>Other works</h3></li>
+              <ul>
+                <li><h4>Systematic effect on $H_0$ due to velocities</h4></li>
+                <li><h4>What's next?</h4></li>
+              </ul>
+              <li><h3>Conclusion</h3></li>
+            </div>
+          </ul>
+        </section>
 
+        <!-- SNe Ia -->
+        <section>
+          <h2>Type Ia supernovae (SNe Ia): powerful probes for cosmology</h2>
+          <div class="r-stack">
+            <span class="fragment fade-out" data-fragment-index="2">
+              <div class="r-hstack">
+                <img
+                  class="fragment"
+                  data-fragment-index="0"
+                  src="/assets/img/talks_img/exploding_wd.png"
+                  style="width: 500px; border: none; margin-right: 50px"
+                />
+                <img class="fragment" data-fragment-index="1" src="/assets/img/talks_img/SNIA_spectra.png" style="width: 500px; border: none" />
+              </div>
+            </span>
 
-				<section>
-					<h2> Outline</h2>
-						<ul style="margin-left: 200px;">
-							<div style="opacity: 0.5;">
-								<li><h3>Introduction:</h3></li>
-									<ul>
-										<li><h4>The $\Lambda$CDM standard model</h4></li>
-										<li><h4>Alternatives to $\Lambda$</h4></li>
-									</ul>
-							<li><h3>Growth rate of structure</h3></li>
-							<ul>
-								<li><h4>What is the growth rate of structures?</h4></li>
-								<li><h4>How to measure it?</h4></li>
-							</ul>
-							</div>
-							<li><h3>Type Ia supernovae</h3></li>
-							<ul>
-								<li><h4>SNe Ia for cosmology</h4></li>
-								<li><h4>The Zwicky Transient Facility</h4></li>
-							</ul>
-							<div style="opacity: 0.5;">
-								<li><h3>The growth-rate analysis pipeline</h3></li>
-								<ul>
-									<li><h4>Simulation</h4></li>
-									<li><h4>Analysis</h4></li>
-								</ul>
-								<li><h3>Results</h3></li>
-								<ul>
-									<li><h4>The sample bias</h4></li>
-									<li><h4>ZTF 6-years forecast</h4></li>
-									<li><h4>How to improve the measurement?</h4></li>
-								</ul>
-								<li><h3>Other works</h3></li>
-								<ul>
-									<li><h4>Systematic effect on $H_0$ due to velocities</h4></li>
-									<li><h4>What's next?</h4></li>
-								</ul>
-								<li><h3>Conclusion</h3></li>
-							</div>
-						</ul>
-				</section>
-
-				<!-- SNe Ia -->
-				<section>
-					<h2>Type Ia supernovae (SNe Ia): powerful probes for cosmology</h2>
-						<div class="r-stack">
-							<span class="fragment fade-out" data-fragment-index="2">
-							<div class="r-hstack">
-								<img class="fragment " data-fragment-index="0"
-								src="/assets/img/talks_img/exploding_wd.png" 
-								style="width: 500px; border: none; margin-right: 50px;">
-								<img class="fragment" data-fragment-index="1" 
-								src="/assets/img/talks_img/SNIA_spectra.png" 
-								style="width: 500px; border: none">
-							</div>
-							</span>
-
-							<div class="r-hstack">
-								<div class="fragment"  data-fragment-index="2">
-									<span class="fragment" data-fragment-index="3"></span>
-									<div data-animate data-load="/assets/img/talks_img/std_candles.svg">
-										<!--
+            <div class="r-hstack">
+              <div class="fragment" data-fragment-index="2">
+                <span class="fragment" data-fragment-index="3"></span>
+                <div data-animate data-load="/assets/img/talks_img/std_candles.svg">
+                  <!--
 											{
 											"setup":
 											[
@@ -476,42 +534,41 @@
 												]
 											}
 										-->
-									</div>
-								</div>
-								<div>
-									<img class="fragment" data-fragment-index="4" src="/assets/img/talks_img/HD_panth.webp" style="margin-left: 30px;">
-									<h3 class="fragment" data-fragment-index="5">Distance modulus: $\mu = m_B - M_B \propto 5\log(d_L)$</h3>
-								</div>
-							</div>
-						</div>
-				</section>
+                </div>
+              </div>
+              <div>
+                <img class="fragment" data-fragment-index="4" src="/assets/img/talks_img/HD_panth.webp" style="margin-left: 30px" />
+                <h3 class="fragment" data-fragment-index="5">Distance modulus: $\mu = m_B - M_B \propto 5\log(d_L)$</h3>
+              </div>
+            </div>
+          </div>
+        </section>
 
+        <section>
+          <h2>SNe Ia: a few words about standardization</h2>
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="3">
+              <h3>SNe Ia are not perfectly standard !!!</h3>
 
-				<section>
-					<h2>SNe Ia: a few words about standardization</h2>
-					<div class="r-stack">
-						<div class="fragment fade-out" data-fragment-index="3">
-							<h3>SNe Ia are not perfectly standard !!!</h3>
+              <span class="fragment" data-fragment-index="0">
+                <p>Correlation of peak magnitude with stretch, color and host galaxies exists</p>
+                <img src="/assets/img/talks_img/t16_SN_lightcurves.png" style="width: 800px" />
+              </span>
+              <h3 class="fragment" data-fragment-index="1">Tripp relation: $m_B^\mathrm{std} = m_B + \alpha x_1 - \beta c$</h3>
+              <h3 class="fragment" data-fragment-index="2">After standardization $\sigma_M \sim 0.12$</h3>
+            </div>
+            <div class="fragment" data-fragment-index="3">
+              <h3>How to get $m_B$, $x_1$ and $c$?</h3>
 
-							<span class="fragment"  data-fragment-index="0">
-								<p>Correlation of peak magnitude with stretch, color and host galaxies exists</p>
-								<img src="/assets/img/talks_img/t16_SN_lightcurves.png" style="width:800px">
-							</span>
-							<h3 class="fragment" data-fragment-index="1">Tripp relation: $m_B^\mathrm{std} = m_B + \alpha x_1 - \beta c$</h3>
-							<h3 class="fragment" data-fragment-index="2">After standardization $\sigma_M \sim 0.12$</h3>
-						</div>
-						<div class="fragment" data-fragment-index="3"> 
-							<h3>How to get $m_B$, $x_1$ and $c$?</h3>
-
-							<div class="r-stack">
-								<h3 class="fragment fade-in-then-out" data-fragment-index="3">Collect data</h3>
-								<h3 class="fragment" data-fragment-index="4">Adjust lightcurve with SALT2 (SED model for SNe Ia)</h3>
-							</div>
-							<br>
-							<br>
-							<br>
-							<div data-animate data-load="/assets/img/talks_img/ztf_onelc.svg" style="scale: 1.5">
-								<!--
+              <div class="r-stack">
+                <h3 class="fragment fade-in-then-out" data-fragment-index="3">Collect data</h3>
+                <h3 class="fragment" data-fragment-index="4">Adjust lightcurve with SALT2 (SED model for SNe Ia)</h3>
+              </div>
+              <br />
+              <br />
+              <br />
+              <div data-animate data-load="/assets/img/talks_img/ztf_onelc.svg" style="scale: 1.5">
+                <!--
 									{
 									"setup": [
 									{
@@ -533,94 +590,93 @@
 									]
 									}
 								-->
-							</div>
-							<br>
-							<br>
-						</div>
-					</div>
-				</section>
+              </div>
+              <br />
+              <br />
+            </div>
+          </div>
+        </section>
 
+        <section data-background="/assets/img/talks_img/palomar.jpg">
+          <h2>The Zwicky Transient Facility survey</h2>
+          <div class="container">
+            <div class="col">
+              <img src="/assets/img/talks_img/ztf-camera-fov.jpg" />
+            </div>
+            <div class="col" style="margin-left: 100px; margin-bottom: 150px">
+              <h3 style="text-align: justify">The ZTF survey:</h3>
+              <ul>
+                <li><h3>Photometric telescope observing 3/4 of the sky every $\sim 2$ nights in 3 bands</h3></li>
+                <li><h3>Spectroscopic telescope measuring transient spectra</h3></li>
+              </ul>
+            </div>
+          </div>
+          <div style="position: absolute; top: 310px; width: 100%; display: inline-flex">
+            <h3 style="position: relative; top: 250px">
+              $\sim 8000$ classified supernovae<br />
+              More than 3000 SNe Ia at low redshift $z < 0.1$
+            </h3>
+            <img
+              src="/assets/img/talks_img/bts_sne_sky_black_logo_saved2.gif"
+              style="position: relative; border-radius: 30px; width: 620px; background-color: rgba(255, 255, 255, 0.577)"
+            />
+          </div>
+          <div style="position: absolute; top: 700px; right: -50px">
+            <p style="font-style: italic; font-size: 20px">Image credits: ZTF.Caltech</p>
+          </div>
+        </section>
 
-				<section data-background="/assets/img/talks_img/palomar.jpg">
-					<h2>The Zwicky Transient Facility survey</h2>
-					<div class="container">
-						<div class="col">
-							<img src="/assets/img/talks_img/ztf-camera-fov.jpg">
-						</div>
-						<div class="col" style="margin-left: 100px;margin-bottom: 150px;">
-							<h3 style="text-align: justify;">The ZTF survey: </h3>
-							<ul>
-								<li><h3>Photometric telescope observing 3/4 of the sky every $\sim 2$ nights in 3 bands</h3></li>
-								<li><h3>Spectroscopic telescope measuring transient spectra</h3></li>
-							</ul>
-						</div>
-					</div>
-					<div style="position: absolute; top: 310px; width: 100%; display: inline-flex;">
-						<h3 style="position: relative; top: 250px;">
-							$\sim 8000$ classified supernovae<br> 
-							More than 3000 SNe Ia at low redshift $z < 0.1$
-						</h3>
-						<img src="/assets/img/talks_img/bts_sne_sky_black_logo_saved2.gif" style="position: relative; border-radius: 30px; width: 620px;
-						background-color: rgba(255, 255, 255, 0.577);">
-					</div>
-					<div style="position: absolute; top: 700px; right: -50px;">
-						<p style="font-style: italic; font-size: 20px">Image credits: ZTF.Caltech</p>
-					</div>
-				</section>
+        <section>
+          <h2>Outline</h2>
+          <ul style="margin-left: 200px">
+            <div style="opacity: 0.5">
+              <li><h3>Introduction:</h3></li>
+              <ul>
+                <li><h4>The $\Lambda$CDM standard model</h4></li>
+                <li><h4>Alternatives to $\Lambda$</h4></li>
+              </ul>
+              <li><h3>Growth rate of structure</h3></li>
+              <ul>
+                <li><h4>What is the growth rate of structure?</h4></li>
+                <li><h4>How to measure it?</h4></li>
+              </ul>
+              <li><h3>Type Ia supernovae</h3></li>
+              <ul>
+                <li><h4>SNe Ia for cosmology</h4></li>
+                <li><h4>The Zwicky Transient Facility</h4></li>
+              </ul>
+            </div>
 
+            <li><h3>The growth-rate analysis pipeline</h3></li>
+            <ul>
+              <li><h4>Simulation</h4></li>
+              <li><h4>Analysis</h4></li>
+            </ul>
+            <div style="opacity: 0.5">
+              <li><h3>Results</h3></li>
+              <ul>
+                <li><h4>The sample bias</h4></li>
+                <li><h4>ZTF 6-years forecast</h4></li>
+                <li><h4>How to improve the measurement?</h4></li>
+              </ul>
+              <li><h3>Other works</h3></li>
+              <ul>
+                <li><h4>Systematic effect on $H_0$ due to velocities</h4></li>
+                <li><h4>What's next?</h4></li>
+              </ul>
+              <li><h3>Conclusion</h3></li>
+            </div>
+          </ul>
+        </section>
 
-				<section>
-					<h2>Outline</h2>
-						<ul style="margin-left: 200px;">
-							<div style="opacity: 0.5;">
-								<li><h3>Introduction:</h3></li>
-									<ul>
-										<li><h4>The $\Lambda$CDM standard model</h4></li>
-										<li><h4>Alternatives to $\Lambda$</h4></li>
-									</ul>
-								<li><h3>Growth rate of structure</h3></li>
-								<ul>
-									<li><h4>What is the growth rate of structure?</h4></li>
-									<li><h4>How to measure it?</h4></li>
-								</ul>
-								<li><h3>Type Ia supernovae</h3></li>
-								<ul>
-									<li><h4>SNe Ia for cosmology</h4></li>
-									<li><h4>The Zwicky Transient Facility</h4></li>
-								</ul>
-							</div>
-
-							<li><h3>The growth-rate analysis pipeline</h3></li>
-							<ul>
-								<li><h4>Simulation</h4></li>
-								<li><h4>Analysis</h4></li>
-							</ul>
-							<div style="opacity: 0.5;">
-								<li><h3>Results</h3></li>
-								<ul>
-									<li><h4>The sample bias</h4></li>
-									<li><h4>ZTF 6-years forecast</h4></li>
-									<li><h4>How to improve the measurement?</h4></li>
-								</ul>
-								<li><h3>Other works</h3></li>
-								<ul>
-									<li><h4>Systematic effect on $H_0$ due to velocities</h4></li>
-									<li><h4>What's next?</h4></li>
-								</ul>
-								<li><h3>Conclusion</h3></li>
-							</div>
-						</ul>
-				</section>
-
-
-				<section>
-					<h2>$f\sigma_8$ with SNe Ia peculiar velocities: the simulation and analysis pipeline</h2>
-					<div>
-						<span class="fragment" data-fragment-index="0"></span>
-						<span class="fragment" data-fragment-index="1"></span>
-						<span class="fragment" data-fragment-index="2"></span>
-						<div data-animate data-load="/assets/img/talks_img/pipeline_phd.svg", style="position: relative; top: 0px;">
-							<!--
+        <section>
+          <h2>$f\sigma_8$ with SNe Ia peculiar velocities: the simulation and analysis pipeline</h2>
+          <div>
+            <span class="fragment" data-fragment-index="0"></span>
+            <span class="fragment" data-fragment-index="1"></span>
+            <span class="fragment" data-fragment-index="2"></span>
+            <div data-animate data-load="/assets/img/talks_img/pipeline_phd.svg" , style="position: relative; top: 0px">
+              <!--
 								{
 								"setup": [
 								{
@@ -637,27 +693,28 @@
 								]
 								}
 							-->
-						</div>
-					</div>
-				</section>
+            </div>
+          </div>
+        </section>
 
-
-				<section>
-					<h2>Simulation: the N-Body simulation</h2>
-					<div class="r-hstack">
-						<div style="margin-top: -100px;">	
-							<h3>OuterRim (<em>Heitmann et al. 2019</em>)</h3>
-							<br>
-							<br>
-							<br>
-							<h3 class="fragment" data-fragment-index="0">WMAP cosmology, $f\sigma_8 = 0.382$</h3>
-							<br>
-							<br>
-							<h3 class="fragment" data-fragment-index="1">(3 Gpc.$h^{-1}$)$^3$ box of dark matter halos at $z=0$ <br>$\Rightarrow$ 27 ZTF realisations up to $z\sim 0.17$</h3>
-						</div>
-						<span class="fragment" data-fragment-index="2"></span>
-						<div data-animate data-load="/assets/img/talks_img/outer_rim.svg" style="scale: 0.9; margin-top: -50px">
-							<!--
+        <section>
+          <h2>Simulation: the N-Body simulation</h2>
+          <div class="r-hstack">
+            <div style="margin-top: -100px">
+              <h3>OuterRim (<em>Heitmann et al. 2019</em>)</h3>
+              <br />
+              <br />
+              <br />
+              <h3 class="fragment" data-fragment-index="0">WMAP cosmology, $f\sigma_8 = 0.382$</h3>
+              <br />
+              <br />
+              <h3 class="fragment" data-fragment-index="1">
+                (3 Gpc.$h^{-1}$)$^3$ box of dark matter halos at $z=0$ <br />$\Rightarrow$ 27 ZTF realisations up to $z\sim 0.17$
+              </h3>
+            </div>
+            <span class="fragment" data-fragment-index="2"></span>
+            <div data-animate data-load="/assets/img/talks_img/outer_rim.svg" style="scale: 0.9; margin-top: -50px">
+              <!--
 								{
 								"setup": [
 								{
@@ -674,20 +731,19 @@
 								]
 								}
 							-->
-						</div>
-					</div>
-				</section>
+            </div>
+          </div>
+        </section>
 
-
-				<section>
-					<h2>Simulation: SN Ia model</h2>
-					<div>
-						<span class="fragment" data-fragment-index="0"></span>
-						<span class="fragment" data-fragment-index="1"></span>
-						<span class="fragment" data-fragment-index="2"></span>
-						<span class="fragment" data-fragment-index="3"></span>
-						<div data-animate data-load="/assets/img/talks_img/snmodel_par.svg" style="scale: 0.85; margin-bottom: -60px; margin-top: -50px;">
-							<!--
+        <section>
+          <h2>Simulation: SN Ia model</h2>
+          <div>
+            <span class="fragment" data-fragment-index="0"></span>
+            <span class="fragment" data-fragment-index="1"></span>
+            <span class="fragment" data-fragment-index="2"></span>
+            <span class="fragment" data-fragment-index="3"></span>
+            <div data-animate data-load="/assets/img/talks_img/snmodel_par.svg" style="scale: 0.85; margin-bottom: -60px; margin-top: -50px">
+              <!--
 								{
 								"setup": [
 								{
@@ -733,34 +789,41 @@
 								]
 								}
 							-->
-						</div>
-						<br>
-						<br>
-						<h3 class="fragment" data-fragment-index="4">$1 + {\color{#96F1FD}z_\mathrm{obs}} = (1 + {\color{#96F1FD}z_\mathrm{cos}}) (1 + {\color{#96F1FD}z_\mathrm{p}})$</h3>
-						<br>
-						<h3 class="fragment" data-fragment-index="5">
-							$m_{B,i} = {\color{#E78A0D}M_B} - {\color{#E78A0D}\alpha x_{1, i}} + {\color{#E78A0D}\beta c_i }+ {\color{#E78A0D}\sigma_{\mathrm{int}, i}} + \mu({\color{#96F1FD}z_{\mathrm{cos},i}}) + 10\log(1 + {\color{#96F1FD}z_{p,i}})$
-						</h3>
-					</div>
-					<img class="fragment" data-fragment-index="4" src="/assets/img/talks_img/outerrim.png" style="border: none; width: 200px; position: relative; bottom: 275px; left: 200px;">
-				</section>
+            </div>
+            <br />
+            <br />
+            <h3 class="fragment" data-fragment-index="4">
+              $1 + {\color{#96F1FD}z_\mathrm{obs}} = (1 + {\color{#96F1FD}z_\mathrm{cos}}) (1 + {\color{#96F1FD}z_\mathrm{p}})$
+            </h3>
+            <br />
+            <h3 class="fragment" data-fragment-index="5">
+              $m_{B,i} = {\color{#E78A0D}M_B} - {\color{#E78A0D}\alpha x_{1, i}} + {\color{#E78A0D}\beta c_i }+ {\color{#E78A0D}\sigma_{\mathrm{int},
+              i}} + \mu({\color{#96F1FD}z_{\mathrm{cos},i}}) + 10\log(1 + {\color{#96F1FD}z_{p,i}})$
+            </h3>
+          </div>
+          <img
+            class="fragment"
+            data-fragment-index="4"
+            src="/assets/img/talks_img/outerrim.png"
+            style="border: none; width: 200px; position: relative; bottom: 275px; left: 200px"
+          />
+        </section>
 
+        <section>
+          <h2>Simulation: survey parameters</h2>
+          <div>
+            <h3>I have worked in ZTF simulation working group to construct ZTF simulation input files</h3>
+            <br />
+            <img src="/assets/img/talks_img/survey_par.svg" style="border: none" />
+          </div>
+        </section>
 
-				<section>
-					<h2>Simulation: survey parameters</h2>
-					<div>
-						<h3>I have worked in ZTF simulation working group to construct ZTF simulation input files</h3>
-						<br>
-						<img src="/assets/img/talks_img/survey_par.svg" style="border: none;">
-				</section>
-
-
-				<section>
-					<h2>Simulation: $\texttt{SNSim}$ and lightcurves</h2>
-					<div class="r-hstack" style="margin-bottom: -10px; margin-top: -30px;">
-						<span class="fragment" data-fragment-index="0"></span>
-						<div data-animate data-load="/assets/img/talks_img/snsim_inputs.svg" style="scale: 0.9;">
-							<!--
+        <section>
+          <h2>Simulation: $\texttt{SNSim}$ and lightcurves</h2>
+          <div class="r-hstack" style="margin-bottom: -10px; margin-top: -30px">
+            <span class="fragment" data-fragment-index="0"></span>
+            <div data-animate data-load="/assets/img/talks_img/snsim_inputs.svg" style="scale: 0.9">
+              <!--
 								{
 								"setup": [
 									{
@@ -787,14 +850,14 @@
 								]
 								}
 							-->
-						</div>
-						<h3 class="fragment" data-fragment-index="1">Noise is computed as
-							<br><br>
-						$\sigma_F = \sqrt{F + \sigma_\mathrm{sky}^2 + \sigma_\mathrm{ZP}^2}$
-						</h3>
-					</div>
-					<div data-animate data-load="/assets/img/talks_img/sim_lcs.svg" style="position: relative; left: -70px; scale: 0.95;"> 
-						<!--
+            </div>
+            <h3 class="fragment" data-fragment-index="1">
+              Noise is computed as <br /><br />
+              $\sigma_F = \sqrt{F + \sigma_\mathrm{sky}^2 + \sigma_\mathrm{ZP}^2}$
+            </h3>
+          </div>
+          <div data-animate data-load="/assets/img/talks_img/sim_lcs.svg" style="position: relative; left: -70px; scale: 0.95">
+            <!--
 							{
 							"setup": [
 								{
@@ -830,24 +893,22 @@
 							]
 							}
 						-->
-					</div>
-				</section>
+          </div>
+        </section>
 
+        <section>
+          <h2>Simulation: applying spectroscopic identification selection function</h2>
+          <span class="fragment" data-fragment-index="0"></span>
+          <span class="fragment" data-fragment-index="3"></span>
+          <div class="r-stack">
+            <h3 class="fragment fade-in-then-out" data-fragment-index="1">Detection: 2 points with SNR $>$ 5</h3>
+            <h3 class="fragment fade-in-then-out" data-fragment-index="2">Spectroscopic efficiency from <em>Perley et al. 2019</em></h3>
 
-				<section>
-					<h2>Simulation: applying spectroscopic identification selection function</h2>
-					<span class="fragment" data-fragment-index="0"></span>
-					<span class="fragment" data-fragment-index="3"></span>
-					<div class="r-stack">
-						<h3 class="fragment fade-in-then-out" data-fragment-index="1">Detection: 2 points with SNR $>$ 5</h3>
-						<h3 class="fragment fade-in-then-out" data-fragment-index="2">Spectroscopic efficiency from <em>Perley et al. 2019</em></h3>
-
-						<h3 class="fragment " data-fragment-index="3">$\langle N_\mathrm{SN} \rangle\sim 4300$</h3>
-					</div>
-					<div style="margin-top: 160px;">
-						<div data-animate data-load="/assets/img/talks_img/zdist_axes1.svg" 
-						style="scale: 2.1" >
-							<!--
+            <h3 class="fragment" data-fragment-index="3">$\langle N_\mathrm{SN} \rangle\sim 4300$</h3>
+          </div>
+          <div style="margin-top: 160px">
+            <div data-animate data-load="/assets/img/talks_img/zdist_axes1.svg" style="scale: 2.1">
+              <!--
 							{
 								"setup": [
 								{
@@ -883,20 +944,18 @@
 								]
 							}
 							-->
-						</div>
-					</div>
-					<div class="fragment fade-in-then-out" data-fragment-index="2" style="position: absolute; top: 200px; left: 800px;">
-						<img src="/assets/img/talks_img/BTSsel.svg" style="background-color: white; width: 500px;">
-					</div>
+            </div>
+          </div>
+          <div class="fragment fade-in-then-out" data-fragment-index="2" style="position: absolute; top: 200px; left: 800px">
+            <img src="/assets/img/talks_img/BTSsel.svg" style="background-color: white; width: 500px" />
+          </div>
+        </section>
 
-				</section>
-
-
-				<section>
-					<h2>$f\sigma_8$ with SNe Ia peculiar velocities: the simulation and analysis pipeline</h2>
-					<div>
-						<div data-animate data-load="/assets/img/talks_img/pipeline_phd.svg",  style="position: relative; top: 0px;">
-									<!--
+        <section>
+          <h2>$f\sigma_8$ with SNe Ia peculiar velocities: the simulation and analysis pipeline</h2>
+          <div>
+            <div data-animate data-load="/assets/img/talks_img/pipeline_phd.svg" , style="position: relative; top: 0px">
+              <!--
 										{
 											"setup": [
 											{
@@ -906,225 +965,257 @@
 											}]
 										}
 									-->
-						</div>
-					</div>
-				</section>
+            </div>
+          </div>
+        </section>
 
+        <section>
+          <h2>Analysis: lightcurves fit and cosmological cut</h2>
+          <div>
+            <h3>After SALT2 fit, we apply quality cuts:</h3>
+            <img src="/assets/img/talks_img/sncuts.png" style="width: 650px" />
+          </div>
+        </section>
 
-				<section>
-					<h2>Analysis: lightcurves fit and cosmological cut</h2>
-					<div>
-						<h3>After SALT2 fit, we apply quality cuts:</h3>
-						<img src="/assets/img/talks_img/sncuts.png" style="width: 650px;">
-					</div>
-				</section>
+        <section>
+          <h2>Analysis: velocities from Hubble diagram residuals</h2>
+          <div class="container" style="display: block">
+            <div class="r-stack">
+              <h3 class="fragment fade-in-then-out" data-fragment-index="1">Standard candles</h3>
+              <span class="fragment fade-in" data-fragment-index="2">
+                <span class="fragment fade-out" data-fragment-index="5">
+                  <h3>Standard candles + velocities</h3>
+                </span>
+              </span>
+              <h3 class="fragment" data-fragment-index="5">Standard candles + velocities + noise</h3>
+            </div>
+            <div class="r-hstack" style="margin-top: 50px">
+              <div>
+                <p class="fragment fade-in" data-fragment-index="3">
+                  The velocity estimator: <br />
+                  $$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$
+                </p>
+                <br />
+                <p class="fragment" data-fragment-index="5">
+                  The velocity estimator error: <br />
+                  $$\sigma_\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\sigma_\mu$$
+                </p>
+              </div>
+              <div class="r-stack" style="margin-left: 50px">
+                <img
+                  class="fragment"
+                  data-fragment-index="1"
+                  style="height: 450px; background-color: white; border-radius: 50px"
+                  data-src="/assets/img/talks_img/HDsimple.svg"
+                />
+                <img
+                  class="fragment"
+                  data-fragment-index="2"
+                  style="height: 450px; border: 0; z-index: 2"
+                  data-src="/assets/img/talks_img/vlegend.svg"
+                />
+                <img
+                  class="fragment"
+                  data-fragment-index="2"
+                  style="height: 450px; background-color: white; border-radius: 50px"
+                  data-src="/assets/img/talks_img/HDvel.svg"
+                />
+                <img
+                  class="fragment"
+                  data-fragment-index="5"
+                  style="height: 450px; background-color: white; border-radius: 50px"
+                  data-src="/assets/img/talks_img/HDvelnoise.svg"
+                />
+              </div>
+            </div>
+            <span class="fragment" data-fragment-index="4"></span>
+            <img
+              class="fragment fade-in-then-out"
+              data-fragment-index="3"
+              data-src="/assets/img/talks_img/pec_vel_effect.svg"
+              style="position: absolute; top: 240px; right: 10px; height: 350px; z-index: 3"
+            />
+          </div>
+        </section>
 
+        <section>
+          <h2>Analysis: the Maximum-Likelihood method</h2>
+          <h4 style="text-align: left; margin-top: -30px">
+            Method used with galaxy data in <em>Abate et al. 2010</em>, <em>Johnson et al. 2014</em> and <em>Howlett et al.</em> 2017
+          </h4>
+          <div class="r-stack">
+            <span class="fragment fade-out" data-fragment-index="4">
+              <div class="container" style="margin-top: 10px; width: 100%">
+                <span class="fragment fade-in" data-fragment-index="0">
+                  <div class="col" style="width: 650px">
+                    <img src="/assets/img/talks_img/rsd_norsd.svg" style="scale: 1.1; border: none" />
+                  </div>
+                </span>
+                <div class="col">
+                  <p class="fragment" data-fragment-index="0" style="font-size: 22px">
+                    The correlation function depends on the <b>Power Spectrum</b>
+                    <br />
+                    <br />
+                  </p>
+                  <p class="fragment" data-fragment-index="1" style="font-size: 22px">
+                    $\langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle \propto (f\sigma_8)^2 \int dk \tilde{P}(k) W^{(v)}(k; \mathbf{x}_i, \mathbf{x}_j)$
+                    <br />
+                    <br />
+                  </p>
+                  <p class="fragment" data-fragment-index="2" style="font-size: 22px">
+                    It gives us a $f\sigma_8$ dependent model for our covariance matrix! <br />
+                    $C_{ij}^{vv}(f\sigma_8) = \langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle$
+                    <br />
+                    <br />
+                  </p>
+                </div>
+              </div>
+            </span>
+            <div class="fragment fade-in" data-fragment-index="4">
+              <div class="r-hstack">
+                <div>
+                  Two non-linear models of power spectra:<br /><br /><br />
+                  <ul>
+                    <li>One based on N-body simulaton fit from <em>Bel et al.</em> 2019</li>
+                    <br />
+                    <li>One based on PT beyond order one from <em>Taruya et al.</em> 2012</li>
+                  </ul>
+                  <br />
+                  <br />
+                  <br />
+                  Effect of redshift space distorsions taken into account with damping function $D_u(\sigma_u)$ (<em>Koda et al. 2014</em>)
+                </div>
+                <img src="/assets/img/talks_img/Power_spectrum.svg" style="width: 750px; margin-left: 20px" />
+              </div>
+            </div>
+          </div>
+        </section>
 
-				<section>
-					<h2>Analysis: velocities from Hubble diagram residuals</h2>
-					<div class="container" style="display:block">
-						<div class="r-stack">
-							<h3 class="fragment fade-in-then-out" data-fragment-index="1">Standard candles</h3>
-							<span class="fragment fade-in" data-fragment-index="2">
-								<span class="fragment fade-out" data-fragment-index="5">
-									<h3>Standard candles + velocities</h3>
-								</span>
-							</span>
-							<h3 class="fragment" data-fragment-index="5">Standard candles + velocities + noise</h3>
-						</div>
-						<div class="r-hstack" style="margin-top: 50px;">
-							<div>
-								<p class="fragment fade-in" data-fragment-index="3">
-									The velocity estimator: <br> $$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$
-								</p>
-								<br>
-								<p class="fragment" data-fragment-index="5">
-									The velocity estimator error: <br> $$\sigma_\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\sigma_\mu$$
-								</p>
+        <section>
+          <h2>Analysis: the Maximum-Likelihood method</h2>
+          <div style="margin-left: 100px">
+            <h3 style="text-align: left">Free parameters of the likelihood:</h3>
+            <div>
+              Growth-rate related parameters:
+              <br /><br />
+              ${\color{yellow} \mathbf{p} = \left\{f\sigma_8, \sigma_u, \sigma_v \right\}}$, $\sigma_u \equiv$ RSD, $\sigma_v\equiv$ non-linearities
+            </div>
+            <br />
+            <span class="fragment">
+              <h3 style="text-align: left">The likelihood:</h3>
+              $\mathcal{L}({\color{yellow}\mathbf{p}}) \propto |C({\color{yellow}\mathbf{p}})|^{-\frac{1}{2}}
+              \times\exp\left[-\frac{1}{2}\mathbf{v}^TC({\color{yellow}\mathbf{p}})^{-1}\mathbf{v}\right]$
+              <br /><br /><br />
+            </span>
+            <span class="fragment">
+              <h3 style="text-align: left">The covariance:</h3>
+              $C_{ij}({\color{yellow}\mathbf{p}}) = C^{vv}_{ij}({\color{yellow}f\sigma_8}, {\color{yellow}\sigma_u}) + {\color{yellow}\sigma_v}^2
+              \delta^K_{ij} + \sigma_\hat{v}^2 \delta^K_{ij}$<br /><br />
+              $C^{vv}_{ij}({\color{yellow}f\sigma_8}, {\color{yellow}\sigma_u}) = \langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle \propto
+              ({\color{yellow}f\sigma_8})^2 \int dk P(k) W(k) D_u^2(k; {\color{yellow}\sigma_u}) $
+            </span>
+          </div>
+        </section>
 
-							</div>
-							<div class="r-stack" style="margin-left: 50px;">
-								<img class="fragment" data-fragment-index="1" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/img/talks_img/HDsimple.svg">
-								<img class="fragment" data-fragment-index="2" style="height: 450px; border: 0; z-index: 2;" data-src="/assets/img/talks_img/vlegend.svg">
-								<img class="fragment" data-fragment-index="2" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/img/talks_img/HDvel.svg">
-								<img class="fragment" data-fragment-index="5" style="height: 450px; background-color: white; border-radius:50px" data-src="/assets/img/talks_img/HDvelnoise.svg">
-							</div>
-						</div>
-						<span class="fragment" data-fragment-index="4"></span>
-						<img class="fragment fade-in-then-out" data-fragment-index="3" data-src="/assets/img/talks_img/pec_vel_effect.svg" style="position: absolute; top: 240px; right: 10px; height: 350px; z-index: 3;">
+        <section>
+          <h2>Outline</h2>
+          <ul style="margin-left: 200px">
+            <div style="opacity: 0.5">
+              <li><h3>Introduction:</h3></li>
+              <ul>
+                <li><h4>The $\Lambda$CDM standard model</h4></li>
+                <li><h4>Alternatives to $\Lambda$</h4></li>
+              </ul>
+              <li><h3>Growth rate of structure</h3></li>
+              <ul>
+                <li><h4>What is the growth rate of structures?</h4></li>
+                <li><h4>How to measure it?</h4></li>
+              </ul>
+              <li><h3>Type Ia supernovae</h3></li>
+              <ul>
+                <li><h4>SNe Ia for cosmology</h4></li>
+                <li><h4>The Zwicky Transient Facility</h4></li>
+              </ul>
 
-					</div>
-				</section>
+              <li><h3>The growth-rate analysis pipeline</h3></li>
+              <ul>
+                <li><h4>Simulation</h4></li>
+                <li><h4>Analysis</h4></li>
+              </ul>
+            </div>
 
-				<section>
-					<h2>Analysis: the Maximum-Likelihood method</h2>
-					<h4 style="text-align: left; margin-top: -30px;">Method used with galaxy data in <em>Abate et al. 2010</em>, <em>Johnson et al. 2014</em> and <em>Howlett et al.</em> 2017</h4>
-					<div class="r-stack" >
-						<span class="fragment fade-out" data-fragment-index="4"> 
-							<div class="container" style="margin-top: 10px; width: 100%;">
-								<span class="fragment fade-in" data-fragment-index="0">
-									<div class="col" style="width: 650px;">
-										<img src="/assets/img/talks_img/rsd_norsd.svg" style="scale: 1.1; border: none;">
-									</div>
-								</span>
-								<div class="col">
-									<p class="fragment" data-fragment-index="0" style="font-size: 22px;">
-										The correlation function depends on the <b>Power Spectrum</b>
-										<br>
-										<br>
-									</p>
-									<p class="fragment" data-fragment-index="1" style="font-size: 22px;">
-										$\langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle \propto (f\sigma_8)^2 \int dk \tilde{P}(k) W^{(v)}(k; \mathbf{x}_i, \mathbf{x}_j)$
-										<br>
-										<br>
-									</p>
-									<p class="fragment" data-fragment-index="2" style="font-size: 22px;">
-										It gives us a $f\sigma_8$ dependent model for our covariance matrix! <br>
-										$C_{ij}^{vv}(f\sigma_8) = \langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle$
-										<br>
-										<br>
-									</p>
-								</div>
-							</div>
-						</span>
-						<div class="fragment fade-in" data-fragment-index="4">
-							<div class="r-hstack">
-								<div>
-									Two non-linear models of power spectra:<br><br><br>
-									<ul>
-										<li>
-											One based on N-body simulaton fit from <em>Bel et al.</em> 2019
-										</li>
-										<br>
-										<li>
-											One based on PT beyond order one from <em>Taruya et al.</em> 2012
-										</li>
-									</ul>
-									<br>
-									<br>
-									<br>
-									Effect of redshift space distorsions taken into account with damping function $D_u(\sigma_u)$ (<em>Koda et al. 2014</em>)
-								</div>
-								<img src="/assets/img/talks_img/Power_spectrum.svg" style="width: 750px; margin-left: 20px;">
-							</div>
-						</div>
-					</div>
-				</section>
+            <li><h3>Results</h3></li>
+            <ul>
+              <li><h4>The sample bias</h4></li>
+              <li><h4>ZTF 6-years forecast</h4></li>
+              <li><h4>How to improve the measurement?</h4></li>
+            </ul>
+            <div style="opacity: 0.5">
+              <li><h3>Other works</h3></li>
+              <ul>
+                <li><h4>Systematic effect on $H_0$ due to velocities</h4></li>
+                <li><h4>What's next?</h4></li>
+              </ul>
+              <li><h3>Conclusion</h3></li>
+            </div>
+          </ul>
+        </section>
 
+        <section>
+          <h2>Results: the selection bias (<em>Carreres et al. 2023</em>)</h2>
+          <div class="container" style="display: block">
+            <div class="r-stack">
+              <span class="fragment fade-out" data-fragment-index="5">
+                <div class="r-hstack">
+                  <div class="fragment" data-fragment-index="1">
+                    <h3 style="margin-right: 50px; margin-bottom: 10px">Bias on HD residuals</h3>
+                    <img style="width: 600px; margin-right: 150px" data-src="/assets/img/talks_img/HD_residuals.svg" />
+                  </div>
+                  <div class="fragment" data-fragment-index="2">
+                    <h3 style="margin-bottom: 10px">Bias on velocity estimates</h3>
+                    <img style="width: 750px" data-src="/assets/img/talks_img/velbias.svg" />
+                  </div>
+                </div>
+                <div
+                  class="fragment"
+                  data-fragment-index="3"
+                  style="
+                    padding-inline: 10px;
+                    border-radius: 20px;
+                    position: absolute;
+                    right: 100px;
+                    top: 320px;
+                    scale: 0.7;
+                    background-color: rgba(94, 94, 94, 0.822);
+                  "
+                >
+                  <h5 style="color: rgb(255, 255, 255)">$$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$</h5>
+                </div>
+                <div class="fragment" data-fragment-index="4" style="position: absolute; top: 460px; left: 50%; transform: translate(-50%, -50%)">
+                  <img src="/assets/img/talks_img/seltruevel.svg" style="width: 800px; background-color: white" />
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <div class="fragment" data-fragment-index="4">
+                  <h3>Only the estimated velocities are biased !!!</h3>
+                </div>
+              </span>
+              <span class="fragment" data-fragment-index="5">
+                <h3>Bias on $f\sigma_8$</h3>
+                <img src="/assets/img/talks_img/fs8_6years_bias.svg" style="width: 800px; background-color: white" />
+              </span>
+            </div>
+          </div>
+        </section>
 
-				<section>
-					<h2>Analysis: the Maximum-Likelihood method</h2>
-					<div style="margin-left: 100px;">
-						<h3 style="text-align: left;">Free parameters of the likelihood:</h3>
-						<div>
-							Growth-rate related parameters:
-							<br><br>
-							${\color{yellow} \mathbf{p} = \left\{f\sigma_8, \sigma_u, \sigma_v \right\}}$, $\sigma_u \equiv$ RSD, $\sigma_v\equiv$ non-linearities 
-						</div>
-						<br>
-						<span class="fragment">
-							<h3 style="text-align: left;">The likelihood:</h3> 
-							$\mathcal{L}({\color{yellow}\mathbf{p}}) \propto |C({\color{yellow}\mathbf{p}})|^{-\frac{1}{2}} \times\exp\left[-\frac{1}{2}\mathbf{v}^TC({\color{yellow}\mathbf{p}})^{-1}\mathbf{v}\right]$
-							<br><br><br>
-						</span>
-						<span class="fragment">
-							<h3 style="text-align: left;">The covariance:</h3> 
-							$C_{ij}({\color{yellow}\mathbf{p}}) = C^{vv}_{ij}({\color{yellow}f\sigma_8}, {\color{yellow}\sigma_u}) + {\color{yellow}\sigma_v}^2 \delta^K_{ij} + \sigma_\hat{v}^2 \delta^K_{ij}$<br><br>
-							$C^{vv}_{ij}({\color{yellow}f\sigma_8}, {\color{yellow}\sigma_u}) = \langle v(\mathbf{x}_i)v(\mathbf{x}_j)\rangle \propto ({\color{yellow}f\sigma_8})^2 \int dk P(k) W(k) D_u^2(k; {\color{yellow}\sigma_u}) $
-						</span>
-					</div>
-				</section>
-
-
-				<section>
-					<h2>Outline</h2>
-						<ul style="margin-left: 200px;">
-							<div style="opacity: 0.5;">
-								<li><h3>Introduction:</h3></li>
-									<ul>
-										<li><h4>The $\Lambda$CDM standard model</h4></li>
-										<li><h4>Alternatives to $\Lambda$</h4></li>
-									</ul>
-								<li><h3>Growth rate of structure</h3></li>
-								<ul>
-									<li><h4>What is the growth rate of structures?</h4></li>
-									<li><h4>How to measure it?</h4></li>
-								</ul>
-								<li><h3>Type Ia supernovae</h3></li>
-								<ul>
-									<li><h4>SNe Ia for cosmology</h4></li>
-									<li><h4>The Zwicky Transient Facility</h4></li>
-								</ul>
-
-								<li><h3>The growth-rate analysis pipeline</h3></li>
-								<ul>
-									<li><h4>Simulation</h4></li>
-									<li><h4>Analysis</h4></li>
-								</ul>
-							</div>
-
-							<li><h3>Results</h3></li>
-							<ul>
-								<li><h4>The sample bias</h4></li>
-								<li><h4>ZTF 6-years forecast</h4></li>
-								<li><h4>How to improve the measurement?</h4></li>
-							</ul>
-							<div style="opacity: 0.5;">
-								<li><h3>Other works</h3></li>
-								<ul>
-									<li><h4>Systematic effect on $H_0$ due to velocities</h4></li>
-									<li><h4>What's next?</h4></li>
-								</ul>
-								<li><h3>Conclusion</h3></li>
-							</div>
-						</ul>
-				</section>
-
-
-				<section>
-					<h2>Results: the selection bias (<em>Carreres et al. 2023</em>)</h2>
-						<div class="container" style="display: block">
-							<div class="r-stack">
-								<span class="fragment fade-out" data-fragment-index="5">
-									<div class="r-hstack">
-										<div class="fragment" data-fragment-index="1">
-											<h3 style="margin-right: 50px; margin-bottom: 10px;">Bias on HD residuals</h3>
-											<img  style="width: 600px; margin-right: 150px;" data-src="/assets/img/talks_img/HD_residuals.svg">
-										</div>
-										<div class="fragment" data-fragment-index="2">
-											<h3 style="margin-bottom: 10px;">Bias on velocity estimates</h3>
-											<img  style="width: 750px" data-src="/assets/img/talks_img/velbias.svg">
-										</div>
-									</div>
-									<div class="fragment" data-fragment-index="3" style="padding-inline:10px; border-radius:20px; position: absolute; right: 100px; top: 320px; scale: 0.7; background-color: rgba(94, 94, 94, 0.822);">
-										<h5 style="color: rgb(255, 255, 255);">$$\hat{v} = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$$</h5>
-									</div>
-									<div class="fragment" data-fragment-index="4" style="position: absolute; top: 460px; left: 50%; transform: translate(-50%, -50%);">
-										<img src="/assets/img/talks_img/seltruevel.svg" style="width: 800px; background-color: white;" />
-									</div>
-									<br>
-									<br>
-									<br>
-									<br>
-									<div class="fragment" data-fragment-index="4">
-										<h3>Only the estimated velocities are biased !!!</h3>
-									</div>
-								</span>
-								<span class="fragment" data-fragment-index="5">
-									<h3>Bias on $f\sigma_8$</h3>
-									<img src="/assets/img/talks_img/fs8_6years_bias.svg" style="width: 800px; background-color: white;" />
-								</span>
-							</div>
-						</div>	
-				</section>
-
-
-				<section>
-					<h2>Results: forecast for a ZTF 6-years complete sample (<em>Carreres et al. 2023</em>)</h2>
-					<h4 style="margin-top: -30px;">$z \lt 0.06 \Rightarrow \langle N_\mathrm{SN} \rangle \simeq 1600 \sim$ half of the sample</h4>
-					<div style="margin-top: 130px;">
-						<div data-animate  style="border: none; scale: 1.8" data-load="/assets/img/talks_img/results_z006.svg">
-							<!--
+        <section>
+          <h2>Results: forecast for a ZTF 6-years complete sample (<em>Carreres et al. 2023</em>)</h2>
+          <h4 style="margin-top: -30px">$z \lt 0.06 \Rightarrow \langle N_\mathrm{SN} \rangle \simeq 1600 \sim$ half of the sample</h4>
+          <div style="margin-top: 130px">
+            <div data-animate style="border: none; scale: 1.8" data-load="/assets/img/talks_img/results_z006.svg">
+              <!--
 								{
 								"setup": [
 								{
@@ -1145,54 +1236,53 @@
 								]
 								}
 							-->
-						</div>
-					</div>
-				</section>
+            </div>
+          </div>
+        </section>
 
+        <section>
+          <h2>Analysis: joint fit</h2>
+          <div class="r-hstack" style="width: 100%">
+            <div>
+              <div class="fragment" style="width: 100%">
+                <h3>Free parameters:</h3>
+                Growth-rate related parameters: ${\color{yellow} \mathbf{p} = \left\{f\sigma_8, \sigma_u, \sigma_v \right\}}$
+                <br />
+                <br />
+                SNe Ia Hubble diagram parameters: ${\color{orange} \mathbf{p}_\mathrm{HD} = \left\{\alpha, \beta, M_B, \sigma_M \right\}}$
+                <br />
+                <br />
+                <br />
+              </div>
 
-				<section>
-					<h2>Analysis: joint fit</h2>
-					<div class="r-hstack" style="width: 100%;">
-						<div>
-							<div class="fragment" style="width: 100%">
-								<h3>Free parameters:</h3>
-								Growth-rate related parameters:
-									${\color{yellow} \mathbf{p} = \left\{f\sigma_8, \sigma_u, \sigma_v \right\}}$
-								<br>
-								<br>
-								SNe Ia Hubble diagram parameters:
-								${\color{orange} \mathbf{p}_\mathrm{HD} = \left\{\alpha, \beta, M_B, \sigma_M \right\}}$ 
-								<br>
-								<br>
-								<br>
-							</div>
+              <div class="fragment" style="width: 100%">
+                <h3>Data vector</h3>
+                HD residuals: $\Delta \mu({\color{orange} \mathbf{p}_\mathrm{HD}}) = m_B + {\color{orange} \alpha} x_1 - {\color{orange} \beta} c -
+                {\color{orange} M_0} - \mu_\mathrm{model}(z)$
+                <br /><br />
+                $\hat{v} \rightarrow \hat{v}({\color{orange} \mathbf{p}_\mathrm{HD}})= -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} -
+                1\right)^{-1}\Delta\mu({\color{orange} \mathbf{p}_\mathrm{HD}})$
+                <br />
+                <br />
+                <br />
+              </div>
 
-							<div class="fragment" style="width: 100%;">
-								<h3>Data vector</h3>
-								HD residuals: $\Delta \mu({\color{orange} \mathbf{p}_\mathrm{HD}}) = m_B + {\color{orange} \alpha} x_1 - {\color{orange} \beta} c - {\color{orange} M_0} - \mu_\mathrm{model}(z)$
-								<br><br>
-								$\hat{v} \rightarrow \hat{v}({\color{orange} \mathbf{p}_\mathrm{HD}})= -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu({\color{orange} \mathbf{p}_\mathrm{HD}})$ 
-								<br>
-								<br>
-								<br>
-							</div>
+              <div class="fragment" style="width: 100%">
+                <h3>Covariance</h3>
+                $\sigma_\hat{v} \rightarrow \sigma_\hat{v}({\color{orange} \mathbf{p}_\mathrm{HD}})= \frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} -
+                1\right)^{-1}\sigma_\mu({\color{orange} \mathbf{p}_\mathrm{HD}})$
+              </div>
+            </div>
+            <img class="fragment" src="/assets/img/talks_img/mcmc_6years_fullfit.svg" style="width: 600px; margin-left: 20px" />
+          </div>
+        </section>
 
-							<div class="fragment" style="width: 100%">
-								<h3>Covariance</h3>
-								$\sigma_\hat{v} \rightarrow \sigma_\hat{v}({\color{orange} \mathbf{p}_\mathrm{HD}})= \frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\sigma_\mu({\color{orange} \mathbf{p}_\mathrm{HD}})$ 
-							</div>
-						</div>
-						<img class="fragment" src="/assets/img/talks_img/mcmc_6years_fullfit.svg" style="width: 600px; margin-left: 20px;"> 
-					</div>
-				</section>
-
-
-				<section>
-					<h2>Results: forecast for a ZTF 6-years complete sample (<em>Carreres et al. 2023</em>)</h2>
-					<h4 style="margin-top: -30px;">$\langle N_\mathrm{SN} \rangle \simeq 1600 \sim$ half of the sample</h4>
-					<div style="margin-top: 130px;">
-						<div data-animate  style="border: none; scale: 1.8" data-load="/assets/img/talks_img/results_z006.svg">
-							<!--
+        <section>
+          <h2>Results: forecast for a ZTF 6-years complete sample (<em>Carreres et al. 2023</em>)</h2>
+          <h4 style="margin-top: -30px">$\langle N_\mathrm{SN} \rangle \simeq 1600 \sim$ half of the sample</h4>
+          <div style="margin-top: 130px">
+            <div data-animate style="border: none; scale: 1.8" data-load="/assets/img/talks_img/results_z006.svg">
+              <!--
 								{
 								"setup": [
 								{
@@ -1203,280 +1293,291 @@
 								]
 								}
 							-->
-						</div>
-					</div>
-				</section>
+            </div>
+          </div>
+        </section>
 
+        <section>
+          <h2>Results: comparison with existing measurements (<em>Carreres et al. 2023</em>)</h2>
+          <div class="container" style="display: block; margin-top: -60px">
+            <img style="height: 500px; border-radius: 20px" data-src="/assets/img/talks_img/plot_fs8_pv_and_bastien.svg" />
+            <br />
+            <h3>With ~1600 SNe Ia, ZTF is at the same precision level as existing measurements with several thousands of galaxies</h3>
+          </div>
+        </section>
 
-				<section>
-					<h2>Results: comparison with existing measurements (<em>Carreres et al. 2023</em>)</h2>
-					<div class="container" style="display: block; margin-top: -60px;" >
-						<img style="height: 500px; border-radius: 20px;" data-src="/assets/img/talks_img/plot_fs8_pv_and_bastien.svg">
-						<br>
-						<h3>With ~1600 SNe Ia, ZTF is at the same precision level as existing measurements with 
-						  several thousands of galaxies</h3>
-					</div>
-				</section>
+        <section>
+          <h2>Results: could a bias correction improve the constraint? (<em>Carreres et al. 2023</em>)</h2>
+          <div class="container" style="display: block">
+            <h3>Simulate a perfect correction of the bias: $v_{\mathrm{debias}, i} \sim \mathcal{N}(v_\mathrm{true}, \sigma_{\hat{v}, i})$</h3>
+            <div class="r-stack">
+              <img
+                class="fragment fade-in-then-out"
+                data-fragment-index="0"
+                style="height: 500px"
+                data-src="/assets/img/talks_img/fs8_6years_fakedebias.svg"
+              />
+              <img
+                class="fragment fade-in-then-out"
+                data-fragment-index="1"
+                style="height: 500px"
+                data-src="/assets/img/talks_img/efs8_6years_fakedebias.svg"
+              />
+              <img class="fragment" data-fragment-index="2" src="/assets/img/talks_img/zdist_axes2.svg" style="border: none; height: 500px" />
+            </div>
+          </div>
+        </section>
 
+        <section>
+          <h2>How to improve the measurement?</h2>
+          <div style="text-align: left; padding-left: 100px; padding-top: 50px">
+            <ul>
+              <li>
+                <h3>Bias correction of the velocity estimates ?</h3>
+                <h3 style="padding-left: 100px">Does not improve strongly the constraint on $f\sigma_8$</h3>
+              </li>
+              <br />
+              <br />
+              <li class="fragment"><h3>Use photo-typing to increase the redshift limit</h3></li>
+              <br />
+              <br />
+              <li class="fragment">
+                <h3>Velocity $\times$ density measurements (e.g. ZTF + DESI)</h3>
+              </li>
+            </ul>
+          </div>
+        </section>
 
-				<section>
-					<h2>Results: could a bias correction improve the constraint? (<em>Carreres et al. 2023</em>)</h2>
-						<div class="container" style="display: block;">
-							<h3>Simulate a perfect correction of the bias:
-							$v_{\mathrm{debias}, i} \sim \mathcal{N}(v_\mathrm{true}, \sigma_{\hat{v}, i})$
-							 </h3>
-							<div class="r-stack">
-								<img class="fragment fade-in-then-out" data-fragment-index="0" style="height: 500px" data-src="/assets/img/talks_img/fs8_6years_fakedebias.svg">
-								<img class="fragment fade-in-then-out" data-fragment-index="1" style="height: 500px" data-src="/assets/img/talks_img/efs8_6years_fakedebias.svg">
-								<img class="fragment" data-fragment-index="2" src="/assets/img/talks_img/zdist_axes2.svg" style="border: none; height: 500px">
-							</div>
-				</section>
-				
+        <section>
+          <h2>Future surveys</h2>
+          <div>
+            <img
+              src="/assets/img/talks_img/fs8_allforecasts.svg"
+              style="width: 800px; background-color: rgba(255, 255, 255, 0.641); border: none; border-radius: 20px"
+            />
+          </div>
 
-				<section>
-					<h2>How to improve the measurement?</h2>
-					<div style="text-align: left; padding-left: 100px; padding-top: 50px;">
-						<ul>
-							<li><h3>Bias correction of the velocity estimates ?</h3>
-								<h3 style="padding-left: 100px;">Does not improve strongly the constraint on $f\sigma_8$</h3>
-							</li>
-							<br>
-							<br>
-							<li class="fragment"><h3>Use photo-typing to increase the redshift limit</h3>
-							</li>
-							<br>
-							<br>
-							<li class="fragment">
-								<h3>Velocity $\times$ density measurements (e.g. ZTF + DESI)</h3>
-							</li>
-						</ul>
-					</div>
-				</section>
+          <div style="position: absolute; top: 700px; right: -50px">
+            <p style="font-style: italic; font-size: 20px">Forecast credits: DESI arxiv:1611.00036, LSST arxiv:1708.08236, EUCLID arXiv:1606.00180</p>
+          </div>
+        </section>
 
+        <section>
+          <h2>Outline</h2>
+          <ul style="margin-left: 200px">
+            <div style="opacity: 0.5">
+              <li><h3>Introduction:</h3></li>
+              <ul>
+                <li><h4>The $\Lambda$CDM standard model</h4></li>
+                <li><h4>Alternatives to $\Lambda$</h4></li>
+              </ul>
+              <li><h3>Growth rate of structure</h3></li>
+              <ul>
+                <li><h4>What is the growth rate of structures?</h4></li>
+                <li><h4>How to measure it?</h4></li>
+              </ul>
+              <li><h3>Type Ia supernovae</h3></li>
+              <ul>
+                <li><h4>SNe Ia for cosmology</h4></li>
+                <li><h4>The Zwicky Transient Facility</h4></li>
+              </ul>
 
-				<section>
-					<h2>Future surveys</h2>
-					<div>
-						<img src="/assets/img/talks_img/fs8_allforecasts.svg" style="width: 800px;background-color: rgba(255, 255, 255, 0.641); border: none; border-radius: 20px;">
-					</div>
+              <li><h3>The growth-rate analysis pipeline</h3></li>
+              <ul>
+                <li><h4>Simulation</h4></li>
+                <li><h4>Analysis</h4></li>
+              </ul>
 
-					<div style="position: absolute; top: 700px; right: -50px;">
-						<p style="font-style: italic; font-size: 20px">Forecast credits: DESI arxiv:1611.00036, LSST arxiv:1708.08236, EUCLID arXiv:1606.00180
-						</p>
-					</div>
-				</section>
+              <li><h3>Results</h3></li>
+              <ul>
+                <li><h4>The sample bias</h4></li>
+                <li><h4>ZTF 6-years forecast</h4></li>
+                <li><h4>How to improve the measurement?</h4></li>
+              </ul>
+            </div>
+            <li><h3>Other works</h3></li>
+            <ul>
+              <li><h4>Systematic effect on $H_0$ due to velocities</h4></li>
+              <li><h4>What's next?</h4></li>
+            </ul>
+            <div style="opacity: 0.5">
+              <li><h3>Conclusion</h3></li>
+            </div>
+          </ul>
+        </section>
 
+        <section>
+          <h2>Systematic effect on $H_0$ due to velocities (paper in prep)</h2>
+          <h3>Hubble Diagram fit</h3>
+          <br />
+          <br />
+          <h3>$\Delta\mu = m_B + \alpha x_1 - \beta c - M_0 - \mu_\mathrm{model}(z)$</h3>
+          <h3>
+            where <b>$M_0$ is degenerate with $H_0$</b>
+            <br />
+            <br />
+          </h3>
+          <br />
+          <br />
+          <br />
+          <div class="fragment">
+            <h3>Velocity error term:</h3>
+            <h3>$\sigma_{\mu-z} = \frac{5}{\ln 10} \frac{\sigma_v}{z}$</h3>
+            <h3>
+              with $c\sigma_v \simeq 250$ km/s
+              <br />
+              <br />
+            </h3>
+          </div>
 
-				<section>
-					<h2>Outline</h2>
-						<ul style="margin-left: 200px;">
-							<div style="opacity: 0.5;">
-								<li><h3>Introduction:</h3></li>
-									<ul>
-										<li><h4>The $\Lambda$CDM standard model</h4></li>
-										<li><h4>Alternatives to $\Lambda$</h4></li>
-									</ul>
-								<li><h3>Growth rate of structure</h3></li>
-								<ul>
-									<li><h4>What is the growth rate of structures?</h4></li>
-									<li><h4>How to measure it?</h4></li>
-								</ul>
-								<li><h3>Type Ia supernovae</h3></li>
-								<ul>
-									<li><h4>SNe Ia for cosmology</h4></li>
-									<li><h4>The Zwicky Transient Facility</h4></li>
-								</ul>
+          <h3 class="fragment">
+            We use our 27 mocks from $\texttt{SNSim}$ that contain correlated velocities to evaluate velocities effect in Hubble diagram fit
+          </h3>
+        </section>
 
-								<li><h3>The growth-rate analysis pipeline</h3></li>
-								<ul>
-									<li><h4>Simulation</h4></li>
-									<li><h4>Analysis</h4></li>
-								</ul>
+        <section>
+          <h2>Systematic effect on $H_0$ due to velocities (paper in prep)</h2>
+          <br />
+          <div class="r-stack">
+            <div class="fragment fade-in-then-out" data-fragment-index="0">
+              <h3>Velocities not taken into account</h3>
+              <img src="/assets/img/talks_img/M0_novel.svg" style="width: 800px" />
+            </div>
+            <div class="fragment fade-in-then-out" data-fragment-index="1">
+              <h3>Diagonal term for velocity errors</h3>
+              <img src="/assets/img/talks_img/M0_jlavel.svg" style="width: 800px" />
+            </div>
+            <div class="fragment" data-fragment-index="2">
+              <h3>Full covariance matrix for velocities</h3>
+              <img src="/assets/img/talks_img/M0_velcov.svg" style="width: 800px" />
+            </div>
+          </div>
+          <h3 class="fragment" data-fragment-index="3">
+            Preliminary results: using full covariance matrix multiplies by ~4 the error on $M_0$ on simulations. First test on ZTF DR2 data gives an
+            error multiplied by ~2.
+          </h3>
+        </section>
 
-								<li><h3>Results</h3></li>
-								<ul>
-									<li><h4>The sample bias</h4></li>
-									<li><h4>ZTF 6-years forecast</h4></li>
-									<li><h4>How to improve the measurement?</h4></li>
-								</ul>
-							</div>
-							<li><h3>Other works</h3></li>
-							<ul>
-								<li><h4>Systematic effect on $H_0$ due to velocities</h4></li>
-								<li><h4>What's next?</h4></li>
-							</ul>
-							<div style="opacity: 0.5;">
-								<li><h3>Conclusion</h3></li>
-							</div>
-						</ul>
-				</section>
+        <section>
+          <h2>What's next?</h2>
+          <div class="container" style="display: block; padding-inline: 100px; padding-top: 50px; text-align: left; font-size: 30px">
+            <ul>
+              <li class="fragment" data-fragment-index="1">Improve the simulation:</li>
+              <h4 class="fragment" data-fragment-index="1" style="text-indent: 50px">
+                Include more realistic noise, correlation with host properties, color-dependant scattering
+              </h4>
+              <br />
+              <li class="fragment" data-fragment-index="2">Evaluate the photometric sample:</li>
+              <h4 class="fragment" data-fragment-index="2" style="text-indent: 50px">Work started with D. Rosselli in a Vera Rubin/DESC project</h4>
+              <br />
+              <li class="fragment" data-fragment-index="3">Generalisation to velocity-density covariance + improvements of model computation:</li>
+              <h4 class="fragment" data-fragment-index="3" style="text-indent: 50px">
+                Work started with C. Ravoux: development of the $\texttt{flip}$ public package
+              </h4>
+              <br />
+              <li class="fragment" data-fragment-index="4">Application of the $f\sigma_8$ analysis to ZTF data</li>
+            </ul>
+          </div>
+        </section>
 
+        <section>
+          <h2>Conclusion</h2>
+          <div class="container" style="display: block; padding-inline: 100px; padding-top: 50px; text-align: left; font-size: 30px">
+            <ul>
+              <li class="fragment">I developed a simulation of supernovae observations including realistic velocities from N-body simulations</li>
+              <br />
+              <li class="fragment">I used real observation conditions to generate ZTF survey realizations</li>
+              <br />
+              <li class="fragment">I developed a full analysis pipeline to measure $f\sigma_8$ from SNe Ia</li>
+              <br />
+              <li class="fragment">The spectroscopic selection causes a bias on velocity estimations above $z\sim 0.06$</li>
+              <br />
+              <li class="fragment">
+                We forecast that we will have a ~19% precision on a $f\sigma_8$ measurement with a 6-year ZTF SNe Ia spectro-identified sample with
+                $z\lt 0.06$
+              </li>
+              <br />
+              <li class="fragment">
+                Improvements are expected from future work on photometric typing analysis and combination with density measurements
+              </li>
+            </ul>
+          </div>
+        </section>
 
-				<section>
-					<h2>Systematic effect on $H_0$ due to velocities (paper in prep)</h2>
-					<h3>Hubble Diagram fit</h3>
-					<br>
-					<br>
-					<h3>$\Delta\mu = m_B + \alpha x_1 - \beta c  - M_0 - \mu_\mathrm{model}(z)$</h3>
-					<h3>where <b>$M_0$ is degenerate with $H_0$</b>
-					<br>
-					<br>
-					</h3>
-					<br>
-					<br>
-					<br>
-					<div class="fragment">
-					<h3>Velocity error term:</h3>
-						<h3>$\sigma_{\mu-z} = \frac{5}{\ln 10} \frac{\sigma_v}{z}$</h3>
-						<h3>with $c\sigma_v \simeq 250$ km/s
-							<br>
-							<br>
-						</h3>
-					</div>
+        <section>
+          <div class="container">
+            <div style="margin-left: auto; margin-right: auto; margin-top: 20%">
+              <h1>Backup slides</h1>
+            </div>
+          </div>
+        </section>
 
-					<h3  class="fragment">We use our 27 mocks from $\texttt{SNSim}$ that contain correlated velocities to evaluate velocities effect in Hubble diagram fit
-				</section>
+        <section>
+          <h2>$f\sigma_8$ as a function of $z_\mathrm{max}$</h2>
+          <div class="container" ; style="display: inline">
+            <img src="/assets/img/talks_img/fs8_6years_true.svg" style="width: 490px; border: none; margin-bottom: 0px" />
+            <img src="/assets/img/talks_img/fs8_6years_bias.svg" style="width: 498px; border: none; margin-bottom: 0px" />
+            <img src="/assets/img/talks_img/fs8_6years_fullfit.svg" style="width: 490px; border: none; margin-top: 0px" />
+          </div>
+        </section>
 
+        <section>
+          <h2>Velocity estimators biases</h2>
+          <div class="container">
+            <div class="col">
+              $\hat{v}_1 = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$
+              <br />
+              <br />
+              $\hat{v}_2 = -\frac{\ln(10)}{5}\frac{H(z)r(z)}{(1+z)}\Delta\mu$
+              <br />
+              <br />
+            </div>
+            <div class="col">
+              $\hat{v}_3 = -\frac{\ln(10)c}{5}\left(\frac{1+z}{z} - 1\right)^{-1}\Delta\mu$
+              <br />
+              <br />
+              $\hat{v}_4 = -\frac{\ln(10)c}{5}\frac{z}{1+z}\Delta\mu$
+            </div>
+          </div>
+          <div>
+            <img src="/assets/img/talks_img/Estimator.svg" style="width: 900px" />
+          </div>
+        </section>
 
-				<section>
-					<h2>Systematic effect on $H_0$ due to velocities (paper in prep)</h2>
-						<br>
-					</h3>
-					<div class="r-stack">
-						<div class="fragment fade-in-then-out" data-fragment-index="0">
-							<h3 >Velocities not taken into account</h3>
-							<img src="/assets/img/talks_img/M0_novel.svg" style="width: 800px;">
-						</div>
-						<div class="fragment fade-in-then-out" data-fragment-index="1">
-							<h3>Diagonal term for velocity errors</h3>
-							<img src="/assets/img/talks_img/M0_jlavel.svg" style="width: 800px;">
-						</div>
-						<div  class="fragment" data-fragment-index="2">
-							<h3>Full covariance matrix for velocities</h3>
-							<img src="/assets/img/talks_img/M0_velcov.svg" style="width: 800px;">
-						</div>
-					</div>
-					<h3 class="fragment"  data-fragment-index="3">Preliminary results: using full covariance matrix multiplies by ~4 the error on $M_0$ on simulations. First test on ZTF DR2 data gives an error multiplied by ~2.</h3>
-				</section>
+        <section>
+          <h2>Gaussian prior on $\sigma_u$</h2>
+          <div class="r-vstack">
+            <img src="/assets/img/talks_img/fs8_prior_meanp.svg" style="width: 480px; margin-bottom: 10px" />
+            <img src="/assets/img/talks_img/fs8_prior_scalep.svg" style="width: 480px; margin-top: 0px" />
+          </div>
+        </section>
 
-				<section>
-					<h2>What's next?</h2>
-					<div class="container" style="display: block; padding-inline: 100px; padding-top: 50px; text-align: left; font-size: 30px;">
-						<ul>
-						<li class="fragment" data-fragment-index="1">Improve the simulation:</li>
-						<h4 class="fragment" data-fragment-index="1" style="text-indent: 50px;">Include more realistic noise, correlation with host properties, color-dependant scattering</h3>
-						<br>
-						<li class="fragment" data-fragment-index="2">Evaluate the photometric sample:</h3>
-						<h4 class="fragment" data-fragment-index="2" style="text-indent: 50px;">Work started with D. Rosselli in a Vera Rubin/DESC project</h4>
-						<br>
-						<li class="fragment" data-fragment-index="3">Generalisation to velocity-density covariance + improvements of model computation:</h3>
-						<h4 class="fragment" data-fragment-index="3" style="text-indent: 50px;">Work started with C. Ravoux: development of the $\texttt{flip}$ public package</h4>
-						<br>
-						<li class="fragment" data-fragment-index="4">Application of the $f\sigma_8$ analysis to ZTF data</li>
+        <section>
+          <h2>ZTF $H_0$ budget erro(<em>Dhawan et al. 2021</em>)</h2>
+          <div>
+            <img src="/assets/img/talks_img/dhawan2021.png" style="width: 1000px" />
+          </div>
+        </section>
+      </div>
+    </div>
 
-					</div>
-				</section>
+    <script src="/assets/js/reveal.js/dist/reveal.js"></script>
+    <script src="/assets/js/reveal.js/plugin/notes/notes.js"></script>
+    <script src="/assets/js/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="/assets/js/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="/assets/js/reveal.js/plugin/math/math.js"></script>
 
+    <!-- Load content plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/loadcontent/plugin.js"></script>
 
-				<section>
-					<h2>Conclusion</h2>
-					<div class="container" style="display: block; padding-inline: 100px; padding-top: 50px; text-align: left; font-size: 30px;">
-						<ul>
-							<li class="fragment">I developed a simulation of supernovae observations including realistic velocities from N-body simulations</li>
-							<br>
-							<li class="fragment">I used real observation conditions to generate ZTF survey realizations</li>
-							<br>
-							<li class="fragment">I developed a full analysis pipeline to measure $f\sigma_8$ from SNe Ia</li>
-							<br>
-							<li class="fragment">The spectroscopic selection causes a bias on velocity estimations above $z\sim 0.06$</li>
-							<br>
-							<li class="fragment">We forecast that we will have a ~19% precision on a $f\sigma_8$ measurement with a 6-year ZTF SNe Ia spectro-identified sample with $z\lt 0.06$ </li>
-							<br>
-							<li class="fragment">Improvements are expected from future work on photometric typing analysis and combination with density measurements</li>
-						</ul>
-					</div>
-				</section>
-				
+    <!-- Animate plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
 
-				<section>
-					<div class="container">
-						<div style="margin-left: auto;margin-right: auto; margin-top: 20%;">
-							<h1>Backup slides</h1> 
-						</div>
-					</div>
-				</section>
-
-
-				<section>
-					<h2>$f\sigma_8$ as a function of $z_\mathrm{max}$</h2>
-					<div class="container"; style="display: inline;">
-						<img src="/assets/img/talks_img/fs8_6years_true.svg" style="width: 490px; border: none;margin-bottom: 0px;">
-						<img src="/assets/img/talks_img/fs8_6years_bias.svg" style="width: 498px; border: none; margin-bottom: 0px;">
-						<img src="/assets/img/talks_img/fs8_6years_fullfit.svg" style="width: 490px; border: none; margin-top: 0px;">
-					</div>
-				</section>
-
-
-				<section>
-					<h2>Velocity estimators biases</h2>
-					<div class="container">
-						<div class="col">
-							$\hat{v}_1 = -\frac{\ln(10)c}{5}\left(\frac{(1+z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$
-							<br>
-							<br>
-							$\hat{v}_2 = -\frac{\ln(10)}{5}\frac{H(z)r(z)}{(1+z)}\Delta\mu$
-							<br>
-							<br>
-						</div>
-						<div class="col">
-							$\hat{v}_3 = -\frac{\ln(10)c}{5}\left(\frac{1+z}{z} - 1\right)^{-1}\Delta\mu$
-							<br>
-							<br>
-							$\hat{v}_4 = -\frac{\ln(10)c}{5}\frac{z}{1+z}\Delta\mu$
-						</div>
-					</div>
-					<div>
-						<img src="/assets/img/talks_img/Estimator.svg" style="width: 900px;">
-					</div>
-				</section>
-
-
-				<section>
-					<h2>Gaussian prior on $\sigma_u$</h2>
-					<div class="r-vstack">
-						<img src="/assets/img/talks_img/fs8_prior_meanp.svg" style="width: 480px; margin-bottom: 10px;">
-						<img src="/assets/img/talks_img/fs8_prior_scalep.svg" style="width: 480px; margin-top: 0px;">
-
-					</div>
-				</section>
-
-				<section>
-					<h2>ZTF $H_0$ budget erro(<em>Dhawan et al. 2021</em>)</h2>
-					<div>
-						<img src="/assets/img/talks_img/dhawan2021.png" style="width: 1000px">
-					</div>
-				</section>
-			</div>
-		</div>
-
-
-		<script src="/assets/js/reveal.js/dist/reveal.js"></script>
-		<script src="/assets/js/reveal.js/plugin/notes/notes.js"></script>
-		<script src="/assets/js/reveal.js/plugin/markdown/markdown.js"></script>
-		<script src="/assets/js/reveal.js/plugin/highlight/highlight.js"></script>
-		<script src="/assets/js/reveal.js/plugin/math/math.js"></script>
-
-		<!-- Load content plugin -->
-		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/loadcontent/plugin.js"></script>
-
-		<!-- Animate plugin -->
-		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
-		
-		<!-- Chart plugin -->
-		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
-		<!-- <script>
+    <!-- Chart plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+    <!-- <script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
@@ -1486,97 +1587,104 @@
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script> -->
-		<script>
-		// More info about initialization & config:
-		// - https://revealjs.com/initialization/
-		// - https://revealjs.com/config/
-		Reveal.initialize({
-			controls: false,
-			
-			hash: true,
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        controls: false,
 
-			// Visibility rule for backwards navigation arrows; "faded", "hidden"
-			// or "visible"
-			controlsBackArrows: 'hidden',
+        hash: true,
 
-			// Display a presentation progress bar
-			progress: false,
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: "hidden",
 
-			// Display the page number of the current slide
-			slideNumber: true,
+        // Display a presentation progress bar
+        progress: false,
 
-			transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Display the page number of the current slide
+        slideNumber: true,
 
-			// The "normal" size of the presentation, aspect ratio will be preserved
-			// when the presentation is scaled to fit different resolutions. Can be
-			// specified using percentage units.
-			width: 1280,
-			height: 720,
-			
-			// Factor of the display size that should remain empty around the content
-			margin: 0.1,
+        transition: "slide", // none/fade/slide/convex/concave/zoom
 
-			// Bounds for smallest/largest possible scale to apply to content
-			minScale: 0.2,
-			maxScale: 1.5,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
 
-			mathjax3: {
-    					mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
-				tex: {
-				inlineMath: [ [ '$', '$' ], [ '\\(', '\\)' ]  ]
-				},
-				options: {
-				skipHtmlTags: [ 'script', 'noscript', 'style', 'textarea', 'pre' ]
-				},
-			},
-			chart: {
-				defaults: {
-					color: 'lightgray', // color of labels
-					scale: {
-						beginAtZero: true,
-						ticks: { stepSize: 1 },
-						grid: { color: "lightgray" } , // color of grid lines
-					},
-				},
-				line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
-				bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
-				pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(136,126,131,.3)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
-			},
-			animate: {
-					autoplay: true
-			},
-			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3,  RevealLoadContent, RevealAnimate, RevealChart ],
-	
-			dependencies: [
-				{
-					src: '/assets/js/reveal.js/plugin/markdown/markdown.js'
-				},
-				{
-					src: '/assets/js/reveal.js/plugin/notes/notes.js',
-					async: true
-				},
-				{
-					src: '/assets/js/reveal.js/plugin/math/math.js',
-					async: true
-				},
-				{
-					src: '/assets/js/reveal.js/plugin/reveal.js-d3/reveald3.js'
-				},
-				{
-					src: '/assets/js/reveal.js/plugin/reveal.js-plugins/chart/Chart.min.js'
-				},
-				{
-					src: '/assets/js/reveal.js/plugin/reveal.js-plugins/chart/csv2chart.js'
-				},
-				{
-					src: '/assets/js/reveal.js/plugin/highlight/highlight.js',
-					async: true
-				},
-			]
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
 
-		});
-	
-	</script>
-	</body>
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+        maxScale: 1.5,
+
+        mathjax3: {
+          mathjax: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js",
+          tex: {
+            inlineMath: [
+              ["$", "$"],
+              ["\\(", "\\)"],
+            ],
+          },
+          options: {
+            skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"],
+          },
+        },
+        chart: {
+          defaults: {
+            color: "lightgray", // color of labels
+            scale: {
+              beginAtZero: true,
+              ticks: { stepSize: 1 },
+              grid: { color: "lightgray" }, // color of grid lines
+            },
+          },
+          line: {
+            borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"],
+            borderDash: [
+              [5, 10],
+              [0, 0],
+            ],
+          },
+          bar: { backgroundColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
+          pie: { backgroundColor: [["rgba(0,0,0,.8)", "rgba(136,126,131,.3)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"]] },
+        },
+        animate: {
+          autoplay: true,
+        },
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3, RevealLoadContent, RevealAnimate, RevealChart],
+
+        dependencies: [
+          {
+            src: "/assets/js/reveal.js/plugin/markdown/markdown.js",
+          },
+          {
+            src: "/assets/js/reveal.js/plugin/notes/notes.js",
+            async: true,
+          },
+          {
+            src: "/assets/js/reveal.js/plugin/math/math.js",
+            async: true,
+          },
+          {
+            src: "/assets/js/reveal.js/plugin/reveal.js-d3/reveald3.js",
+          },
+          {
+            src: "/assets/js/reveal.js/plugin/reveal.js-plugins/chart/Chart.min.js",
+          },
+          {
+            src: "/assets/js/reveal.js/plugin/reveal.js-plugins/chart/csv2chart.js",
+          },
+          {
+            src: "/assets/js/reveal.js/plugin/highlight/highlight.js",
+            async: true,
+          },
+        ],
+      });
+    </script>
+  </body>
 </html>
