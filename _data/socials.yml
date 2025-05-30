@@ -30,7 +30,9 @@ linkedin_username: bastien-carreres-78541a1b8 # your LinkedIn user name
 # pinterest_id: # your pinterest id
 # publons_id: # your ID on Publons
 # quora_username: # your Quora username
-#rss_icon: False # set to true to show the RSS icon
+# research_gate_profile: # your profile on ResearchGate
+# rss_icon: true # comment this line to hide the RSS icon
+scholar_userid: b97QHLgAAAAJ # your Google Scholar ID
 # scopus_id: # your profile on Scopus
 # semanticscholar_id: # your Semantic Scholar ID
 # spotify_id: # your spotify id
