@@ -1,92 +1,88 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SNe Ia growth-rate measurements with Rubin-LSST simulations: intrinsic scatter systematics</title>
 
-	<title>SNe Ia growth-rate measurements with Rubin-LSST simulations: intrinsic scatter systematics</title>
+    <link rel="stylesheet" href="/assets/js/reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="/assets/js/reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="/assets/js/reveal.js/dist/theme/black.css" />
+    <link rel="stylesheet" href="/assets/custom_css/revealjs_pres_style.css" />
 
-	<link rel="stylesheet" href="/assets/js/reveal.js/dist/reset.css">
-	<link rel="stylesheet" href="/assets/js/reveal.js/dist/reveal.css">
-	<link rel="stylesheet" href="/assets/js/reveal.js/dist/theme/black.css">
-	<link rel="stylesheet" href="/assets/custom_css/revealjs_pres_style.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/assets/js/reveal.js/plugin/highlight/monokai.css" />
+  </head>
 
-	<!-- Theme used for syntax highlighted code -->
-	<link rel="stylesheet" href="/assets/js/reveal.js/plugin/highlight/monokai.css">
-</head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- TITLE SLIDE -->
+        <section data-background="figs/rubin.webp">
+          <div class="titlepage">
+            <div class="title" style="border-radius: 20px; background-color: rgba(95, 93, 93, 0.514); padding: 15px; margin-bottom: 10px">
+              <h1>SNe Ia growth-rate measurements with Rubin-LSST simulations: intrinsic scatter systematics</h1>
+            </div>
+            <br />
+            <div style="font-size: 110%; text-align: left; margin-left: 20px">
+              <u>B. Carreres</u>, R. Chen, E. Peterson, D. Scolnic, D. Rosselli, C. Ravoux <em>et al.</em>
+            </div>
+            <br />
+            <br />
+            <div class="logos">
+              <img class="plain" data-src="figs/dukecosmo.png" />
+              <img class="plain" data-src="figs/logo-dark-mode.png" style="float: right" />
+            </div>
+          </div>
+        </section>
 
-<body>
-	<div class="reveal">
-		<div class="slides">
-			<!-- TITLE SLIDE -->
-			<section data-background="figs/rubin.webp">
-				<div class="titlepage">
-					<div class="title"
-						style="border-radius: 20px; background-color: rgba(95, 93, 93, 0.514); padding: 15px; margin-bottom: 10px;">
-						<h1>SNe Ia growth-rate measurements with Rubin-LSST simulations: intrinsic scatter systematics
-						</h1>
-					</div>
-					<br>
-					<div style="font-size: 110%; text-align: left; margin-left: 20px;">
-						<u>B. Carreres</u>, R. Chen, E. Peterson, D. Scolnic, D. Rosselli, C. Ravoux <em>et al.</em>
-					</div>
-					<br>
-					<br>
-					<div class="logos">
-						<img class="plain" data-src="figs/dukecosmo.png" />
-						<img class="plain" data-src="figs/logo-dark-mode.png" style="float: right" />
-					</div>
-				</div>
-			</section>
-
-			<!-- INTRO SLIDES -->
-			<section data-background="figs/illustris.webp">
-				<h2>\(f\sigma_8\) as a probe for general relativity</h2>
-				<div class="container" style="display: flex; column-gap: 0em; flex-direction: row; height: 20em;">
-					<div class="r-stack" style="background-color: rgba(0, 0, 0, 0.850); 
-						border-radius: 2em; padding: 0.8em ; text-align: center; flex: 1 1 0">
-						<span class="fragment fade-out" data-fragment-index="2">
-							<h4>Structure evolution:<br>Dark energy vs Gravity</h4>
-							<br>
-							<span class="fragment" data-fragment-index="0">
-								<h4>
-									Density contrast: $\delta(\mathbf{x}) = \frac{\rho(\mathbf{x})}{\bar{\rho}} - 1$
-								</h4>
-							</span>
-							<br>
-							<span class="fragment" data-fragment-index="1">
-								<h4>
-									$\sigma_8$ : fluctuation over sphere of<br>
-									8 Mpc.$h^{-1}$ radius
-								</h4>
-								<h4>
-									$\delta(\mathbf{x}) = \sigma_8 \tilde{\delta}(\mathbf{x})$
-								</h4>
-							</span>
-						</span>
-						<span class="fragment" data-fragment-index="2">
-							<h4>
-								Velocities are linked to density through the continuity equation:
-								<br> <br>
-								$\nabla.v(\mathbf{x}) \propto f\sigma_8 \tilde{\delta}(\mathbf{x})$
-								<br><br>
-								where $f \equiv$ growth rate
-								<br><br>
-								<span class="fragment" data-fragment-index="3">
-									General Relativity + $\Lambda$CDM:
-									<br>
-									$f \simeq \Omega_m^\gamma$
-									with $\gamma \simeq 0.55$
-								</span>
-							</h4>
-						</span>
-					</div>
-					<div class="r-stack" style="flex: 2 1 0; width: 10em;">
-						<div data-animate class="fragment fade-out" data-fragment-index="1"
-							data-load="figs/grav_vs_de.svg"
-							style="border: none; scale: 0.7; position: relative; top: -8em; right: 1em;">
-							<!--
+        <!-- INTRO SLIDES -->
+        <section data-background="figs/illustris.webp">
+          <h2>\(f\sigma_8\) as a probe for general relativity</h2>
+          <div class="container" style="display: flex; column-gap: 0em; flex-direction: row; height: 20em">
+            <div class="r-stack" style="background-color: rgba(0, 0, 0, 0.85); border-radius: 2em; padding: 0.8em; text-align: center; flex: 1 1 0">
+              <span class="fragment fade-out" data-fragment-index="2">
+                <h4>Structure evolution:<br />Dark energy vs Gravity</h4>
+                <br />
+                <span class="fragment" data-fragment-index="0">
+                  <h4>Density contrast: $\delta(\mathbf{x}) = \frac{\rho(\mathbf{x})}{\bar{\rho}} - 1$</h4>
+                </span>
+                <br />
+                <span class="fragment" data-fragment-index="1">
+                  <h4>
+                    $\sigma_8$ : fluctuation over sphere of<br />
+                    8 Mpc.$h^{-1}$ radius
+                  </h4>
+                  <h4>$\delta(\mathbf{x}) = \sigma_8 \tilde{\delta}(\mathbf{x})$</h4>
+                </span>
+              </span>
+              <span class="fragment" data-fragment-index="2">
+                <h4>
+                  Velocities are linked to density through the continuity equation:
+                  <br />
+                  <br />
+                  $\nabla.v(\mathbf{x}) \propto f\sigma_8 \tilde{\delta}(\mathbf{x})$
+                  <br /><br />
+                  where $f \equiv$ growth rate
+                  <br /><br />
+                  <span class="fragment" data-fragment-index="3">
+                    General Relativity + $\Lambda$CDM:
+                    <br />
+                    $f \simeq \Omega_m^\gamma$ with $\gamma \simeq 0.55$
+                  </span>
+                </h4>
+              </span>
+            </div>
+            <div class="r-stack" style="flex: 2 1 0; width: 10em">
+              <div
+                data-animate
+                class="fragment fade-out"
+                data-fragment-index="1"
+                data-load="figs/grav_vs_de.svg"
+                style="border: none; scale: 0.7; position: relative; top: -8em; right: 1em"
+              >
+                <!--
 									{
 									"setup": [
 									{
@@ -97,11 +93,15 @@
 									]
 									}
 								-->
-						</div>
-						<div data-animate class="fragment fade-in-then-out" data-fragment-index="2"
-							data-load="figs/grav_vs_de.svg"
-							style="border: none; scale: 0.7; position: relative; top: -8em; right: 1em;">
-							<!--
+              </div>
+              <div
+                data-animate
+                class="fragment fade-in-then-out"
+                data-fragment-index="2"
+                data-load="figs/grav_vs_de.svg"
+                style="border: none; scale: 0.7; position: relative; top: -8em; right: 1em"
+              >
+                <!--
 									{
 									"setup": [
 									{
@@ -112,56 +112,70 @@
 									]
 									}
 								-->
-						</div>
-						<img class="rounded fragment" data-fragment-index="3" data-src="figs/fs8_varg.svg"
-							style="background-color: rgba(255, 255, 255, 0.85); position: relative; right: -1em;"
-							width="750em">
-						<img class="plain fragment fade-in-then-out" data-fragment-index="1" src="figs/circle_8mpch.png"
-							style="width: 20em; position: relative; right: 1em;">
-					</div>
-				</div>
-				<div style="position: absolute; top: 26em; right: -1em;">
-					<p style="font-style: italic; font-size: 20px">Image credits: Illustris TNG</p>
-				</div>
-			</section>
+              </div>
+              <img
+                class="rounded fragment"
+                data-fragment-index="3"
+                data-src="figs/fs8_varg.svg"
+                style="background-color: rgba(255, 255, 255, 0.85); position: relative; right: -1em"
+                width="750em"
+              />
+              <img
+                class="plain fragment fade-in-then-out"
+                data-fragment-index="1"
+                src="figs/circle_8mpch.png"
+                style="width: 20em; position: relative; right: 1em"
+              />
+            </div>
+          </div>
+          <div style="position: absolute; top: 26em; right: -1em">
+            <p style="font-style: italic; font-size: 20px">Image credits: Illustris TNG</p>
+          </div>
+        </section>
 
-			<section data-background="figs/illustris.webp">
-				<h2>How to measure $f\sigma_8$ ?</h2>
-				<div class="container" , style="display: flex; column-gap: 0em;">
-					<div class="col" style="text-align: center;">
-						<h5 class="fragment" data-fragment-index="0" style="line-height: 1.5; ; background-color: rgba(0, 0, 0, 0.850); 
-								width: 22em; border-radius: 2em; padding: 1em ; text-align: center">
-							Velocities are probes of $f\sigma_8$!
-							<br>
-							<br>
-							Doppler effect on redshift:
-							<br>
-							$1 + z_\mathrm{obs} = \left(1 + z_\mathrm{cos}\right)\left(1 + z_p\right)$
-							<br>
-							<br>
-							$z_p \simeq \frac{v_p}{c}$, $v_p$ is the line-of-sight velocity
-							<br>
-							<br>
-							$v_p \sim 300 \ \mathrm{km}.\mathrm{s}^{-1}$ and $z_p \sim 0.001$
-						</h5>
+        <section data-background="figs/illustris.webp">
+          <h2>How to measure $f\sigma_8$ ?</h2>
+          <div class="container" , style="display: flex; column-gap: 0em">
+            <div class="col" style="text-align: center">
+              <h5
+                class="fragment"
+                data-fragment-index="0"
+                style="line-height: 1.5; background-color: rgba(0, 0, 0, 0.85); width: 22em; border-radius: 2em; padding: 1em; text-align: center"
+              >
+                Velocities are probes of $f\sigma_8$!
+                <br />
+                <br />
+                Doppler effect on redshift:
+                <br />
+                $1 + z_\mathrm{obs} = \left(1 + z_\mathrm{cos}\right)\left(1 + z_p\right)$
+                <br />
+                <br />
+                $z_p \simeq \frac{v_p}{c}$, $v_p$ is the line-of-sight velocity
+                <br />
+                <br />
+                $v_p \sim 300 \ \mathrm{km}.\mathrm{s}^{-1}$ and $z_p \sim 0.001$
+              </h5>
 
-						<h5 class="fragment" data-fragment-index="2" style="line-height: 1.5; ; background-color: rgba(0, 0, 0, 0.850); 
-								width: 22em; border-radius: 2em; padding: 1em ; text-align: center">
-							Velocity estimation: <br> Redshift + Distance
-							<br>
-							<br>
-							Galaxy distances: $\sigma_D/D \sim 20\%$
-							<br>
-							Type Ia supernova distances: $\sigma_D/D \sim 7 \%$
-						</h5>
-					</div>
+              <h5
+                class="fragment"
+                data-fragment-index="2"
+                style="line-height: 1.5; background-color: rgba(0, 0, 0, 0.85); width: 22em; border-radius: 2em; padding: 1em; text-align: center"
+              >
+                Velocity estimation: <br />
+                Redshift + Distance
+                <br />
+                <br />
+                Galaxy distances: $\sigma_D/D \sim 20\%$
+                <br />
+                Type Ia supernova distances: $\sigma_D/D \sim 7 \%$
+              </h5>
+            </div>
 
-					<div class="col">
-						<div class="r-stack">
-							<span class="fragment fade-in-then-out" data-fragment-index="0">
-								<div data-animate data-load="figs/telescope_gal.svg" ,
-									style="scale: 0.8; position: relative; top:-8em">
-									<!--
+            <div class="col">
+              <div class="r-stack">
+                <span class="fragment fade-in-then-out" data-fragment-index="0">
+                  <div data-animate data-load="figs/telescope_gal.svg" , style="scale: 0.8; position: relative; top: -8em">
+                    <!--
 										{
 										"setup": [
 										{
@@ -198,12 +212,11 @@
 										]
 										}
 									-->
-								</div>
-							</span>
-							<span class="fragment fade-in-then-out" data-fragment-index="1">
-								<div data-animate data-load="figs/telescope_gal.svg"
-									style="scale: 0.8; position: relative; top:-8em;">
-									<!--
+                  </div>
+                </span>
+                <span class="fragment fade-in-then-out" data-fragment-index="1">
+                  <div data-animate data-load="figs/telescope_gal.svg" style="scale: 0.8; position: relative; top: -8em">
+                    <!--
 											{
 											"setup": [
 											{
@@ -214,57 +227,68 @@
 											]
 											}
 										-->
-								</div>
-							</span>
+                  </div>
+                </span>
 
-							<div data-animate class="fragment fade-in-then-out" data-load="figs/telescope_gal.svg"
-								style="scale: 0.8; position: relative; top:-8em" data-fragment-index="9"></div>
+                <div
+                  data-animate
+                  class="fragment fade-in-then-out"
+                  data-load="figs/telescope_gal.svg"
+                  style="scale: 0.8; position: relative; top: -8em"
+                  data-fragment-index="9"
+                ></div>
 
-							<span class="fragment fade-in-then-out" data-fragment-index="5">
-								<img class="rounded" src="figs/HDsimpleSimp.svg"
-									style="width: 30em; background-color: rgba(255, 255, 255, 0.85); position: relative; top:-6em;">
-							</span>
+                <span class="fragment fade-in-then-out" data-fragment-index="5">
+                  <img
+                    class="rounded"
+                    src="figs/HDsimpleSimp.svg"
+                    style="width: 30em; background-color: rgba(255, 255, 255, 0.85); position: relative; top: -6em"
+                  />
+                </span>
 
-							<span class="fragment fade-in-then-out" data-fragment-index="6">
-								<img class="rounded" src="figs/HDvelSimple.svg"
-									style="width: 30em; background-color: rgba(255, 255, 255, 0.85); position: relative; top:-6em">
-							</span>
+                <span class="fragment fade-in-then-out" data-fragment-index="6">
+                  <img
+                    class="rounded"
+                    src="figs/HDvelSimple.svg"
+                    style="width: 30em; background-color: rgba(255, 255, 255, 0.85); position: relative; top: -6em"
+                  />
+                </span>
 
-							<span class="fragment fade-in-then-out" data-fragment-index="6">
-								<img class="rounded fragment" data-fragment-index="2"
-									style="width: 30em; z-index: 2; position: relative; top:-6em;"
-									data-src="figs/vlegend.svg">
-							</span>
-						</div>
-					</div>
-				</div>
-				<div style="position: absolute; top: 26em; right: -1em;">
-					<p style="font-style: italic; font-size: 20px">Image credits: Illustris TNG</p>
-				</div>
-			</section>
+                <span class="fragment fade-in-then-out" data-fragment-index="6">
+                  <img
+                    class="rounded fragment"
+                    data-fragment-index="2"
+                    style="width: 30em; z-index: 2; position: relative; top: -6em"
+                    data-src="figs/vlegend.svg"
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div style="position: absolute; top: 26em; right: -1em">
+            <p style="font-style: italic; font-size: 20px">Image credits: Illustris TNG</p>
+          </div>
+        </section>
 
-			<section>
-				<h2>Getting distances from SNe Ia</h2>
-				<span class="fragment" data-fragment-index="3"></span>
-				<div class="r-stack">
-					<div class="fragment fade-out" data-fragment-index="2">
-						<div class="r-stack">
-							<h3 class="fragment fade-out" data-fragment-index="1">Type Ia supernovae are exploding white
-								dwarfs!</h3>
-							<h3 class="fragment" data-fragment-index="1">Type Ia supernovae are standard candles!</h3>
-						</div>
-						<br>
-						<div class="r-stack">
-							<img class="plain fragment fade-out" data-fragment-index="1" width="800em"
-								data-src="figs/supernova-M82.gif">
-							<img class="plain fragment" data-fragment-index="1" width="800em"
-								data-src="figs/supernova-M82.png">
-						</div>
-					</div>
-					<span class="fragment fade-out" data-fragment-index="6">
-						<div class="fragment" data-fragment-index="2">
-							<div data-animate data-load="figs/std_candles.svg">
-								<!--
+        <section>
+          <h2>Getting distances from SNe Ia</h2>
+          <span class="fragment" data-fragment-index="3"></span>
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="2">
+              <div class="r-stack">
+                <h3 class="fragment fade-out" data-fragment-index="1">Type Ia supernovae are exploding white dwarfs!</h3>
+                <h3 class="fragment" data-fragment-index="1">Type Ia supernovae are standard candles!</h3>
+              </div>
+              <br />
+              <div class="r-stack">
+                <img class="plain fragment fade-out" data-fragment-index="1" width="800em" data-src="figs/supernova-M82.gif" />
+                <img class="plain fragment" data-fragment-index="1" width="800em" data-src="figs/supernova-M82.png" />
+              </div>
+            </div>
+            <span class="fragment fade-out" data-fragment-index="6">
+              <div class="fragment" data-fragment-index="2">
+                <div data-animate data-load="figs/std_candles.svg">
+                  <!--
 										{
 											"setup":
 											[
@@ -312,82 +336,82 @@
 											]
 										}
 									-->
-							</div>
-						</div>
-					</span>
-					<div class="container fragment" data-fragment-index="6" style="display: flex; column-gap: 0em;">
-						<div class="col" style="flex: 1.2 1 0">
-							<h4 class="fragment" data-fragment-index="7">Distance modulus: $\mu = 5
-								\mathrm{log}\left(d_L / 10\ \text{pc}\right) = m - M$</h4>
-							<br>
-							<h5 class="fragment" data-fragment-index="8">SNe Ia luminosity is corrected for known
-								correlations!<br><br>
-								<ul>
-									<li class="fragment" data-fragment-index="9" style="margin-bottom: 1em">
-										Brighter-slower: higher stretch $x_1 \Rightarrow $ brigther SNIa</li>
-									<li class="fragment" data-fragment-index="10" style="margin-bottom: 1em">
-										Brighter-bluer: lower color $c \Rightarrow $ brigther SNIa</li>
-									<li class="fragment" data-fragment-index="11">Mass step: SN Ia in more massive
-										galaxies are brigther</li>
-								</ul>
-								<br>
-								<br>
-								<h4 class="fragment" data-fragment-index="8">$\mu_\text{obs} = m_B - (M_B$ <span
-										class="fragment" data-fragment-index="9">$- \alpha x_1$ </span> <span
-										class="fragment" data-fragment-index="10">$+ \beta c$</span> <span
-										class="fragment" data-fragment-index="11">$+ \Delta_M$</span> $)$</h4>
-								<br>
-								<span class="fragment" data-fragment-index="12">Remaining intrinsic scatter $\sigma_\mu
-									\sim 0.12$ mag</span>
-								<br>
-							</h5>
-						</div>
-						<div class="col" style="flex: 1.5 1; margin-top: -1em;">
-							<img class="rounded" width="660em" data-src="figs/DES5years.png">
-						</div>
-					</div>
-				</div>
-			</section>
+                </div>
+              </div>
+            </span>
+            <div class="container fragment" data-fragment-index="6" style="display: flex; column-gap: 0em">
+              <div class="col" style="flex: 1.2 1 0">
+                <h4 class="fragment" data-fragment-index="7">Distance modulus: $\mu = 5 \mathrm{log}\left(d_L / 10\ \text{pc}\right) = m - M$</h4>
+                <br />
+                <h5 class="fragment" data-fragment-index="8">
+                  SNe Ia luminosity is corrected for known correlations!<br /><br />
+                  <ul>
+                    <li class="fragment" data-fragment-index="9" style="margin-bottom: 1em">
+                      Brighter-slower: higher stretch $x_1 \Rightarrow $ brigther SNIa
+                    </li>
+                    <li class="fragment" data-fragment-index="10" style="margin-bottom: 1em">
+                      Brighter-bluer: lower color $c \Rightarrow $ brigther SNIa
+                    </li>
+                    <li class="fragment" data-fragment-index="11">Mass step: SN Ia in more massive galaxies are brigther</li>
+                  </ul>
+                  <br />
+                  <br />
+                  <h4 class="fragment" data-fragment-index="8">
+                    $\mu_\text{obs} = m_B - (M_B$ <span class="fragment" data-fragment-index="9">$- \alpha x_1$ </span>
+                    <span class="fragment" data-fragment-index="10">$+ \beta c$</span>
+                    <span class="fragment" data-fragment-index="11">$+ \Delta_M$</span> $)$
+                  </h4>
+                  <br />
+                  <span class="fragment" data-fragment-index="12">Remaining intrinsic scatter $\sigma_\mu \sim 0.12$ mag</span>
+                  <br />
+                </h5>
+              </div>
+              <div class="col" style="flex: 1.5 1; margin-top: -1em">
+                <img class="rounded" width="660em" data-src="figs/DES5years.png" />
+              </div>
+            </div>
+          </div>
+        </section>
 
-			<section>
-				<h2>The intrinsic scatter of SNe Ia</h3>
-					<h3>
-						We know that intrinsic scatter has a color dependence!
-						<br>
-						<br>
-					</h3>
-					<div class="container" style="display: flex;">
-						<h5>
-							In this work we will consider 4 models of intrinsic scatter:
-							<br>
-							<br>
-							<ul>
-								<li class="fragment" data-fragment-index="0" style="margin-bottom: 30px;">Random
-									coherent (achromatic) scatter
-									<br>
-									<em>Unrealistic</em>
-								</li>
-								<li class="fragment" data-fragment-index="1" style="margin-bottom: 30px;">The G10 model
-									(<em>Guy et al. 2010</em>): $\sim 70\%$ achromatic / $\sim 30\%$ chromatic
-									<br>
-									<em>Historically used (Pantheon, Pantheon+)</em>
-								</li>
-								<li class="fragment" data-fragment-index="2" style="margin-bottom: 30px;">The C11 model
-									(<em>Chotard et al. 2011</em>): $\sim 30\%$ achromatic / $\sim 70\%$ chromatic
-									<br>
-									<em>Historically used (Pantheon, Pantheon+)</em>
-								</li>
+        <section>
+          <h2>The intrinsic scatter of SNe Ia</h2>
+          <h3>
+            We know that intrinsic scatter has a color dependence!
+            <br />
+            <br />
+          </h3>
+          <div class="container" style="display: flex">
+            <h5>
+              In this work we will consider 4 models of intrinsic scatter:
+              <br />
+              <br />
+              <ul>
+                <li class="fragment" data-fragment-index="0" style="margin-bottom: 30px">
+                  Random coherent (achromatic) scatter
+                  <br />
+                  <em>Unrealistic</em>
+                </li>
+                <li class="fragment" data-fragment-index="1" style="margin-bottom: 30px">
+                  The G10 model (<em>Guy et al. 2010</em>): $\sim 70\%$ achromatic / $\sim 30\%$ chromatic
+                  <br />
+                  <em>Historically used (Pantheon, Pantheon+)</em>
+                </li>
+                <li class="fragment" data-fragment-index="2" style="margin-bottom: 30px">
+                  The C11 model (<em>Chotard et al. 2011</em>): $\sim 30\%$ achromatic / $\sim 70\%$ chromatic
+                  <br />
+                  <em>Historically used (Pantheon, Pantheon+)</em>
+                </li>
 
-								<li class="fragment" data-fragment-index="3">The BS21 model (<em>Brout et al. 2021</em>)
-									with its parameters fitted in <em>Popovic et al. 2023</em> (P23): dust-based model
-									<br>
-									<em>Currently favored by data (DES 5 year)</em>
-								</li>
-							</ul>
-						</h5>
+                <li class="fragment" data-fragment-index="3">
+                  The BS21 model (<em>Brout et al. 2021</em>) with its parameters fitted in <em>Popovic et al. 2023</em> (P23): dust-based model
+                  <br />
+                  <em>Currently favored by data (DES 5 year)</em>
+                </li>
+              </ul>
+            </h5>
 
-						<div data-animate data-load="figs/scatter_mod.svg" , style="scale:1; position: relative">
-							<!--
+            <div data-animate data-load="figs/scatter_mod.svg" , style="scale: 1; position: relative">
+              <!--
 								{
 								"setup": [
 								{
@@ -413,27 +437,26 @@
 								]
 								}
 							-->
-						</div>
-					</div>
+            </div>
+          </div>
+        </section>
 
-			</section>
+        <section>
+          <h2>Why is SNe Ia intrinsic scatter a concern?</h2>
+          <h4>
+            Intrinsic scatter is the most important systematic for the DES 5 year analysis of the dark energy equation of state parameter $w$ (<em
+              >Vincenzi et al. 2024</em
+            >).
+          </h4>
+          <img class="r-stretch rounded" data-src="figs/vincenzisocks.png" style="align-self: center; margin-top: 0" />
+        </section>
 
-			<section>
-				<h2>Why is SNe Ia intrinsic scatter a concern?</h2>
-				<h4>Intrinsic scatter is the most important systematic for the DES 5 year analysis of the dark energy
-					equation of state parameter $w$ (<em>Vincenzi et al. 2024</em>).</h4>
-				<img class="r-stretch rounded" data-src="figs/vincenzisocks.png"
-					style="align-self: center; margin-top: 0;">
-			</section>
-
-			<!-- METHOD SLIDES -->
-			<section>
-				<h2>Rubin-LSST Simulations</h2>
-				<h4>We used the SNANA software (<em>Kessler et al. 2009</em>) to simulate the 10 years of the Rubin-LSST
-					survey!</h4>
-				<div data-animate data-load="figs/pipeline_DESC.svg" ,
-					style="scale:0.8; position: relative;  top: -2.5em;">
-					<!--
+        <!-- METHOD SLIDES -->
+        <section>
+          <h2>Rubin-LSST Simulations</h2>
+          <h4>We used the SNANA software (<em>Kessler et al. 2009</em>) to simulate the 10 years of the Rubin-LSST survey!</h4>
+          <div data-animate data-load="figs/pipeline_DESC.svg" , style="scale: 0.8; position: relative; top: -2.5em">
+            <!--
 							{
 							"setup": [
 							{
@@ -466,62 +489,53 @@
 							]
 							}
 						-->
-				</div>
-				<h4 style="position: relative; top: -14em; text-align: left;">
-					<ul>
-						<li class="fragment" style="margin-bottom: 0.5em;">Survey parameters from the LSST survey
-							simulation <tt>OpSim</tt></li>
-						<li class="fragment" style="margin-bottom: 0.5em;">SN Ia model: Spectra model (SALT) + intrinsic
-							scattering model + SALT parameter distributions</li>
-						<li class="fragment">Host catalog: The Uchuu UniverseMachine N-body simulation</li>
-					</ul>
-				</h4>
-			</section>
+          </div>
+          <h4 style="position: relative; top: -14em; text-align: left">
+            <ul>
+              <li class="fragment" style="margin-bottom: 0.5em">Survey parameters from the LSST survey simulation <tt>OpSim</tt></li>
+              <li class="fragment" style="margin-bottom: 0.5em">
+                SN Ia model: Spectra model (SALT) + intrinsic scattering model + SALT parameter distributions
+              </li>
+              <li class="fragment">Host catalog: The Uchuu UniverseMachine N-body simulation</li>
+            </ul>
+          </h4>
+        </section>
 
-			<section>
-				<h2>Simulation of the SN Ia hosts</h2>
+        <section>
+          <h2>Simulation of the SN Ia hosts</h2>
 
-				<div class="r-stack">
-					<div class="fragment fade-out" data-fragment-index="1">
-						<h4 style="text-align: left; ">
-							8 mocks cut from the (2 Gpc $h^{-1}$)$^3$ box of the Uchuu UniverseMachine galaxy catalog
-							(<em>Ishiyama et al.</em> 2021, <em>Aung et al. 2023</em>) $\Rightarrow$ Density and
-							velocity field corresponding to Planck15 cosmology
-						</h4>
-						<img class="rounded" data-src="figs/uchuu_plot.png" width="750em" style="margin-top: 1em;">
-					</div>
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="1">
+              <h4 style="text-align: left">
+                8 mocks cut from the (2 Gpc $h^{-1}$)$^3$ box of the Uchuu UniverseMachine galaxy catalog (<em>Ishiyama et al.</em> 2021,
+                <em>Aung et al. 2023</em>) $\Rightarrow$ Density and velocity field corresponding to Planck15 cosmology
+              </h4>
+              <img class="rounded" data-src="figs/uchuu_plot.png" width="750em" style="margin-top: 1em" />
+            </div>
 
-					<div class="fragment" data-fragment-index="1">
-						<h4>
-							We simulated SN Ia parameters correlations with their host properties: <br><br>
-							<ul>
-								<li style="margin-bottom: 0.5em;">SN Ia rate - Host mass correlation from <em>Wiseman et
-										al. 2021</em></li>
-								<li>SN Ia parameters - Host mass correlation from <em>Popovic et al. 2021</em></li>
-							</ul>
-						</h4>
-						<img class="rounded" data-src="figs/mass.png">
-					</div>
+            <div class="fragment" data-fragment-index="1">
+              <h4>
+                We simulated SN Ia parameters correlations with their host properties: <br /><br />
+                <ul>
+                  <li style="margin-bottom: 0.5em">SN Ia rate - Host mass correlation from <em>Wiseman et al. 2021</em></li>
+                  <li>SN Ia parameters - Host mass correlation from <em>Popovic et al. 2021</em></li>
+                </ul>
+              </h4>
+              <img class="rounded" data-src="figs/mass.png" />
+            </div>
+          </div>
+        </section>
 
-				</div>
-
-
-			</section>
-
-			<section>
-				<h2>The SNe Ia simulated sample</h2>
-				<h4 style="margin-top: 0em;">
-					$N_\text{SN} \sim O(50 \ 000)$
-				</h4>
-				<img class="rounded r-stretch" data-src="figs/sn_loc.png" style="align-self: center;">
-				<img class="rounded fragment" data-src="figs/z.png" style="position: absolute; top: 5em; right: 0em;"
-					width="500em">
-			</section>
-			<section>
-				<h2>Building the Hubble diagram</h2>
-				<div data-animate data-load="figs/pipeline_DESC.svg" ,
-					style="scale:0.8; position: relative;  top: -2.5em;">
-					<!--
+        <section>
+          <h2>The SNe Ia simulated sample</h2>
+          <h4 style="margin-top: 0em">$N_\text{SN} \sim O(50 \ 000)$</h4>
+          <img class="rounded r-stretch" data-src="figs/sn_loc.png" style="align-self: center" />
+          <img class="rounded fragment" data-src="figs/z.png" style="position: absolute; top: 5em; right: 0em" width="500em" />
+        </section>
+        <section>
+          <h2>Building the Hubble diagram</h2>
+          <div data-animate data-load="figs/pipeline_DESC.svg" , style="scale: 0.8; position: relative; top: -2.5em">
+            <!--
 							{
 							"setup": [
 							{
@@ -553,31 +567,28 @@
 							]
 							}
 						-->
-				</div>
-			</section>
-			<section>
-				<h2>Building the Hubble diagram: simple framework</h2>
-				<div style="align-self: auto; padding: 5em">
-					<h4>
-						$\boldsymbol{\mu_\mathrm{obs}} = \boldsymbol{m_B} - \left({\color{red} M_0} - {\color{red}
-						\alpha} \boldsymbol{x_1} + {\color{red} \beta} \boldsymbol{c} +
-						\boldsymbol{\Delta_M}\left(\mathbf{M_\mathrm{host}}; {\color{red} \gamma}\right)\right)$
-						<br>
-						<br>
-						$\boldsymbol{\sigma_\mu}^2 = \boldsymbol{\sigma_\mathrm{obs}}^2 +
-						{\color{red}\sigma_\mathrm{int}}^2$
-						<br>
-						<br>
-						${\color{red}M_0}$, ${\color{red}\alpha}$, ${\color{red}\beta}$, ${\color{red}\gamma}$ and
-						${\color{red}\sigma_\mathrm{int}}$ will be fitted along $f\sigma_8$
-					</h4>
-				</div>
-			</section>
-			<section>
-				<h2>Building the Hubble diagram</h2>
-				<div data-animate data-load="figs/pipeline_DESC.svg" ,
-					style="scale:0.8; position: relative;  top: -2.5em;">
-					<!--
+          </div>
+        </section>
+        <section>
+          <h2>Building the Hubble diagram: simple framework</h2>
+          <div style="align-self: auto; padding: 5em">
+            <h4>
+              $\boldsymbol{\mu_\mathrm{obs}} = \boldsymbol{m_B} - \left({\color{red} M_0} - {\color{red} \alpha} \boldsymbol{x_1} + {\color{red}
+              \beta} \boldsymbol{c} + \boldsymbol{\Delta_M}\left(\mathbf{M_\mathrm{host}}; {\color{red} \gamma}\right)\right)$
+              <br />
+              <br />
+              $\boldsymbol{\sigma_\mu}^2 = \boldsymbol{\sigma_\mathrm{obs}}^2 + {\color{red}\sigma_\mathrm{int}}^2$
+              <br />
+              <br />
+              ${\color{red}M_0}$, ${\color{red}\alpha}$, ${\color{red}\beta}$, ${\color{red}\gamma}$ and ${\color{red}\sigma_\mathrm{int}}$ will be
+              fitted along $f\sigma_8$
+            </h4>
+          </div>
+        </section>
+        <section>
+          <h2>Building the Hubble diagram</h2>
+          <div data-animate data-load="figs/pipeline_DESC.svg" , style="scale: 0.8; position: relative; top: -2.5em">
+            <!--
 							{
 							"setup": [
 							{
@@ -594,49 +605,48 @@
 							]
 							}
 						-->
-				</div>
-			</section>
+          </div>
+        </section>
 
-			<section>
-				<h2>Building the Hubble diagram: BBC framework</h2>
-				<h4>
-					$\boldsymbol{\mu_\mathrm{obs, BBC}} = \boldsymbol{m_B} - \left({\color{red} M_0} -
-					{\color{red}\alpha} \boldsymbol{x_1} + {\color{red}\beta} \boldsymbol{c} +
-					\boldsymbol{\Delta_M}\left(\mathbf{M_\mathrm{host}}; {\color{red}\gamma}\right)\right) +
-					\delta_\mathrm{corr.}$
-					<br>
-					<br>
-					$\boldsymbol{\sigma_\mu}^2 = \boldsymbol{\sigma_\mathrm{obs}}^2 +
-					{\color{red}\sigma_\mathrm{int}}^2$
-					<br>
-					<br>
-					<span class="fragment" data-fragment-index="1">$\delta_\mathrm{corr.}$ is obtained by:</span>
-					<br>
-					<br>
-					<ul>
-						<li class="fragment" data-fragment-index="2" style="margin-bottom: 1em;">Running an extra-large
-							simulation ($\sim40\times$ LSST) and fitting the hubble diagram</li>
-						<li class="fragment" data-fragment-index="3" style="margin-bottom: 1em;">Binning over the
-							parameters $p=\left\{z_\mathrm{obs}, x_1, c, M_\mathrm{host}\right\}$</li>
-						<li class="fragment" data-fragment-index="4" style="margin-bottom: 1em;">Computing the
-							correction in each cell $\delta_\mathrm{corr.} = \left<\mu_\mathrm{obs} -
-								\mu_\mathrm{fid}\right>_\mathrm{cell}$</li>
-						<li class="fragment" data-fragment-index="5">Interpolate over the cells to obtain
-							$\delta_\text{corr.}(p)$</li>
-					</ul>
-					<br>
-					<br>
-					<span class="fragment" data-fragment-index="6">${\color{red}\alpha}$, ${\color{red}\beta}$,
-						${\color{red}\gamma}$ and ${\color{red}\sigma_\mathrm{int}}$ are fitted prior to
-						$f\sigma_8$</span>
-				</h4>
-			</section>
+        <section>
+          <h2>Building the Hubble diagram: BBC framework</h2>
+          <h4>
+            $\boldsymbol{\mu_\mathrm{obs, BBC}} = \boldsymbol{m_B} - \left({\color{red} M_0} - {\color{red}\alpha} \boldsymbol{x_1} +
+            {\color{red}\beta} \boldsymbol{c} + \boldsymbol{\Delta_M}\left(\mathbf{M_\mathrm{host}}; {\color{red}\gamma}\right)\right) +
+            \delta_\mathrm{corr.}$
+            <br />
+            <br />
+            $\boldsymbol{\sigma_\mu}^2 = \boldsymbol{\sigma_\mathrm{obs}}^2 + {\color{red}\sigma_\mathrm{int}}^2$
+            <br />
+            <br />
+            <span class="fragment" data-fragment-index="1">$\delta_\mathrm{corr.}$ is obtained by:</span>
+            <br />
+            <br />
+            <ul>
+              <li class="fragment" data-fragment-index="2" style="margin-bottom: 1em">
+                Running an extra-large simulation ($\sim40\times$ LSST) and fitting the hubble diagram
+              </li>
+              <li class="fragment" data-fragment-index="3" style="margin-bottom: 1em">
+                Binning over the parameters $p=\left\{z_\mathrm{obs}, x_1, c, M_\mathrm{host}\right\}$
+              </li>
+              <li class="fragment" data-fragment-index="4" style="margin-bottom: 1em">
+                Computing the correction in each cell $\delta_\mathrm{corr.} = \left<\mu_\mathrm{obs} - \mu_\mathrm{fid}\right>_\mathrm{cell}$
+              </li>
+              <li class="fragment" data-fragment-index="5">Interpolate over the cells to obtain $\delta_\text{corr.}(p)$</li>
+            </ul>
+            <br />
+            <br />
+            <span class="fragment" data-fragment-index="6"
+              >${\color{red}\alpha}$, ${\color{red}\beta}$, ${\color{red}\gamma}$ and ${\color{red}\sigma_\mathrm{int}}$ are fitted prior to
+              $f\sigma_8$</span
+            >
+          </h4>
+        </section>
 
-			<section>
-				<h2>The maximum likelihood method</h2>
-				<div data-animate data-load="figs/pipeline_DESC.svg" ,
-					style="scale:0.8; position: relative;  top: -2.5em;">
-					<!--
+        <section>
+          <h2>The maximum likelihood method</h2>
+          <div data-animate data-load="figs/pipeline_DESC.svg" , style="scale: 0.8; position: relative; top: -2.5em">
+            <!--
 							{
 							"setup": [
 							{
@@ -654,101 +664,89 @@
 							]
 							}
 						-->
-				</div>
-			</section>
+          </div>
+        </section>
 
-			<section>
-				<h2>The maximum likelihood mehod</h2>
-				<h4>
-					The Maximum likelihood method is implemented within the <img class="plain"
-						data-src="figs/flip_logo.webp" width="100em" style="position: relative; top:1.2em"> package
-					(Ravoux, Carreres et al. 2025)
-					<br><br>
-				</h4>
-				<h4>
-					We want to maximize the likelihood function: $$\mathcal{L}(f\sigma_8; \hat{v}) \propto
-					\left(2\pi\right)^{-\frac{N}{2}}\left|\text{C}(f\sigma_8)\right|^{-\frac{1}{2}}\exp\left(-\frac{1}{2}\boldsymbol{\hat{v}}^T\text{C}(f\sigma_8)^{-1}\boldsymbol{\hat{v}}\right)$$
-				</h4>
-			</section>
+        <section>
+          <h2>The maximum likelihood mehod</h2>
+          <h4>
+            The Maximum likelihood method is implemented within the
+            <img class="plain" data-src="figs/flip_logo.webp" width="100em" style="position: relative; top: 1.2em" /> package (Ravoux, Carreres et al.
+            2025) <br /><br />
+          </h4>
+          <h4>
+            We want to maximize the likelihood function: $$\mathcal{L}(f\sigma_8; \hat{v}) \propto
+            \left(2\pi\right)^{-\frac{N}{2}}\left|\text{C}(f\sigma_8)\right|^{-\frac{1}{2}}\exp\left(-\frac{1}{2}\boldsymbol{\hat{v}}^T\text{C}(f\sigma_8)^{-1}\boldsymbol{\hat{v}}\right)$$
+          </h4>
+        </section>
 
+        <section>
+          <h2>The maximum likelihood mehod: estimated velocities</h2>
+          <img class="rounded" data-src="figs/HDvpec.png" width="550em" style="align-self: center; margin-top: -1em" />
+          <img
+            class="fragment fade-in-then-out"
+            data-fragment-index="1"
+            data-src="figs/pec_vel_effect.svg"
+            width="400em"
+            style="align-self: center; margin-top: -1em; position: absolute; top: 5em; right: 10em"
+          />
 
-			<section>
-				<h2>The maximum likelihood mehod: estimated velocities</h2>
-				<img class="rounded" data-src="figs/HDvpec.png" width="550em"
-					style="align-self: center; margin-top: -1em;">
-				<img class="fragment fade-in-then-out" data-fragment-index="1" data-src="figs/pec_vel_effect.svg"
-					width="400em"
-					style="align-self: center; margin-top: -1em; position: absolute; top: 5em; right: 10em;">
+          <h5 class="fragment" data-fragment-index="1">
+            The data vector are the estimated velocities: $$\hat{v} = -\frac{c\ln10}{5}\left(\frac{(1 + z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu \
+            \text{ where } \ \Delta\mu = \mu_\mathrm{obs} - \mu_\mathrm{model}(z_\mathrm{obs})$$
+            <br />
+          </h5>
+          <h5 class="fragment" data-fragment-index="2" style="margin-top: -2em">
+            Noise is propagated as: $$\sigma_\hat{v} = \frac{c\ln10}{5}\left(\frac{(1 + z)c}{H(z)r(z)} - 1\right)^{-1} \sigma_{\Delta\mu}$$
+          </h5>
+        </section>
+        <section>
+          <h2>The maximum likelihood mehod: velocity covariance</h2>
+          <div class="container" style="display: flex; flex-direction: row; column-gap: 1em">
+            <img class="plain" data-src="figs/rsd_norsd.svg" width="500em" />
+            <div>
+              The velocity field is approximated as a Gaussian random field<br /><br />
+              The covariance of the velocity field is: $$\langle v_i(x_i) v_j(x_j)\rangle = \text{C}_{ij}^{vv}\propto ({\color{red}f\sigma_8})^2
+              \int_{k_\mathrm{min}}^{k_\mathrm{max}} P(k) W_{ij}(k; \mathbf{r}_i, \mathbf{r}_j) {\rm d}k $$
+              <span class="fragment">
+                The observational covariance is: $$C^{vv, \mathrm{obs}} = \left[\frac{c\ln10}{5}\left(\frac{(1 + z)c}{H(z)r(z)} -
+                1\right)^{-1}\right]^2\text{diag}\left[\sigma_\mu^2\right]$$
+              </span>
+              <span class="fragment">
+                The total covariance is: $\text{C} = \text{C}^{vv}({\color{red}f\sigma_8}) + C^{vv, \mathrm{obs}} + {\color{red}\sigma_v}^2
+                \mathbf{I}$
+              </span>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>The $\sigma_u$ redshift space parameter</h2>
+          <div class="r-stack">
+            <div class="container fragment fade-out" data-fragment-index="1" style="display: flex; flex-direction: row">
+              <h4>
+                Position are evaluated using $z_\mathrm{obs} \ \Rightarrow$ Redshift Space Distorsion
+                <br />
+                <br />
+                Empirical damping introduced in <em>Koda et al. 2014</em>: $D_u = \text{sinc}(k\sigma_u)$
+                <br />
+                <br />
+                $$\text{C}_{ij}^{vv}\propto (f\sigma_8)^2 \int_{k_\mathrm{min}}^{k_\mathrm{max}} P(k){\color{red} D_u(k, \sigma_u)}^2 W_{ij}(k;
+                \mathbf{r}_i, \mathbf{r}_j) {\rm d}k$$
+              </h4>
+              <img class="plain" data-src="figs/RSD.svg" , width="500em" style="position: relative; top: -2em" />
+            </div>
 
-				<h5 class="fragment" data-fragment-index="1">
-					The data vector are the estimated velocities:
-					$$\hat{v} = -\frac{c\ln10}{5}\left(\frac{(1 + z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu \ \text{ where
-					} \ \Delta\mu = \mu_\mathrm{obs} - \mu_\mathrm{model}(z_\mathrm{obs})$$
-					<br>
-				</h5>
-				<h5 class="fragment" data-fragment-index="2" style="margin-top: -2em;">
-					Noise is propagated as:
-					$$\sigma_\hat{v} = \frac{c\ln10}{5}\left(\frac{(1 + z)c}{H(z)r(z)} - 1\right)^{-1}
-					\sigma_{\Delta\mu}$$
-				</h5>
-			</section>
-			<section>
-				<h2>The maximum likelihood mehod: velocity covariance</h2>
-				<div class="container" style="display: flex; flex-direction: row; column-gap: 1em;">
-					<img class="plain" data-src="figs/rsd_norsd.svg" width="500em">
-					<div>
-						The velocity field is approximated as a Gaussian random field<br><br>
-						The covariance of the velocity field is:
-						$$\langle v_i(x_i) v_j(x_j)\rangle = \text{C}_{ij}^{vv}\propto ({\color{red}f\sigma_8})^2
-						\int_{k_\mathrm{min}}^{k_\mathrm{max}} P(k) W_{ij}(k; \mathbf{r}_i, \mathbf{r}_j) {\rm d}k
-						$$
-						<span class="fragment">
-							The observational covariance is:
-							$$C^{vv, \mathrm{obs}} = \left[\frac{c\ln10}{5}\left(\frac{(1 + z)c}{H(z)r(z)} -
-							1\right)^{-1}\right]^2\text{diag}\left[\sigma_\mu^2\right]$$
-						</span>
-						<span class="fragment">
-							The total covariance is:
-							$\text{C} = \text{C}^{vv}({\color{red}f\sigma_8}) + C^{vv, \mathrm{obs}} +
-							{\color{red}\sigma_v}^2 \mathbf{I}$
-						</span>
-					</div>
-				</div>
-			</section>
-			<section>
-				<h2>The $\sigma_u$ redshift space parameter</h2>
-				<div class="r-stack">
-					<div class="container fragment fade-out" data-fragment-index="1"
-						style="display: flex; flex-direction: row;">
-						<h4>
-							Position are evaluated using $z_\mathrm{obs} \ \Rightarrow$ Redshift Space Distorsion
-							<br>
-							<br>
-							Empirical damping introduced in <em>Koda et al. 2014</em>: $D_u = \text{sinc}(k\sigma_u)$
-							<br>
-							<br>
-							$$\text{C}_{ij}^{vv}\propto (f\sigma_8)^2 \int_{k_\mathrm{min}}^{k_\mathrm{max}}
-							P(k){\color{red} D_u(k, \sigma_u)}^2 W_{ij}(k; \mathbf{r}_i, \mathbf{r}_j) {\rm d}k$$
-						</h4>
-						<img class="plain" data-src="figs/RSD.svg" , width="500em"
-							style="position: relative; top: -2em;">
-					</div>
+            <div class="fragment" data-fragment-index="1">
+              <h4>From a fit of true vel. from randomly sampled galaxies of the Uchuu simulation we found $\sigma_u \simeq 21 \text{Mpc }h^{-1}$</h4>
+              <img class="rounded" data-src="figs/sigu.png" style="align-self: center" width="650em" />
+            </div>
+          </div>
+        </section>
 
-					<div class="fragment" data-fragment-index="1">
-						<h4>
-							From a fit of true vel. from randomly sampled galaxies of the Uchuu simulation we found
-							$\sigma_u \simeq 21 \text{Mpc }h^{-1}$
-						</h4>
-						<img class="rounded" data-src="figs/sigu.png" style="align-self: center;" width="650em">
-					</div>
-				</div>
-			</section>
-
-			<section>
-				<h2>Fitting for $f\sigma_8$</h2>
-				<div data-animate data-load="figs/pipeline_DESC.svg" ,
-					style="scale:0.8; position: relative;  top: -2.5em;">
-					<!--
+        <section>
+          <h2>Fitting for $f\sigma_8$</h2>
+          <div data-animate data-load="figs/pipeline_DESC.svg" , style="scale: 0.8; position: relative; top: -2.5em">
+            <!--
 							{
 							"setup": [
 							{
@@ -760,168 +758,153 @@
 							]
 							}
 						-->
-				</div>
-			</section>
+          </div>
+        </section>
 
-			<!-- RESULTS SLIDES -->
-			<section>
-				<h2>Results: Estimated velocities</h2>
-				<h4>We only consider SNe Ia at $0.02 < z < 0.1$, $N_\text{SN} \sim 8000$</h4>
-						<div class="r-stack r-stretch">
-							<img class="rounded fragment fade-out" data-fragment-index="0" data-src="figs/Vbias_c.png"
-								style="align-self: center;">
-							<img class="rounded fragment" data-fragment-index="0" data-src="figs/Vbiaspull.png"
-								style="align-self: center;">
-						</div>
-			</section>
+        <!-- RESULTS SLIDES -->
+        <section>
+          <h2>Results: Estimated velocities</h2>
+          <h4>We only consider SNe Ia at $0.02 < z < 0.1$, $N_\text{SN} \sim 8000$</h4>
+          <div class="r-stack r-stretch">
+            <img class="rounded fragment fade-out" data-fragment-index="0" data-src="figs/Vbias_c.png" style="align-self: center" />
+            <img class="rounded fragment" data-fragment-index="0" data-src="figs/Vbiaspull.png" style="align-self: center" />
+          </div>
+        </section>
 
-			<section>
-				<h2>Results: $f\sigma_8$ fit for different scatter model</h2>
-				<div class="container" style="display: flex; margin-top: 2em; width: 100%;">
-					<div class="col" style="flex:0.43">
-						<h4>
-							<ul>
-								<li class="fragment" style="margin-bottom: 30px;">True vel. fit: unbiased,
-									$\sigma_{f\sigma_8}\sim 5\%$ </li>
-								<li class="fragment" style="margin-bottom: 15px;">COH, G10 and C11:<br>
-									Similar results for simple and BBC fit<br>
-									Unbiased $f\sigma_8$<br>
-									$\sigma_{f\sigma_8}\sim 10 - 13\%$</li>
-								<li class="fragment">
-									P23 - Simple fit: $\sigma_{f\sigma_8}\sim 14\%$<br>
-									P23 - BBC fit: $\sigma_{f\sigma_8}\sim10\%$<br>
-									Results for P23 are biased by $\sim-20\%$!
-								</li>
-							</ul>
-						</h4>
-					</div>
-					<div class="col" style="flex: 0.57;">
-						<img class="rounded" data-src="figs/Resfs8.png" width="100%" style="align-self: center;">
-					</div>
-				</div>
+        <section>
+          <h2>Results: $f\sigma_8$ fit for different scatter model</h2>
+          <div class="container" style="display: flex; margin-top: 2em; width: 100%">
+            <div class="col" style="flex: 0.43">
+              <h4>
+                <ul>
+                  <li class="fragment" style="margin-bottom: 30px">True vel. fit: unbiased, $\sigma_{f\sigma_8}\sim 5\%$</li>
+                  <li class="fragment" style="margin-bottom: 15px">
+                    COH, G10 and C11:<br />
+                    Similar results for simple and BBC fit<br />
+                    Unbiased $f\sigma_8$<br />
+                    $\sigma_{f\sigma_8}\sim 10 - 13\%$
+                  </li>
+                  <li class="fragment">
+                    P23 - Simple fit: $\sigma_{f\sigma_8}\sim 14\%$<br />
+                    P23 - BBC fit: $\sigma_{f\sigma_8}\sim10\%$<br />
+                    Results for P23 are biased by $\sim-20\%$!
+                  </li>
+                </ul>
+              </h4>
+            </div>
+            <div class="col" style="flex: 0.57">
+              <img class="rounded" data-src="figs/Resfs8.png" width="100%" style="align-self: center" />
+            </div>
+          </div>
+        </section>
 
-			</section>
+        <section>
+          <h2>Results: adding the B21 variations covariance</h2>
+          <h4>
+            Bias correction re-run for simulation using variations of BS21 parameters $\Rightarrow \delta_\mathrm{corr}$ is changing
+            <br /><br />
+            <span class="fragment">
+              New covariance term computed from variations to baseline:
+              <br />
+              <img class="plain" data-src="figs/B21_var.svg" width="800em" />
+            </span>
+          </h4>
+          <img class="rounded fragment" data-src="figs/table.png" style="align-self: center" height="250em" />
+        </section>
 
-			<section>
-				<h2>Results: adding the B21 variations covariance</h2>
-				<h4>
-					Bias correction re-run for simulation using variations of BS21 parameters $\Rightarrow
-					\delta_\mathrm{corr}$ is changing
-					<br><br>
-					<span class="fragment">
-						New covariance term computed from variations to baseline:
-						<br>
-						<img class="plain" data-src="figs/B21_var.svg" width="800em">
-					</span>
-				</h4>
-				<img class="rounded fragment" data-src="figs/table.png" style="align-self: center;" height="250em">
-			</section>
+        <section>
+          <h2>Results: the $\sigma_u$ systematic</h2>
+          <h4>$\Delta\sigma_u \sim 18.5 - 23.5 \text{ Mpc }h^{-1}$ &#8680; $\sigma_{f\sigma_8}^{\sigma_u}\sim6\%$</h4>
+          <img class="rounded r-stretch" data-src="figs/fs8_sigu.png" style="align-self: center" />
+        </section>
 
-			<section>
-				<h2>Results: the $\sigma_u$ systematic</h2>
-				<h4>$\Delta\sigma_u \sim 18.5 - 23.5 \text{ Mpc }h^{-1}$ &#8680 $\sigma_{f\sigma_8}^{\sigma_u}\sim6\%$
-				</h4>
-				<img class="rounded r-stretch" data-src="figs/fs8_sigu.png" style="align-self: center;">
+        <!-- CONSLUSION SLIDE -->
+        <section>
+          <h2>Conclusion</h2>
+          <h4>
+            <br />
+            <ul>
+              <li class="fragment" style="margin-bottom: 30px">Estimated PVs are unbiased using the BBC method compared to the simple method</li>
+              <li class="fragment" style="margin-bottom: 30px">Correlations between hosts and SNe don't seems to bias $f\sigma_8$</li>
+              <li class="fragment" style="margin-bottom: 30px">The BS21 model leads to non-gaussianity that bias the measurements of $f\sigma_8$</li>
+              <li class="fragment" style="margin-bottom: 30px">
+                The uncertainty on the parameters of BS21 are not a major systematic for $f\sigma_8$
+              </li>
+              <li class="fragment">
+                The parameter $\sigma_u$ is correlated with $f\sigma_8$ and we estimated the amplitude of this systematic to be $\sim6\%$
+              </li>
+            </ul>
+            <br />
+            <br />
+          </h4>
+          <h3 class="fragment" style="text-align: left">What's next?</h3>
+          <h4>
+            <ul>
+              <li class="fragment" style="margin-bottom: 30px">Is the BS21 model correct? Will we see non-gausianities in data?</li>
+              <li class="fragment">Can we get rid of $\sigma_u$?</li>
+            </ul>
+          </h4>
+        </section>
 
-			</section>
+        <section>
+          <div style="position: relative; width: 100%; height: 720px; display: flex; justify-content: center; align-items: center">
+            <p style="font-size: 200%">Thank you for your attention !</p>
+          </div>
+        </section>
 
-			<!-- CONSLUSION SLIDE -->
-			<section>
-				<h2>Conclusion</h2>
-				<h4>
-					<br>
-					<ul>
-						<li class="fragment" style="margin-bottom: 30px;">Estimated PVs are unbiased using the BBC
-							method compared to the simple method</li>
-						<li class="fragment" style="margin-bottom: 30px;">Correlations between hosts and SNe don't seems
-							to bias $f\sigma_8$</li>
-						<li class="fragment" style="margin-bottom: 30px;">The BS21 model leads to non-gaussianity that
-							bias the measurements of $f\sigma_8$</li>
-						<li class="fragment" style="margin-bottom: 30px;">The uncertainty on the parameters of BS21 are
-							not a major systematic for $f\sigma_8$</li>
-						<li class="fragment">The parameter $\sigma_u$ is correlated with $f\sigma_8$ and we estimated
-							the amplitude of this systematic to be $\sim6\%$</li>
-					</ul>
-					<br>
-					<br>
-				</h4>
-				<h3 class="fragment" style="text-align: left;">What's next?</h3>
-				<h4>
-					<ul>
-						<li class="fragment" style="margin-bottom: 30px;">Is the BS21 model correct? Will we see
-							non-gausianities in data?</li>
-						<li class="fragment">Can we get rid of $\sigma_u$?</li>
-					</ul>
-				</h4>
-			</section>
+        <!-- BACKUP SLIDE -->
+        <section>
+          <h2>Full $f\sigma_8$ results</h2>
+          <img class="rounded r-stretch" data-src="figs/fulltable.png" />
+        </section>
 
-			<section>
-				<div
-					style="position: relative; width: 100%; height: 720px; display: flex; justify-content: center; align-items: center;">
-					<p style="font-size: 200%;">
-						Thank you for your attention !
-					</p>
-				</div>
-			</section>
+        <section>
+          <h2>$\sigma_u$ syst. for G10</h2>
+          <img class="rounded r-stretch" data-src="figs/fs8_sigu_G10.png" />
+        </section>
 
-			<!-- BACKUP SLIDE -->
-			<section>
-				<h2>Full $f\sigma_8$ results</h2>
-				<img class="rounded r-stretch" data-src="figs/fulltable.png">
-			</section>
+        <section>
+          <h2>BS21 equations</h2>
+          $$\Delta m_b = \beta c + (R_V + 1)E$$ $$\mathcal{P}(c) \sim \mathcal{N}(\bar{c}, \sigma_c)$$ $$\mathcal{P}(E) \sim \mathrm{Exp}(\tau^{-1})$$
+          $$\mathcal{P}(\beta) \sim \mathcal{N}(\bar{\beta}, \sigma_\beta)$$ $$\mathcal{P}(R_V)\sim \mathcal{N}(\bar{R_V}, \sigma_{R_V})$$
+        </section>
+      </div>
+    </div>
 
-			<section>
-				<h2>$\sigma_u$ syst. for G10</h2>
-				<img class="rounded r-stretch" data-src="figs/fs8_sigu_G10.png">
-			</section>
+    <script src="/assets/js/reveal.js/dist/reveal.js"></script>
+    <script src="/assets/js/reveal.js/plugin/notes/notes.js"></script>
+    <script src="/assets/js/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="/assets/js/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="/assets/js/reveal.js/plugin/math/math.js"></script>
 
-			<section>
-				<h2>BS21 equations</h2>
-				$$\Delta m_b = \beta c + (R_V + 1)E$$
-				$$\mathcal{P}(c) \sim \mathcal{N}(\bar{c}, \sigma_c)$$
-				$$\mathcal{P}(E) \sim \mathrm{Exp}(\tau^{-1})$$
-				$$\mathcal{P}(\beta) \sim \mathcal{N}(\bar{\beta}, \sigma_\beta)$$
-				$$\mathcal{P}(R_V)\sim \mathcal{N}(\bar{R_V}, \sigma_{R_V})$$
+    <!-- Load content plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/loadcontent/plugin.js"></script>
+    <!-- Animate plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
 
-			</section>
-		</div>
-	</div>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        width: 1280,
+        height: 720,
+        controls: false,
+        progress: false,
+        slideNumber: true,
+        animate: {
+          autoplay: true, // default is false
+        },
 
-	<script src="/assets/js/reveal.js/dist/reveal.js"></script>
-	<script src="/assets/js/reveal.js/plugin/notes/notes.js"></script>
-	<script src="/assets/js/reveal.js/plugin/markdown/markdown.js"></script>
-	<script src="/assets/js/reveal.js/plugin/highlight/highlight.js"></script>
-	<script src="/assets/js/reveal.js/plugin/math/math.js"></script>
-
-	<!-- Load content plugin -->
-	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/loadcontent/plugin.js"></script>
-	<!-- Animate plugin -->
-	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
-
-	<script>
-		// More info about initialization & config:
-		// - https://revealjs.com/initialization/
-		// - https://revealjs.com/config/
-		Reveal.initialize({
-			hash: true,
-			width: 1280,
-			height: 720,
-			controls: false,
-			progress: false,
-			slideNumber: true,
-			animate: {
-				autoplay: true // default is false
-			},
-
-			mathjax3: {
-				loader: { load: ['[tex]/boldsymbol'] },
-				tex: { packages: { '[+]': ['boldsymbol'] } }
-			},
-			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3, RevealLoadContent, RevealAnimate]
-		});
-	</script>
-</body>
-
+        mathjax3: {
+          loader: { load: ["[tex]/boldsymbol"] },
+          tex: { packages: { "[+]": ["boldsymbol"] } },
+        },
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3, RevealLoadContent, RevealAnimate],
+      });
+    </script>
+  </body>
 </html>
