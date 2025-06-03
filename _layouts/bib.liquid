@@ -51,7 +51,7 @@
     <div class="title">
       {{ entry.title }}
 
-      {% if entry.annotation and entry.annotation != "" %}
+      {% if entry.annotation and entry.annotation != '' %}
         <i
           class="fa-solid fa-circle-info ml-1"
           data-toggle="popover"
@@ -190,7 +190,6 @@
 
     <!-- Links/Buttons -->
     <div class="links">
-
       {% assign entry_is_published = true %}
       {% unless entry.doi %}
         {% assign entry_is_published = false %}
