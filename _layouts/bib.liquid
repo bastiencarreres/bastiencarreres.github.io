@@ -190,7 +190,11 @@
 
     <!-- Links/Buttons -->
     <div class="links">
+
       {% assign entry_is_published = true %}
+      {% unless entry.doi %}
+        {% assign entry_is_published = false %}
+      {% endunless %}
       {% if entry.doi and entry.doi contains 'arXiv' %}
         {% assign entry_is_published = false %}
       {% endif %}
@@ -208,7 +212,7 @@
         <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
       {% endif %}
       {% if entry.eprint %}
-        <a href="http://arxiv.org/abs/{{ entry.eprint }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
+        <a href="entry.eprint" class="btn btn-sm z-depth-0" role="button">arXiv</a>
       {% endif %}
       {% if entry.bibtex_show %}
         <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
