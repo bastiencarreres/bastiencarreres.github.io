@@ -51,34 +51,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/outreach/";
           },
-        },{id: "post-a-post-with-plotly-js",
-        
-          title: "a post with plotly.js",
-        
-        description: "this is what included plotly.js code could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/sample-posts/2025/03/26/plotly.html";
-          
-        },
-      },{id: "post-a-post-with-image-galleries",
-        
-          title: "a post with image galleries",
-        
-        description: "this is what included image galleries could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/sample-posts/2024/12/04/photo-gallery.html";
-          
-        },
-      },{id: "books-the-godfather",
-          title: 'The Godfather',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather.html";
-            },},{
+        },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
