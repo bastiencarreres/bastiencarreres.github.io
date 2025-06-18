@@ -100,7 +100,7 @@
       "name": "Programming Languages",
       "level": "",
       "icon": "fa-solid fa-code",
-      "keywords": ["Python : <i>Advanced</i>", "C/C++ : <i>Basics</i>", "HTML/CSS : <i>Beginner</i> "]
+      "keywords": ["Python (Expert)", "C/C++ (Novice)", "HTML/CSS (Novice)"]
     },
     {
       "name": "Cosmology software and library",
