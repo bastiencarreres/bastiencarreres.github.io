@@ -3,7 +3,6 @@ layout: about
 title: About
 permalink: /
 subtitle: Postdoctoral Associate at Duke University
-redirect_to: "https://bastiencarreres.com"
 
 profile:
   align: left
