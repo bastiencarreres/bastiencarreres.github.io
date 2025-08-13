@@ -16,29 +16,6 @@
     },
     "profiles": []
   },
-  "work": [
-    {
-      "institution": "Duke University",
-      "position": "Postdoctoral Associate",
-      "url": "",
-      "startDate": "2023-11-01",
-      "endDate": "",
-      "summary": "",
-      "location": "Durham, NC, USA",
-      "highlights": []
-    },
-    {
-      "institution": "Centre de Physique des Particules de Marseille",
-      "position": "PhD student",
-      "url": "https://www.cppm.in2p3.fr/web/fr/index.html",
-      "startDate": "2020-10-01",
-      "endDate": "2023-09-31",
-      "summary": "",
-      "location": "Marseille, France",
-      "highlights": []
-    }
-  ],
-  "volunteer": [],
   "education": [
     {
       "institution": "Université de Montpellier",
@@ -77,6 +54,29 @@
       ]
     }
   ],
+  "work": [
+    {
+      "institution": "Duke University",
+      "position": "Postdoctoral Associate",
+      "url": "",
+      "startDate": "2023-11-01",
+      "endDate": "",
+      "summary": "",
+      "location": "Durham, NC, USA",
+      "highlights": []
+    },
+    {
+      "institution": "Centre de Physique des Particules de Marseille",
+      "position": "PhD student",
+      "url": "https://www.cppm.in2p3.fr/web/fr/index.html",
+      "startDate": "2020-10-01",
+      "endDate": "2023-09-31",
+      "summary": "",
+      "location": "Marseille, France",
+      "highlights": []
+    }
+  ],
+  "volunteer": [],
   "grants": [
     {
       "title": "LSSTC Enabling Science Program Award",
