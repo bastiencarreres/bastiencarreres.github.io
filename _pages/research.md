@@ -3,10 +3,7 @@ layout: page
 permalink: /research/
 title: Research
 nav: False
-nav_order: 4
 ---
-
-My researches focus
 
 # SN Ia Peculiar velocities
 
