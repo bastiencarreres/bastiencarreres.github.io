@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://bastiencarreres.github.io/sitemap.xml
+Sitemap: https://bastiencarreres.com/sitemap.xml
