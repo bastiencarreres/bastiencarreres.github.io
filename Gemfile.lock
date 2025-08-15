@@ -219,8 +219,6 @@ GEM
       time
       uri
     ostruct (0.6.3)
-    pandoc (0.0.1)
-    pandoc-ruby (2.1.10)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (6.0.2)
@@ -302,8 +300,6 @@ DEPENDENCIES
   jemoji
   observer
   ostruct
-  pandoc
-  pandoc-ruby
 
 BUNDLED WITH
    2.6.9
