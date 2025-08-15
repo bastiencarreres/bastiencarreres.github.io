@@ -57,7 +57,7 @@
           data-toggle="popover"
           data-placement="top"
           data-html="true"
-          data-content="{{ entry.annotation | escape }}"
+          data-content="{{ entry.annotation | markdownify }}"
         >
         </i>
       {% endif %}

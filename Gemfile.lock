@@ -9,7 +9,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (8.0.2)
+    activesupport (8.0.2.1)
       base64
       benchmark (>= 0.3)
       bigdecimal
@@ -82,25 +82,25 @@ GEM
     forwardable (1.3.3)
     forwardable-extended (2.6.0)
     gemoji (4.1.0)
-    google-protobuf (4.31.1)
+    google-protobuf (4.32.0)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.31.1-aarch64-linux-gnu)
+    google-protobuf (4.32.0-aarch64-linux-gnu)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.31.1-aarch64-linux-musl)
+    google-protobuf (4.32.0-aarch64-linux-musl)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.31.1-arm64-darwin)
+    google-protobuf (4.32.0-arm64-darwin)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.31.1-x86_64-darwin)
+    google-protobuf (4.32.0-x86_64-darwin)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.31.1-x86_64-linux-gnu)
+    google-protobuf (4.32.0-x86_64-linux-gnu)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.31.1-x86_64-linux-musl)
+    google-protobuf (4.32.0-x86_64-linux-musl)
       bigdecimal
       rake (>= 13)
     html-pipeline (2.14.3)
@@ -152,8 +152,6 @@ GEM
       terser (~> 1.2.3)
     jekyll-paginate-v2 (3.0.0)
       jekyll (>= 3.0, < 5.0)
-    jekyll-redirect-from (0.16.0)
-      jekyll (>= 3.3, < 5.0)
     jekyll-regex-replace (1.1.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
@@ -221,6 +219,8 @@ GEM
       time
       uri
     ostruct (0.6.3)
+    pandoc (0.0.1)
+    pandoc-ruby (2.1.10)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (6.0.2)
@@ -292,7 +292,6 @@ DEPENDENCIES
   jekyll-link-attributes
   jekyll-minifier
   jekyll-paginate-v2
-  jekyll-redirect-from
   jekyll-regex-replace
   jekyll-scholar
   jekyll-sitemap
@@ -303,6 +302,8 @@ DEPENDENCIES
   jemoji
   observer
   ostruct
+  pandoc
+  pandoc-ruby
 
 BUNDLED WITH
    2.6.9
