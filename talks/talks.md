@@ -11,6 +11,9 @@ nav_order: 1
 
 ## 2025
 
+- 07/02 - [**SNe Ia growth-rate measurements with Rubin-LSST simulations: intrinsic scatter systematics**](cosmiclighthouse-2025-07-02/index.html) at _Cosmic Lighthouses 2025_, Cambridge, UK
+
+
 - 02/06 - [**SNe Ia growth-rate measurements with Rubin-LSST simulations: intrinsic scatter systematics**](cosmicflows-2025-02-06/index.html) at _CosmicFlows 2025_, Brisbane, Australia
 
 - 02/03 - [**Improving SN Ia Hubble residual scatter with galaxy groups**](cosmicflows-2025-02-03/CF2025_GalGrpSN_250203.pdf) at _CosmicFlows 2025_, Brisbane, Australia
