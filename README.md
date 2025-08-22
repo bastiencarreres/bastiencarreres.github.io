@@ -1,4 +1,4 @@
-My personal page repo hosted [here](https://bastiencarreres.github.io/)
+My personal page repo hosted [here](https://bastiencarreres.com)
 
 ## Aknowledgment
 
