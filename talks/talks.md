@@ -11,7 +11,7 @@ nav_order: 1
 
 ## 2025
 
-- 09/22 - [**Status of PV cosmology in LSST-DESC**](desc-pv-workshop-2025-09-22/DESCPV-2025-09-22.pdf) at _DESC workshop on cosmology with peculiar velocities_., Marseille, France
+- 09/22 - [**Status of PV cosmology in LSST-DESC**](desc-pv-workshop-2025-09-22/DESCPV-2025-09-22.pdf) at _DESC workshop on cosmology with peculiar velocities_, Marseille, France
 
 - 07/02 - [**SNe Ia growth-rate measurements with Rubin-LSST simulations: intrinsic scatter systematics**](cosmiclighthouse-2025-07-02/index.html) at _Cosmic Lighthouses 2025_, Cambridge, UK
 
