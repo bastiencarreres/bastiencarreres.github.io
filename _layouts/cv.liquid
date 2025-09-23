@@ -90,7 +90,7 @@ layout: default
           <div class="card mt-3 p-3">
             {% if data[0] == 'work' %}
               <h3 class="card-title font-weight-medium">{{ data[0] | capitalize }} Experience</h3>
-              {% else %}
+            {% else %}
               <h3 class="card-title font-weight-medium">{{ data[0] | capitalize }}</h3>
             {% endif %}
 
@@ -121,6 +121,7 @@ layout: default
                 {% when 'references' %}
                   {% include resume/references.liquid %}
                 {% else %}
+
               {% endcase %}
             </div>
           </div>
