@@ -19,7 +19,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-After obtaining a master's degree in [Subatomic Physics and Cosmology](https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-physique-IAQK7WZY/parcours-physique-subatomique-et-cosmologie-2e-annee-IAY1KEEB.html) at _[Université Grenoble-Alpes](https://www.univ-grenoble-alpes.fr/)_ I completed my PhD in Astrophycs and Cosmology at _[Centre de Physique des Particules de Marseille](https://www.cppm.in2p3.fr/web/fr/index.html)_.
+After obtaining a master's degree in [Subatomic Physics and Cosmology](https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-physique-IAQK7WZY/parcours-physique-subatomique-et-cosmologie-2e-annee-IAY1KEEB.html) at _[Université Grenoble-Alpes](https://www.univ-grenoble-alpes.fr/)_ I completed my PhD in Astrophisycs and Cosmology at _[Centre de Physique des Particules de Marseille](https://www.cppm.in2p3.fr/web/fr/index.html)_.
 {: style="text-align: justify"}
 
 **I'm currently working as a Postdoctoral Associate in the [Cosmology group of Duke Universty](https://physics.duke.edu/research/astrophysics).**
