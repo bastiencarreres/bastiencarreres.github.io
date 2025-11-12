@@ -11,6 +11,8 @@ nav_order: 1
 
 ## 2025
 
+- 11/12 - [**DESC Project announcement: Constraining Structure Growth and Modified Gravity Using LSST low-z SN Ia PVs and Weak Lensing**](descmcp-2025-11-12/DESC_Project_Announcement_ Constraining_Structure_Growth_and_Modified_Gravity_Using_LSST_lowz_SNe_Ia_PVs_and_Weak_Lensing.pdf)
+
 - 09/22 - [**Status of PV cosmology in LSST-DESC**](desc-pv-workshop-2025-09-22/DESCPV-2025-09-22.pdf) at _DESC workshop on cosmology with peculiar velocities_, Marseille, France
 
 - 07/02 - [**SNe Ia growth-rate measurements with Rubin-LSST simulations: intrinsic scatter systematics**](cosmiclighthouse-2025-07-02/index.html) at _Cosmic Lighthouses 2025_, Cambridge, UK
@@ -23,8 +25,7 @@ nav_order: 1
 
 ## 2024
 
-- 10/15 - [**DESC Project announcement: Measurement of the growth-rate of structures using
-  SN Ia PVs in the BBC framework**](desctd-2024-10-15/DESC_PV_BBC_project.pdf) at _DESC-TD biweekly meeting_, online
+- 10/15 - [**DESC Project announcement: Measurement of the growth-rate of structures using SN Ia PVs in the BBC framework**](desctd-2024-10-15/DESC_PV_BBC_project.pdf) at _DESC-TD biweekly meeting_, online
 
 ---
 
