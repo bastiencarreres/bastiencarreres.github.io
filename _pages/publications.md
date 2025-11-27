@@ -2,7 +2,7 @@
 layout: pub_page
 permalink: /publications/
 title: Publications
-publist_pdf: pub_list.pdf
+publist_pdf: Bastien_Carreres_Publications_List.pdf
 description:
 nav: true
 nav_order: 1
