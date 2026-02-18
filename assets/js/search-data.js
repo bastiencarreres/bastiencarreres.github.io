@@ -23,12 +23,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/talks/";
           },
-        },{id: "nav-repositories",
-          title: "Repositories",
-          description: "Github repositories I am contributing in.",
+        },{id: "nav-software",
+          title: "Software",
+          description: "Open-source tools I develop and contribute to.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/repositories/";
+            window.location.href = "/software/";
           },
         },{id: "nav-cv",
           title: "CV",
