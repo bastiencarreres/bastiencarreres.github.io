@@ -1,5 +1,21 @@
 ---
 ---
+{% if entry.doi %}
+  <span class="pub-link" data-url="https://doi.org/{{ entry.doi }}" hidden></span>
+{% elsif entry.preprint %}
+  <span class="pub-link" data-url="{{ entry.preprint }}" hidden></span>
+{% endif %}
+{% if entry.annotation and entry.annotation != '' %}
+  <!-- Annotation button (top-right corner of card) -->
+  <div class="annotation-container">
+    <button class="annotation-toggle" aria-label="Show annotation">
+      <i class="fa-solid fa-circle-info"></i>
+    </button>
+    <div class="annotation-tooltip">
+      <p>{{ entry.annotation | newline_to_br }}</p>
+    </div>
+  </div>
+{% endif %}
 <div class="row">
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
@@ -48,20 +64,7 @@
   <!-- Entry bib key -->
   <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
     <!-- Title -->
-    <div class="title">
-      {{ entry.title }}
-
-      {% if entry.annotation and entry.annotation != '' %}
-        <i
-          class="fa-solid fa-circle-info ml-1"
-          data-toggle="popover"
-          data-placement="top"
-          data-html="true"
-          data-content="{{ entry.annotation | markdownify }}"
-        >
-        </i>
-      {% endif %}
-    </div>
+    <div class="title">{{ entry.title }}</div>
     <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}

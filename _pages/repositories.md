@@ -1,51 +1,59 @@
 ---
 layout: page
-permalink: /repositories/
-title: Repositories
-description: Github repositories I am contributing in.
+permalink: /software/
+title: Software
+description: Open-source tools I develop and contribute to.
 nav: true
 nav_order: 3
 ---
 
-## GitHub profile
+<div class="repo-cards">
 
-{% if site.data.repositories.github_users %}
+  <a href="https://github.com/bastiencarreres/snsim" class="repo-card" target="_blank" rel="noopener">
+    <div class="repo-card-header">
+      <i class="fa-brands fa-github"></i>
+      <span class="repo-name">snsim</span>
+    </div>
+    <p class="repo-description">Simulator for supernovae surveys.</p>
+    <div class="repo-meta">
+      <span class="repo-lang"><span class="lang-dot python"></span>Python</span>
+      <span class="repo-stars"><i class="fa-regular fa-star"></i> 5</span>
+    </div>
+  </a>
 
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for user in site.data.repositories.github_users %}
-    {% include repository/repo_user.liquid username=user %}
-  {% endfor %}
+  <a href="https://github.com/corentinravoux/flip" class="repo-card" target="_blank" rel="noopener">
+    <div class="repo-card-header">
+      <i class="fa-brands fa-github"></i>
+      <span class="repo-name">flip</span>
+    </div>
+    <p class="repo-description">Field Level Inference Package: infer growth rate from density and velocity fields.</p>
+    <div class="repo-meta">
+      <span class="repo-lang"><span class="lang-dot python"></span>Python</span>
+      <span class="repo-stars"><i class="fa-regular fa-star"></i> 6</span>
+    </div>
+  </a>
+
+  <a href="https://github.com/LSSTDESC/OpSimSummaryV2" class="repo-card" target="_blank" rel="noopener">
+    <div class="repo-card-header">
+      <i class="fa-brands fa-github"></i>
+      <span class="repo-name">OpSimSummaryV2</span>
+    </div>
+    <p class="repo-description">Tools for summarizing LSST Operations Simulator outputs.</p>
+    <div class="repo-meta">
+      <span class="repo-lang"><span class="lang-dot jupyter"></span>Jupyter Notebook</span>
+      <span class="repo-stars"><i class="fa-regular fa-star"></i> 2</span>
+    </div>
+  </a>
+
+  <a href="https://github.com/bastiencarreres/snanapytools" class="repo-card" target="_blank" rel="noopener">
+    <div class="repo-card-header">
+      <i class="fa-brands fa-github"></i>
+      <span class="repo-name">snanapytools</span>
+    </div>
+    <p class="repo-description">Python utilities to visualize and work with SNANA.</p>
+    <div class="repo-meta">
+      <span class="repo-lang"><span class="lang-dot python"></span>Python</span>
+    </div>
+  </a>
+
 </div>
-
----
-
-## GitHub Repositories
-
-{% if site.data.repositories.github_repos %}
-
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for repo in site.data.repositories.github_repos %}
-    {% include repository/repo.liquid repository=repo %}
-  {% endfor %}
-</div>
-{% endif %}
-
----
-
-## GitHub Trophees :trophy:
-
-{% if site.repo_trophies.enabled %}
-{% for user in site.data.repositories.github_users %}
-{% if site.data.repositories.github_users.size > 1 %}
-
-  <h4>{{ user }}</h4>
-  {% endif %}
-  <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% include repository/repo_trophies.liquid username=user %}
-  </div>
-
----
-
-{% endfor %}
-{% endif %}
-{% endif %}

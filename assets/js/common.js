@@ -52,8 +52,65 @@ $(document).ready(function () {
     }
   });
 
-  // trigger popovers
+  // trigger popovers (non-annotation)
   $('[data-toggle="popover"]').popover({
     trigger: "hover",
+  });
+
+  // Annotation tooltips with MathJax support
+  function typesetAnnotation($tooltip) {
+    if (typeof MathJax === "undefined") return;
+    // MathJax v3: clear previous typeset marks, then re-typeset
+    if (MathJax.startup && MathJax.startup.promise) {
+      MathJax.startup.promise.then(function () {
+        MathJax.typesetClear([$tooltip[0]]);
+        MathJax.typesetPromise([$tooltip[0]]);
+      });
+    }
+  }
+
+  $(".annotation-container").each(function () {
+    var $container = $(this);
+    var $tooltip = $container.find(".annotation-tooltip");
+    var mathjaxDone = false;
+
+    $container.on("mouseenter", function () {
+      if (!mathjaxDone) {
+        typesetAnnotation($tooltip);
+        mathjaxDone = true;
+      }
+    });
+
+    // Also support click/tap for mobile
+    $container.find(".annotation-toggle").on("click", function (e) {
+      e.stopPropagation();
+      $container.toggleClass("active");
+      if (!mathjaxDone) {
+        typesetAnnotation($tooltip);
+        mathjaxDone = true;
+      }
+    });
+  });
+
+  // Close annotation tooltips when clicking outside
+  $(document).on("click", function () {
+    $(".annotation-container.active").removeClass("active");
+  });
+
+  // Clickable publication cards — navigate to publisher/preprint URL
+  $(".publications ol.bibliography li").each(function () {
+    var $li = $(this);
+    var $link = $li.find(".pub-link");
+    if ($link.length) {
+      var url = $link.data("url");
+      $li.css("cursor", "pointer");
+      $li.on("click", function (e) {
+        // Don't navigate if clicking on an interactive element
+        if ($(e.target).closest("a, button, .annotation-container, .author, .links, .badges, .hidden.open").length) {
+          return;
+        }
+        window.open(url, "_blank");
+      });
+    }
   });
 });

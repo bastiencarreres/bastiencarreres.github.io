@@ -6,6 +6,12 @@ body {
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
+  background-image: var(--global-bg-pattern);
+  background-size: var(--global-bg-pattern-size);
+  background-attachment: fixed;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
   h1,
   h2,
@@ -35,6 +41,7 @@ body.sticky-bottom-footer {
 .profile {
   img {
     width: 100%;
+    border-radius: 0.5rem;
   }
 }
 
