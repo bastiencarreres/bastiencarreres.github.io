@@ -782,13 +782,13 @@ footer.sticky-bottom {
   }
 
   h2.bibliography {
-    color: var(--global-text-color-light);
+    color: var(--global-text-color);
     border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
     margin-top: 2.5rem;
     text-align: right;
-    font-weight: 400;
-    font-size: 1.25rem;
+    font-weight: 600;
+    font-size: 1.5rem;
   }
 
   ol.bibliography {
