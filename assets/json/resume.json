@@ -54,7 +54,7 @@
       ]
     }
   ],
-  "work": [
+  "research_experience": [
     {
       "institution": "Duke University",
       "position": "Postdoctoral Associate",
@@ -76,12 +76,63 @@
       "highlights": []
     }
   ],
+  "teaching": [
+    {
+      "course": "PhD candidate with teaching duties",
+      "institution": "Aix-Marseille Université",
+      "location": "Marseille, France",
+      "startDate": "2020-09",
+      "endDate": "2023-06",
+      "highlights": ["64h / year. Bachelor's lectures in basic physics: Electricity, Optics, Thermodynamics."]
+    },
+    {
+      "course": "Calculus tutoring",
+      "institution": "Université de Montpellier",
+      "location": "Montpellier, France",
+      "startDate": "2017-10",
+      "endDate": "2017-12",
+      "highlights": ["Tutoring for first-year college students."]
+    },
+    {
+      "course": "Math tutoring",
+      "startDate": "2016-09",
+      "endDate": "2018-06",
+      "highlights": ["Independent tutoring for middle-school and high-school students."]
+    },
+    {
+      "subsection": "Student Mentoring",
+      "course": "PhD student mentoring",
+      "institution": "Duke University",
+      "startDate": "2023-11",
+      "highlights": ["Maria Acevedo — Subject: Cosmology with the DEBASS survey."]
+    },
+    {
+      "subsection": "Student Mentoring",
+      "course": "Graduate student project supervision",
+      "institution": "Duke University",
+      "startDate": "2024-09",
+      "endDate": "2025-06",
+      "highlights": ["Subject: Estimation of the velocity power spectrum in a N-body simulation."]
+    }
+  ],
   "volunteer": [],
   "grants": [
     {
-      "title": "LSSTC Enabling Science Program Award",
+      "title": "Marie Skłodowska-Curie Actions Postdoctoral Fellowship",
+      "date": "2025",
+      "awarder": "European Commission",
+      "url": "",
+      "summary": "Project PEGASUS: Probing dark Energy and Gravity through Analysis of the growth of Structure Using Supernovae.",
+      "highlights": [
+        "Amount: €276,187.",
+        "Host organisation: University of Oxford, UK.",
+        "Awarded with an evaluation score of 99.4/100 (top 1.62% of 1669 proposals in the EF-PHY panel)."
+      ]
+    },
+    {
+      "title": "Science Catalyst Grant",
       "date": "2021",
-      "awarder": "",
+      "awarder": "LSST Discovery Alliance",
       "url": "",
       "summary": "$5000 awards"
     },

@@ -1,14 +1,28 @@
 <ul class="card-text font-weight-light list-group list-group-flush">
-  {% assign work = data[1] | sort: 'startDate' | reverse %}
-  {% for content in work %}
+  {% assign current_subsection = '' %}
+  {% for content in data[1] %}
+    {% assign entry_subsection = content.subsection | default: '' %}
+    {% if entry_subsection != current_subsection %}
+      {% assign current_subsection = entry_subsection %}
+      {% if current_subsection != '' %}
+        <li class="list-group-item pt-3 pb-1">
+          <h5 class="font-weight-medium" style="font-size: 1rem; color: var(--global-theme-color)">{{ current_subsection }}</h5>
+        </li>
+      {% endif %}
+    {% endif %}
     <li class="list-group-item">
       <div class="row">
         <div class="col-xs-2 cl-sm-2 col-md-2 text-center date-column">
           {% if content.startDate %}
             {% assign startDate = content.startDate | split: '-' | slice: 0, 2 | join: '/' %}
-            {% assign endDate = content.endDate | split: '-' | slice: 0, 2 | join: '/' | default: 'Present' %}
-            {% assign date = startDate | append: ' - ' %}
-            {% assign date = date | append: endDate %}
+            {% if content.endDate and content.endDate != '' %}
+              {% assign endDate = content.endDate | split: '-' | slice: 0, 2 | join: '/' %}
+            {% else %}
+              {% assign endDate = 'Present' %}
+            {% endif %}
+            {% assign date = startDate | append: ' - ' | append: endDate %}
+          {% elsif content.date %}
+            {% assign date = content.date %}
           {% else %}
             {% assign date = '' %}
           {% endif %}
@@ -33,21 +47,13 @@
           </table>
         </div>
         <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-          <h6 class="title font-weight-bold ml-1 ml-md-4">
-            {% if content.url %}
-              <a href="{{ content.url }}">{{ content.position }}</a>
-            {% else %}
-              {{ content.position }}
-            {% endif %}
-          </h6>
+          <h6 class="title font-weight-bold ml-1 ml-md-4">{{ content.course }}</h6>
           {% if content.institution %}
             <div class="d-flex align-items-center ml-1 ml-md-4 mb-1">
               <i class="fa-solid fa-building-columns iconinstitution"></i>
               <span style="font-size: 0.95rem">{{ content.institution }}</span>
             </div>
           {% endif %}
-          <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ content.name }}</h6>
-          <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">{{ content.summary }}</h6>
           <ul class="items">
             {% for item in content.highlights %}
               <li>
