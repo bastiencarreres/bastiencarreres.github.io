@@ -91,6 +91,10 @@ jobs:
           valueFile: "_config.yml"
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
+      - name: Install Node dependencies 📦
+        run: npm ci
+      - name: Copy reveal.js dist 🎞️
+        run: npm run copy-reveal
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick

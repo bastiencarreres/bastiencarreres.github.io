@@ -15,7 +15,7 @@ nav_order: 1
 
 ## 2025
 
-- 11/12 - [**DESC Project announcement: Constraining Structure Growth and Modified Gravity Using LSST low-z SN Ia PVs and Weak Lensing**](descmcp-2025-11-12/DESC*Project_Announcement* Constraining*Structure_Growth_and_Modified_Gravity_Using_LSST_lowz_SNe_Ia_PVs_and_Weak_Lensing.pdf) at \_DESC-MCP meeting*, online
+- 11/12 - [**DESC Project announcement: Constraining Structure Growth and Modified Gravity Using LSST low-z SN Ia PVs and Weak Lensing**](descmcp-2025-11-12/DESC_Project_Announcement_Constraining_Structure_Growth_and_Modified_Gravity_Using_LSST_lowz_SNe_Ia_PVs_and_Weak_Lensing.pdf) at _DESC-MCP meeting_, online
 
 - 09/22 - [**Status of PV cosmology in LSST-DESC**](desc-pv-workshop-2025-09-22/DESCPV-2025-09-22.pdf) at _DESC workshop on cosmology with peculiar velocities_, Marseille, France
 

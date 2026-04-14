@@ -322,13 +322,14 @@
             </a>
           {% endif %}
           {% if site.enable_publication_badges.nasa_ads and entry_has_nasa_ads_badge %}
+            {% capture nasa_ads_logo_svg %}{% include nasa_ads_logo.svg %}{% endcapture %}
             <a
               href="https://ui.adsabs.harvard.edu/abs/{{ entry.ads_bibcode }}/abstract"
               aria-label="NASA ADS link"
               role="button"
             >
               <img
-                src="https://img.shields.io/badge/NASA ADS-{% nasa_ads_citations entry.ads_bibcode %}-001628?&labelColor=beige&logo=data:image/svg%2bxml;base64,{{ site.nasa_ads_logo_base64 }}"
+                src="https://img.shields.io/badge/NASA ADS-{% nasa_ads_citations entry.ads_bibcode %}-001628?&labelColor=beige&logo=data:image/svg%2bxml;base64,{{ nasa_ads_logo_svg | base64_encode }}"
                 alt="{% nasa_ads_citations entry.ads_bibcode %} NASA ADS citations"
               >
             </a>

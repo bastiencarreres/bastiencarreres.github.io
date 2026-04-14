@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "copy-reveal": "rm -rf assets/js/reveal.js && mkdir -p assets/js/reveal.js && cp -r node_modules/reveal.js/dist assets/js/reveal.js/"
+  },
+  "dependencies": {
+    "reveal.js": "^6.0.1"
+  },
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.4.0",
     "prettier": "^3.1.1"
