@@ -82,7 +82,8 @@ module Jekyll
         data = JSON.parse(response.body)
         puts data
         # Extract citation count from the first (and only) result document
-        citation_count = data["response"]["docs"][0]["citation_count"].to_i
+        docs = data["response"]["docs"]
+        citation_count = (docs && !docs.empty?) ? docs[0]["citation_count"].to_i : "N/A"
 
       rescue Exception => e
         # Handle any API or network errors gracefully
