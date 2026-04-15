@@ -12,3 +12,4 @@ node_modules/
 assets/js/reveal.js/
 vendor
 .idea
+.venv
