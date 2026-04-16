@@ -12,14 +12,14 @@ npx prettier --write "**/*.{html,liquid}"  # format templates
 
 ## Key Files
 
-| What | Where |
-|------|-------|
-| Pages | `_pages/*.md` |
-| Publications | `_bibliography/papers.bib` |
-| CV data | `assets/json/resume.json` (JSON Resume schema) |
-| Social links | `_data/socials.yml` (order = display order) |
-| Styles | `_sass/_variables.scss`, `_themes.scss` |
-| Feature flags | `_config.yml` — `enable_*` keys |
+| What          | Where                                          |
+| ------------- | ---------------------------------------------- |
+| Pages         | `_pages/*.md`                                  |
+| Publications  | `_bibliography/papers.bib`                     |
+| CV data       | `assets/json/resume.json` (JSON Resume schema) |
+| Social links  | `_data/socials.yml` (order = display order)    |
+| Styles        | `_sass/_variables.scss`, `_themes.scss`        |
+| Feature flags | `_config.yml` — `enable_*` keys                |
 
 ## Conventions
 
