@@ -1,0 +1,1468 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+
+        <title>Yale Seminar — B. Carreres</title>
+
+        <link rel="stylesheet" href="/assets/js/reveal.js/dist/reset.css" />
+        <link rel="stylesheet" href="/assets/js/reveal.js/dist/reveal.css" />
+        <link rel="stylesheet" href="/assets/js/reveal.js/dist/theme/black.css" />
+        <link rel="stylesheet" href="/assets/custom_css/revealjs_pres_style.css" />
+        <link rel="stylesheet" href="/assets/js/reveal.js/dist/plugin/highlight/monokai.css" />
+        <style>
+            #ztf {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <!-- TITLE SLIDE -->
+                <section
+                    data-background="../general_figs/common_figs/rubin.png"
+                >
+                    <div class="titlepage">
+                        <div
+                            style="
+                                border-radius: 20px;
+                                background-color: rgba(95, 93, 93, 0.514);
+                                padding: 15px;
+                                margin-bottom: 10px;
+                            "
+                        >
+                            <h1>
+                                Cosmology with SNe Ia: measuring growth-rate of
+                                structures with the new generation of survey
+                            </h1>
+                        </div>
+                        <br />
+                        <div
+                            style="
+                                font-size: 110%;
+                                text-align: left;
+                                margin-left: 20px;
+                            "
+                        >
+                            Bastien&nbsp;Carreres
+                        </div>
+                        <br />
+                        <div
+                            style="
+                                font-size: 90%;
+                                text-align: left;
+                                margin-left: 20px;
+                            "
+                        ></div>
+                        <div class="logos">
+                            <img
+                                class="plain"
+                                data-src="../general_figs/common_figs/dukecosmo.png"
+                            />
+                            <img
+                                class="plain"
+                                data-src="../general_figs/common_figs/logo-dark-mode.png"
+                                style="float: right"
+                            />
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 1 -->
+                <section
+                    data-transition="slide-in none-out"
+                    data-transition-speed="fast"
+                >
+                    <h2>Cosmology with SNe Ia in a nutshell</h2>
+                    <div class="r-stack">
+                        <h3 class="fragment fade-out" data-fragment-index="1">
+                            Type Ia supernovae are exploding white dwarfs!
+                        </h3>
+                        <h3 class="fragment" data-fragment-index="1">
+                            Type Ia supernovae are standard candles!
+                        </h3>
+                    </div>
+                    <br />
+                    <div class="r-stack">
+                        <img
+                            class="plain fragment fade-out"
+                            data-fragment-index="1"
+                            width="800px"
+                            data-src="../general_figs/common_figs/supernova-M82.gif"
+                        />
+                        <img
+                            class="plain fragment"
+                            data-fragment-index="1"
+                            width="900px"
+                            data-src="../general_figs/common_figs/supernova-M82.png"
+                        />
+                    </div>
+                </section>
+
+                <section
+                    data-transition="none-in slide-out"
+                    data-visibility="uncounted"
+                >
+                    <h2>Cosmology with SNe Ia in a nutshell</h2>
+                    <span class="fragment"></span>
+                    <div
+                        data-animate
+                        data-load="../general_figs/common_figs/std_candles_v1.svg"
+                    >
+                        <!--
+								{
+									"setup":
+									[
+										{
+											"element": "#redax",
+											"modifier": "attr",
+											"parameters": [ {"class": "fragment", "data-fragment-index": "0"} ]
+										}
+									],
+									"animation":
+									[
+										[],
+										[
+											{
+												"duration": 0,
+												"when": "now",
+												"element": "#ellipsemid",
+												"modifier": "attr",
+												"parameters": [ {"fill": "#f88936"} ]
+											},
+											{
+												"delay": 0,
+												"when": "now",
+												"element": "#bulbmid",
+												"modifier": "attr",
+												"parameters": [ {"fill": "#ff9323"} ]
+											},
+											{
+												"delay": 0,
+												"when": "now",
+												"element": "#ellipsefar",
+												"modifier": "attr",
+												"parameters": [ {"fill": "#b93e00"} ]
+											},
+											{
+												"delay": 0,
+												"element": "#bulbfar",
+												"when": "now",
+												"modifier": "attr",
+												"parameters": [ {"fill": "#b93e00"} ]
+											}
+										]
+									]
+								}
+							-->
+                    </div>
+                </section>
+
+                <section
+                    data-transition="none-in slide-out"
+                    data-visibility="uncounted"
+                >
+                    <h2>Cosmology with SNe Ia in a nutshell</h2>
+                    <div
+                        class="container fragment"
+                        data-fragment-index="0"
+                        style="display: flex; column-gap: 0em"
+                    >
+                        <div class="col" style="flex: 1.2 1 0">
+                            <h4 class="fragment" data-fragment-index="0">
+                                Distance modulus: $$ \mu = 5
+                                \mathrm{log}\left(d_L / 10\ \text{pc}\right) = m
+                                - M$$
+                            </h4>
+                            <br />
+                            <h5 class="fragment" data-fragment-index="1">
+                                SNe Ia luminosity is corrected for known
+                                correlations!<br /><br />
+                                <ul>
+                                    <li
+                                        class="fragment"
+                                        data-fragment-index="2"
+                                        style="margin-bottom: 1em"
+                                    >
+                                        Brighter-slower: higher stretch $x_1
+                                        \Rightarrow $ brighter SNIa
+                                    </li>
+                                    <li
+                                        class="fragment"
+                                        data-fragment-index="3"
+                                        style="margin-bottom: 1em"
+                                    >
+                                        Brighter-bluer: lower color $c
+                                        \Rightarrow $ brighter SNIa
+                                    </li>
+                                    <li
+                                        class="fragment"
+                                        data-fragment-index="4"
+                                    >
+                                        Mass step: SN Ia in more massive
+                                        galaxies are brighter
+                                    </li>
+                                </ul>
+                                <br />
+                                <br />
+                                <h4 class="fragment" data-fragment-index="1">
+                                    $\mu_\text{obs} = m_B - (M_B$
+                                    <span
+                                        class="fragment"
+                                        data-fragment-index="2"
+                                        >$- \alpha x_1$
+                                    </span>
+                                    <span
+                                        class="fragment"
+                                        data-fragment-index="3"
+                                        >$+ \beta c$</span
+                                    >
+                                    <span
+                                        class="fragment"
+                                        data-fragment-index="4"
+                                        >$+ \Delta_M$</span
+                                    >
+                                    $)$
+                                </h4>
+                                <br />
+                                <span class="fragment" data-fragment-index="5"
+                                    >Remaining intrinsic scatter $\sigma_\mu
+                                    \sim 0.12$ mag</span
+                                >
+                                <br />
+                            </h5>
+                        </div>
+                        <div class="col" style="flex: 1.5 1; margin-top: 0em">
+                            <div class="r-stack">
+                                <img
+                                    class="rounded fragment fade-in-then-out"
+                                    data-fragment-index="0"
+                                    width="700em"
+                                    data-src="./figs/DES_HD_nostd.png"
+                                />
+                                <img
+                                    class="rounded fragment fade-in-then-out"
+                                    data-fragment-index="2"
+                                    width="600em"
+                                    data-src="./figs/mb_vs_x1.png"
+                                />
+                                <img
+                                    class="rounded fragment fade-in-then-out"
+                                    data-fragment-index="3"
+                                    width="600em"
+                                    data-src="./figs/mb_vs_c.png"
+                                />
+                                <img
+                                    class="rounded fragment fade-in-then-out"
+                                    data-fragment-index="4"
+                                    width="600em"
+                                    data-src="./figs/mb_vs_logm.png"
+                                />
+                                <img
+                                    class="rounded fragment fade-in-then-out"
+                                    data-fragment-index="5"
+                                    width="700em"
+                                    data-src="./figs/DES_HD_nostd.png"
+                                />
+                                <img
+                                    class="rounded fragment"
+                                    data-fragment-index="6"
+                                    width="700em"
+                                    data-src="./figs/DES_HD_std.png"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Cosmology with SNe Ia in a nutshell</h2>
+                    <span class="fragment"></span>
+                    <span class="fragment"></span>
+                    <span class="fragment"></span>
+                    <span class="fragment"></span>
+
+                    <div style="margin-top: 10ex">
+                        <div
+                            data-animate
+                            data-load="../general_figs/snia_pres/SN_HD.svg"
+                            style="scale: 1.7"
+                        >
+                            <!--
+							{
+								"setup":
+								[
+									{
+										"element": "#dark",
+										"modifier": "attr",
+										"parameters": [ {"class": "fragment", "data-fragment-index": "0"} ]
+									},
+									{
+										"element": "#h",
+										"modifier": "attr",
+										"parameters": [ {"class": "fragment fade-in-then-out", "data-fragment-index": "1"} ]
+									},
+									{
+										"element": "#lsst",
+										"modifier": "attr",
+										"parameters": [ {"class": "fragment", "data-fragment-index": "2"} ]
+									},
+									{
+										"element": "#lowz",
+										"modifier": "attr",
+										"parameters": [ {"class": "fragment", "data-fragment-index": "3"} ]
+									},
+									{
+										"element": "#gos",
+										"modifier": "attr",
+										"parameters": [ {"class": "fragment", "data-fragment-index": "4"} ]
+									}
+								],
+								"animation": []
+							}
+							-->
+                        </div>
+                    </div>
+                </section>
+                <section
+                    data-background="../general_figs/common_figs/illustris.png"
+                >
+                    <h2>\(f\sigma_8\) as a probe for general relativity</h2>
+                    <div
+                        class="container"
+                        style="
+                            display: flex;
+                            column-gap: 0em;
+                            flex-direction: row;
+                            height: 21em;
+                        "
+                    >
+                        <div
+                            class="r-stack"
+                            style="
+                                background-color: rgba(0, 0, 0, 0.85);
+                                border-radius: 2em;
+                                padding: 0.5em;
+                                text-align: center;
+                                flex: 1 1 0;
+                            "
+                        >
+                            <span
+                                class="fragment fade-out"
+                                data-fragment-index="4"
+                            >
+                                <div class="r-stack">
+                                    <h4
+                                        class="fragment fade-out"
+                                        data-fragment-index="0"
+                                    >
+                                        Cosmological principle:<br />Universe is
+                                        homogeneous
+                                    </h4>
+                                    <h4
+                                        class="fragment"
+                                        data-fragment-index="0"
+                                    >
+                                        Observations:<br />Universe is
+                                        <em>not exactly</em> homogeneous
+                                    </h4>
+                                </div>
+                                <br />
+                                <span class="fragment" data-fragment-index="1">
+                                    <h4>
+                                        Matter density fluctuations:<br />
+                                        $\delta(\mathbf{x}) =
+                                        \frac{\rho(\mathbf{x})}{\bar{\rho}} - 1$
+                                    </h4>
+                                </span>
+                                <br />
+                                <span class="fragment" data-fragment-index="2">
+                                    <h4>
+                                        $\sigma_8$ : fluctuation over sphere
+                                        of<br />
+                                        8 Mpc.$h^{-1}$ radius<br /><br />
+                                        $\delta(\mathbf{x}) = \sigma_8
+                                        \tilde{\delta}(\mathbf{x})$
+                                    </h4>
+                                </span>
+                                <br />
+                                <span class="fragment" data-fragment-index="3">
+                                    <h4>
+                                        Fluctuations evolve over time<br />
+                                        $\delta(\mathbf{x}, t) =
+                                        \delta(\mathbf{x})D(t)$
+                                    </h4>
+                                </span>
+                            </span>
+
+                            <span class="fragment" data-fragment-index="4">
+                                <h4>
+                                    <b
+                                        >Evolution of structures: <br />Dark
+                                        energy vs Gravity</b
+                                    >
+                                </h4>
+                                $$f = \frac{\text{d}\ln D}{\text{d}\ln a}$$
+                                <h4 class="fragment" data-fragment-index="5">
+                                    $f \simeq \Omega_m^\gamma$<br /><br />
+                                    General Relativity + $\Lambda$CDM: $\gamma
+                                    \simeq 0.55$<br /><br />
+                                    $\gamma \equiv$ Growth index<br /><br />
+                                    $f$ measurement is generally degenerate with
+                                    $\sigma_8$ !<br />
+                                    $\Rightarrow f\sigma_8$
+                                </h4>
+                            </span>
+                        </div>
+                        <div class="r-stack" style="flex: 2 1 0; width: 10em">
+                            <img
+                                class="plain fragment fade-in-then-out"
+                                data-fragment-index="2"
+                                src="../general_figs/common_figs/circle_8mpch.png"
+                                style="
+                                    width: 20em;
+                                    position: relative;
+                                    right: 1em;
+                                "
+                            />
+                            <img
+                                class="rounded fragment fade-in-then-out"
+                                data-fragment-index="3"
+                                data-src="../general_figs/common_figs/fast_millenium.gif"
+                            />
+                            <span
+                                class="fragment fade-out"
+                                data-fragment-index="5"
+                            >
+                                <div
+                                    data-animate
+                                    class="fragment"
+                                    data-fragment-index="4"
+                                    data-load="../general_figs/common_figs/grav_vs_de_v1.svg"
+                                    style="
+                                        border: none;
+                                        scale: 0.7;
+                                        position: relative;
+                                        top: -8em;
+                                        right: 1em;
+                                    "
+                                >
+                                    <!--
+                                        {
+                                        "setup": [
+                                        {
+                                        "element": "#vel",
+                                        "modifier": "opacity",
+                                        "parameters": [ 0 ]
+                                        }
+                                        ]
+                                        }
+                                        -->
+                                </div>
+                            </span>
+                            <div
+                                data-animate
+                                class="fragment"
+                                data-fragment-index="5"
+                                data-load="../general_figs/common_figs/fs8_z.svg"
+                                style="scale: 0.8"
+                            >
+                                <!--
+                                    {
+                                    "setup": [
+                                    {
+                                    "element": "#ztf",
+                                    "modifier": "opacity",
+                                    "parameters": [ 0 ]
+                                    },
+                                    {
+                                    "element": "#lsst",
+                                    "modifier": "opacity",
+                                    "parameters": [ 0 ]
+                                    },
+                                    {
+                                    "element": "#round",
+                                    "modifier": "opacity",
+                                    "parameters": [ 0 ]
+                                    },
+                                    {
+                                    "element": "#atlas",
+                                    "modifier": "opacity",
+                                    "parameters": [ 0 ]
+                                    }
+                                    ]
+                                    }
+                                    -->
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position: absolute; top: 26em; right: 1em">
+                        <p style="font-style: italic; font-size: 20px">
+                            Image credits: Illustris TNG
+                        </p>
+                    </div>
+                </section>
+
+                <section
+                    data-background="../general_figs/common_figs/illustris.png"
+                >
+                    <h2>How to measure $f\sigma_8$ ?</h2>
+                    <div
+                        class="container"
+                        ,
+                        style="display: flex; column-gap: 0em"
+                    >
+                        <div class="col" style="text-align: center">
+                            <h4
+                                style="
+                                    line-height: 1.5;
+                                    background-color: rgba(0, 0, 0, 0.85);
+                                    width: 22em;
+                                    border-radius: 2em;
+                                    padding: 1em;
+                                    text-align: center;
+                                "
+                            >
+                                <span class="fragment" data-fragment-index="1">
+                                    Velocities are probes of $f\sigma_8$!
+                                </span>
+                                <br />
+                                <br />
+                                <span class="fragment" data-fragment-index="2">
+                                    Velocity statistics directly depend on
+                                    $f\sigma_8$:<br />
+                                    $\langle
+                                    v(\mathbf{x_i})v(\mathbf{x_j})\rangle
+                                    \propto \left(f\sigma_8\right)^2$
+                                </span>
+                            </h4>
+                        </div>
+
+                        <div class="col">
+                            <div class="r-stack">
+                                <div
+                                    data-animate
+                                    class="fragment fade-out"
+                                    data-fragment-index="2"
+                                    data-load="../general_figs/common_figs/grav_vs_de_v1.svg"
+                                    style="
+                                        border: none;
+                                        scale: 0.7;
+                                        position: relative;
+                                        top: -8em;
+                                        right: 1em;
+                                    "
+                                >
+                                    <!--
+										{
+										"setup": [
+										{
+											"element": "#vel",
+											"modifier": "attr",
+											"parameters": [ {"class" : "fragment", "data-fragment-index": "0"} ]
+										}
+										]
+										}
+									-->
+                                </div>
+                                <div class="fragment" data-fragment-index="2">
+                                    <img
+                                        data-src="../general_figs/common_figs/vel_cov.png"
+                                        class="plain"
+                                        width="700em"
+                                        style="
+                                            position: relative;
+                                            top: -8em;
+                                            right: 1.5em;
+                                        "
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="position: absolute; top: 26em; right: 1em">
+                        <p style="font-style: italic; font-size: 20px">
+                            Image credits: Illustris TNG
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h2>Estimating velocities from SNe Ia</h2>
+                    <div class="container" style="display: flex">
+                        <div class="col">
+                            <h5>
+                                Observed redshifts:<br /><br />
+                                $1 + z_\mathrm{obs} = (1 + z_\mathrm{cos}) (1 +
+                                z_\mathrm{p})$ with $z_p\simeq v_p / c$
+                            </h5>
+                            <span
+                                class="fragment"
+                                data-fragment-index="1"
+                            ></span>
+                            <span
+                                class="fragment"
+                                data-fragment-index="2"
+                            ></span>
+                            <span
+                                class="fragment"
+                                data-fragment-index="3"
+                            ></span>
+                            <span
+                                class="fragment"
+                                data-fragment-index="4"
+                            ></span>
+
+                            <br />
+                            <h5 class="fragment" data-fragment-index="6">
+                                Hubble residuals:<br /><br />
+                                <span class="r-stack">
+                                    <span
+                                        class="fragment fade-out"
+                                        data-fragment-index="7"
+                                    >
+                                        $\Delta\mu = \mu_\mathrm{obs} -
+                                        \mu_\text{th}(z_\mathrm{obs}) = 0$
+                                    </span>
+                                    <span
+                                        class="fragment"
+                                        data-fragment-index="7"
+                                    >
+                                        $\Delta\mu = \mu_\mathrm{obs} -
+                                        \mu_\text{th}(z_\mathrm{obs})
+                                        \simeq-\frac{5}{c\ln10}\left(\frac{(1 +
+                                        z)c}{H(z)r(z)} - 1\right)v_p$
+                                    </span>
+                                </span>
+                            </h5>
+                            <br />
+                            <h5 class="fragment" data-fragment-index="6">
+                                <span class="r-stack">
+                                    <span
+                                        class="fragment fade-out"
+                                        data-fragment-index="6"
+                                    >
+                                        $v_p \simeq
+                                        -\frac{c\ln10}{5}\left(\frac{(1 +
+                                        z)c}{H(z)r(z)} - 1\right)^{-1}\Delta\mu$
+                                    </span>
+                                    <span
+                                        class="fragment"
+                                        data-fragment-index="7"
+                                    >
+                                        $\sigma_{v_p} \simeq
+                                        -\frac{c\ln10}{5}\left(\frac{(1 +
+                                        z)c}{H(z)r(z)} -
+                                        1\right)^{-1}\sigma_{\Delta\mu}$
+                                    </span>
+                                </span>
+                            </h5>
+                        </div>
+                        <div class="col">
+                            <div class="r-stack">
+                                <div
+                                    data-animate
+                                    class="fragment fade-out"
+                                    data-fragment-index="6"
+                                    data-load="../general_figs/common_figs/telescope_gal_v2.svg"
+                                    style="
+                                        scale: 0.8;
+                                        position: relative;
+                                        top: -2em;
+                                        left: -2em;
+                                    "
+                                >
+                                    <!--
+									{
+									"setup": [
+										{
+											"element": "#galr",
+											"modifier": "attr",
+										    "parameters": [ {"class": "fragment fade-in-then-out", "data-fragment-index": "1"}  ]
+										},
+										{
+											"element": "#galb",
+											"modifier": "opacity",
+										    "parameters": [ 0 ]
+										},
+										{
+											"element": "#los",
+											"modifier": "attr",
+										    "parameters": [ {"class": "fragment fade-in-then-out", "data-fragment-index": "0"} ]
+										},
+										{
+											"element": "#sn",
+											"modifier": "opacity",
+										    "parameters": [ 0 ]
+										},
+										{
+											"element": "#vlos",
+											"modifier": "attr",
+										    "parameters": [ {"class": "fragment fade-in-then-out", "data-fragment-index": "0"} ]
+										},
+										{
+											"modifier": "function() {var clone = this.findOne('#vlos').clone(); clone.attr({'id': 'vlos2'}); clone.addTo(this);}"
+										},
+										{
+											"element": "#vlos2",
+											"modifier": "attr",
+										    "parameters": [ {"class": "fragment fade-in-then-out", "data-fragment-index": "1"} ]
+										},
+										{
+											"element": "#vlosn",
+											"modifier": "opacity",
+										    "parameters": [ 0 ]
+										}
+									],
+									"animation": [
+										[],
+										[],
+										[
+											{
+												"element": "#vel3d",
+												"modifier": "opacity",
+												"parameters": [ 0 ],
+												"duration": 0
+											},
+											{
+												"element": "#vlos",
+												"modifier": "attr",
+												"parameters": [ {"stroke": "#000000"} ],
+												"duration": 0,
+												"delay": -400
+											},
+											{
+												"element": "#gal",
+												"modifier": "opacity",
+										    	"parameters": [ 0.5 ],
+												"delay": -400,
+												"duration": 0
+											}
+										],
+										[
+											{
+												"element": "#vlosn",
+												"modifier": "opacity",
+										    	"parameters": [ 1 ],
+												"duration": 0
+											},
+											{
+												"element": "#galb",
+												"modifier": "opacity",
+										    	"parameters": [ 1 ],
+												"delay": -400,
+												"duration": 0
+											},
+											{
+												"element": "#vlos",
+												"modifier": "opacity",
+										    	"parameters": [ 0 ],
+												"delay": -400,
+												"duration": 0
+											}
+										],
+										[
+											{
+												"element": "#sn",
+												"modifier": "opacity",
+										    	"parameters": [ 1 ],
+												"duration": 0
+											},
+											{
+												"element": "#gal",
+												"modifier": "opacity",
+										    	"parameters": [ 1 ],
+												"delay": -400,
+												"duration": 0
+											},
+											{
+												"element": "#galb",
+												"modifier": "opacity",
+										    	"parameters": [ 0 ],
+												"delay": -400,
+												"duration": 0
+											},
+											{
+												"element": "#vlosn",
+												"modifier": "opacity",
+										    	"parameters": [ 0 ],
+												"delay": -400,
+												"duration": 0
+											}
+										]
+									]
+									}
+									-->
+                                </div>
+                                <div class="r-stack">
+                                    <img
+                                        class="rounded fragment fade-in-then-out"
+                                        data-fragment-index="6"
+                                        src="../general_figs/common_figs/HDsimple_v2.svg"
+                                        style="
+                                            width: 30em;
+                                            background-color: rgb(
+                                                255,
+                                                255,
+                                                255
+                                            );
+                                            position: relative;
+                                            top: -2em;
+                                        "
+                                    />
+                                    <img
+                                        class="rounded fragment"
+                                        data-fragment-index="7"
+                                        src="../general_figs/common_figs/HDvel_v2.svg"
+                                        style="
+                                            width: 30em;
+                                            background-color: rgb(
+                                                255,
+                                                255,
+                                                255
+                                            );
+                                            position: relative;
+                                            top: -2em;
+                                        "
+                                    />
+                                    <img
+                                        class="plain fragment fade-in-then-out"
+                                        data-fragment-index="8"
+                                        data-src="../general_figs/common_figs/backup_pveff.png"
+                                        style="
+                                            width: 20em;
+                                            order: 0;
+                                            z-index: 10;
+                                            top: -1em;
+                                        "
+                                    />
+                                    <span
+                                        class="fragment"
+                                        data-fragment-index="9"
+                                    ></span>
+                                    <img
+                                        class="rounded fragment"
+                                        data-fragment-index="10"
+                                        src="../general_figs/common_figs/HDvelnoise_v2.svg"
+                                        style="
+                                            width: 30em;
+                                            background-color: rgb(
+                                                255,
+                                                255,
+                                                255
+                                            );
+                                            position: relative;
+                                            top: -2em;
+                                        "
+                                    />
+                                    <img
+                                        class="rounded fragment"
+                                        data-fragment-index="7"
+                                        src="../general_figs/common_figs/vellegend.svg"
+                                        style="
+                                            width: 30em;
+                                            position: relative;
+                                            top: -2em;
+                                        "
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>
+                        Constraint on $f\sigma_8$ with the maximum likelihood
+                        mehod
+                    </h2>
+                    <h4>
+                        The Maximum likelihood method is implemented within the
+                        <img
+                            class="plain"
+                            data-src="../general_figs/common_figs/flip_logo.webp"
+                            width="100em"
+                            style="position: relative; top: 1.2em"
+                        />
+                        package (<em>Ravoux, Carreres et al. 2025</em>)
+                        <br /><br />
+                    </h4>
+                    <h4>
+                        We want to maximize the likelihood function:
+                        $$\mathcal{L}(f\sigma_8; v_p) \propto
+                        \left(2\pi\right)^{-\frac{N}{2}}\left|\text{C}(f\sigma_8)\right|^{-\frac{1}{2}}\exp\left(-\frac{1}{2}\boldsymbol{v_p}^T\text{C}(f\sigma_8)^{-1}\boldsymbol{v_p}\right)$$
+                    </h4>
+                    <h4 class="fragment">
+                        $\text{C}(f\sigma_8) =\text{C}^\mathrm{obs} +
+                        \text{C}^{vv}(f\sigma_8)$
+                    </h4>
+                </section>
+
+                <section>
+                    <h2>The maximum likelihood mehod: velocity covariance</h2>
+                    <div>
+                        The covariance of the velocity field is: $$\langle
+                        v_i(\mathbf{r}_i) v_j(\mathbf{r}_j)\rangle =
+                        \text{C}_{ij}^{vv}\propto ({\color{red}f\sigma_8})^2
+                        \int_{k_\mathrm{min}}^{k_\mathrm{max}} P(k) W_{ij}(k;
+                        \mathbf{r}_i, \mathbf{r}_j) {\rm d}k $$
+                    </div>
+                    <div>
+                        <img
+                            class="rounded"
+                            data-src="../general_figs/common_figs/fast_cov_gif_mod.gif"
+                            width="800em"
+                        />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Forecast results</h2>
+                    <div>
+                        <div
+                            data-animate
+                            data-load="../general_figs/common_figs/fs8_z.svg"
+                            style="scale: 1"
+                        >
+                            <!--
+                            {
+                            "setup": [
+                            {
+                            "element": "#ztf",
+                            "modifier": "attr",
+                            "parameters": [ {"class" : "fragment", "data-fragment-index": "0"}  ]
+                            },
+                            {
+                            "element": "#lsst",
+                            "modifier": "attr",
+                            "parameters": [ {"class" : "fragment", "data-fragment-index": "1"}  ]
+                            },
+                            {
+                            "element": "#round",
+                            "modifier": "opacity",
+                            "parameters": [ 0 ]
+                            },
+                            {
+                            "element": "#atlas",
+                            "modifier": "opacity",
+                            "parameters": [ 0 ]
+                            }
+                            ]
+                            }
+                            -->
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <p style="font-size: 200%; padding-top: 5em">
+                            What about systematics?
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>The intrinsic scatter of SNe Ia</h2>
+                    <div class="r-stack">
+                        <img
+                            class="rounded fragment fade-out"
+                            data-fragment-index="1"
+                            src="../general_figs/common_figs/HDvel_v2.svg"
+                            style="
+                                width: 30em;
+                                background-color: rgb(255, 255, 255);
+                                position: relative;
+                            "
+                        />
+                        <img
+                            class="rounded fragment fade-in-then-out"
+                            data-fragment-index="1"
+                            src="../general_figs/common_figs/HDvelnoise_v1.svg"
+                            style="
+                                width: 30em;
+                                background-color: rgb(255, 255, 255);
+                                position: relative;
+                            "
+                        />
+                        <img
+                            class="rounded"
+                            src="../general_figs/common_figs/vellegend.svg"
+                            style="width: 30em; position: relative"
+                        />
+                    </div>
+                </section>
+                <section>
+                    <h2 style="margin-bottom: 0">
+                        The intrinsic scatter of SNe Ia
+                    </h2>
+                    <div
+                        style="
+                            display: flex;
+                            gap: 0.5em;
+                            align-items: center;
+                            margin-top: 1em;
+                        "
+                    >
+                        <h4 style="flex: 0.8">
+                            Main systematic of DES 5-year dark energy
+                            analysis<br />
+                            (<em>Vincenzi et al. 2023</em>)!!!
+                            <br />
+                            <br />
+                            What about $f\sigma_8$ ???
+                        </h4>
+                        <img
+                            class="plain"
+                            data-src="./../general_figs/common_figs/vincenzisocks.png"
+                            style="width: 12em; flex-shrink: 0"
+                        />
+                    </div>
+                </section>
+                <section>
+                    <h2>The intrinsic scatter of SNe Ia</h2>
+                    <br />
+                    <div class="container" style="display: flex">
+                        <h4 style="flex: 1">
+                            <ul>
+                                <li
+                                    class="fragment"
+                                    data-fragment-index="0"
+                                    style="margin-bottom: 30px"
+                                >
+                                    Random coherent scatter (COH)<br />
+                                    Achromatic
+                                    <br />
+                                    <em>Unrealistic</em>
+                                </li>
+                                <li
+                                    class="fragment"
+                                    data-fragment-index="1"
+                                    style="margin-bottom: 30px"
+                                >
+                                    The G10 model (<em>Guy et al. 2010</em>):
+                                    <br />
+                                    $\sim 70\%$ achromatic / $\sim 30\%$
+                                    chromatic
+                                    <br />
+                                    <em
+                                        >Historically used (Pantheon,
+                                        Pantheon+)</em
+                                    >
+                                </li>
+                                <li
+                                    class="fragment"
+                                    data-fragment-index="2"
+                                    style="margin-bottom: 30px"
+                                >
+                                    The C11 model (<em>Chotard et al. 2011</em
+                                    >):
+                                    <br />
+                                    $\sim 30\%$ achromatic / $\sim 70\%$
+                                    chromatic
+                                    <br />
+                                    <em
+                                        >Historically used (Pantheon,
+                                        Pantheon+)</em
+                                    >
+                                </li>
+
+                                <li class="fragment" data-fragment-index="3">
+                                    The BS21 model (<em>Brout & Scolnic 2021</em
+                                    >)
+                                    <br />
+                                    <em
+                                        >Currently favored by data (DES
+                                        5-year)</em
+                                    >
+                                </li>
+                            </ul>
+                        </h4>
+
+                        <div
+                            data-animate
+                            data-load="../general_figs/common_figs/scatter_mod.svg"
+                            ,
+                            style="
+                                scale: 1.2;
+                                position: relative;
+                                flex: 1.5;
+                                top: 2em;
+                            "
+                        >
+                            <!--
+								{
+								"setup": [
+								{
+									"element": "#COH",
+									"modifier": "attr",
+									"parameters": [ {"class" : "fragment", "data-fragment-index": "0"} ]
+								},
+								{
+									"element": "#G10",
+									"modifier": "attr",
+									"parameters": [ {"class" : "fragment", "data-fragment-index": "1"} ]
+								},
+								{
+									"element": "#C11",
+									"modifier": "attr",
+									"parameters": [ {"class" : "fragment", "data-fragment-index": "2"} ]
+								},
+								{
+									"element": "#P23",
+									"modifier": "attr",
+									"parameters": [ {"class" : "fragment", "data-fragment-index": "3"} ]
+								}
+								]
+								}
+							-->
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Simulation: LSST SN Ia sample</h2>
+                    <div class="r-stack">
+                        <div class="fragment fade-in-then-out">
+                            <h3 style="margin-top: 0em">
+                                LSST simulated observation (OpSim)
+                            </h3>
+                            <img
+                                class="rounded"
+                                data-src="./figs/baseline_lsst.png"
+                                style="
+                                    align-self: center;
+                                    scale: 0.5;
+                                    margin-top: -8em;
+                                "
+                            />
+                        </div>
+                        <div class="fragment fade-in-then-out">
+                            <h3 style="margin-top: -8em">
+                                Velocity field from the Uchuu UniverseMachine
+                                simulation (<em>Ishiyama et al. 2021</em>,
+                                <em>Aung et al. 2022</em>)
+                            </h3>
+                            <img
+                                data-src="../general_figs/common_figs/vel_cov.png"
+                                class="plain"
+                                width="700em"
+                            />
+                        </div>
+                        <div class="fragment fade-in-then-out">
+                            <img
+                                class="plain"
+                                data-src="../general_figs/common_figs/mass_v1.png"
+                                style="margin-top: -5em"
+                            />
+                        </div>
+                        <div class="fragment fade-in-then-out">
+                            <h3 style="margin-top: -5em">
+                                Realistics simulation of the LSST SN Ia sample
+                                up to $z\sim0.1$<br />
+                                After quality cut $N\sim 7000$
+                            </h3>
+                            <img
+                                class="rounded"
+                                data-src="../general_figs/common_figs/sn_loc_bbc.png"
+                                style="
+                                    align-self: center;
+                                    scale: 0.8;
+                                    margin-top: -2em;
+                                "
+                            />
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>The intrinsic scatter of SNe Ia: results</h2>
+                    <div
+                        class="container"
+                        style="display: flex; margin-top: 2em; width: 100%"
+                    >
+                        <div class="col" style="flex: 0.43">
+                            <h4>
+                                <ul>
+                                    <li
+                                        class="fragment"
+                                        style="margin-bottom: 30px"
+                                    >
+                                        True vel. fit:<br />
+                                        Unbiased $f\sigma_8$<br />
+                                        $\sigma_{f\sigma_8}\sim 5\%$
+                                    </li>
+                                    <li
+                                        class="fragment"
+                                        style="margin-bottom: 30px"
+                                    >
+                                        COH, G10 and C11:<br />
+                                        Unbiased $f\sigma_8$<br />
+                                        $\sigma_{f\sigma_8}\sim 13-14\%$
+                                    </li>
+                                    <li class="fragment">
+                                        BS21: $\sigma_{f\sigma_8}\sim11\%$<br />
+                                        <span class="fragment"
+                                            >$f\sigma_8$ is biased by $>20\%$
+                                            !!!
+                                        </span>
+                                    </li>
+                                </ul>
+                            </h4>
+                        </div>
+                        <div class="col" style="flex: 0.57">
+                            <div
+                                data-animate
+                                data-load="./figs/Resfs8_simplified.svg"
+                                ,
+                                style="scale: 1.2; position: relative"
+                            >
+                                <!--
+									{
+									"setup": [
+									{
+										"element": "#truevel",
+										"modifier": "attr",
+										"parameters": [ {"class": "fragment", "data-fragment-index": "0"} ]
+									},
+									{
+										"element": "#nop23",
+										"modifier": "attr",
+										"parameters": [ {"class": "fragment", "data-fragment-index": "1"} ]
+
+									},
+									{
+										"element": "#p23",
+										"modifier": "attr",
+										"parameters":  [ {"class": "fragment", "data-fragment-index": "2"} ]
+									},
+									{
+										"element": "#bias",
+										"modifier": "attr",
+										"parameters":  [ {"class": "fragment", "data-fragment-index": "3"} ]
+									}
+									]
+									}
+								-->
+                            </div>
+                        </div>
+                    </div>
+                    <img
+                        class="rounded fragment"
+                        data-src="./figs/Vbiaspull.png"
+                        style="
+                            position: absolute;
+                            width: 20em;
+                            top: 3em;
+                            left: 1em;
+                        "
+                    />
+                </section>
+
+                <section>
+                    <h2>The intrinsic scatter of SNe Ia: the DEBASS survey</h2>
+                    <div>
+                        <p>
+                            The DEBASS survey looking at low-z SNe Ia with DECam
+                            with high precision - $\sigma_\mu \sim 0.1$
+                            <br />
+                            $\Rightarrow$ Ideal to study intrinsic scatter model
+                        </p>
+                        <div class="r-stack">
+                            <img
+                                class="plain fragment fade-out"
+                                data-fragment-index="1"
+                                data-src="./figs/sherman_debass.png"
+                                style="width: 25em"
+                            />
+                            <img
+                                class="plain fragment"
+                                data-fragment-index="1"
+                                data-src="./figs/nongauss_DEBASS.png"
+                                style="width: 20em"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="fragment">
+                            Cosmological analysis coming later this year:
+                            <br />
+                            Data Release & Local Cosmology (Sherman et al.
+                            <em>in prep</em>),
+                            <br />
+                            SN Ia Dark Energy (Acevedo et al.
+                            <em>in prep</em>),
+                            <br />
+                            Cross-probe cosmology (Brout et al.
+                            <em>in prep</em>),
+                            <br />
+                            $f\sigma_8$ (Carreres et al. <em>in prep</em>)
+                        </h4>
+                    </div>
+                </section>
+                <section>
+                    <h2>
+                        Another systematic: redshift space distorsion of the PV
+                        power spectrum
+                    </h2>
+                    <div class="r-stack">
+                        <div
+                            class="container fragment fade-out"
+                            data-fragment-index="1"
+                            style="display: flex; flex-direction: row"
+                        >
+                            <h4>
+                                <br />
+                                <br />
+                                <br />
+
+                                Positions are evaluated using $z_\mathrm{obs} \
+                                \Rightarrow$ Redshift Space Distorsion
+                                <br />
+                                <br />
+                                Empirical damping introduced in
+                                <em>Koda et al. 2014</em>: $D_u =
+                                \text{sinc}(k\sigma_u)$
+                                <br />
+                                <br />
+                                $$\text{C}_{ij}^{vv}\propto (f\sigma_8)^2
+                                \int_{k_\mathrm{min}}^{k_\mathrm{max}}
+                                P(k){\color{red} D_u(k, \sigma_u)}^2 W_{ij}(k;
+                                \mathbf{r}_i, \mathbf{r}_j) {\rm d}k$$
+                            </h4>
+                            <img
+                                class="plain"
+                                data-src="../general_figs/common_figs/RSD.svg"
+                                ,
+                                width="500em"
+                                style="position: relative"
+                            />
+                        </div>
+
+                        <div
+                            class="fragment fade-in-then-out"
+                            data-fragment-index="1"
+                        >
+                            <h4>
+                                Calibrated from a fit of true vel. from randomly
+                                sampled galaxies of the Uchuu simulation we
+                                found <br />
+                                $\sigma_u \simeq 21 \text{ Mpc }h^{-1}$
+                            </h4>
+                            <img
+                                class="rounded"
+                                data-src="../general_figs/common_figs/sigu_v3.png"
+                                style="align-self: center"
+                                width="650em"
+                            />
+                        </div>
+                        <div class="fragment" data-fragment-index="2">
+                            <h4>
+                                Correlated with $f\sigma_8$ and estimated as a
+                                $\sim$6% systematic
+                            </h4>
+                            <img
+                                class="rounded"
+                                data-src="./figs/fs8_sigu.png"
+                                style="align-self: center"
+                                width="650em"
+                            />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Conclusion</h2>
+                    <br />
+
+                    <h3>
+                        <ul>
+                            <li class="fragment" style="margin-bottom: 30px">
+                                Measurements of $f\sigma_8$ provide a powerful
+                                test of $\Lambda$CDM and General Relativity
+                            </li>
+                            <li class="fragment" style="margin-bottom: 30px">
+                                Next-generation SNe Ia surveys have the
+                                potential to deliver independent constraints on
+                                $f\sigma_8$
+                            </li>
+                            <li class="fragment" style="margin-bottom: 30px">
+                                Systematics must be better understood: SNe Ia
+                                astrophysics, PV modeling, ...
+                            </li>
+                            <li class="fragment">
+                                Several low-$z$ survey results expected in the
+                                coming years: DEBASS, ZTF, ATLAS, Rubin-LSST
+                            </li>
+                        </ul>
+                    </h3>
+                </section>
+                <!-- SLIDE EXAMPLE: SVG animation -->
+                <!--
+        <section>
+          <h2>Animated SVG slide</h2>
+          <div
+            data-animate
+            data-load="figs/yourfig.svg"
+          >
+            JSON animation config goes here in an HTML comment
+          </div>
+        </section>
+        -->
+
+                <!-- THANK YOU -->
+                <section>
+                    <div
+                        style="
+                            width: 100%;
+                            height: 720px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        "
+                    >
+                        <p style="font-size: 200%">
+                            Thanks for your attention!
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <script src="/assets/js/reveal.js/dist/reveal.js"></script>
+        <script src="/assets/js/reveal.js/dist/plugin/notes.js"></script>
+        <script src="/assets/js/reveal.js/dist/plugin/markdown.js"></script>
+        <script src="/assets/js/reveal.js/dist/plugin/highlight.js"></script>
+        <script src="/assets/js/reveal.js/dist/plugin/math.js"></script>
+
+        <!-- Load content plugin -->
+        <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/loadcontent/plugin.js"></script>
+        <!-- Animate plugin + SVG.js -->
+        <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+
+        <script>
+            Reveal.initialize({
+                hash: true,
+                width: 1280,
+                height: 720,
+                controls: false,
+                progress: false,
+                slideNumber: true,
+                backgroundTransition: "none",
+                animate: { autoplay: true },
+                plugins: [
+                    RevealMarkdown,
+                    RevealHighlight,
+                    RevealNotes,
+                    RevealMath.MathJax4,
+                    RevealLoadContent,
+                    RevealAnimate,
+                ],
+            });
+        </script>
+    </body>
+</html>
