@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-04-17'
+  last_updated: '2026-04-24'
 papers:
   b97QHLgAAAAJ:0EnyYjriUFMC:
     citations: 7
     title: Astronomy & Astrophysics, 674
     year: '2023'
   b97QHLgAAAAJ:2osOgNQ5qMEC:
-    citations: 29
+    citations: 30
     title: 'ZTF SN Ia DR2: Environmental dependencies of stretch and luminosity for a volume-limited sample of 1000 type Ia supernovae'
     year: '2025'
   b97QHLgAAAAJ:5nxA0vEk-isC:
@@ -18,11 +18,11 @@ papers:
     title: 'WHALES. The Weighing Halos Accurately, Locally, and Efficiently with Supernovae Survey: Overview and Initial Data Release'
     year: '2026'
   b97QHLgAAAAJ:9yKSN-GCB0IC:
-    citations: 6
+    citations: 7
     title: 'ZTF SN Ia DR2: Impact of the galaxy cluster environment on the stretch distribution of Type Ia supernovae'
     year: '2025'
   b97QHLgAAAAJ:IjCSPb-OGe4C:
-    citations: 15
+    citations: 16
     title: 'ZTF SN Ia DR2: Evidence of changing dust distribution with redshift using type Ia supernovae'
     year: '2025'
   b97QHLgAAAAJ:LkGwnXOMwfcC:
@@ -38,7 +38,7 @@ papers:
     title: The Impact from Galaxy Groups on Cosmological Measurements with Type Ia Supernovae
     year: '2024'
   b97QHLgAAAAJ:UeHWp8X0CEIC:
-    citations: 37
+    citations: 38
     title: 'ZTF SN Ia DR2: Colour standardisation of type Ia supernovae and its dependence on the environment'
     year: '2025'
   b97QHLgAAAAJ:UebtZRa9Y70C:
@@ -46,7 +46,7 @@ papers:
     title: 'ZTF SNe Ia DR2: Towards cosmology-grade ZTF supernova light curves using scene modeling photometry'
     year: '2025'
   b97QHLgAAAAJ:W7OEmFMy1HYC:
-    citations: 17
+    citations: 18
     title: 'ZTF SN Ia DR2: Simulations and volume-limited sample'
     year: '2025'
   b97QHLgAAAAJ:WF5omc3nYNoC:
@@ -54,11 +54,11 @@ papers:
     title: Generalized framework for likelihood-based field-level inference of growth rate from velocity and density fields
     year: '2025'
   b97QHLgAAAAJ:Y0pCki6q_DkC:
-    citations: 77
+    citations: 78
     title: 'ZTF SN Ia DR2: Overview'
     year: '2025'
   b97QHLgAAAAJ:YsMSGLbcyi4C:
-    citations: 70
+    citations: 72
     title: 'The Hubble tension in our own backyard: DESI and the nearness of the coma cluster'
     year: '2025'
   b97QHLgAAAAJ:_FxGoFyzp5QC:
@@ -94,6 +94,6 @@ papers:
     title: Improving the Determination of Supernova Cosmological Redshifts by Using Galaxy Groups
     year: '2025'
   b97QHLgAAAAJ:zYLM7Y9cAGgC:
-    citations: 7
+    citations: 8
     title: 'ZTF SN Ia DR2: Exploring SN Ia properties in the vicinity of under-dense environments'
     year: '2025'
