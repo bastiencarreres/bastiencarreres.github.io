@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-05-27'
+  last_updated: '2026-06-03'
 papers:
   b97QHLgAAAAJ:0EnyYjriUFMC:
     citations: 7
@@ -22,11 +22,11 @@ papers:
     title: 'ZTF SN Ia DR2: Impact of the galaxy cluster environment on the stretch distribution of Type Ia supernovae'
     year: '2025'
   b97QHLgAAAAJ:IjCSPb-OGe4C:
-    citations: 18
+    citations: 17
     title: 'ZTF SN Ia DR2: Evidence of changing dust distribution with redshift using type Ia supernovae'
     year: '2025'
   b97QHLgAAAAJ:LkGwnXOMwfcC:
-    citations: 3
+    citations: 2
     title: 'Type Ia supernova growth-rate measurement with LSST simulations: intrinsic scatter systematics'
     year: '2025'
   b97QHLgAAAAJ:MXK_kJrjxJIC:
@@ -50,7 +50,7 @@ papers:
     title: 'ZTF SNe Ia DR2: Towards cosmology-grade ZTF supernova light curves using scene modeling photometry'
     year: '2025'
   b97QHLgAAAAJ:W7OEmFMy1HYC:
-    citations: 20
+    citations: 21
     title: 'ZTF SN Ia DR2: Simulations and volume-limited sample'
     year: '2025'
   b97QHLgAAAAJ:WF5omc3nYNoC:
@@ -58,11 +58,11 @@ papers:
     title: Generalized framework for likelihood-based field-level inference of growth rate from velocity and density fields
     year: '2025'
   b97QHLgAAAAJ:Y0pCki6q_DkC:
-    citations: 84
+    citations: 86
     title: 'ZTF SN Ia DR2: Overview'
     year: '2025'
   b97QHLgAAAAJ:YsMSGLbcyi4C:
-    citations: 78
+    citations: 80
     title: 'The Hubble tension in our own backyard: DESI and the nearness of the coma cluster'
     year: '2025'
   b97QHLgAAAAJ:_FxGoFyzp5QC:
@@ -82,15 +82,15 @@ papers:
     title: The Weighing Halos Accurately, Locally, and Efficiently with Supernovae (WHALES) Survey Overview and Initial Data Release
     year: '2025'
   b97QHLgAAAAJ:qjMakFHDy7sC:
-    citations: 19
+    citations: 20
     title: 'ZTF SN Ia DR2: Study of Type Ia supernova light-curve fits'
     year: '2025'
   b97QHLgAAAAJ:roLk4NBRz8UC:
-    citations: 11
+    citations: 10
     title: Forecast for a growth-rate measurement using peculiar velocities from LSST supernovae
     year: '2025'
   b97QHLgAAAAJ:u5HHmVD_uO8C:
-    citations: 25
+    citations: 26
     title: Growth-rate measurement with type-Ia supernovae using ZTF survey simulations
     year: '2023'
   b97QHLgAAAAJ:ufrVoPGSRksC:
