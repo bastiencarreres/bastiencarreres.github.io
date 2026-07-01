@@ -13,18 +13,18 @@ npx prettier --write "**/*.{html,liquid}"  # format templates
 
 ## Key Files
 
-| What               | Where                                          |
-| ------------------ | ---------------------------------------------- |
-| Pages              | `_pages/*.md`                                  |
-| Publications       | `_bibliography/papers.bib`                     |
-| CV data            | `assets/json/resume.json` (JSON Resume schema) |
-| Social links       | `_data/socials.yml` (order = display order)    |
-| Talks index        | `talks/talks.md` (manually edited)             |
-| Co-author links    | `_data/coauthors.yml`                          |
-| Journal/venue URLs | `_data/venues.yml`                             |
+| What               | Where                                                            |
+| ------------------ | ---------------------------------------------------------------- |
+| Pages              | `_pages/*.md`                                                    |
+| Publications       | `_bibliography/papers.bib`                                       |
+| CV data            | `assets/json/resume.json` (JSON Resume schema)                   |
+| Social links       | `_data/socials.yml` (order = display order)                      |
+| Talks index        | `talks/talks.md` (manually edited)                               |
+| Co-author links    | `_data/coauthors.yml`                                            |
+| Journal/venue URLs | `_data/venues.yml`                                               |
 | Citation cache     | `_data/citations.yml` (auto-updated by CI, do not edit manually) |
-| Styles             | `_sass/_variables.scss`, `_themes.scss`        |
-| Feature flags      | `_config.yml` — `enable_*` keys                |
+| Styles             | `_sass/_variables.scss`, `_themes.scss`                          |
+| Feature flags      | `_config.yml` — `enable_*` keys                                  |
 
 ## Conventions
 
@@ -35,6 +35,7 @@ npx prettier --write "**/*.{html,liquid}"  # format templates
 **NASA ADS logo:** stored as `_includes/nasa_ads_logo.svg`, base64-encoded at build time via `_plugins/base64-filter.rb` and inlined into the shields.io badge URL in `_layouts/bib.liquid`.
 
 **Talk presentations:** standalone reveal.js HTML files in `talks/<name>/index.html`. Must manually include `<link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />` — not auto-injected by Jekyll. PDF slides also supported. Add entry to `talks/talks.md` in format:
+
 ```
 - MM/DD - [**Title**](path/to/file) at _Venue Name_, City, Country
 ```
