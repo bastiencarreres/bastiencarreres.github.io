@@ -11,7 +11,7 @@ nav_order: 1
 
 ## 2026
 
-- 01/07 - [**Red Dust Redemption**](oxford)
+- 01/07 - [**Red Dust Redemption**](oxfordnextgensn-2026-07-01/Red_Dust_Redemption.pdf) at _Next-Generation of SN Ia Survey Mini-Workshop_, Oxford, UK
 
 - 21/04 - [**Cosmology with SNe Ia: measuring growth-rate of structures with the new generation of survey**](yale-2026-04-21/index.html) at _Yale cosmology group seminar_, Yale University, New Haven, CT, USA
 
