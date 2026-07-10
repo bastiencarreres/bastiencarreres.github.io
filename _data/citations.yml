@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-06-24'
+  last_updated: '2026-07-08'
 papers:
   b97QHLgAAAAJ:0EnyYjriUFMC:
     citations: 7
     title: Astronomy & Astrophysics, 674
     year: '2023'
   b97QHLgAAAAJ:2osOgNQ5qMEC:
-    citations: 37
+    citations: 38
     title: 'ZTF SN Ia DR2: Environmental dependencies of stretch and luminosity for a volume-limited sample of 1000 type Ia supernovae'
     year: '2025'
   b97QHLgAAAAJ:3fE2CSJIrl8C:
@@ -54,7 +54,7 @@ papers:
     title: 'ZTF SNe Ia DR2: Towards cosmology-grade ZTF supernova light curves using scene modeling photometry'
     year: '2025'
   b97QHLgAAAAJ:W7OEmFMy1HYC:
-    citations: 23
+    citations: 24
     title: 'ZTF SN Ia DR2: Simulations and volume-limited sample'
     year: '2025'
   b97QHLgAAAAJ:WF5omc3nYNoC:
@@ -62,11 +62,11 @@ papers:
     title: Generalized framework for likelihood-based field-level inference of growth rate from velocity and density fields
     year: '2025'
   b97QHLgAAAAJ:Y0pCki6q_DkC:
-    citations: 92
+    citations: 95
     title: 'ZTF SN Ia DR2: Overview'
     year: '2025'
   b97QHLgAAAAJ:YsMSGLbcyi4C:
-    citations: 83
+    citations: 85
     title: 'The Hubble tension in our own backyard: DESI and the nearness of the coma cluster'
     year: '2025'
   b97QHLgAAAAJ:_FxGoFyzp5QC:
@@ -86,7 +86,7 @@ papers:
     title: The Weighing Halos Accurately, Locally, and Efficiently with Supernovae (WHALES) Survey Overview and Initial Data Release
     year: '2025'
   b97QHLgAAAAJ:qjMakFHDy7sC:
-    citations: 21
+    citations: 22
     title: 'ZTF SN Ia DR2: Study of Type Ia supernova light-curve fits'
     year: '2025'
   b97QHLgAAAAJ:roLk4NBRz8UC:
@@ -94,7 +94,7 @@ papers:
     title: Forecast for a growth-rate measurement using peculiar velocities from LSST supernovae
     year: '2025'
   b97QHLgAAAAJ:u5HHmVD_uO8C:
-    citations: 26
+    citations: 27
     title: Growth-rate measurement with type-Ia supernovae using ZTF survey simulations
     year: '2023'
   b97QHLgAAAAJ:ufrVoPGSRksC:
