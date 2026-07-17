@@ -95,6 +95,8 @@ layout: default
                 <h3 class="card-title font-weight-medium">Teaching Experience</h3>
               {% when 'grants' %}
                 <h3 class="card-title font-weight-medium">Grants & Fellowships</h3>
+              {% when 'volunteer' %}
+                <h3 class="card-title font-weight-medium">Responsibilities & Services</h3>
               {% else %}
                 <h3 class="card-title font-weight-medium">{{ data[0] | replace: '_', ' ' | capitalize }}</h3>
             {% endcase %}
