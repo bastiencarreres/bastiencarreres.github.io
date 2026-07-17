@@ -13,3 +13,4 @@ assets/js/reveal.js/
 vendor
 .idea
 .venv
+__pycache__/

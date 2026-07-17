@@ -63,11 +63,6 @@ module Jekyll
       api_url = "#{base_url}?#{query}"
 
       begin
-        # If the citation count has already been fetched, return it
-        if NasaADSCitationsTag::Citations[bibcode]
-          return NasaADSCitationsTag::Citations[bibcode]
-        end
-
         # Build the HTTPS request
         uri = URI(api_url)
         req = Net::HTTP::Get.new(uri)
@@ -80,7 +75,6 @@ module Jekyll
 
         # Parse the returned JSON data
         data = JSON.parse(response.body)
-        puts data
         # Extract citation count from the first (and only) result document
         docs = data["response"]["docs"]
         citation_count = (docs && !docs.empty?) ? docs[0]["citation_count"].to_i : "N/A"

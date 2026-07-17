@@ -17,6 +17,7 @@ npx prettier --write "**/*.{html,liquid}"  # format templates
 | ------------------ | ---------------------------------------------------------------- |
 | Pages              | `_pages/*.md`                                                    |
 | Publications       | `_bibliography/papers.bib`                                       |
+| LaTeX pub list     | `cv-latex/papers_latex.bib` (EN), `cv-latex/papers_latex_fr.bib` (FR), `cv-latex/main.tex` — mirrors of `papers.bib` for a separate LaTeX CV; kept in sync via `bin/update_bibliography.py` |
 | CV data            | `assets/json/resume.json` (JSON Resume schema)                   |
 | Social links       | `_data/socials.yml` (order = display order)                      |
 | Talks index        | `talks/talks.md` (manually edited)                               |
