@@ -5,6 +5,8 @@ repo_description_lines_max: 2
 
 # Repo cards shown on /software/. `stars` is refreshed automatically by
 # .github/workflows/update-repo-stars.yml — do not edit it by hand.
+# `lang` must be a slug matching a `.lang-dot.<lang>` class in _sass/_base.scss
+# (currently: python, jupyter — add a class there for new languages).
 github_repos:
   - repo: bastiencarreres/snsim
     description: Simulator for supernovae surveys.
