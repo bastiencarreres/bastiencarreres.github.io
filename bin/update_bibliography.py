@@ -111,7 +111,7 @@ def unescape_latex(s: str) -> str:
     return s.replace("\\&", "&")
 
 
-def load_existing_identifiers() -> tuple[str, set, set, set]:
+def load_existing_identifiers() -> tuple[str, set, set, set, set]:
     text = load_bib_text(BIB_PATH)
 
     bibcodes = {
