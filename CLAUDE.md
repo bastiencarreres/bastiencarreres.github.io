@@ -17,7 +17,7 @@ npx prettier --write "**/*.{html,liquid}"  # format templates
 | ------------------ | ---------------------------------------------------------------- |
 | Pages              | `_pages/*.md`                                                    |
 | Publications       | `_bibliography/papers.bib`                                       |
-| LaTeX pub list     | `cv-latex/papers_latex.bib` (EN), `cv-latex/papers_latex_fr.bib` (FR), `cv-latex/main.tex` — mirrors of `papers.bib` for a separate LaTeX CV; kept in sync via `bin/update_bibliography.py` |
+| LaTeX CV (external) | private repo [`bastiencarreres/My_CV`](https://github.com/bastiencarreres/My_CV) (Overleaf-synced) — its `papers.bib`/`papers_fr.bib` are updated by `bin/update_bibliography.py`; its `main.tex` is summarized into `assets/json/resume.json` by `bin/update_cv.py` |
 | CV data            | `assets/json/resume.json` (JSON Resume schema)                   |
 | Social links       | `_data/socials.yml` (order = display order)                      |
 | Talks index        | `talks/talks.md` (manually edited)                               |
@@ -31,7 +31,7 @@ npx prettier --write "**/*.{html,liquid}"  # format templates
 
 **Publications:** `selected={true}` shows paper on about page. `inspirehep_id` / `ads_bibcode` enable citation badges. Author highlighting via `scholar.last_name`/`first_name` in `_config.yml`.
 
-**CV:** Edit `assets/json/resume.json`. Sections shown controlled by `jsonresume` key in `_config.yml`.
+**CV:** Source of truth is `main.tex` in the private `My_CV` repo (edited on Overleaf). Run `python bin/update_cv.py` to summarize it into `assets/json/resume.json` (only education / research_experience / teaching / volunteer / grants are overwritten; other keys are hand-curated). Sections shown controlled by `jsonresume` key in `_config.yml`.
 
 **NASA ADS logo:** stored as `_includes/nasa_ads_logo.svg`, base64-encoded at build time via `_plugins/base64-filter.rb` and inlined into the shields.io badge URL in `_layouts/bib.liquid`.
 
