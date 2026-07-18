@@ -1,0 +1,38 @@
+{% assign talks_sorted = site.data.talks | sort: 'date' | reverse %}
+{% assign current_year = '' %}
+{% for talk in talks_sorted %}
+  {% assign talk_year = talk.date | date: '%Y' %}
+  {% if talk_year != current_year %}
+    {% assign current_year = talk_year %}
+    <h2 class="talks-year">{{ talk_year }}</h2>
+  {% endif %}
+  {% capture talk_date %}
+    {%- if talk.date_display -%}
+      {{- talk.date_display -}}
+    {%- else -%}
+      {{- talk.date | date: "%m/%d" -}}
+    {%- endif -%}
+  {% endcapture %}
+  <p class="talks-entry">
+    {{ talk_date | strip }} -
+    {% if talk.type == 'poster' %}Poster:{% endif %}
+    {% if talk.link %}
+      {% if talk.link contains '://' %}
+        <a href="{{ talk.link }}"
+          ><b>{{ talk.title }}</b></a
+        >
+      {% else %}
+        <a href="{{ talk.link | prepend: '/talks/' | relative_url }}"
+          ><b>{{ talk.title }}</b></a
+        >
+      {% endif %}
+    {% else %}
+      <b>{{ talk.title }}</b>
+    {% endif %}
+    {% if talk.proceedings %}
+      + <a href="{{ talk.proceedings }}">Proceedings</a>
+    {% endif %}
+    at <em>{{ talk.venue }}</em>
+    {%- if talk.location %}, {{ talk.location }}{% endif %}
+  </p>
+{% endfor %}

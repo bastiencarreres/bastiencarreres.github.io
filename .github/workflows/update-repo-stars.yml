@@ -1,0 +1,42 @@
+name: Update repo star counts
+
+on:
+  schedule:
+    - cron: "0 3 * * 1" # Monday 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update-stars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Update star counts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python bin/update_repo_stars.py
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+
+      - name: Commit and push if changed
+        run: |
+          git add _data/repositories.yml
+          git diff --staged --quiet || (
+            git commit -m "Update repo star counts"
+            git push
+          )

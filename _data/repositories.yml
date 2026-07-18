@@ -3,8 +3,28 @@ github_users:
 
 repo_description_lines_max: 2
 
+# Repo cards shown on /software/. `stars` is refreshed automatically by
+# .github/workflows/update-repo-stars.yml — do not edit it by hand.
+# `lang` must be a slug matching a `.lang-dot.<lang>` class in _sass/_base.scss
+# (currently: python, jupyter — add a class there for new languages).
 github_repos:
-  - bastiencarreres/snsim
-  - LSSTDESC/OpSimSummaryV2
-  - corentinravoux/flip
-  - bastiencarreres/snanapytools
+  - repo: bastiencarreres/snsim
+    description: Simulator for supernovae surveys.
+    lang: python
+    lang_display: Python
+    stars: 5
+  - repo: corentinravoux/flip
+    description: "Field Level Inference Package: infer growth rate from density and velocity fields."
+    lang: python
+    lang_display: Python
+    stars: 6
+  - repo: LSSTDESC/OpSimSummaryV2
+    description: Tools for summarizing LSST Operations Simulator outputs.
+    lang: jupyter
+    lang_display: Jupyter Notebook
+    stars: 2
+  - repo: bastiencarreres/snanapytools
+    description: Python utilities to visualize and work with SNANA.
+    lang: python
+    lang_display: Python
+    stars: 0

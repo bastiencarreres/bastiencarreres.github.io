@@ -1,0 +1,130 @@
+# Talks and posters, rendered on /talks/ by _includes/talks_list.liquid.
+# Add entries anywhere — the template sorts by date (newest first) and groups by year.
+#
+# Fields:
+#   date:         YYYY-MM-DD (required; used for sorting and MM/DD display)
+#   date_display: optional string shown instead of MM/DD (e.g. "Feb.") when day is unknown
+#   title:        talk title (required)
+#   venue:        event/seminar name, rendered in italics (required)
+#   location:     city/institution/country or "online" (optional)
+#   link:         slides — relative to /talks/ (e.g. mydir/index.html) or absolute URL (optional)
+#   type:         "poster" to prefix the entry with "Poster:" (optional)
+#   proceedings:  URL to proceedings, rendered as a trailing "+ Proceedings" link (optional)
+
+- date: 2026-07-01
+  title: Red Dust Redemption
+  venue: Next-Generation of SN Ia Survey Mini-Workshop
+  location: Oxford, UK
+  link: oxfordnextgensn-2026-07-01/Red_Dust_Redemption.pdf
+
+- date: 2026-04-21
+  title: "Cosmology with SNe Ia: measuring growth-rate of structures with the new generation of survey"
+  venue: Yale cosmology group seminar
+  location: Yale University, New Haven, CT, USA
+  link: yale-2026-04-21/index.html
+
+- date: 2026-01-12
+  title: "SNe Ia growth-rate measurements with Rubin-LSST simulations: intrinsic scatter systematics"
+  venue: CPPM Renoir Meeting
+  location: Marseille, France
+  link: CPPM-2026-01-12/index.html
+
+- date: 2025-11-12
+  title: "DESC Project announcement: Constraining Structure Growth and Modified Gravity Using LSST low-z SN Ia PVs and Weak Lensing"
+  venue: DESC-MCP meeting
+  location: online
+  link: descmcp-2025-11-12/DESC_Project_Announcement_Constraining_Structure_Growth_and_Modified_Gravity_Using_LSST_lowz_SNe_Ia_PVs_and_Weak_Lensing.pdf
+
+- date: 2025-09-22
+  title: Status of PV cosmology in LSST-DESC
+  venue: DESC workshop on cosmology with peculiar velocities
+  location: Marseille, France
+  link: desc-pv-workshop-2025-09-22/DESCPV-2025-09-22.pdf
+
+- date: 2025-07-02
+  title: "SNe Ia growth-rate measurements with Rubin-LSST simulations: intrinsic scatter systematics"
+  venue: Cosmic Lighthouses 2025
+  location: Cambridge, UK
+  link: cosmiclighthouse-2025-07-02/index.html
+
+- date: 2025-03-19
+  title: "SNe Ia growth-rate measurements with Rubin-LSST simulations: intrinsic scatter systematics"
+  venue: SN Ia Cosmology group of LPCA
+  location: online
+  link: clermontferrand-2025-03-19/index.html
+
+- date: 2025-02-06
+  title: "SNe Ia growth-rate measurements with Rubin-LSST simulations: intrinsic scatter systematics"
+  venue: CosmicFlows 2025
+  location: Brisbane, Australia
+  link: cosmicflows-2025-02-06/index.html
+
+- date: 2025-02-03
+  title: Improving SN Ia Hubble residual scatter with galaxy groups
+  venue: CosmicFlows 2025
+  location: Brisbane, Australia
+  link: cosmicflows-2025-02-03/CF2025_GalGrpSN_250203.pdf
+
+- date: 2024-10-15
+  title: "DESC Project announcement: Measurement of the growth-rate of structures using SN Ia PVs in the BBC framework"
+  venue: DESC-TD biweekly meeting
+  location: online
+  link: desctd-2024-10-15/DESC_PV_BBC_project.pdf
+
+- date: 2023-09-29
+  title: Thesis defense
+  venue: Centre de Physique des Particules de Marseille
+  location: Marseille, France
+  link: PhD/index.html
+
+- date: 2023-09-12
+  title: Possible velocity systematic on the Hubble diagram fit
+  venue: ZTF France
+  location: LPC, Clermont-Ferrand, France
+  link: https://indico.in2p3.fr/event/30615/contributions/128392/attachments/79574/116616/Possible%20impacts%20of%20velocities%20on%20the%20fit%20of%20the%20HD.pdf
+
+- date: 2023-04-20
+  title: Growth-rate measurement with type Ia supernovae
+  venue: Duke cosmology group seminar
+  location: Duke University, Durham, NC, USA
+  link: duke-2023-04-20/index.html
+
+- date: 2023-03-28
+  title: Growth-rate measurement with type Ia supernovae
+  venue: DESC-TD biweekly meeting
+  location: online
+  link: desctd-2023-03-28/index.html
+
+- date: 2022-11-18
+  title: Cosmology with the growth rate using type Ia supernovae
+  venue: Action Dark Energy 2022
+  location: Marseille, France
+  link: https://indico.in2p3.fr/event/27399/contributions/116473/attachments/74014/106473/ADE_2022_bc.pdf
+
+- date: 2022-07-01
+  date_display: July
+  type: poster
+  title: Cosmology with the growth rate of structures using type Ia supernovae
+  venue: DESC Summer Meeting 2022
+  location: University of Chicago
+  link: Poster_Moriond_Chicago.pdf
+
+- date: 2022-05-13
+  title: Measuring the growth-rate with the ZTF SN Ia sample
+  venue: ZTF Spring Meeting
+  location: LPNHE, Paris, France
+  link: https://indico.in2p3.fr/event/26793/contributions/110110/attachments/70411/99926/f%CF%838%20with%20SN%20Ia%20-%20ZTF%20Paris%20-%20PhD%20talks.pdf
+
+- date: 2022-02-01
+  date_display: Feb.
+  type: poster
+  title: Cosmology with the growth rate of structures using type Ia supernovae
+  venue: Rencontres de Moriond
+  link: Poster_Moriond_Chicago.pdf
+  proceedings: https://moriond.in2p3.fr/download/proceedings_cosmology_2022.pdf
+
+- date: 2021-05-27
+  title: Peculiar velocities with Type Ia Supernovae
+  venue: Rubin-LSST France 2021
+  location: LPSC, Grenoble, France
+  link: https://indico.in2p3.fr/event/23494/contributions/95032/attachments/64400/89320/Pre%CC%81sentation_lsst_france_final.pdf

@@ -2,8 +2,9 @@
 """
 Find papers on ADS where you are an author but that are missing from
 _bibliography/papers.bib, and interactively add them. Also mirrors new
-entries into the LaTeX CV publication list (cv-latex/papers_latex.bib and
-cv-latex/papers_latex_fr.bib).
+entries into the LaTeX CV publication lists (papers.bib and papers_fr.bib)
+in the private bastiencarreres/My_CV repo (Overleaf-synced), which is
+cloned/pulled to a local cache dir.
 
 Usage:
     ADS_API_TOKEN=xxxx python bin/update_bibliography.py [--since YEAR] [--dry-run]
@@ -25,23 +26,29 @@ The script:
        section (`FirstAuth` / `SignContrib` / `Other`), then generates a
        bibtex entry following the file's existing conventions and appends
        it to the right section of all three bib files (papers.bib uses
-       \\(...\\) math delimiters; the cv-latex copies use $...$ and the
+       \\(...\\) math delimiters; the My_CV copies use $...$ and the
        _fr one gets a separately-entered French annotation).
     4. For each paper whose bibcode changed, shows a diff and asks for
        confirmation before updating the entry (by citekey) in all three
        bib files.
+    5. If the My_CV repo files changed, asks for confirmation before
+       committing and pushing them (Overleaf then syncs automatically).
 """
 
 import argparse
 import os
 import re
+import subprocess
 import sys
 
 import requests
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from update_cv import clone_or_pull, CACHE_DIR
+
 BIB_PATH = "_bibliography/papers.bib"
-BIB_PATH_LATEX_EN = "cv-latex/papers_latex.bib"
-BIB_PATH_LATEX_FR = "cv-latex/papers_latex_fr.bib"
+BIB_NAME_LATEX_EN = "papers.bib"
+BIB_NAME_LATEX_FR = "papers_fr.bib"
 ADS_SEARCH_URL = "https://api.adsabs.harvard.edu/v1/search/query"
 FIRST_AUTHOR_LASTNAME = "Carreres"
 
@@ -104,7 +111,7 @@ def unescape_latex(s: str) -> str:
     return s.replace("\\&", "&")
 
 
-def load_existing_identifiers() -> tuple[str, set, set, set]:
+def load_existing_identifiers() -> tuple[str, set, set, set, set]:
     text = load_bib_text(BIB_PATH)
 
     bibcodes = {
@@ -262,7 +269,7 @@ def escape_latex(s: str) -> str:
 
 
 def to_plain_math(s: str) -> str:
-    """Convert \\(...\\) math delimiters (used in papers.bib) to $...$ (used in the LaTeX cv-latex bibs)."""
+    """Convert \\(...\\) math delimiters (used in papers.bib) to $...$ (used in the My_CV LaTeX bibs)."""
     return s.replace("\\(", "$").replace("\\)", "$")
 
 
@@ -315,11 +322,33 @@ def insert_entry(text: str, section: str, entry: str) -> str:
     return before + entry + "\n" + after
 
 
+def offer_cv_repo_push():
+    status = subprocess.run(
+        ["git", "-C", str(CACHE_DIR), "status", "--porcelain"],
+        capture_output=True, text=True,
+    ).stdout.strip()
+    if not status:
+        return
+    print("\nMy_CV repo has changes:")
+    subprocess.run(["git", "-C", str(CACHE_DIR), "diff", "--stat"])
+    if yes_no("Commit and push the updated bib files to My_CV (Overleaf will sync)?", default=True):
+        subprocess.run(["git", "-C", str(CACHE_DIR), "add", "papers.bib", "papers_fr.bib"], check=True)
+        subprocess.run(["git", "-C", str(CACHE_DIR), "commit", "-m", "Update publication list from website"], check=True)
+        subprocess.run(["git", "-C", str(CACHE_DIR), "push"], check=True)
+        print("Pushed to My_CV.")
+    else:
+        print(f"Not pushed. The updated files remain in {CACHE_DIR} — push manually when ready.")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--since", type=int, default=None, help="Only consider papers from this year onward")
     parser.add_argument("--dry-run", action="store_true", help="Don't write to papers.bib")
     args = parser.parse_args()
+
+    clone_or_pull()
+    bib_path_latex_en = str(CACHE_DIR / BIB_NAME_LATEX_EN)
+    bib_path_latex_fr = str(CACHE_DIR / BIB_NAME_LATEX_FR)
 
     token = ads_token()
     print("Querying ADS...")
@@ -327,8 +356,8 @@ def main():
     print(f"Found {len(docs)} papers on ADS matching your author query.")
 
     text, bibcodes, inspire_ids, arxiv_ids, dois = load_existing_identifiers()
-    text_latex_en = load_bib_text(BIB_PATH_LATEX_EN)
-    text_latex_fr = load_bib_text(BIB_PATH_LATEX_FR)
+    text_latex_en = load_bib_text(bib_path_latex_en)
+    text_latex_fr = load_bib_text(bib_path_latex_fr)
 
     existing_entries = parse_entries(text)
     bibcode_index = {e["bibcode"]: e for e in existing_entries if e["bibcode"]}
@@ -401,11 +430,12 @@ def main():
         if updated and not args.dry_run:
             with open(BIB_PATH, "w") as f:
                 f.write(text)
-            with open(BIB_PATH_LATEX_EN, "w") as f:
+            with open(bib_path_latex_en, "w") as f:
                 f.write(text_latex_en)
-            with open(BIB_PATH_LATEX_FR, "w") as f:
+            with open(bib_path_latex_fr, "w") as f:
                 f.write(text_latex_fr)
             print(f"Wrote {updated} updated entry/entries.")
+            offer_cv_repo_push()
         elif updated:
             print(f"Dry run: {updated} entry/entries would have been updated (not written).")
         else:
@@ -469,7 +499,7 @@ def main():
 
         print("\nGenerated entry (papers.bib):\n")
         print(entry)
-        if not yes_no("Add this entry to papers.bib and the cv-latex bib files?", default=True):
+        if not yes_no("Add this entry to papers.bib and the My_CV bib files?", default=True):
             print("Skipped.\n")
             continue
 
@@ -482,14 +512,15 @@ def main():
     if (added or updated) and not args.dry_run:
         with open(BIB_PATH, "w") as f:
             f.write(text)
-        with open(BIB_PATH_LATEX_EN, "w") as f:
+        with open(bib_path_latex_en, "w") as f:
             f.write(text_latex_en)
-        with open(BIB_PATH_LATEX_FR, "w") as f:
+        with open(bib_path_latex_fr, "w") as f:
             f.write(text_latex_fr)
         print(
             f"Wrote {added} new and {updated} updated entry/entries to {BIB_PATH}, "
-            f"{BIB_PATH_LATEX_EN} and {BIB_PATH_LATEX_FR}."
+            f"{bib_path_latex_en} and {bib_path_latex_fr}."
         )
+        offer_cv_repo_push()
     elif added or updated:
         print(f"Dry run: {added} new and {updated} updated entry/entries (not written).")
     else:

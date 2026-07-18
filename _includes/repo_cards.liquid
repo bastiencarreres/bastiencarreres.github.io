@@ -1,0 +1,18 @@
+<div class="repo-cards">
+  {% for entry in site.data.repositories.github_repos %}
+    {% assign repo_name = entry.repo | split: '/' | last %}
+    <a href="https://github.com/{{ entry.repo }}" class="repo-card" target="_blank" rel="noopener">
+      <div class="repo-card-header">
+        <i class="fa-brands fa-github"></i>
+        <span class="repo-name">{{ repo_name }}</span>
+      </div>
+      <p class="repo-description">{{ entry.description }}</p>
+      <div class="repo-meta">
+        <span class="repo-lang"><span class="lang-dot {{ entry.lang }}"></span>{{ entry.lang_display }}</span>
+        {% if entry.stars and entry.stars > 0 %}
+          <span class="repo-stars"><i class="fa-regular fa-star"></i> {{ entry.stars }}</span>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+</div>
