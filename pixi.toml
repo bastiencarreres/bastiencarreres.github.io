@@ -1,0 +1,27 @@
+[workspace]
+name = "bastiencarreres.github.io"
+description = "Personal academic website (al-folio Jekyll theme)"
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-64", "osx-arm64"]
+
+[dependencies]
+ruby = "3.2.*"
+nodejs = "20.*"
+python = "3.11.*"
+pip = "*"
+imagemagick = "*"
+compilers = "*"
+make = "*"
+
+[pypi-dependencies]
+nbconvert = "*"
+pyyaml = "*"
+scholarly = "*"
+requests = "*"
+pytest = "*"
+
+[tasks]
+install = { cmd = "bundle install && npm install && npm run copy-reveal", description = "Install Ruby gems + npm deps, vendor reveal.js" }
+serve = { cmd = "bundle exec jekyll serve", description = "Serve site at http://localhost:4000" }
+build = { cmd = "bundle exec jekyll build", description = "Build site into _site/" }
+test = { cmd = "pytest bin/tests", description = "Run Python test suite" }

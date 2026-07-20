@@ -1,3 +1,4 @@
+
 # This plugin defines a custom Liquid tag for Jekyll that fetches the citation count
 # for a given NASA ADS bibcode using the NASA ADS API.
 #

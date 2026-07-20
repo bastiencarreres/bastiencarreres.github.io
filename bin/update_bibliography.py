@@ -22,8 +22,10 @@ The script:
          preprint-only bibcode like `2025arXiv250513290C` that has since
          become a published one like `2025ApJ...994..178C`) — these get
          their journal/volume/number/pages/doi/ads_bibcode refreshed.
-    3. For each new paper, asks you to confirm authorship and pick a
-       section (`FirstAuth` / `SignContrib` / `Other`), then generates a
+    3. For each new paper, asks you to confirm authorship (a "no" is
+       remembered in bin/not_my_papers.txt so you're never asked again about
+       that bibcode) and pick a section (`FirstAuth` / `SignContrib` / `Other`),
+       then generates a
        bibtex entry following the file's existing conventions and appends
        it to the right section of all three bib files (papers.bib uses
        \\(...\\) math delimiters; the My_CV copies use $...$ and the
@@ -33,6 +35,13 @@ The script:
        bib files.
     5. If the My_CV repo files changed, asks for confirmation before
        committing and pushing them (Overleaf then syncs automatically).
+
+With --sync-cv, skips the ADS query entirely and instead checks the My_CV
+bib files against _bibliography/papers.bib (the website, treated as the
+source of truth): entries missing from My_CV are added (after confirmation,
+optionally prompting for a French annotation), and bibliographic fields
+that have drifted (journal, volume, pages, doi, ads_bibcode, etc. - not
+annotation) are refreshed to match the website.
 """
 
 import argparse
@@ -51,6 +60,7 @@ BIB_NAME_LATEX_EN = "papers.bib"
 BIB_NAME_LATEX_FR = "papers_fr.bib"
 ADS_SEARCH_URL = "https://api.adsabs.harvard.edu/v1/search/query"
 FIRST_AUTHOR_LASTNAME = "Carreres"
+NOT_MINE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "not_my_papers.txt")
 
 SECTION_BANNERS = {
     "FirstAuth": "################\n# FIRST AUTHOR #\n################",
@@ -58,6 +68,12 @@ SECTION_BANNERS = {
     "Other": "###################\n# CO-AUTH CONTRIB #\n###################",
 }
 SECTION_ORDER = ["FirstAuth", "SignContrib", "Other"]
+# Bibliographic fields kept in sync between the website bib and the My_CV bibs.
+# `annotation` is deliberately excluded: the fr copy carries a hand-translated note.
+SYNC_FIELDS = [
+    "title", "author", "year", "journal", "volume", "number", "pages",
+    "doi", "ads_bibcode", "selected",
+]
 
 
 def ads_token() -> str:
@@ -231,6 +247,20 @@ def already_in_bib(doc: dict, bibcodes, arxiv_ids, dois) -> bool:
     return False
 
 
+def load_not_mine() -> set:
+    if not os.path.exists(NOT_MINE_PATH):
+        return set()
+    with open(NOT_MINE_PATH, "r") as f:
+        return {line.strip() for line in f if line.strip() and not line.startswith("#")}
+
+
+def mark_not_mine(bibcode: str | None) -> None:
+    if not bibcode:
+        return
+    with open(NOT_MINE_PATH, "a") as f:
+        f.write(bibcode + "\n")
+
+
 def prompt(question: str, default: str | None = None) -> str:
     suffix = f" [{default}]" if default is not None else ""
     ans = input(f"{question}{suffix}: ").strip()
@@ -322,6 +352,114 @@ def insert_entry(text: str, section: str, entry: str) -> str:
     return before + entry + "\n" + after
 
 
+def parse_full_entries(text: str) -> dict:
+    """Parse top-level bib entries into citekey -> {body, section}, `body` being the
+    entry's full raw text (including the @type{key, ... } wrapper). Relies on the same
+    lone-'}'-line convention as parse_entries().
+    """
+    lines = text.split("\n")
+    entries = {}
+    i = 0
+    while i < len(lines):
+        m = ENTRY_START_RE.match(lines[i])
+        if m:
+            key = m.group(2)
+            end = None
+            for j in range(i + 1, len(lines)):
+                if lines[j].strip() == "}":
+                    end = j
+                    break
+            if end is not None:
+                body = "\n".join(lines[i : end + 1]) + "\n"
+                kw_vals = re.findall(r"keywords\s*=\s*\{([^}]*)\}", body)
+                section = next((kv.strip() for kv in kw_vals if kv.strip() in SECTION_ORDER), "Other")
+                entries[key] = {"body": body, "section": section}
+                i = end
+        i += 1
+    return entries
+
+
+def convert_annotation_delims(body: str) -> str:
+    """Convert \\(...\\) math delimiters (website bib) to $...$ (My_CV bibs)."""
+    return body.replace("\\(", "$").replace("\\)", "$")
+
+
+def set_annotation(body: str, annotation: str) -> str:
+    if re.search(r"annotation\s*=\s*\{[^}]*\}", body):
+        return re.sub(r"annotation\s*=\s*\{[^}]*\}", f"annotation = {{{annotation}}}", body, count=1)
+    lines = body.split("\n")
+    lines.insert(-1, f"  annotation = {{{annotation}}},")
+    return "\n".join(lines)
+
+
+def sync_cv_from_website(text: str, text_latex_en: str, text_latex_fr: str):
+    """Add entries missing from the My_CV bibs and refresh SYNC_FIELDS that have drifted,
+    using _bibliography/papers.bib (the website) as the source of truth. Returns the
+    (possibly updated) en/fr texts and whether anything changed.
+    """
+    web_entries = parse_full_entries(text)
+    en_entries = parse_full_entries(text_latex_en)
+
+    missing_keys = [k for k in web_entries if k not in en_entries]
+    field_updates = []  # (key, field, old, new)
+    for key, web in web_entries.items():
+        cv = en_entries.get(key)
+        if not cv:
+            continue
+        for field in SYNC_FIELDS:
+            wv = get_field(web["body"], field)
+            cv_v = get_field(cv["body"], field)
+            if wv is not None and wv != cv_v:
+                field_updates.append((key, field, cv_v, wv))
+
+    if not missing_keys and not field_updates:
+        print("My_CV bib files already in sync with the website bibliography.")
+        return text_latex_en, text_latex_fr, False
+
+    print(f"{len(missing_keys)} entr{'y' if len(missing_keys) == 1 else 'ies'} missing from My_CV bib files.")
+    print(f"{len(field_updates)} field(s) out of sync.\n")
+
+    changed = False
+
+    for key in missing_keys:
+        web = web_entries[key]
+        print("=" * 70)
+        print(web["body"])
+        if not yes_no(f"Add '{key}' to the My_CV bib files?", default=True):
+            print("Skipped.\n")
+            continue
+        entry_en = convert_annotation_delims(web["body"])
+        annotation_fr = prompt(
+            f"French annotation for '{key}' (optional, leave blank to reuse the English text for now)",
+            default="",
+        )
+        entry_fr = set_annotation(entry_en, annotation_fr) if annotation_fr else entry_en
+        text_latex_en = insert_entry(text_latex_en, web["section"], entry_en)
+        text_latex_fr = insert_entry(text_latex_fr, web["section"], entry_fr)
+        changed = True
+        print(f"Added '{key}'.\n")
+
+    by_key = {}
+    for key, field, old, new in field_updates:
+        by_key.setdefault(key, []).append((field, old, new))
+
+    for key, changes in by_key.items():
+        print("=" * 70)
+        print(f"Entry: {key}")
+        for field, old, new in changes:
+            print(f"  {field}: {old!r} -> {new!r}")
+        if not yes_no(f"Update '{key}' in the My_CV bib files with the website's values?", default=True):
+            print("Skipped.\n")
+            continue
+        updates = {field: new for field, _old, new in changes}
+        text_latex_en = update_entry_fields(text_latex_en, key, updates)
+        text_latex_fr = update_entry_fields(text_latex_fr, key, updates)
+        changed = True
+        print(f"Updated '{key}'.\n")
+
+    return text_latex_en, text_latex_fr, changed
+
+
 def offer_cv_repo_push():
     status = subprocess.run(
         ["git", "-C", str(CACHE_DIR), "status", "--porcelain"],
@@ -344,11 +482,33 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--since", type=int, default=None, help="Only consider papers from this year onward")
     parser.add_argument("--dry-run", action="store_true", help="Don't write to papers.bib")
+    parser.add_argument(
+        "--sync-cv",
+        action="store_true",
+        help="Check the My_CV bib files against _bibliography/papers.bib and update them to "
+        "match (missing entries added, drifted fields refreshed). Skips the ADS query.",
+    )
     args = parser.parse_args()
 
     clone_or_pull()
     bib_path_latex_en = str(CACHE_DIR / BIB_NAME_LATEX_EN)
     bib_path_latex_fr = str(CACHE_DIR / BIB_NAME_LATEX_FR)
+
+    text_latex_en = load_bib_text(bib_path_latex_en)
+    text_latex_fr = load_bib_text(bib_path_latex_fr)
+
+    if args.sync_cv:
+        text = load_bib_text(BIB_PATH)
+        text_latex_en, text_latex_fr, changed = sync_cv_from_website(text, text_latex_en, text_latex_fr)
+        if changed and not args.dry_run:
+            with open(bib_path_latex_en, "w") as f:
+                f.write(text_latex_en)
+            with open(bib_path_latex_fr, "w") as f:
+                f.write(text_latex_fr)
+            offer_cv_repo_push()
+        elif changed:
+            print("Dry run: My_CV bib files would have been updated (not written).")
+        return
 
     token = ads_token()
     print("Querying ADS...")
@@ -356,8 +516,6 @@ def main():
     print(f"Found {len(docs)} papers on ADS matching your author query.")
 
     text, bibcodes, inspire_ids, arxiv_ids, dois = load_existing_identifiers()
-    text_latex_en = load_bib_text(bib_path_latex_en)
-    text_latex_fr = load_bib_text(bib_path_latex_fr)
 
     existing_entries = parse_entries(text)
     bibcode_index = {e["bibcode"]: e for e in existing_entries if e["bibcode"]}
@@ -385,6 +543,12 @@ def main():
             stale_docs.append((d, matched))
         elif not already_in_bib(d, bibcodes, arxiv_ids, dois):
             new_docs.append(d)
+
+    not_mine = load_not_mine()
+    skipped_not_mine = [d for d in new_docs if d.get("bibcode") in not_mine]
+    new_docs = [d for d in new_docs if d.get("bibcode") not in not_mine]
+    if skipped_not_mine:
+        print(f"{len(skipped_not_mine)} paper(s) previously marked as not yours (skipped).")
 
     print(f"{len(new_docs)} new paper(s) not currently in {BIB_PATH}.")
     print(f"{len(stale_docs)} existing paper(s) whose ADS bibcode has changed (e.g. now published).\n")
@@ -464,7 +628,8 @@ def main():
         print()
 
         if not yes_no(f"Are you ({FIRST_AUTHOR_LASTNAME}) really an author of this paper?", default=True):
-            print("Skipped.\n")
+            mark_not_mine(doc.get("bibcode"))
+            print("Skipped (won't be asked about this paper again).\n")
             continue
 
         first_author_last = authors[0].split(",")[0].strip() if authors else FIRST_AUTHOR_LASTNAME

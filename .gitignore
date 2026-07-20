@@ -15,3 +15,5 @@ vendor
 .venv
 __pycache__/
 .claude/worktrees/
+.pixi/
+pixi.lock
