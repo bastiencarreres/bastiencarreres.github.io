@@ -1059,12 +1059,14 @@ Expected: clones/pulls My_CV, prints a unified diff of resume.json. Read the dif
 
 - [ ] **Step 6: Add the volunteer heading override in `_layouts/cv.liquid`**
 
-In `_layouts/cv.liquid`, the heading `{% case data[0] %}` block (around line 91) currently has cases for `research_experience`, `teaching`, `grants`. Add one more before `{% else %}`:
+In `_layouts/cv.liquid`, the heading `{% raw %}{% case data[0] %}{% endraw %}` block (around line 91) currently has cases for `research_experience`, `teaching`, `grants`. Add one more before `{% raw %}{% else %}{% endraw %}`:
 
+{% raw %}
 ```liquid
               {% when 'volunteer' %}
                 <h3 class="card-title font-weight-medium">Responsibilities & Services</h3>
 ```
+{% endraw %}
 
 Run: `npx prettier --write _layouts/cv.liquid`
 

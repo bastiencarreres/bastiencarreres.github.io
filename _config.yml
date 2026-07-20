@@ -108,6 +108,7 @@ kramdown:
 include: ["_pages", "_scripts", "_talks", ".gitmodules"]
 exclude:
   - bin/
+  - docs/
   - CONTRIBUTING.md
   - CUSTOMIZE.md
   - Dockerfile
