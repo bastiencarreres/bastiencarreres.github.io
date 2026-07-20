@@ -5,11 +5,16 @@ Personal academic website for Bastien Carreres (cosmologist at Duke University),
 ## Dev Commands
 
 ```bash
-docker compose up                          # preferred — http://localhost:8080
+pixi run install                           # bundle install + npm install (once, or after Gemfile/package.json changes)
+pixi run serve                              # preferred — http://localhost:4000
+pixi run build                              # build into _site/
+pixi run test                               # run bin/tests Python suite
+docker compose up                          # alternative — http://localhost:8080
 docker compose -f docker-compose-slim.yml up  # lighter build, no imagemagick
-bundle exec jekyll serve                   # direct (requires Ruby + imagemagick)
 npx prettier --write "**/*.{html,liquid}"  # format templates
 ```
+
+Env (Ruby, Node, Python) is managed via [pixi](https://pixi.sh); see `pixi.toml`.
 
 ## Key Files
 
