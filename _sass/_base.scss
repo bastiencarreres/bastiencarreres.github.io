@@ -613,8 +613,15 @@ footer.sticky-bottom {
 }
 
 .date-column {
-  width: 75px;
-  transform: translateX(-15px) translateY(-5px);
+  width: 130px;
+
+  .badge {
+    display: inline-block;
+    width: 110px;
+    font-size: 0.7rem;
+    white-space: normal;
+    line-height: 1.3;
+  }
 }
 
 // Repositories

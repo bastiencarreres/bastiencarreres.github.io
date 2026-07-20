@@ -38,6 +38,45 @@ SECTION_TO_KEY = {
     "Awards & Grant": "grants",
 }
 
+MONTH_ABBREV = {
+    "jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
+    "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12,
+}
+
+
+def _date_sort_key(date_str: str) -> tuple[int, int]:
+    """'Oct. 2020' / 'June 2023' / '2023' / '' (ongoing) -> (year, month) for descending sort."""
+    if not date_str:
+        return (9999, 12)  # ongoing/present ranks as most recent
+    m = re.match(r"^([A-Za-z]+)\.?\s+(\d{4})$", date_str.strip())
+    if m:
+        month_num = MONTH_ABBREV.get(m.group(1)[:3].lower(), 0)
+        return (int(m.group(2)), month_num)
+    m = re.match(r"^(\d{4})$", date_str.strip())
+    if m:
+        return (int(m.group(1)), 0)
+    return (0, 0)
+
+
+def _sort_by_date_desc(items: list[dict], date_field: str) -> list[dict]:
+    return sorted(items, key=lambda it: _date_sort_key(it.get(date_field, "")), reverse=True)
+
+
+def _sort_teaching(items: list[dict]) -> list[dict]:
+    """Sort within each subsection group by date desc, preserving group order of first appearance."""
+    groups: dict[str | None, list[dict]] = {}
+    order: list[str | None] = []
+    for it in items:
+        key = it.get("subsection")
+        if key not in groups:
+            groups[key] = []
+            order.append(key)
+        groups[key].append(it)
+    result = []
+    for key in order:
+        result.extend(_sort_by_date_desc(groups[key], "startDate"))
+    return result
+
 
 def clone_or_pull() -> Path:
     if CACHE_DIR.exists():
@@ -220,6 +259,12 @@ def tex_to_resume_updates(tex: str) -> dict[str, list]:
                 if not item["highlights"]:
                     del item["highlights"]
             out.append(item)
+        if key == "research_experience" or key == "volunteer":
+            out = _sort_by_date_desc(out, "startDate")
+        elif key == "teaching":
+            out = _sort_teaching(out)
+        elif key in ("education", "grants"):
+            out = _sort_by_date_desc(out, "date")
         updates[key] = out
 
     return updates

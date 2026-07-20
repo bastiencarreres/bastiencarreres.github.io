@@ -105,21 +105,21 @@
       ]
     },
     {
-      "course": "PhD student Mentoring",
-      "institution": "Duke University",
-      "startDate": "Nov. 2023",
-      "highlights": [
-        "Maria Acevedo -- Subject: Cosmology with the DEBASS survey."
-      ],
-      "subsection": "Student Mentoring"
-    },
-    {
       "course": "Graduate student project supervision",
       "institution": "Duke University",
       "startDate": "Sept. 2024",
       "endDate": "June 2025",
       "highlights": [
         "Subject: Estimation of the velocity power spectrum in a N-body simulation."
+      ],
+      "subsection": "Student Mentoring"
+    },
+    {
+      "course": "PhD student Mentoring",
+      "institution": "Duke University",
+      "startDate": "Nov. 2023",
+      "highlights": [
+        "Maria Acevedo -- Subject: Cosmology with the DEBASS survey."
       ],
       "subsection": "Student Mentoring"
     }
@@ -154,15 +154,6 @@
     },
     {
       "organization": "",
-      "position": "Member of the DESC Collaboration Council",
-      "url": "",
-      "startDate": "Dec. 2024",
-      "endDate": "",
-      "summary": "Elected for a 2 year term.",
-      "highlights": []
-    },
-    {
-      "organization": "",
       "position": "Reviewer for MNRAS",
       "url": "",
       "startDate": "Feb. 2025",
@@ -172,11 +163,11 @@
     },
     {
       "organization": "",
-      "position": "Co-organiser of the CPPM cosmology group' journal club",
+      "position": "Member of the DESC Collaboration Council",
       "url": "",
-      "startDate": "Sept. 2021",
-      "endDate": "June 2023",
-      "summary": "",
+      "startDate": "Dec. 2024",
+      "endDate": "",
+      "summary": "Elected for a 2 year term.",
       "highlights": []
     },
     {
@@ -185,6 +176,15 @@
       "url": "",
       "startDate": "Oct. 2021",
       "endDate": "2023",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "organization": "",
+      "position": "Co-organiser of the CPPM cosmology group' journal club",
+      "url": "",
+      "startDate": "Sept. 2021",
+      "endDate": "June 2023",
       "summary": "",
       "highlights": []
     }
