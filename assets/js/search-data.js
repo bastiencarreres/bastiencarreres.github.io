@@ -44,8 +44,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/thesis/";
           },
-        },{id: "nav-outreach",
-          title: "Outreach",
+        },{id: "nav-outreach-amp-teaching",
+          title: "Outreach &amp; Teaching",
           description: "",
           section: "Navigation",
           handler: () => {

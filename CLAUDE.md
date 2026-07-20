@@ -17,9 +17,10 @@ npx prettier --write "**/*.{html,liquid}"  # format templates
 | ------------------ | ---------------------------------------------------------------- |
 | Pages              | `_pages/*.md`                                                    |
 | Publications       | `_bibliography/papers.bib`                                       |
+| LaTeX CV (external) | private repo [`bastiencarreres/My_CV`](https://github.com/bastiencarreres/My_CV) (Overleaf-synced) — its `papers.bib`/`papers_fr.bib` are updated by `bin/update_bibliography.py`; its `main.tex` is summarized into `assets/json/resume.json` by `bin/update_cv.py` |
 | CV data            | `assets/json/resume.json` (JSON Resume schema)                   |
 | Social links       | `_data/socials.yml` (order = display order)                      |
-| Talks index        | `talks/talks.md` (manually edited)                               |
+| Talks index        | `_data/talks.yml` (rendered by `_includes/talks_list.liquid`)    |
 | Co-author links    | `_data/coauthors.yml`                                            |
 | Journal/venue URLs | `_data/venues.yml`                                               |
 | Citation cache     | `_data/citations.yml` (auto-updated by CI, do not edit manually) |
@@ -30,15 +31,21 @@ npx prettier --write "**/*.{html,liquid}"  # format templates
 
 **Publications:** `selected={true}` shows paper on about page. `inspirehep_id` / `ads_bibcode` enable citation badges. Author highlighting via `scholar.last_name`/`first_name` in `_config.yml`.
 
-**CV:** Edit `assets/json/resume.json`. Sections shown controlled by `jsonresume` key in `_config.yml`.
+**CV:** Source of truth is `main.tex` in the private `My_CV` repo (edited on Overleaf). Run `python bin/update_cv.py` to summarize it into `assets/json/resume.json` (only education / research_experience / teaching / volunteer / grants are overwritten; other keys are hand-curated). Sections shown controlled by `jsonresume` key in `_config.yml`.
 
 **NASA ADS logo:** stored as `_includes/nasa_ads_logo.svg`, base64-encoded at build time via `_plugins/base64-filter.rb` and inlined into the shields.io badge URL in `_layouts/bib.liquid`.
 
-**Talk presentations:** standalone reveal.js HTML files in `talks/<name>/index.html`. Must manually include `<link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />` — not auto-injected by Jekyll. PDF slides also supported. Add entry to `talks/talks.md` in format:
+**Talk presentations:** standalone reveal.js HTML files in `talks/<name>/index.html`. Must manually include `<link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />` — not auto-injected by Jekyll. PDF slides also supported. Add an entry to `_data/talks.yml` (fields documented in the file header; the template sorts by date and groups by year):
 
+```yaml
+- date: YYYY-MM-DD
+  title: Talk title
+  venue: Event Name
+  location: City, Country
+  link: mydir/slides.pdf # relative to /talks/, or absolute URL
 ```
-- MM/DD - [**Title**](path/to/file) at _Venue Name_, City, Country
-```
+
+**Software page:** `/software/` cards come from `_data/repositories.yml` (`github_repos` entries: repo/description/lang/lang_display/stars). Star counts auto-refreshed weekly by `update-repo-stars.yml`.
 
 **Co-authors:** `_data/coauthors.yml` maps last name → list of firstname variants + optional URL. Used to auto-link author names in publications.
 
