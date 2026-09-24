@@ -5,10 +5,12 @@
   {% if talk_year != current_year %}
     {% if current_year != '' %}
       </ul>
+      </div>
     {% endif %}
     {% assign current_year = talk_year %}
-    <h2 class="talks-year">{{ talk_year }}</h2>
-    <ul class="talks-list">
+    <div class="talks-year-section">
+      <h2 class="talks-year">{{ talk_year }}</h2>
+      <ul class="talks-list">
   {% endif %}
   {% capture talk_date %}
     {%- if talk.date_display -%}
@@ -18,7 +20,7 @@
     {%- endif -%}
   {% endcapture %}
   <li class="talks-entry">
-    {{ talk_date | strip }} -
+    <span class="talks-date">{{ talk_date | strip }}</span> -
     {% if talk.type == 'poster' %}Poster:{% endif %}
     {% if talk.link %}
       {% if talk.link contains '://' %}
@@ -41,3 +43,4 @@
   </li>
 {% endfor %}
 </ul>
+</div>

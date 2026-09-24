@@ -176,11 +176,14 @@ ul.timeline li {
 }
 
 span.badge-toc {
-  color: var(--global-bg-color);
-  background-color: var(--global-theme-color);
+  color: var(--global-theme-color);
+  background-color: transparent;
+  border: 1px solid var(--global-divider-color);
   border-radius: 0.25rem;
   padding: 0.15rem 0.6rem;
   font-weight: 600 !important;
+  font-family: "Source Serif 4", "Georgia", serif;
+  font-style: italic;
   font-size: 0.85rem;
   display: inline-block;
   inline-size: fit-content;
@@ -190,12 +193,80 @@ ul.timeline li::before {
   content: "";
   min-height: 2.5rem;
   width: 1px;
-  background: var(--global-text-color);
+  background: var(--global-divider-color);
   margin: 0;
   padding: 0;
   position: absolute;
   left: 2px;
   top: -0.5rem;
+}
+
+ul.timeline li::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--global-accent-color);
+  position: absolute;
+  left: -0.5px;
+  top: 0.3rem;
+}
+
+/*****************************
+ * Talks timeline styles
+ *****************************/
+
+.talks-year-section {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--global-divider-color);
+  margin-bottom: 0.5rem;
+}
+
+h2.talks-year {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+h2.talks-year::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--global-accent-color);
+  position: absolute;
+  left: calc(-1.5rem - 1.5px - 7px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+ul.talks-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+li.talks-entry {
+  position: relative;
+  padding-bottom: 0.9rem;
+}
+
+li.talks-entry::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--global-divider-color);
+  position: absolute;
+  left: calc(-1.5rem - 1.5px - 3px);
+  top: 0.5em;
+}
+
+.talks-date {
+  color: var(--global-text-color-light);
+  font-family: "Source Serif 4", "Georgia", serif;
+  font-style: italic;
 }
 
 /*ul.timeline::before {
