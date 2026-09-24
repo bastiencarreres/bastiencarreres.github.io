@@ -26,9 +26,7 @@
       "date": "2023",
       "endDate": "",
       "score": "",
-      "courses": [
-        "Thesis title: Measurement of the growth rate of structures with Type Ia Supernovae of the ZTF photometric survey."
-      ]
+      "courses": ["Thesis title: Measurement of the growth rate of structures with Type Ia Supernovae of the ZTF photometric survey."]
     },
     {
       "institution": "Université Grenoble-Alpes",
@@ -82,9 +80,7 @@
       "location": "Marseille, France",
       "startDate": "Sept. 2020",
       "endDate": "June 2023",
-      "highlights": [
-        "64h / year. Bachelor's lectures in basic physics: Electricity, Optics, Thermodynamics"
-      ]
+      "highlights": ["64h / year. Bachelor's lectures in basic physics: Electricity, Optics, Thermodynamics"]
     },
     {
       "course": "Calculus tutoring",
@@ -92,35 +88,27 @@
       "location": "Montpellier, France",
       "startDate": "Oct. 2017",
       "endDate": "Dec. 2017",
-      "highlights": [
-        "Tutoring for first-year college students."
-      ]
+      "highlights": ["Tutoring for first-year college students."]
     },
     {
       "course": "Math tutoring",
       "startDate": "Sept. 2016",
       "endDate": "June 2018",
-      "highlights": [
-        "Independant tutoring for middle-school and high-school students."
-      ]
+      "highlights": ["Independant tutoring for middle-school and high-school students."]
     },
     {
       "course": "Graduate student project supervision",
       "institution": "Duke University",
       "startDate": "Sept. 2024",
       "endDate": "June 2025",
-      "highlights": [
-        "Subject: Estimation of the velocity power spectrum in a N-body simulation."
-      ],
+      "highlights": ["Subject: Estimation of the velocity power spectrum in a N-body simulation."],
       "subsection": "Student Mentoring"
     },
     {
       "course": "PhD student Mentoring",
       "institution": "Duke University",
       "startDate": "Nov. 2023",
-      "highlights": [
-        "Maria Acevedo -- Subject: Cosmology with the DEBASS survey."
-      ],
+      "highlights": ["Maria Acevedo -- Subject: Cosmology with the DEBASS survey."],
       "subsection": "Student Mentoring"
     }
   ],
@@ -224,33 +212,19 @@
       "name": "Programming Languages",
       "level": "",
       "icon": "fa-solid fa-code",
-      "keywords": [
-        "Python (Expert)",
-        "C/C++ (Novice)",
-        "HTML/CSS (Novice)"
-      ]
+      "keywords": ["Python (Expert)", "C/C++ (Novice)", "HTML/CSS (Novice)"]
     },
     {
       "name": "Cosmology software and library",
       "level": "",
       "icon": "fa-regular fa-star",
-      "keywords": [
-        "SNANA",
-        "SNCosmo",
-        "CAMB",
-        "Class"
-      ]
+      "keywords": ["SNANA", "SNCosmo", "CAMB", "Class"]
     },
     {
       "name": "Python library",
       "level": "",
       "icon": "fa-brands fa-python",
-      "keywords": [
-        "numpy",
-        "numba",
-        "dask",
-        "jax"
-      ]
+      "keywords": ["numpy", "numba", "dask", "jax"]
     }
   ],
   "languages": [

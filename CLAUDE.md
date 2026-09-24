@@ -20,19 +20,19 @@ Env (Ruby, Node, Python) is managed via [pixi](https://pixi.sh); see `pixi.toml`
 
 ## Key Files
 
-| What               | Where                                                            |
-| ------------------ | ---------------------------------------------------------------- |
-| Pages              | `_pages/*.md`                                                    |
-| Publications       | `_bibliography/papers.bib`                                       |
+| What                | Where                                                                                                                                                                                                                                                                |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Pages               | `_pages/*.md`                                                                                                                                                                                                                                                        |
+| Publications        | `_bibliography/papers.bib`                                                                                                                                                                                                                                           |
 | LaTeX CV (external) | private repo [`bastiencarreres/My_CV`](https://github.com/bastiencarreres/My_CV) (Overleaf-synced) — its `papers.bib`/`papers_fr.bib` are updated by `bin/update_bibliography.py`; its `main.tex` is summarized into `assets/json/resume.json` by `bin/update_cv.py` |
-| CV data            | `assets/json/resume.json` (JSON Resume schema)                   |
-| Social links       | `_data/socials.yml` (order = display order)                      |
-| Talks index        | `_data/talks.yml` (rendered by `_includes/talks_list.liquid`)    |
-| Co-author links    | `_data/coauthors.yml`                                            |
-| Journal/venue URLs | `_data/venues.yml`                                               |
-| Citation cache     | `_data/citations.yml` (auto-updated by CI, do not edit manually) |
-| Styles             | `_sass/_variables.scss`, `_themes.scss`                          |
-| Feature flags      | `_config.yml` — `enable_*` keys                                  |
+| CV data             | `assets/json/resume.json` (JSON Resume schema)                                                                                                                                                                                                                       |
+| Social links        | `_data/socials.yml` (order = display order)                                                                                                                                                                                                                          |
+| Talks index         | `_data/talks.yml` (rendered by `_includes/talks_list.liquid`)                                                                                                                                                                                                        |
+| Co-author links     | `_data/coauthors.yml`                                                                                                                                                                                                                                                |
+| Journal/venue URLs  | `_data/venues.yml`                                                                                                                                                                                                                                                   |
+| Citation cache      | `_data/citations.yml` (auto-updated by CI, do not edit manually)                                                                                                                                                                                                     |
+| Styles              | `_sass/_variables.scss`, `_themes.scss`                                                                                                                                                                                                                              |
+| Feature flags       | `_config.yml` — `enable_*` keys                                                                                                                                                                                                                                      |
 
 ## Conventions
 

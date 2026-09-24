@@ -9,6 +9,7 @@
 **Tech Stack:** Jekyll/Liquid (al-folio pre-v1), Python 3 (stdlib + requests), GitHub Actions, GitHub REST API.
 
 **Verification notes for the executor:**
+
 - Site builds with `docker compose up` (serves http://localhost:8080) or `bundle exec jekyll serve`. For one-shot builds use: `docker compose run --rm jekyll bundle exec jekyll build` (or `bundle exec jekyll build` if Ruby is set up locally). If neither works in your environment, say so in your report — do not claim the build passed.
 - Python script tests use pytest: `pip install pytest` (not added to requirements.txt — dev-only).
 - Prettier CI enforces formatting on `.liquid`/`.html`: run `npx prettier --write` on every touched liquid file before committing.
@@ -19,6 +20,7 @@
 ### Task 1: Talks data file
 
 **Files:**
+
 - Create: `_data/talks.yml`
 
 All 21 existing entries from `talks/talks.md` migrated. Date format on the current page is inconsistent (2026 entries render DD/MM, earlier years MM/DD); the YAML stores ISO dates and the template (Task 2) renders a uniform MM/DD. Entries with no exact day (two 2022 posters) use `date_display`. The two poster entries get `type: poster`; the Moriond poster keeps its proceedings link via `proceedings:`.
@@ -177,16 +179,17 @@ git commit -m "feat: add talks data file"
 ### Task 2: Talks template + thin page
 
 **Files:**
+
 - Create: `_includes/talks_list.liquid`
 - Modify: `talks/talks.md` (replace entire body)
 
 - [ ] **Step 1: Create `_includes/talks_list.liquid`**
 
 ```liquid
-{% assign talks_sorted = site.data.talks | sort: "date" | reverse %}
-{% assign current_year = "" %}
+{% assign talks_sorted = site.data.talks | sort: 'date' | reverse %}
+{% assign current_year = '' %}
 {% for talk in talks_sorted %}
-  {% assign talk_year = talk.date | date: "%Y" %}
+  {% assign talk_year = talk.date | date: '%Y' %}
   {% if talk_year != current_year %}
     {% assign current_year = talk_year %}
     <h2 class="talks-year">{{ talk_year }}</h2>
@@ -200,12 +203,16 @@ git commit -m "feat: add talks data file"
   {% endcapture %}
   <p class="talks-entry">
     {{ talk_date | strip }} -
-    {% if talk.type == "poster" %}Poster:{% endif %}
+    {% if talk.type == 'poster' %}Poster:{% endif %}
     {% if talk.link %}
-      {% if talk.link contains "://" %}
-        <a href="{{ talk.link }}"><b>{{ talk.title }}</b></a>
+      {% if talk.link contains '://' %}
+        <a href="{{ talk.link }}"
+          ><b>{{ talk.title }}</b></a
+        >
       {% else %}
-        <a href="{{ talk.link | prepend: '/talks/' | relative_url }}"><b>{{ talk.title }}</b></a>
+        <a href="{{ talk.link | prepend: '/talks/' | relative_url }}"
+          ><b>{{ talk.title }}</b></a
+        >
       {% endif %}
     {% else %}
       <b>{{ talk.title }}</b>
@@ -284,6 +291,7 @@ git commit -m "feat: render talks page from _data/talks.yml"
 ### Task 3: Software page data + template
 
 **Files:**
+
 - Modify: `_data/repositories.yml` (replace `github_repos` list with rich entries)
 - Create: `_includes/repo_cards.liquid`
 - Modify: `_pages/repositories.md` (replace hardcoded cards)
@@ -334,7 +342,7 @@ If `_includes/repository/` templates iterate `site.data.repositories.github_repo
 ```liquid
 <div class="repo-cards">
   {% for entry in site.data.repositories.github_repos %}
-    {% assign repo_name = entry.repo | split: "/" | last %}
+    {% assign repo_name = entry.repo | split: '/' | last %}
     <a href="https://github.com/{{ entry.repo }}" class="repo-card" target="_blank" rel="noopener">
       <div class="repo-card-header">
         <i class="fa-brands fa-github"></i>
@@ -396,6 +404,7 @@ git commit -m "feat: render software cards from _data/repositories.yml"
 ### Task 4: Star-count refresh script + workflow
 
 **Files:**
+
 - Create: `bin/update_repo_stars.py`
 - Create: `.github/workflows/update-repo-stars.yml`
 - Test: `bin/tests/test_update_repo_stars.py`
@@ -626,6 +635,7 @@ git commit -m "feat: auto-refresh GitHub star counts weekly"
 ### Task 5: CV parser script (`bin/update_cv.py`)
 
 **Files:**
+
 - Create: `bin/update_cv.py`
 - Test: `bin/tests/test_update_cv.py`
 
@@ -633,15 +643,15 @@ The script clones/pulls `bastiencarreres/My_CV`, parses `main.tex`, and updates 
 
 **Section → resume.json mapping:**
 
-| LaTeX `\section*{...}` | resume.json key | notes |
-| --- | --- | --- |
-| `Education` | `education` | `\cventry{studyType}{institution}{location}{date}{details}`; details → `score` if it starts with "Graduated", else first `courses` item |
-| `Research Experience` | `research_experience` | details kept as `summary` |
-| `Teaching \& Mentoring Experience` | `teaching` | `\subsection*{Student Mentoring}` entries get `"subsection": "Student Mentoring"` |
-| `Responsibilities \& Services` | `volunteer` | position = entry title; details → summary |
-| `Awards \& Grant` | `grants` | first detail line → `summary`, rest → `highlights` |
-| `Technical skills` | *skipped* | resume.json's curated `skills` are richer than the .tex list; left untouched |
-| `Collaborations`, `Selected publications`, research-interests box | *skipped* | not represented in the web CV |
+| LaTeX `\section*{...}`                                            | resume.json key       | notes                                                                                                                                   |
+| ----------------------------------------------------------------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `Education`                                                       | `education`           | `\cventry{studyType}{institution}{location}{date}{details}`; details → `score` if it starts with "Graduated", else first `courses` item |
+| `Research Experience`                                             | `research_experience` | details kept as `summary`                                                                                                               |
+| `Teaching \& Mentoring Experience`                                | `teaching`            | `\subsection*{Student Mentoring}` entries get `"subsection": "Student Mentoring"`                                                       |
+| `Responsibilities \& Services`                                    | `volunteer`           | position = entry title; details → summary                                                                                               |
+| `Awards \& Grant`                                                 | `grants`              | first detail line → `summary`, rest → `highlights`                                                                                      |
+| `Technical skills`                                                | _skipped_             | resume.json's curated `skills` are richer than the .tex list; left untouched                                                            |
+| `Collaborations`, `Selected publications`, research-interests box | _skipped_             | not represented in the web CV                                                                                                           |
 
 The script only replaces the mapped keys; everything else in `resume.json` (basics, skills, languages, …) is preserved as-is. This matches the "summarize, don't copy everything" requirement.
 
@@ -1062,10 +1072,12 @@ Expected: clones/pulls My_CV, prints a unified diff of resume.json. Read the dif
 In `_layouts/cv.liquid`, the heading `{% raw %}{% case data[0] %}{% endraw %}` block (around line 91) currently has cases for `research_experience`, `teaching`, `grants`. Add one more before `{% raw %}{% else %}{% endraw %}`:
 
 {% raw %}
+
 ```liquid
               {% when 'volunteer' %}
                 <h3 class="card-title font-weight-medium">Responsibilities & Services</h3>
 ```
+
 {% endraw %}
 
 Run: `npx prettier --write _layouts/cv.liquid`
@@ -1095,6 +1107,7 @@ git commit -m "feat: generate web CV summary from My_CV LaTeX source"
 ### Task 6: Retarget `bin/update_bibliography.py` to the My_CV repo
 
 **Files:**
+
 - Modify: `bin/update_bibliography.py`
 - Delete: `cv-latex/` (after verification)
 
@@ -1163,9 +1176,10 @@ Add `import subprocess` to the imports.
 
 - [ ] **Step 4: Reconcile content differences before first use**
 
-The My_CV bibs and the old cv-latex bibs have drifted slightly (case of `arxiv` in a DOI, an `ads_bibcode`/`journal`/`pages` block present in cv-latex but missing in My_CV). The My_CV versions are the CV's source of truth for *presentation*; the website script only needs its *matching* to work (it matches entries by citekey via `update_entry_fields`, and appends via section banners). Verify the My_CV bibs contain the same citekeys and section banners:
+The My*CV bibs and the old cv-latex bibs have drifted slightly (case of `arxiv` in a DOI, an `ads_bibcode`/`journal`/`pages` block present in cv-latex but missing in My_CV). The My_CV versions are the CV's source of truth for \_presentation*; the website script only needs its _matching_ to work (it matches entries by citekey via `update_entry_fields`, and appends via section banners). Verify the My_CV bibs contain the same citekeys and section banners:
 
 Run:
+
 ```bash
 git clone --depth 1 https://github.com/bastiencarreres/My_CV.git /tmp/mycv-check 2>/dev/null || git -C /tmp/mycv-check pull
 python3 - <<'EOF'
@@ -1182,6 +1196,7 @@ for name in ("papers.bib", "papers_fr.bib"):
 print("banners OK")
 EOF
 ```
+
 Expected: `banners OK`, and empty (or explainable) key differences. If keys differ, report them to the user before proceeding — do not silently reconcile.
 
 - [ ] **Step 5: Dry-run the retargeted script**
@@ -1219,6 +1234,7 @@ git commit -m "feat: sync LaTeX publication list to My_CV repo, drop cv-latex mi
 ### Task 7: Fix wrong preprint link in papers.bib
 
 **Files:**
+
 - Modify: `_bibliography/papers.bib:38`
 
 Found during planning: entry `carreresztfsnia2025` ("ZTF SN Ia DR2: Peculiar velocities' impact on the Hubble diagram") has `preprint = {https://arxiv.org/abs/2505.13290}` — that arXiv ID belongs to the LSST intrinsic-scatter paper (`carreresTypeIaSupernova2025`). The correct ID for the ZTF DR2 PV paper is `2405.20409`.
@@ -1256,6 +1272,7 @@ git commit -m "fix: correct arXiv preprint link for ZTF DR2 peculiar-velocities 
 ### Task 8: Outreach page teaching header
 
 **Files:**
+
 - Modify: `_pages/outreach.md`
 
 - [ ] **Step 1: Rewrite `_pages/outreach.md`**
@@ -1313,6 +1330,7 @@ git commit -m "feat: add teaching and mentoring sections to outreach page"
 ### Task 9: Research page draft (NOT published — stays nav: false)
 
 **Files:**
+
 - Modify: `_pages/research.md`
 - Create: `assets/img/research/` (2-4 figures)
 
@@ -1325,7 +1343,7 @@ Draft one section per first-author paper, newest first. The three papers (from `
 - [ ] **Step 1: Download arXiv sources and pick figures**
 
 For each paper: `curl -sL "https://arxiv.org/src/<ID>" -o /tmp/<ID>.tar.gz && mkdir -p /tmp/<ID> && tar xzf /tmp/<ID>.tar.gz -C /tmp/<ID>`.
-Pick 1-2 *key* figures per paper — prefer: the headline constraint/result figure (e.g. fσ8 posterior or bias summary) and at most one illustrative figure (e.g. Hubble-diagram residuals). Read the paper's abstract + figure captions in the .tex source to choose; favor figures the abstract's main claim rests on.
+Pick 1-2 _key_ figures per paper — prefer: the headline constraint/result figure (e.g. fσ8 posterior or bias summary) and at most one illustrative figure (e.g. Hubble-diagram residuals). Read the paper's abstract + figure captions in the .tex source to choose; favor figures the abstract's main claim rests on.
 Convert PDFs to PNG at reasonable web resolution: `pdftoppm -png -r 150 fig.pdf out` (install poppler-utils if needed; if unavailable, use another available converter and note it).
 Name files descriptively, e.g. `assets/img/research/lsst-scatter-fs8-bias.png`, and keep total ≤ 6 files.
 
