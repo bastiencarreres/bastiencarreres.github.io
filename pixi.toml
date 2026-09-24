@@ -15,6 +15,7 @@ make = "*"
 
 [pypi-dependencies]
 nbconvert = "*"
+ipython = "*"
 pyyaml = "*"
 scholarly = "*"
 requests = "*"
