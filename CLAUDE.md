@@ -9,6 +9,8 @@ pixi run install                           # bundle install + npm install (once,
 pixi run serve                              # preferred — http://localhost:4000
 pixi run build                              # build into _site/
 pixi run test                               # run bin/tests Python suite
+pixi run update-cv                          # sync assets/json/resume.json from My_CV main.tex
+pixi run update-bib                         # sync _bibliography/papers.bib from My_CV
 docker compose up                          # alternative — http://localhost:8080
 docker compose -f docker-compose-slim.yml up  # lighter build, no imagemagick
 npx prettier --write "**/*.{html,liquid}"  # format templates
