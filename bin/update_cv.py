@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
 Summarize the LaTeX CV from the private bastiencarreres/My_CV repo into
-assets/json/resume.json (the web CV rendered on /cv/).
+assets/json/resume.json (the web CV rendered on /cv/), and recompile
+assets/pdf/Bastien_Carreres_CV.pdf from the same main.tex via latexmk.
 
 Usage:
-    python bin/update_cv.py [--tex PATH] [--dry-run]
+    python bin/update_cv.py [--tex PATH] [--dry-run] [--skip-pdf]
 
 By default the script clones (or pulls) https://github.com/bastiencarreres/My_CV
 into a cache directory and reads main.tex from it. Pass --tex to parse a local
@@ -15,7 +16,11 @@ Only these resume.json keys are overwritten, mapped from \\section*{...} blocks:
     Services), grants (Awards & Grant).
 Everything else (basics, skills, languages, ...) is preserved untouched.
 
-The script shows a diff and asks for confirmation before writing.
+The script shows a diff and asks for confirmation before writing resume.json.
+The PDF is then recompiled unconditionally (it reflects the whole CV, not
+just the mapped sections) and copied over assets/pdf/Bastien_Carreres_CV.pdf;
+pass --skip-pdf to skip that step, or --dry-run to skip both writes.
+Requires latexmk/pdflatex on PATH.
 """
 
 import argparse
@@ -29,6 +34,7 @@ from pathlib import Path
 CV_REPO_URL = "https://github.com/bastiencarreres/My_CV.git"
 CACHE_DIR = Path.home() / ".cache" / "my_cv_repo"
 RESUME_PATH = Path("assets/json/resume.json")
+PDF_PATH = Path("assets/pdf/Bastien_Carreres_CV.pdf")
 
 SECTION_TO_KEY = {
     "Education": "education",
@@ -78,20 +84,20 @@ def _sort_teaching(items: list[dict]) -> list[dict]:
     return result
 
 
-def clone_or_pull() -> Path:
-    if CACHE_DIR.exists():
-        cmd = ["git", "-C", str(CACHE_DIR), "pull", "--ff-only"]
+def clone_or_pull(repo_url: str = CV_REPO_URL, cache_dir: Path = CACHE_DIR) -> Path:
+    if cache_dir.exists():
+        cmd = ["git", "-C", str(cache_dir), "pull", "--ff-only"]
     else:
-        cmd = ["git", "clone", "--depth", "1", CV_REPO_URL, str(CACHE_DIR)]
+        cmd = ["git", "clone", "--depth", "1", repo_url, str(cache_dir)]
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
         print(
-            f"Failed to fetch My_CV repo:\n{result.stderr}\n"
+            f"Failed to fetch {repo_url}:\n{result.stderr}\n"
             "Check your git credentials / network, or pass --tex PATH.",
             file=sys.stderr,
         )
         sys.exit(1)
-    return CACHE_DIR / "main.tex"
+    return cache_dir / "main.tex"
 
 
 def strip_latex(s: str) -> str:
@@ -270,10 +276,28 @@ def tex_to_resume_updates(tex: str) -> dict[str, list]:
     return updates
 
 
+def compile_pdf(tex_path: Path) -> None:
+    """Run latexmk on tex_path and copy the resulting PDF over PDF_PATH."""
+    result = subprocess.run(
+        ["latexmk", "-pdf", "-interaction=nonstopmode", "-cd", str(tex_path)],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0:
+        print(
+            f"latexmk failed to compile {tex_path}:\n{result.stdout[-2000:]}\n{result.stderr[-2000:]}",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+    built_pdf = tex_path.with_suffix(".pdf")
+    PDF_PATH.write_bytes(built_pdf.read_bytes())
+    print(f"Wrote {PDF_PATH}.")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--tex", type=Path, default=None, help="Parse this .tex file instead of cloning My_CV")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--skip-pdf", action="store_true", help="Don't recompile assets/pdf/Bastien_Carreres_CV.pdf")
     args = parser.parse_args()
 
     tex_path = args.tex if args.tex else clone_or_pull()
@@ -294,6 +318,8 @@ def main():
 
     if new_text == old_text:
         print("resume.json already up to date.")
+        if not args.skip_pdf:
+            compile_pdf(tex_path)
         return
 
     diff = difflib.unified_diff(
@@ -313,6 +339,9 @@ def main():
         print(f"Wrote {RESUME_PATH}.")
     else:
         print("Aborted, nothing written.")
+
+    if not args.skip_pdf:
+        compile_pdf(tex_path)
 
 
 if __name__ == "__main__":
