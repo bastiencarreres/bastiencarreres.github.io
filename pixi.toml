@@ -20,10 +20,13 @@ scholarly = "*"
 requests = "*"
 pytest = "*"
 
+[activation]
+scripts = ["bin/load_env.sh"]
+
 [tasks]
 install = { cmd = "bundle install && npm install && npm run copy-reveal", description = "Install Ruby gems + npm deps, vendor reveal.js" }
 serve = { cmd = "bundle exec jekyll serve", description = "Serve site at http://localhost:4000" }
 build = { cmd = "bundle exec jekyll build", description = "Build site into _site/" }
 test = { cmd = "pytest bin/tests", description = "Run Python test suite" }
-update-cv = { cmd = "python bin/update_cv.py", description = "Sync assets/json/resume.json from My_CV main.tex" }
-update-bib = { cmd = "python bin/update_bibliography.py", description = "Sync _bibliography/papers.bib from My_CV" }
+update-cv = { cmd = "python bin/update_cv.py", description = "Sync assets/json/resume.json and recompile assets/pdf/Bastien_Carreres_CV.pdf from My_CV main.tex" }
+update-bib = { cmd = "python bin/update_bibliography.py", description = "Sync _bibliography/papers.bib from ADS, mirror to My_CV and Publications_List, and push both" }

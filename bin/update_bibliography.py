@@ -2,9 +2,10 @@
 """
 Find papers on ADS where you are an author but that are missing from
 _bibliography/papers.bib, and interactively add them. Also mirrors new
-entries into the LaTeX CV publication lists (papers.bib and papers_fr.bib)
-in the private bastiencarreres/My_CV repo (Overleaf-synced), which is
-cloned/pulled to a local cache dir.
+entries into the LaTeX publication lists (papers.bib and papers_fr.bib)
+in the private bastiencarreres/My_CV and bastiencarreres/Publications_List
+repos (both Overleaf-synced, kept as identical copies), which are
+cloned/pulled to local cache dirs.
 
 Usage:
     ADS_API_TOKEN=xxxx python bin/update_bibliography.py [--since YEAR] [--dry-run]
@@ -27,21 +28,23 @@ The script:
        that bibcode) and pick a section (`FirstAuth` / `SignContrib` / `Other`),
        then generates a
        bibtex entry following the file's existing conventions and appends
-       it to the right section of all three bib files (papers.bib uses
-       \\(...\\) math delimiters; the My_CV copies use $...$ and the
-       _fr one gets a separately-entered French annotation).
+       it to the right section of all five bib files (papers.bib uses
+       \\(...\\) math delimiters; the My_CV/Publications_List copies use
+       $...$ and the _fr ones get a separately-entered French annotation).
     4. For each paper whose bibcode changed, shows a diff and asks for
-       confirmation before updating the entry (by citekey) in all three
+       confirmation before updating the entry (by citekey) in all five
        bib files.
-    5. If the My_CV repo files changed, asks for confirmation before
-       committing and pushing them (Overleaf then syncs automatically).
+    5. If the My_CV and/or Publications_List repo files changed, asks for
+       confirmation before committing and pushing each (Overleaf then
+       syncs automatically).
 
 With --sync-cv, skips the ADS query entirely and instead checks the My_CV
 bib files against _bibliography/papers.bib (the website, treated as the
 source of truth): entries missing from My_CV are added (after confirmation,
 optionally prompting for a French annotation), and bibliographic fields
 that have drifted (journal, volume, pages, doi, ads_bibcode, etc. - not
-annotation) are refreshed to match the website.
+annotation) are refreshed to match the website. The same result is then
+mirrored into Publications_List.
 """
 
 import argparse
@@ -49,11 +52,15 @@ import os
 import re
 import subprocess
 import sys
+from pathlib import Path
 
 import requests
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from update_cv import clone_or_pull, CACHE_DIR
+
+PUBLIST_REPO_URL = "https://github.com/bastiencarreres/Publications_List.git"
+PUBLIST_CACHE_DIR = Path.home() / ".cache" / "publications_list_repo"
 
 BIB_PATH = "_bibliography/papers.bib"
 BIB_NAME_LATEX_EN = "papers.bib"
@@ -460,22 +467,37 @@ def sync_cv_from_website(text: str, text_latex_en: str, text_latex_fr: str):
     return text_latex_en, text_latex_fr, changed
 
 
-def offer_cv_repo_push():
+def write_cv_bibs(text_latex_en: str, text_latex_fr: str, paths: list[tuple[str, str]]):
+    """Write the same (mirrored) bib text to each (en_path, fr_path) pair, e.g. My_CV and Publications_List."""
+    for en_path, fr_path in paths:
+        with open(en_path, "w") as f:
+            f.write(text_latex_en)
+        with open(fr_path, "w") as f:
+            f.write(text_latex_fr)
+
+
+def offer_repo_push(cache_dir: Path, label: str):
     status = subprocess.run(
-        ["git", "-C", str(CACHE_DIR), "status", "--porcelain"],
+        ["git", "-C", str(cache_dir), "status", "--porcelain"],
         capture_output=True, text=True,
     ).stdout.strip()
     if not status:
         return
-    print("\nMy_CV repo has changes:")
-    subprocess.run(["git", "-C", str(CACHE_DIR), "diff", "--stat"])
-    if yes_no("Commit and push the updated bib files to My_CV (Overleaf will sync)?", default=True):
-        subprocess.run(["git", "-C", str(CACHE_DIR), "add", "papers.bib", "papers_fr.bib"], check=True)
-        subprocess.run(["git", "-C", str(CACHE_DIR), "commit", "-m", "Update publication list from website"], check=True)
-        subprocess.run(["git", "-C", str(CACHE_DIR), "push"], check=True)
-        print("Pushed to My_CV.")
+    print(f"\n{label} repo has changes:")
+    subprocess.run(["git", "-C", str(cache_dir), "diff", "--stat"])
+    if yes_no(f"Commit and push the updated bib files to {label} (Overleaf will sync)?", default=True):
+        subprocess.run(["git", "-C", str(cache_dir), "add", "papers.bib", "papers_fr.bib"], check=True)
+        subprocess.run(["git", "-C", str(cache_dir), "commit", "-m", "Update publication list from website"], check=True)
+        subprocess.run(["git", "-C", str(cache_dir), "push"], check=True)
+        print(f"Pushed to {label}.")
     else:
-        print(f"Not pushed. The updated files remain in {CACHE_DIR} — push manually when ready.")
+        print(f"Not pushed. The updated files remain in {cache_dir} — push manually when ready.")
+
+
+def offer_cv_repo_push():
+    """Push the mirrored bib changes to both My_CV and Publications_List (identical bib copies)."""
+    offer_repo_push(CACHE_DIR, "My_CV")
+    offer_repo_push(PUBLIST_CACHE_DIR, "Publications_List")
 
 
 def main():
@@ -491,8 +513,11 @@ def main():
     args = parser.parse_args()
 
     clone_or_pull()
+    clone_or_pull(PUBLIST_REPO_URL, PUBLIST_CACHE_DIR)
     bib_path_latex_en = str(CACHE_DIR / BIB_NAME_LATEX_EN)
     bib_path_latex_fr = str(CACHE_DIR / BIB_NAME_LATEX_FR)
+    bib_path_latex_en_publist = str(PUBLIST_CACHE_DIR / BIB_NAME_LATEX_EN)
+    bib_path_latex_fr_publist = str(PUBLIST_CACHE_DIR / BIB_NAME_LATEX_FR)
 
     text_latex_en = load_bib_text(bib_path_latex_en)
     text_latex_fr = load_bib_text(bib_path_latex_fr)
@@ -501,13 +526,13 @@ def main():
         text = load_bib_text(BIB_PATH)
         text_latex_en, text_latex_fr, changed = sync_cv_from_website(text, text_latex_en, text_latex_fr)
         if changed and not args.dry_run:
-            with open(bib_path_latex_en, "w") as f:
-                f.write(text_latex_en)
-            with open(bib_path_latex_fr, "w") as f:
-                f.write(text_latex_fr)
+            write_cv_bibs(
+                text_latex_en, text_latex_fr,
+                [(bib_path_latex_en, bib_path_latex_fr), (bib_path_latex_en_publist, bib_path_latex_fr_publist)],
+            )
             offer_cv_repo_push()
         elif changed:
-            print("Dry run: My_CV bib files would have been updated (not written).")
+            print("Dry run: My_CV/Publications_List bib files would have been updated (not written).")
         return
 
     token = ads_token()
@@ -594,10 +619,10 @@ def main():
         if updated and not args.dry_run:
             with open(BIB_PATH, "w") as f:
                 f.write(text)
-            with open(bib_path_latex_en, "w") as f:
-                f.write(text_latex_en)
-            with open(bib_path_latex_fr, "w") as f:
-                f.write(text_latex_fr)
+            write_cv_bibs(
+                text_latex_en, text_latex_fr,
+                [(bib_path_latex_en, bib_path_latex_fr), (bib_path_latex_en_publist, bib_path_latex_fr_publist)],
+            )
             print(f"Wrote {updated} updated entry/entries.")
             offer_cv_repo_push()
         elif updated:
@@ -677,13 +702,14 @@ def main():
     if (added or updated) and not args.dry_run:
         with open(BIB_PATH, "w") as f:
             f.write(text)
-        with open(bib_path_latex_en, "w") as f:
-            f.write(text_latex_en)
-        with open(bib_path_latex_fr, "w") as f:
-            f.write(text_latex_fr)
+        write_cv_bibs(
+            text_latex_en, text_latex_fr,
+            [(bib_path_latex_en, bib_path_latex_fr), (bib_path_latex_en_publist, bib_path_latex_fr_publist)],
+        )
         print(
             f"Wrote {added} new and {updated} updated entry/entries to {BIB_PATH}, "
-            f"{bib_path_latex_en} and {bib_path_latex_fr}."
+            f"{bib_path_latex_en}, {bib_path_latex_fr}, "
+            f"{bib_path_latex_en_publist} and {bib_path_latex_fr_publist}."
         )
         offer_cv_repo_push()
     elif added or updated:
