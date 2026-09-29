@@ -58,7 +58,7 @@ def test_parse_cventries_extracts_fields():
     sections = parse_sections(SAMPLE_TEX)
     entries = parse_cventries(sections["Education"])
     assert len(entries) == 2
-    assert entries[0]["title"] == "PhD -- Astrophysics and Cosmology"
+    assert entries[0]["title"] == "PhD — Astrophysics and Cosmology"
     assert entries[0]["org"] == "Aix-Marseille Université"
     assert entries[0]["location"] == "Marseille, France"
     assert entries[0]["dates"] == "2023"
@@ -74,7 +74,7 @@ def test_parse_cventries_tracks_subsections():
 
 def test_strip_latex():
     assert strip_latex(r"low-$z$ SNe~Ia") == "low-z SNe Ia"
-    assert strip_latex(r"Nov.~2023~--~Present") == "Nov. 2023 -- Present"
+    assert strip_latex(r"Nov.~2023~--~Present") == "Nov. 2023 — Present"
     assert strip_latex(r"``PEGASUS''") == '"PEGASUS"'
     assert strip_latex(r"line one\\line two") == "line one\nline two"
     assert strip_latex(r"\href{https://x.org}{text}") == "text"
@@ -93,7 +93,7 @@ def test_tex_to_resume_updates_shapes():
     }
     edu = updates["education"]
     assert edu[0]["institution"] == "Aix-Marseille Université"
-    assert edu[0]["studyType"] == "PhD -- Astrophysics and Cosmology"
+    assert edu[0]["studyType"] == "PhD — Astrophysics and Cosmology"
     assert edu[1]["score"] == "Graduated with honors"
 
     teach = updates["teaching"]

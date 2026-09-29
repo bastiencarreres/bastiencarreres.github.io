@@ -105,6 +105,7 @@ def strip_latex(s: str) -> str:
     s = re.sub(r"\\(?:textbf|textit|emph|underline|mbox)\{([^}]*)\}", r"\1", s)
     s = s.replace(r"\\", "\n")
     s = s.replace("``", '"').replace("''", '"')
+    s = s.replace("---", "—").replace("--", "—")
     s = s.replace(r"\$", "\x00")  # protect escaped dollars from math stripping
     s = re.sub(r"\$([^$]*)\$", r"\1", s)  # drop inline-math delimiters
     s = s.replace("\x00", "$")
@@ -181,8 +182,8 @@ def parse_cventries(section_src: str) -> list[dict]:
 
 
 def _split_dates(dates: str) -> tuple[str, str]:
-    """'Nov. 2023 -- Present' -> ('Nov. 2023', ''); '2023' -> ('2023', '')."""
-    parts = re.split(r"\s*--\s*", dates)
+    """'Nov. 2023 — Present' -> ('Nov. 2023', ''); '2023' -> ('2023', '')."""
+    parts = re.split(r"\s*(?:—|--)\s*", dates)
     start = parts[0].strip()
     end = parts[1].strip() if len(parts) > 1 else ""
     if end.lower() == "present":

@@ -22,7 +22,7 @@
       "location": "Marseille, France",
       "url": "",
       "area": "",
-      "studyType": "PhD -- Astrophysics and Cosmology",
+      "studyType": "PhD — Astrophysics and Cosmology",
       "date": "2023",
       "endDate": "",
       "score": "",
@@ -33,7 +33,7 @@
       "location": "Grenoble, France",
       "url": "",
       "area": "",
-      "studyType": "Master's degree -- Subatomic Physics and Cosmology",
+      "studyType": "Master's degree — Subatomic Physics and Cosmology",
       "date": "2020",
       "endDate": "",
       "score": "Graduated with honors",
@@ -44,7 +44,7 @@
       "location": "Montpellier, France",
       "url": "",
       "area": "",
-      "studyType": "Bachelor's degree -- Fundamental Physics",
+      "studyType": "Bachelor's degree — Fundamental Physics",
       "date": "2018",
       "endDate": "",
       "score": "Graduated with high honors",
@@ -108,7 +108,7 @@
       "course": "PhD student Mentoring",
       "institution": "Duke University",
       "startDate": "Nov. 2023",
-      "highlights": ["Maria Acevedo -- Subject: Cosmology with the DEBASS survey."],
+      "highlights": ["Maria Acevedo — Subject: Cosmology with the DEBASS survey."],
       "subsection": "Student Mentoring"
     }
   ],
@@ -200,7 +200,7 @@
     {
       "title": "French National PhD fellowship",
       "date": "2020",
-      "awarder": "ED352 -- Aix-Marseille Université",
+      "awarder": "ED352 — Aix-Marseille Université",
       "url": "",
       "summary": "3 years contract"
     }
