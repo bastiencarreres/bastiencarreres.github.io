@@ -67,7 +67,7 @@ _[Read the paper](https://arxiv.org/abs/2505.13290)_
 
 ## Collaborations
 
-I am a member of ZTF, of the Rubin-LSST Dark Energy Science Collaboration ([DESC](https://lsstdesc.org/)), and of the Dark Energy Bedrock All-Sky Supernova program (DEBASS), and I have contributed to the WHALES survey. I am also working on the TITAN SN Ia sample from the Asteroid Terrestrial-impact Last Alert System (ATLAS), for which I will perform the \\(f\sigma_8\\) measurement. I have also worked on growth-rate forecasts for LSST, on field-level inference of the growth rate from velocity and density fields, on the determination of SN Ia redshifts using galaxy groups, and on the ZTF DR2 papers. The full list is on the [publications page]({{ '/publications/' | relative_url }}).
+I am a member of ZTF, of the Rubin-LSST Dark Energy Science Collaboration ([DESC](https://lsstdesc.org/)), and of the Dark Energy Bedrock All-Sky Supernova program (DEBASS). I am also working on the TITAN SN Ia sample from the Asteroid Terrestrial-impact Last Alert System (ATLAS), for which I will perform the \\(f\sigma_8\\) measurement. I have also worked on growth-rate forecasts for LSST, on field-level inference of the growth rate from velocity and density fields, on the determination of SN Ia redshifts using galaxy groups, and on the ZTF DR2 papers. The full list is on the [publications page]({{ '/publications/' | relative_url }}).
 
 ## Perspectives
 
