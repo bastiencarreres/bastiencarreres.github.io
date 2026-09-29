@@ -4,8 +4,7 @@ permalink: /publications/
 title: Publications
 publist_pdf: Bastien_Carreres_Publications_List.pdf
 description:
-nav: true
-nav_order: 1
+nav: false
 ---
 
 <!-- _pages/publications.md -->
