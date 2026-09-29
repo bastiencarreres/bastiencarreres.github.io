@@ -9,21 +9,35 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-publications",
-          title: "Publications",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/publications/";
-          },
-        },{id: "nav-talks",
-          title: "Talks",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/talks/";
-          },
-        },{id: "nav-software",
+  },{id: "dropdown-overview",
+              title: "Overview",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/research/";
+              },
+            },{id: "dropdown-thesis",
+              title: "Thesis",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/thesis/";
+              },
+            },{id: "dropdown-papers",
+              title: "Papers",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/publications/";
+              },
+            },{id: "dropdown-talks",
+              title: "Talks",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/talks/";
+              },
+            },{id: "nav-software",
           title: "Software",
           description: "Open-source tools I develop and contribute to.",
           section: "Navigation",
@@ -36,13 +50,6 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
-          },
-        },{id: "nav-thesis",
-          title: "Thesis",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/thesis/";
           },
         },{id: "nav-outreach-amp-teaching",
           title: "Outreach &amp; Teaching",
