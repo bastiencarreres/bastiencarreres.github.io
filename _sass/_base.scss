@@ -270,6 +270,39 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+.about-intro {
+  margin-bottom: 3rem;
+
+  .profile {
+    width: 100%;
+    margin: 0 0 1.5rem;
+
+    .more-info p {
+      display: block;
+    }
+  }
+
+  .about-bio {
+    p {
+      text-align: left;
+    }
+
+    .about-lead {
+      font-size: 1.1rem;
+    }
+
+    .about-more {
+      font-weight: 500;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .about-intro .profile {
+    max-width: 240px;
+  }
+}
+
 .post-description {
   margin-bottom: 2rem;
   font-size: 0.875rem;
