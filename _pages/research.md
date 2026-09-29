@@ -47,18 +47,14 @@ With colleagues, I also forecasted that Rubin-LSST will measure \\(f\sigma_8\\) 
 
 Although forecasts show a great potential, no robust measurement of \\(f\sigma_8\\) with SNe Ia has yet been achieved with the complexities of real data. I am currently working on the TITAN SN Ia sample from the Asteroid Terrestrial-impact Last Alert System (ATLAS), one of the largest low-redshift SN Ia samples to date, for which I will perform the \\(f\sigma_8\\) measurement. I forecasted that ATLAS could constrain \\(f\sigma_8\\) at the ~20–25% level, already competitive with galaxy surveys. This measurement will also provide a first data-driven systematic error budget for \\(f\sigma_8\\) before Rubin-LSST. I am also leading the \\(f\sigma_8\\) measurement with the DEBASS sample.
 
-## Broader contributions to SN Ia cosmology
+## Peculiar velocities as a systematic
 
-**Peculiar velocities and \\(H_0\\).** PVs are also a systematic for the Hubble diagram, in particular at low redshift. Using simulations of ZTF, I showed that PVs need to be described by their full covariance matrix rather than a diagonal term, as was done in previous analyses. For the ZTF SN Ia DR2 sample, neglecting PV correlations shifts \\(H_0\\) by ~1 km s<sup>−1</sup> Mpc<sup>−1</sup> and underestimates its uncertainty ([Carreres et al. 2025a](https://arxiv.org/abs/2405.20409)). With Erik Peterson, we also showed that averaging the redshifts of galaxies in the host group reduces the scatter of the Hubble diagram at very low redshift ([Peterson, Carreres et al. 2025](https://doi.org/10.3847/1538-4357/ada285)).
+PVs are also a source of systematic uncertainty in the Hubble diagram, and the smaller the redshift, the larger the effect is. Using simulations of ZTF, I showed that PVs need to be described by their full covariance matrix rather than by a diagonal term, as was done in previous analyses. For the ZTF SN Ia DR2 sample, neglecting PV correlations shifts \\(H_0\\) by ~1 km s<sup>−1</sup> Mpc<sup>−1</sup> and underestimates its uncertainty ([Carreres et al. 2025a](https://arxiv.org/abs/2405.20409)).
 
 <div class="row justify-content-center">
   <div class="col-sm-8 mt-3 mt-md-0">
     {% include figure.liquid path="assets/img/research/ztf-dr2-hubble-fit-pv-covariance.png" class="img-fluid rounded z-depth-1" zoomable=true caption="Hubble diagram fit of the ZTF SN Ia DR2 sample without PVs (blue), with a diagonal PV error term (yellow), and with the full PV covariance (red)." %}
   </div>
 </div>
-
-**DEBASS.** DEBASS aims to replace the heterogeneous low-redshift sample of the DES 5-year analysis by observing low-redshift SNe Ia with the same instrument and pipeline as DES. I contributed forecasts for the dark energy analysis of the DEBASS+DES sample ([Acevedo et al. 2025](https://doi.org/10.3847/1538-4357/ae1e78)) and I work with Maria Acevedo, PhD student at Duke, on its cosmological analysis.
-
-**Rubin-LSST simulations.** Within DESC, I develop and maintain [`OpSimSummaryV2`](https://github.com/LSSTDESC/OpSimSummaryV2), which converts the Rubin-LSST simulated observations into inputs for SN Ia simulations, and I took part in the first simulation of the whole Rubin-LSST SN Ia sample. I am also using the Rubin Data Preview 1 to study the impact of the saturation of the brightest SNe Ia on low-redshift cosmology.
 
 The complete list of my publications is available on the [publications page]({{ '/publications/' | relative_url }}).
