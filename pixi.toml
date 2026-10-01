@@ -30,4 +30,4 @@ serve = { cmd = "bundle exec jekyll serve", description = "Serve site at http://
 build = { cmd = "bundle exec jekyll build", description = "Build site into _site/" }
 test = { cmd = "pytest bin/tests", description = "Run Python test suite" }
 update-cv = { cmd = "python bin/update_cv.py", description = "Sync assets/json/resume.json and recompile assets/pdf/Bastien_Carreres_CV.pdf from My_CV main.tex" }
-update-bib = { cmd = "python bin/update_bibliography.py", description = "Sync _bibliography/papers.bib from ADS, mirror to My_CV and Publications_List, and push both" }
+update-bib = { cmd = "python bin/update_bibliography.py", description = "Sync _bibliography/papers.bib from ADS, mirror to My_CV and Publications_List, push both, and recompile the CV and publication list PDFs" }

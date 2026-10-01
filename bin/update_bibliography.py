@@ -8,7 +8,7 @@ repos (both Overleaf-synced, kept as identical copies), which are
 cloned/pulled to local cache dirs.
 
 Usage:
-    ADS_API_TOKEN=xxxx python bin/update_bibliography.py [--since YEAR] [--dry-run]
+    ADS_API_TOKEN=xxxx python bin/update_bibliography.py [--since YEAR] [--dry-run] [--no-pdf]
 
 Setup:
     1. Get a free ADS API token: https://ui.adsabs.harvard.edu/user/settings/token
@@ -35,8 +35,12 @@ The script:
        confirmation before updating the entry (by citekey) in all five
        bib files.
     5. If the My_CV and/or Publications_List repo files changed, asks for
-       confirmation before committing and pushing each (Overleaf then
-       syncs automatically).
+       confirmation before committing and pushing each to GitHub. Overleaf
+       does not pull automatically: use Menu > GitHub > "Pull GitHub changes
+       into Overleaf" in each project afterwards.
+    6. Recompiles assets/pdf/Bastien_Carreres_CV.pdf and
+       assets/pdf/Bastien_Carreres_Publications_List.pdf from the cached
+       repos' main.tex (skipped with --dry-run or --no-pdf). Needs latexmk.
 
 With --sync-cv, skips the ADS query entirely and instead checks the My_CV
 bib files against _bibliography/papers.bib (the website, treated as the
@@ -57,10 +61,11 @@ from pathlib import Path
 import requests
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from update_cv import clone_or_pull, CACHE_DIR
+from update_cv import clone_or_pull, compile_pdf, CACHE_DIR, PDF_PATH as CV_PDF_PATH
 
 PUBLIST_REPO_URL = "https://github.com/bastiencarreres/Publications_List.git"
 PUBLIST_CACHE_DIR = Path.home() / ".cache" / "publications_list_repo"
+PUBLIST_PDF_PATH = Path("assets/pdf/Bastien_Carreres_Publications_List.pdf")
 
 BIB_PATH = "_bibliography/papers.bib"
 BIB_NAME_LATEX_EN = "papers.bib"
@@ -276,10 +281,15 @@ def prompt(question: str, default: str | None = None) -> str:
 
 def yes_no(question: str, default: bool = True) -> bool:
     d = "Y/n" if default else "y/N"
-    ans = input(f"{question} [{d}]: ").strip().lower()
-    if not ans:
-        return default
-    return ans.startswith("y")
+    while True:
+        ans = input(f"{question} [{d}]: ").strip().lower()
+        if not ans:
+            return default
+        if ans in ("y", "yes"):
+            return True
+        if ans in ("n", "no"):
+            return False
+        print(f"  Unrecognized answer {ans!r}; please type y or n.")
 
 
 def citekey_slug(title: str) -> str:
@@ -322,6 +332,9 @@ def build_entry(doc: dict, citekey: str, keyword: str, selected: bool, annotatio
     lines.append(f"  title = {{{title}}},")
     lines.append(f"  author = {{{authors}}},")
     lines.append(f"  year = {{{year}}},")
+    month = (doc.get("pubdate") or "")[5:7]
+    if month and month != "00":
+        lines.append(f"  month = {{{month}}},")
     if pub:
         lines.append(f"  journal = {{{pub}}},")
     if doc.get("volume"):
@@ -399,6 +412,29 @@ def set_annotation(body: str, annotation: str) -> str:
     return "\n".join(lines)
 
 
+# The LaTeX CV (My_CV main.tex) lists FirstAuth/SignContrib papers only when their
+# `keywords` also contain `selected`; this is independent of the website's
+# `selected` field (which controls the /about page).
+CV_SELECTABLE_SECTIONS = ("FirstAuth", "SignContrib")
+
+
+def ask_cv_selected(section: str, default: bool) -> bool:
+    if section not in CV_SELECTABLE_SECTIONS:
+        return False
+    return yes_no("Include in the LaTeX CV's selected publications?", default=default)
+
+
+def add_cv_selected_keyword(entry: str) -> str:
+    """Append `selected` to the last `keywords` field (the one biblatex uses)."""
+    matches = list(re.finditer(r"(keywords\s*=\s*\{)([^}]*)(\})", entry))
+    if not matches:
+        return entry
+    m = matches[-1]
+    if "selected" in [k.strip() for k in m.group(2).split(",")]:
+        return entry
+    return entry[:m.start(2)] + m.group(2) + ",selected" + entry[m.end(2):]
+
+
 def sync_cv_from_website(text: str, text_latex_en: str, text_latex_fr: str):
     """Add entries missing from the My_CV bibs and refresh SYNC_FIELDS that have drifted,
     using _bibliography/papers.bib (the website) as the source of truth. Returns the
@@ -436,6 +472,9 @@ def sync_cv_from_website(text: str, text_latex_en: str, text_latex_fr: str):
             print("Skipped.\n")
             continue
         entry_en = convert_annotation_delims(web["body"])
+        web_selected = (get_field(web["body"], "selected") or "").lower() == "true"
+        if ask_cv_selected(web["section"], default=web_selected):
+            entry_en = add_cv_selected_keyword(entry_en)
         annotation_fr = prompt(
             f"French annotation for '{key}' (optional, leave blank to reuse the English text for now)",
             default="",
@@ -485,13 +524,22 @@ def offer_repo_push(cache_dir: Path, label: str):
         return
     print(f"\n{label} repo has changes:")
     subprocess.run(["git", "-C", str(cache_dir), "diff", "--stat"])
-    if yes_no(f"Commit and push the updated bib files to {label} (Overleaf will sync)?", default=True):
+    if yes_no(f"Commit and push the updated bib files to {label} on GitHub?", default=True):
         subprocess.run(["git", "-C", str(cache_dir), "add", "papers.bib", "papers_fr.bib"], check=True)
         subprocess.run(["git", "-C", str(cache_dir), "commit", "-m", "Update publication list from website"], check=True)
         subprocess.run(["git", "-C", str(cache_dir), "push"], check=True)
-        print(f"Pushed to {label}.")
+        print(
+            f"Pushed to {label} on GitHub. In Overleaf, use Menu > GitHub > "
+            f"\"Pull GitHub changes into Overleaf\" to get them there."
+        )
     else:
         print(f"Not pushed. The updated files remain in {cache_dir} — push manually when ready.")
+
+
+def rebuild_pdfs():
+    """Recompile the CV and Publications List PDFs, which both render papers.bib."""
+    compile_pdf(CACHE_DIR / "main.tex", CV_PDF_PATH)
+    compile_pdf(PUBLIST_CACHE_DIR / "main.tex", PUBLIST_PDF_PATH)
 
 
 def offer_cv_repo_push():
@@ -510,8 +558,19 @@ def main():
         help="Check the My_CV bib files against _bibliography/papers.bib and update them to "
         "match (missing entries added, drifted fields refreshed). Skips the ADS query.",
     )
+    parser.add_argument(
+        "--no-pdf",
+        action="store_true",
+        help="Don't recompile the CV and Publications List PDFs at the end of the run.",
+    )
     args = parser.parse_args()
 
+    sync(args)
+    if not args.dry_run and not args.no_pdf:
+        rebuild_pdfs()
+
+
+def sync(args):
     clone_or_pull()
     clone_or_pull(PUBLIST_REPO_URL, PUBLIST_CACHE_DIR)
     bib_path_latex_en = str(CACHE_DIR / BIB_NAME_LATEX_EN)
@@ -673,6 +732,7 @@ def main():
                 selected_default = False
 
         selected = yes_no("Show on the /about page (selected)?", default=selected_default)
+        cv_selected = ask_cv_selected(section, default=selected)
         annotation_en = prompt(
             "One-line note (English) on your contribution to this paper (optional, use \\(...\\) for math)",
             default="",
@@ -684,8 +744,9 @@ def main():
 
         citekey = make_citekey(first_author_last, title, str(year), text)
         entry = build_entry(doc, citekey, keyword, selected, annotation_en)
-        entry_latex_en = build_entry(doc, citekey, keyword, selected, to_plain_math(annotation_en))
-        entry_latex_fr = build_entry(doc, citekey, keyword, selected, to_plain_math(annotation_fr))
+        latex_keyword = keyword + (",selected" if cv_selected else "")
+        entry_latex_en = build_entry(doc, citekey, latex_keyword, selected, to_plain_math(annotation_en))
+        entry_latex_fr = build_entry(doc, citekey, latex_keyword, selected, to_plain_math(annotation_fr))
 
         print("\nGenerated entry (papers.bib):\n")
         print(entry)

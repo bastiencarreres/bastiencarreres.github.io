@@ -277,8 +277,8 @@ def tex_to_resume_updates(tex: str) -> dict[str, list]:
     return updates
 
 
-def compile_pdf(tex_path: Path) -> None:
-    """Run latexmk on tex_path and copy the resulting PDF over PDF_PATH."""
+def compile_pdf(tex_path: Path, pdf_path: Path = PDF_PATH) -> None:
+    """Run latexmk on tex_path and copy the resulting PDF over pdf_path."""
     result = subprocess.run(
         ["latexmk", "-pdf", "-interaction=nonstopmode", "-cd", str(tex_path)],
         capture_output=True, text=True,
@@ -290,8 +290,8 @@ def compile_pdf(tex_path: Path) -> None:
         )
         sys.exit(1)
     built_pdf = tex_path.with_suffix(".pdf")
-    PDF_PATH.write_bytes(built_pdf.read_bytes())
-    print(f"Wrote {PDF_PATH}.")
+    pdf_path.write_bytes(built_pdf.read_bytes())
+    print(f"Wrote {pdf_path}.")
 
 
 def main():
