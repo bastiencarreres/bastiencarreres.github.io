@@ -11,7 +11,7 @@ layout: default
             {% if page.cv_pdf contains '://' %}
               href="{{ page.cv_pdf }}"
             {% else %}
-              href="{{ page.cv_pdf | relative_url }}"
+              href="{{ page.cv_pdf | relative_url }}?v={{ site.time | date: '%s' }}"
             {% endif %}
             target="_blank"
             rel="noopener noreferrer"
@@ -62,7 +62,7 @@ layout: default
             {% if page.cv_pdf contains '://' %}
               href="{{ page.cv_pdf }}"
             {% else %}
-              href="{{ page.cv_pdf | relative_url }}"
+              href="{{ page.cv_pdf | relative_url }}?v={{ site.time | date: '%s' }}"
             {% endif %}
             target="_blank"
             rel="noopener noreferrer"

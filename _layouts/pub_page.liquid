@@ -14,7 +14,7 @@ layout: default
       {{ page.title }}
       {% if page.publist_pdf %}
         <a
-          href="{{ page.publist_pdf | prepend: '/assets/pdf/' | absolute_url}}"
+          href="{{ page.publist_pdf | prepend: '/assets/pdf/' | absolute_url }}?v={{ site.time | date: '%s' }}"
           target="_blank"
           rel="noopener noreferrer"
           class="float-right"
