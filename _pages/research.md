@@ -45,7 +45,7 @@ With colleagues, I also forecasted that Rubin-LSST will measure \\(f\sigma_8\\) 
 
 ### Towards a measurement with real data
 
-Although forecasts show a great potential, no robust measurement of \\(f\sigma_8\\) with SNe Ia has yet been achieved with the complexities of real data. I am currently working on the TITAN SN Ia sample from the Asteroid Terrestrial-impact Last Alert System (ATLAS), one of the largest low-redshift SN Ia samples to date, for which I will perform the \\(f\sigma_8\\) measurement. I forecasted that ATLAS could constrain \\(f\sigma_8\\) at the ~20–25% level, already competitive with galaxy surveys. This measurement will also provide a first data-driven systematic error budget for \\(f\sigma_8\\) before Rubin-LSST. I am also leading the \\(f\sigma_8\\) measurement with the DEBASS sample.
+Although forecasts show a great potential, no robust measurement of \\(f\sigma_8\\) with SNe Ia has yet been achieved with the complexities of real data. I am currently working on the TITAN SN Ia sample from the Asteroid Terrestrial-impact Last Alert System (ATLAS), one of the largest low-redshift SN Ia samples to date, for which I will perform the \\(f\sigma_8\\) measurement. I forecasted that ATLAS could constrain \\(f\sigma_8\\) at the ~20–25% level, already competitive with galaxy surveys. This measurement will also provide a first data-driven systematic error budget for \\(f\sigma_8\\) before Rubin-LSST.
 
 ## Peculiar velocities as a systematic
 
