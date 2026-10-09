@@ -74,6 +74,7 @@ BIB_NAME_LATEX_EN = "papers.bib"
 BIB_NAME_LATEX_FR = "papers_fr.bib"
 ADS_SEARCH_URL = "https://api.adsabs.harvard.edu/v1/search/query"
 ARXIV_API_URL = "https://export.arxiv.org/api/query"
+INSPIRE_API_URL = "https://inspirehep.net/api/literature"
 # arXiv lists both "B. Carreres" and "Bastien Carreres"; au:"Carreres B" misses the latter,
 # so search the surname and keep entries with a B-initialed Carreres author.
 ARXIV_AUTHOR_QUERY = "au:Carreres"
@@ -140,13 +141,18 @@ def query_arxiv(since_year: int | None) -> list[dict]:
 
     Catches papers posted in the last few days that ADS hasn't indexed yet.
     """
-    resp = requests.get(
-        ARXIV_API_URL,
-        params={"search_query": ARXIV_AUTHOR_QUERY, "max_results": 200,
-                "sortBy": "submittedDate", "sortOrder": "descending"},
-        timeout=30,
-    )
-    resp.raise_for_status()
+    # Best-effort: export.arxiv.org is often slow; ADS results alone are still a valid sync.
+    try:
+        resp = requests.get(
+            ARXIV_API_URL,
+            params={"search_query": ARXIV_AUTHOR_QUERY, "max_results": 200,
+                    "sortBy": "submittedDate", "sortOrder": "descending"},
+            timeout=60,
+        )
+        resp.raise_for_status()
+    except requests.RequestException as e:
+        print(f"Warning: arXiv query failed ({e}); skipping arXiv-only preprints.")
+        return []
     ns = {"a": "http://www.w3.org/2005/Atom"}
     docs = []
     for e in ET.fromstring(resp.content).findall("a:entry", ns):
@@ -245,6 +251,7 @@ def parse_entries(text: str) -> list[dict]:
                         "bibcode": unescape_latex(bibcode) if bibcode else None,
                         "doi": get_field(body, "doi"),
                         "arxiv": arxiv,
+                        "inspire": get_field(body, "inspirehep_id"),
                     }
                 )
                 i = end
@@ -285,9 +292,28 @@ def update_entry_fields(text: str, key: str, updates: dict[str, str]) -> str:
             to_insert.append((field, value))
 
     if to_insert:
+        # The entry's last field usually has no trailing comma; add one before appending.
+        last = end - 1
+        if last > start and not lines[last].rstrip().endswith(","):
+            lines[last] = lines[last].rstrip() + ","
         lines[end:end] = [f"  {field} = {{{value}}}," for field, value in to_insert]
 
     return "\n".join(lines)
+
+
+def query_inspire_id(entry: dict) -> str | None:
+    """Look up an entry's INSPIRE record id by arXiv id (or DOI). Best-effort: None on any failure."""
+    q = f"arxiv:{entry['arxiv']}" if entry["arxiv"] else f"doi:{entry['doi']}" if entry["doi"] else None
+    if not q:
+        return None
+    try:
+        resp = requests.get(INSPIRE_API_URL, params={"q": q, "fields": "control_number"}, timeout=30)
+        resp.raise_for_status()
+        hits = resp.json()["hits"]["hits"]
+    except (requests.RequestException, ValueError, KeyError) as e:
+        print(f"Warning: INSPIRE lookup for '{entry['key']}' failed ({e}).")
+        return None
+    return str(hits[0]["metadata"]["control_number"]) if len(hits) == 1 else None
 
 
 def doc_arxiv_id(doc: dict) -> str | None:
@@ -735,6 +761,17 @@ def sync(args):
         text_latex_fr = update_entry_fields(text_latex_fr, matched["key"], upd)
         updated += 1
         print(f"Updated '{matched['key']}'.\n")
+
+    # Fill in missing INSPIRE ids (citation badges). Website-only field, not mirrored to My_CV.
+    missing_inspire = [e for e in existing_entries if not e["inspire"]]
+    if missing_inspire:
+        print(f"Looking up INSPIRE ids for {len(missing_inspire)} entry/entries without one...")
+    for e in missing_inspire:
+        inspire_id = query_inspire_id(e)
+        if inspire_id:
+            text = update_entry_fields(text, e["key"], {"inspirehep_id": inspire_id})
+            updated += 1
+            print(f"  {e['key']}: inspirehep_id = {inspire_id}")
 
     candidates = new_docs
 
