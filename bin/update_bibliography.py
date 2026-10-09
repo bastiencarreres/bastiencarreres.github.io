@@ -16,7 +16,8 @@ Setup:
     3. (optional) export ORCID_ID=0000-0000-0000-0000 to also search by ORCID
 
 The script:
-    1. Queries ADS for papers matching your name (and ORCID, if set).
+    1. Queries ADS for papers matching your name (and ORCID, if set), plus
+       the arXiv API for astro-ph preprints not yet indexed by ADS.
     2. Splits results into:
        - brand new papers (no matching bibcode/arXiv id/DOI in papers.bib)
        - known papers whose ADS bibcode changed since it was added (e.g. a
@@ -56,6 +57,7 @@ import os
 import re
 import subprocess
 import sys
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import requests
@@ -71,6 +73,10 @@ BIB_PATH = "_bibliography/papers.bib"
 BIB_NAME_LATEX_EN = "papers.bib"
 BIB_NAME_LATEX_FR = "papers_fr.bib"
 ADS_SEARCH_URL = "https://api.adsabs.harvard.edu/v1/search/query"
+ARXIV_API_URL = "https://export.arxiv.org/api/query"
+# arXiv lists both "B. Carreres" and "Bastien Carreres"; au:"Carreres B" misses the latter,
+# so search the surname and keep entries with a B-initialed Carreres author.
+ARXIV_AUTHOR_QUERY = "au:Carreres"
 FIRST_AUTHOR_LASTNAME = "Carreres"
 NOT_MINE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "not_my_papers.txt")
 
@@ -127,6 +133,51 @@ def query_ads(token: str, since_year: int | None) -> list[dict]:
     docs = resp.json()["response"]["docs"]
     # Exclude non-article record types (errata, catalogs, etc.)
     return [d for d in docs if d.get("doctype") in ("article", "eprint", None)]
+
+
+def query_arxiv(since_year: int | None) -> list[dict]:
+    """Query the arXiv API for astro-ph preprints, shaped like ADS docs (no bibcode).
+
+    Catches papers posted in the last few days that ADS hasn't indexed yet.
+    """
+    resp = requests.get(
+        ARXIV_API_URL,
+        params={"search_query": ARXIV_AUTHOR_QUERY, "max_results": 200,
+                "sortBy": "submittedDate", "sortOrder": "descending"},
+        timeout=30,
+    )
+    resp.raise_for_status()
+    ns = {"a": "http://www.w3.org/2005/Atom"}
+    docs = []
+    for e in ET.fromstring(resp.content).findall("a:entry", ns):
+        cats = [c.get("term", "") for c in e.findall("a:category", ns)]
+        if not any(c.startswith("astro-ph") for c in cats):
+            continue
+        arxiv_id = re.sub(r"v\d+$", "", e.findtext("a:id", "", ns).rsplit("/abs/", 1)[-1])
+        published = e.findtext("a:published", "", ns)
+        if since_year and int(published[:4]) < since_year:
+            continue
+        # ponytail: "F. Last" -> "Last, F." splits on last space; compound last names
+        # (e.g. "A. de la Macorra") come out wrong — ADS replaces these once indexed.
+        authors = []
+        for a in e.findall("a:author", ns):
+            first, _, last = " ".join(a.findtext("a:name", "", ns).split()).rpartition(" ")
+            authors.append(f"{last}, {first}" if first else last)
+        if not any(a.lower().startswith(f"{FIRST_AUTHOR_LASTNAME.lower()}, b") for a in authors):
+            continue
+        docs.append({
+            "title": [" ".join(e.findtext("a:title", "", ns).split())],
+            "author": authors,
+            "year": published[:4],
+            "pubdate": published[:10],
+            "pub": "arXiv e-prints",
+            "page": [f"arXiv:{arxiv_id}"],
+            "doi": [f"10.48550/arXiv.{arxiv_id}"],
+            "identifier": [f"arXiv:{arxiv_id}"],
+            "abstract": " ".join(e.findtext("a:summary", "", ns).split()),
+            "doctype": "eprint",
+        })
+    return docs
 
 
 def load_bib_text(path: str) -> str:
@@ -266,11 +317,17 @@ def load_not_mine() -> set:
         return {line.strip() for line in f if line.strip() and not line.startswith("#")}
 
 
-def mark_not_mine(bibcode: str | None) -> None:
-    if not bibcode:
-        return
-    with open(NOT_MINE_PATH, "a") as f:
-        f.write(bibcode + "\n")
+def not_mine_keys(doc: dict) -> set:
+    """Keys a paper can be remembered under in not_my_papers.txt: ADS bibcode and/or arXiv:<id>."""
+    arx = doc_arxiv_id(doc)
+    return {k for k in (doc.get("bibcode"), arx and f"arXiv:{arx}") if k}
+
+
+def mark_not_mine(doc: dict) -> None:
+    keys = not_mine_keys(doc)
+    if keys:
+        with open(NOT_MINE_PATH, "a") as f:
+            f.write("".join(k + "\n" for k in sorted(keys)))
 
 
 def prompt(question: str, default: str | None = None) -> str:
@@ -628,9 +685,16 @@ def sync(args):
         elif not already_in_bib(d, bibcodes, arxiv_ids, dois):
             new_docs.append(d)
 
+    # arXiv-only preprints ADS hasn't indexed yet: only ever new, never "stale".
+    print("Querying arXiv...")
+    seen_arxiv = arxiv_ids | {doc_arxiv_id(d) for d in docs}
+    arxiv_new = [d for d in query_arxiv(args.since) if doc_arxiv_id(d) not in seen_arxiv]
+    print(f"{len(arxiv_new)} astro-ph preprint(s) on arXiv not yet on ADS or in {BIB_PATH}.")
+    new_docs += arxiv_new
+
     not_mine = load_not_mine()
-    skipped_not_mine = [d for d in new_docs if d.get("bibcode") in not_mine]
-    new_docs = [d for d in new_docs if d.get("bibcode") not in not_mine]
+    skipped_not_mine = [d for d in new_docs if not_mine_keys(d) & not_mine]
+    new_docs = [d for d in new_docs if not (not_mine_keys(d) & not_mine)]
     if skipped_not_mine:
         print(f"{len(skipped_not_mine)} paper(s) previously marked as not yours (skipped).")
 
@@ -712,7 +776,7 @@ def sync(args):
         print()
 
         if not yes_no(f"Are you ({FIRST_AUTHOR_LASTNAME}) really an author of this paper?", default=True):
-            mark_not_mine(doc.get("bibcode"))
+            mark_not_mine(doc)
             print("Skipped (won't be asked about this paper again).\n")
             continue
 
