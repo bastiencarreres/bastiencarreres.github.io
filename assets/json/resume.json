@@ -53,11 +53,21 @@
   ],
   "research_experience": [
     {
+      "institution": "University of Oxford",
+      "position": "Marie Skłodowska-Curie Actions Postdoctoral Fellow",
+      "url": "",
+      "startDate": "Nov. 2023",
+      "endDate": "Oct. 2026",
+      "summary": "Supervisor: Prof. Maria Vincenzi.",
+      "location": "Oxford, Oxfordshire, UK",
+      "highlights": []
+    },
+    {
       "institution": "Duke University",
       "position": "Post-doctoral Associate",
       "url": "",
       "startDate": "Nov. 2023",
-      "endDate": "",
+      "endDate": "Oct. 2026",
       "summary": "Supervisor: Prof. Dan Scolnic. Subjects: Cosmology with low-z SNe Ia, peculiar velocities, survey simulation, data analysis.",
       "location": "Durham, NC, USA",
       "highlights": []
