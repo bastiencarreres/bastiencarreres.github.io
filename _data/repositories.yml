@@ -22,7 +22,7 @@ github_repos:
     description: Tools for summarizing LSST Operations Simulator outputs.
     lang: jupyter
     lang_display: Jupyter Notebook
-    stars: 2
+    stars: 3
   - repo: bastiencarreres/snanapytools
     description: Python utilities to visualize and work with SNANA.
     lang: python
