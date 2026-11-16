@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Postdoctoral Associate at Duke University
+subtitle: Marie Skłodowska-Curie Actions Postdoctoral Fellow at the University of Oxford
 
 profile:
   align: left
